@@ -18,9 +18,23 @@ namespace Proyecto_Consultorio_Medico.Vistas
             InitializeComponent();
         }
 
+        public Plantilla(string titulo)
+        {
+            InitializeComponent();
+            lblTitulo.Text = titulo;
+        }
+
         private void Plantilla_Load(object sender, EventArgs e)
         {
             Inicioadores.Plantillas(this);
+            Inicioadores.Header(panelHeader);
+            Inicioadores.Titulo(lblTitulo);
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
