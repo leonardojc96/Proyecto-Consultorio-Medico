@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5d717d0c0ef4402d88113c6402b04924" Name="Diagram1" ZoomLevel="55">
+        <EntityTypeShape EntityType="Model.ConsultaMedica" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Consultorios" Width="1.5" PointX="3.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Especialidades" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.HistorialConsultas" Width="1.5" PointX="0.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MedicoConsultorio" Width="1.5" PointX="6" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MedicoEspecialidad" Width="1.5" PointX="3" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Medicos" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Pacientes" Width="1.5" PointX="1.5" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Turnos" Width="1.5" PointX="6" PointY="13.5" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_ConsultaMedica_HistorialConsultas" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ConsultaMedica_Medicos" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Consultorios_Especialidades" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_MedicoConsultorio_Consultorios" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Turnos_Consultorios" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_MedicoEspecialidad_Especialidades" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_HistorialConsultas_Pacientes" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_MedicoConsultorio_Medicos" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_MedicoEspecialidad_Medicos" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Turnos_Pacientes" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
