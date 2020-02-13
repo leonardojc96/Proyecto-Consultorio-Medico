@@ -11,7 +11,8 @@ namespace Proyecto_Consultorio_Medico.Modelo
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+
     public partial class Pacientes
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -38,5 +39,69 @@ namespace Proyecto_Consultorio_Medico.Modelo
         public virtual ICollection<HistorialConsultas> HistorialConsultas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Turnos> Turnos { get; set; }
+
+        public bool Save(Pacientes paciente)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                db.Pacientes.Add(paciente);
+
+                if (db.SaveChanges() == 1)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        public ICollection<Pacientes> Get()
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                return db.Pacientes.ToList();
+            }
+        }
+
+        public Pacientes Get(int  id)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                return db.Pacientes.Find(id);
+            }
+        }
+
+        public Pacientes GetDNI(string DNI)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                return db.Pacientes.Where(x => x.DNI == DNI).FirstOrDefault();
+            }
+        }
+
+        public void Remove(Pacientes paciente)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                db.Pacientes.Remove(paciente);
+            }
+        }
+
+        public bool Update(int id, Pacientes paciente)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                Pacientes p = paciente.Get(id);
+
+                p = paciente;
+
+                if (db.SaveChanges() == 1)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+
+
     }
 }

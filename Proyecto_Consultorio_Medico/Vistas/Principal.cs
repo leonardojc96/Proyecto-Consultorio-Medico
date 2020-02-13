@@ -21,6 +21,7 @@ namespace Proyecto_Consultorio_Medico
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             Inicioadores.FormInicio(this);
+
             if (Validaciones.FormularioNoAbierto("Menu"))
             {
                 Vistas.Menu menu = new Vistas.Menu();
