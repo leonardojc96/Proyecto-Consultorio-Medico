@@ -11,6 +11,7 @@ namespace Proyecto_Consultorio_Medico.Modelo
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     
     public partial class Especialidades
     {
@@ -28,5 +29,32 @@ namespace Proyecto_Consultorio_Medico.Modelo
         public virtual ICollection<Consultorios> Consultorios { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MedicoEspecialidad> MedicoEspecialidad { get; set; }
+
+        public void SaveEspecialidades(Especialidades x)
+        {
+            Especialidades mesp = new Especialidades();
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                db.Especialidades.Add(x);
+                db.SaveChanges();
+            }
+        }
+
+        
+        public void RemoveEspecialidad(Especialidades x)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                db.Especialidades.Remove(x);
+            }
+        }
+
+        public ICollection<Especialidades>GetEspecialidades()
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                return db.Especialidades.ToList();
+            }
+        }
     }
 }
