@@ -11,6 +11,7 @@ namespace Proyecto_Consultorio_Medico.Modelo
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     
     public partial class Medicos
     {
@@ -41,5 +42,26 @@ namespace Proyecto_Consultorio_Medico.Modelo
         public virtual ICollection<MedicoConsultorio> MedicoConsultorio { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MedicoEspecialidad> MedicoEspecialidad { get; set; }
+
+
+        public void SaveMedico(Medicos med)
+        {
+
+            Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities();
+            db.Medicos.Add(med);
+            db.SaveChanges();
+        }
+
+        public Medicos GetMedicoByName(string nombre)
+        {
+            nombre = nombre.ToLower().Trim();
+            Medicos m = new Medicos();
+            Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities();
+            m = db.Medicos.Where(x => x.Nombre.ToLower().Trim() == nombre).FirstOrDefault();
+
+
+            return m;
+        }
+
     }
 }
