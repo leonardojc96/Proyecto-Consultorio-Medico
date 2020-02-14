@@ -11,7 +11,8 @@ namespace Proyecto_Consultorio_Medico.Modelo
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+
     public partial class HistorialConsultas
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -27,5 +28,35 @@ namespace Proyecto_Consultorio_Medico.Modelo
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ConsultaMedica> ConsultaMedica { get; set; }
         public virtual Pacientes Pacientes { get; set; }
+
+        public bool Save(HistorialConsultas historial)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                db.HistorialConsultas.Add(historial);
+
+                if (db.SaveChanges() == 1)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        public ICollection<HistorialConsultas> Get()
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                return db.HistorialConsultas.ToList();
+            }
+        }
+
+        public HistorialConsultas Get(int id)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                return db.HistorialConsultas.Find(id);
+            }
+        }
     }
 }

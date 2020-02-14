@@ -11,7 +11,8 @@ namespace Proyecto_Consultorio_Medico.Modelo
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+
     public partial class Consultorios
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -31,5 +32,74 @@ namespace Proyecto_Consultorio_Medico.Modelo
         public virtual ICollection<MedicoConsultorio> MedicoConsultorio { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Turnos> Turnos { get; set; }
+
+
+        public bool Save(Consultorios consultorio)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                db.Consultorios.Add(consultorio);
+
+                if (db.SaveChanges() == 1)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        public ICollection<Consultorios> Get()
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                return db.Consultorios.ToList();
+            }
+        }
+
+        public Consultorios Get(int id)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                return db.Consultorios.Find(id);
+            }
+        }
+
+        public Consultorios GetByNumero(string Numero)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                return db.Consultorios.Where(x => x.Nombre == Numero).FirstOrDefault();
+            }
+        }
+
+        public bool Remove(Consultorios consultorio)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                db.Consultorios.Remove(consultorio);
+
+                if (db.SaveChanges() == 1)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        public bool Update(int id, Consultorios consultorio)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                Consultorios p = consultorio.Get(id);
+
+                p = consultorio;
+
+                if (db.SaveChanges() == 1)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
     }
 }
