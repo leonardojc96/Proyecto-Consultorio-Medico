@@ -9,27 +9,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Proyecto_Consultorio_Medico.Vistas
+namespace Proyecto_Consultorio_Medico.Vistas.Plantillas
 {
-    public partial class Plantilla : Form
+    public partial class PlantillaAlta : Plantilla
     {
-        public Plantilla()
+        public PlantillaAlta()
         {
             InitializeComponent();
         }
 
-        public Plantilla(string titulo)
+        public PlantillaAlta(string titulo): base(titulo)
         {
             InitializeComponent();
-            lblTitulo.Text = titulo;
         }
 
-        private void Plantilla_Load(object sender, EventArgs e)
+        private void PlantillaAlta_Load(object sender, EventArgs e)
         {
-            Inicioadores.Plantillas(this);
-            Inicioadores.Header(panelHeader);
-            Inicioadores.Titulo(lblTitulo);
-
+            AcceptButton = btnAgregar;
+            CancelButton = btnSalir;
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

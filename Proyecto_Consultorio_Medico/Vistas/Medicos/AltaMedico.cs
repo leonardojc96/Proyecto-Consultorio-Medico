@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_Consultorio_Medico.Negocios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,16 +9,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Proyecto_Consultorio_Medico.Vistas
+namespace Proyecto_Consultorio_Medico.Vistas.Medicos
 {
-    public partial class Menu : Plantillas.Plantilla
+    public partial class AltaMedico : Plantillas.PlantillaAlta
     {
-        public Menu(): base("Menu Principal")
+        public AltaMedico(): base("Medicos")
         {
             InitializeComponent();
         }
 
-        private void Menu_Load(object sender, EventArgs e)
+        private void AltaMedico_Load(object sender, EventArgs e)
         {
         }
     }

@@ -8,17 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Proyecto_Consultorio_Medico.Vistas
+namespace Proyecto_Consultorio_Medico.Vistas.Plantillas
 {
-    public partial class Menu : Plantillas.Plantilla
+    public partial class PlantillaInfo : Plantilla
     {
-        public Menu(): base("Menu Principal")
+        public PlantillaInfo()
         {
             InitializeComponent();
+            //hacer metodo cargar foto al abrir
         }
 
-        private void Menu_Load(object sender, EventArgs e)
+        private void PlantillaInfo_Load(object sender, EventArgs e)
         {
+
         }
     }
 }

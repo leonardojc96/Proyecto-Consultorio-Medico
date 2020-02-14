@@ -32,6 +32,12 @@ namespace Proyecto_Consultorio_Medico
 
         private void altaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (Validaciones.FormularioNoAbierto("AltaMedico"))
+            {
+                Vistas.Medicos.AltaMedico altaMedico = new Vistas.Medicos.AltaMedico();
+                altaMedico.MdiParent = this;
+                altaMedico.Show();
+            }
         }
     }
 }
