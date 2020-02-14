@@ -101,6 +101,7 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Negocios\Inicioadores.cs" />
+    <Compile Include="Negocios\PacienteNegocio.cs" />
     <Compile Include="Negocios\Validaciones.cs" />
     <Compile Include="Vistas\Menu.cs">
       <SubType>Form</SubType>
