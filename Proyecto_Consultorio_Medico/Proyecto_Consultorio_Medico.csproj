@@ -100,9 +100,20 @@
     <Compile Include="Modelo\Turnos.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Negocios\ConsultoriosNegocio.cs" />
+    <Compile Include="Negocios\HistorialNegocios.cs" />
     <Compile Include="Negocios\Inicioadores.cs" />
+    <Compile Include="Negocios\MedicoConsultorioNegocio.cs" />
+    <Compile Include="Negocios\MedicoEspecialidadNegocio.cs" />
+    <Compile Include="Negocios\MedicosNegocio.cs" />
     <Compile Include="Negocios\Nespecialidades.cs" />
+    <Compile Include="Negocios\PacienteNegocio.cs" />
     <Compile Include="Negocios\Validaciones.cs" />
+    <Compile Include="Proyecto_centro_medicoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Proyecto_centro_medicoDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Medicos\AltaMedico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +196,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Proyecto_centro_medicoDataSet.xsc">
+      <DependentUpon>Proyecto_centro_medicoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Proyecto_centro_medicoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Proyecto_centro_medicoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Proyecto_centro_medicoDataSet.xss">
+      <DependentUpon>Proyecto_centro_medicoDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -20,5 +20,21 @@ namespace Proyecto_Consultorio_Medico.Modelo
     
         public virtual Especialidades Especialidades { get; set; }
         public virtual Medicos Medicos { get; set; }
+
+        public bool Save(MedicoEspecialidad medicoEspecialidad)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                db.MedicoEspecialidad.Add(medicoEspecialidad);
+
+                if (db.SaveChanges() == 1)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+
+
     }
 }

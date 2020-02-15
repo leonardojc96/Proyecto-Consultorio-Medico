@@ -64,6 +64,14 @@ namespace Proyecto_Consultorio_Medico.Modelo
             }
         }
 
+        public ICollection<Consultorios> GetByEspecialidad(int idEspecialidad)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                return db.Consultorios.Where(x => x.Id_Especialidad == idEspecialidad).ToList();
+            }
+        }
+
         public Consultorios GetByNumero(string Numero)
         {
             using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_Consultorio_Medico.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +9,11 @@ namespace Proyecto_Consultorio_Medico.Negocios
 {
     class Nespecialidades
     {
+        Especialidades especialidades = new Especialidades();
 
         public void SaveEspecialidad(Modelo.Especialidades es)
         {
             es.SaveEspecialidades(es);
-
-
         }
 
         public void RemoveEspecialidad(Modelo.Especialidades es)
@@ -28,6 +28,10 @@ namespace Proyecto_Consultorio_Medico.Negocios
             esplist = esp.GetEspecialidades();
             return esplist;
         }
-        
+
+        public Especialidades Get(int id)
+        {
+            return especialidades.Get(id);
+        }
     }
 }

@@ -56,5 +56,13 @@ namespace Proyecto_Consultorio_Medico.Modelo
                 return db.Especialidades.ToList();
             }
         }
+
+        public Especialidades Get(int id)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                return db.Especialidades.Find(id);
+            }
+        }
     }
 }

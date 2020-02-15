@@ -70,8 +70,10 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(438, 61);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(365, 486);
+            this.dataGridView1.Size = new System.Drawing.Size(340, 486);
             this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             // 
             // btnModificar
             // 
@@ -95,7 +97,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(793, 373);
+            this.ClientSize = new System.Drawing.Size(768, 373);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.dataGridView1);
@@ -123,8 +125,8 @@
         public System.Windows.Forms.Panel panelAlta;
         public System.Windows.Forms.Button btnAgregar;
         public System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.DataGridView dataGridView1;
         public System.Windows.Forms.Button btnModificar;
         public System.Windows.Forms.Button btnEliminar;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }

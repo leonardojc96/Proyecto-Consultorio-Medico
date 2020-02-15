@@ -21,6 +21,11 @@ namespace Proyecto_Consultorio_Medico.Negocios
             return consultorios.Get();
         }
 
+        public ICollection<Consultorios> GetByEspecialidad(int idEspecialidad)
+        {
+            return consultorios.GetByEspecialidad(idEspecialidad);
+        }
+
         public Consultorios Get(int id)
         {
             return consultorios.Get(id);

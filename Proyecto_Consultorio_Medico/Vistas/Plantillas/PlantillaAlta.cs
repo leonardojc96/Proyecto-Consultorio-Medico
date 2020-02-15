@@ -33,5 +33,15 @@ namespace Proyecto_Consultorio_Medico.Vistas.Plantillas
         {
             this.Close();
         }
+
+        public virtual void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //hacer override de este metodo para usar
+        }
+
+        public virtual void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //hacer override de este metodo para usar
+        }
     }
 }

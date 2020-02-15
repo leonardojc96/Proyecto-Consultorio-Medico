@@ -32,5 +32,20 @@ namespace Proyecto_Consultorio_Medico.Modelo
     
         public virtual HistorialConsultas HistorialConsultas { get; set; }
         public virtual Medicos Medicos { get; set; }
+
+        public bool Save(ConsultaMedica consultaMedica)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                db.ConsultaMedica.Add(consultaMedica);
+
+                if (db.SaveChanges() == 1)
+                {
+                    return true;
+                }
+
+                return false;
+            }
+        }
     }
 }

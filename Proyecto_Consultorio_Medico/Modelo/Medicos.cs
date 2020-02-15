@@ -63,5 +63,13 @@ namespace Proyecto_Consultorio_Medico.Modelo
             return m;
         }
 
+        public Medicos Get(int id)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                return db.Medicos.Find(id);
+            }
+        }
+
     }
 }

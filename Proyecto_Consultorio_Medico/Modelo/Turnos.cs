@@ -20,5 +20,19 @@ namespace Proyecto_Consultorio_Medico.Modelo
     
         public virtual Consultorios Consultorios { get; set; }
         public virtual Pacientes Pacientes { get; set; }
+
+        public bool Save(Turnos turno)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                db.Turnos.Add(turno);
+
+                if (db.SaveChanges() == 1)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
     }
 }

@@ -11,7 +11,8 @@ namespace Proyecto_Consultorio_Medico.Modelo
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+
     public partial class MedicoConsultorio
     {
         public int Id { get; set; }
@@ -29,5 +30,35 @@ namespace Proyecto_Consultorio_Medico.Modelo
     
         public virtual Consultorios Consultorios { get; set; }
         public virtual Medicos Medicos { get; set; }
+
+        public bool Save(MedicoConsultorio medicoConsultorio)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                db.MedicoConsultorio.Add(medicoConsultorio);
+
+                if (db.SaveChanges() == 1)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        public ICollection<MedicoConsultorio> GetByConsultorio(int idConsultorio)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                return db.MedicoConsultorio.Where(x => x.Id_Consultorio == idConsultorio).ToList();
+            }
+        }
+
+        public ICollection<MedicoConsultorio> GetByMedico(int idMedico)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                return db.MedicoConsultorio.Where(x => x.Id_Medico == idMedico).ToList();
+            }
+        }
     }
 }
