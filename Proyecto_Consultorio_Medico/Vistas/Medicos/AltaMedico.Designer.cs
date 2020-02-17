@@ -62,6 +62,7 @@
             this.fotoTextBox = new System.Windows.Forms.TextBox();
             this.curriculaTextBox = new System.Windows.Forms.TextBox();
             this.panelLabels = new System.Windows.Forms.Panel();
+            this.picMuestraFoto = new System.Windows.Forms.PictureBox();
             this.lunesCheckBox = new System.Windows.Forms.CheckBox();
             this.martesCheckBox = new System.Windows.Forms.CheckBox();
             this.miercolesCheckBox = new System.Windows.Forms.CheckBox();
@@ -71,29 +72,6 @@
             this.domingoCheckBox = new System.Windows.Forms.CheckBox();
             this.cbConsultorios = new System.Windows.Forms.ComboBox();
             this.dgvHorarios = new System.Windows.Forms.DataGridView();
-            this.btnAgregarHorario = new System.Windows.Forms.Button();
-            this.panelHorarios = new System.Windows.Forms.Panel();
-            this.cbEspecialidad = new System.Windows.Forms.ComboBox();
-            this.dgvEspecialidades = new System.Windows.Forms.DataGridView();
-            this.btnAgregarEspecialidad = new System.Windows.Forms.Button();
-            this.openFoto = new System.Windows.Forms.OpenFileDialog();
-            this.button1 = new System.Windows.Forms.Button();
-            this.cId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvDisponibles = new System.Windows.Forms.DataGridView();
-            this.lblDisponibles = new System.Windows.Forms.Label();
-            this.cH_Entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cH_Salida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cLunes = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.cMartes = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.cMiercoles = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.cJueves = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.cViernes = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.cSabado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.cDomingo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.cMedico = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.H_Entradatxt = new System.Windows.Forms.MaskedTextBox();
-            this.H_Salidatxt = new System.Windows.Forms.MaskedTextBox();
             this.H_Entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.H_Salida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lu = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -105,6 +83,29 @@
             this.Do = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.cConsultorio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAgregarHorario = new System.Windows.Forms.Button();
+            this.panelHorarios = new System.Windows.Forms.Panel();
+            this.H_Salidatxt = new System.Windows.Forms.MaskedTextBox();
+            this.H_Entradatxt = new System.Windows.Forms.MaskedTextBox();
+            this.cbEspecialidad = new System.Windows.Forms.ComboBox();
+            this.dgvEspecialidades = new System.Windows.Forms.DataGridView();
+            this.cId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAgregarEspecialidad = new System.Windows.Forms.Button();
+            this.openFoto = new System.Windows.Forms.OpenFileDialog();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dgvDisponibles = new System.Windows.Forms.DataGridView();
+            this.cH_Entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cH_Salida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cLunes = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.cMartes = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.cMiercoles = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.cJueves = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.cViernes = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.cSabado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.cDomingo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.cMedico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblDisponibles = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
             dNILabel = new System.Windows.Forms.Label();
@@ -129,6 +130,7 @@
             label2 = new System.Windows.Forms.Label();
             this.panelAlta.SuspendLayout();
             this.panelLabels.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMuestraFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHorarios)).BeginInit();
             this.panelHorarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEspecialidades)).BeginInit();
@@ -417,6 +419,7 @@
             // 
             this.fotoTextBox.Location = new System.Drawing.Point(156, 320);
             this.fotoTextBox.Name = "fotoTextBox";
+            this.fotoTextBox.ReadOnly = true;
             this.fotoTextBox.Size = new System.Drawing.Size(180, 20);
             this.fotoTextBox.TabIndex = 19;
             // 
@@ -429,6 +432,7 @@
             // 
             // panelLabels
             // 
+            this.panelLabels.Controls.Add(this.picMuestraFoto);
             this.panelLabels.Controls.Add(label2);
             this.panelLabels.Controls.Add(nombreLabel);
             this.panelLabels.Controls.Add(dNILabel);
@@ -446,6 +450,15 @@
             this.panelLabels.Size = new System.Drawing.Size(113, 457);
             this.panelLabels.TabIndex = 22;
             this.panelLabels.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // picMuestraFoto
+            // 
+            this.picMuestraFoto.Location = new System.Drawing.Point(3, 358);
+            this.picMuestraFoto.Name = "picMuestraFoto";
+            this.picMuestraFoto.Size = new System.Drawing.Size(110, 99);
+            this.picMuestraFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picMuestraFoto.TabIndex = 52;
+            this.picMuestraFoto.TabStop = false;
             // 
             // lunesCheckBox
             // 
@@ -537,209 +550,6 @@
             this.dgvHorarios.Size = new System.Drawing.Size(341, 113);
             this.dgvHorarios.TabIndex = 43;
             // 
-            // btnAgregarHorario
-            // 
-            this.btnAgregarHorario.BackColor = System.Drawing.Color.Navy;
-            this.btnAgregarHorario.Enabled = false;
-            this.btnAgregarHorario.Location = new System.Drawing.Point(168, 159);
-            this.btnAgregarHorario.Name = "btnAgregarHorario";
-            this.btnAgregarHorario.Size = new System.Drawing.Size(114, 23);
-            this.btnAgregarHorario.TabIndex = 44;
-            this.btnAgregarHorario.Text = "Agregar horario";
-            this.btnAgregarHorario.UseVisualStyleBackColor = false;
-            this.btnAgregarHorario.Click += new System.EventHandler(this.btnAgregarHorario_Click);
-            // 
-            // panelHorarios
-            // 
-            this.panelHorarios.Controls.Add(this.H_Salidatxt);
-            this.panelHorarios.Controls.Add(this.H_Entradatxt);
-            this.panelHorarios.Controls.Add(this.cbConsultorios);
-            this.panelHorarios.Controls.Add(this.btnAgregarHorario);
-            this.panelHorarios.Controls.Add(this.domingoCheckBox);
-            this.panelHorarios.Controls.Add(domingoLabel);
-            this.panelHorarios.Controls.Add(this.sabadoCheckBox);
-            this.panelHorarios.Controls.Add(label1);
-            this.panelHorarios.Controls.Add(sabadoLabel);
-            this.panelHorarios.Controls.Add(h_EntradaLabel);
-            this.panelHorarios.Controls.Add(this.viernesCheckBox);
-            this.panelHorarios.Controls.Add(viernesLabel);
-            this.panelHorarios.Controls.Add(h_SalidaLabel);
-            this.panelHorarios.Controls.Add(this.juevesCheckBox);
-            this.panelHorarios.Controls.Add(juevesLabel);
-            this.panelHorarios.Controls.Add(lunesLabel);
-            this.panelHorarios.Controls.Add(this.miercolesCheckBox);
-            this.panelHorarios.Controls.Add(this.lunesCheckBox);
-            this.panelHorarios.Controls.Add(miercolesLabel);
-            this.panelHorarios.Controls.Add(martesLabel);
-            this.panelHorarios.Controls.Add(this.martesCheckBox);
-            this.panelHorarios.Location = new System.Drawing.Point(417, 61);
-            this.panelHorarios.Name = "panelHorarios";
-            this.panelHorarios.Size = new System.Drawing.Size(322, 186);
-            this.panelHorarios.TabIndex = 45;
-            // 
-            // cbEspecialidad
-            // 
-            this.cbEspecialidad.FormattingEnabled = true;
-            this.cbEspecialidad.Location = new System.Drawing.Point(156, 396);
-            this.cbEspecialidad.Name = "cbEspecialidad";
-            this.cbEspecialidad.Size = new System.Drawing.Size(200, 21);
-            this.cbEspecialidad.TabIndex = 46;
-            this.cbEspecialidad.DropDownClosed += new System.EventHandler(this.cbEspecialidad_DropDownClosed);
-            // 
-            // dgvEspecialidades
-            // 
-            this.dgvEspecialidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEspecialidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cId,
-            this.cNombre});
-            this.dgvEspecialidades.Location = new System.Drawing.Point(156, 423);
-            this.dgvEspecialidades.Name = "dgvEspecialidades";
-            this.dgvEspecialidades.Size = new System.Drawing.Size(212, 59);
-            this.dgvEspecialidades.TabIndex = 47;
-            // 
-            // btnAgregarEspecialidad
-            // 
-            this.btnAgregarEspecialidad.Location = new System.Drawing.Point(198, 488);
-            this.btnAgregarEspecialidad.Name = "btnAgregarEspecialidad";
-            this.btnAgregarEspecialidad.Size = new System.Drawing.Size(138, 23);
-            this.btnAgregarEspecialidad.TabIndex = 48;
-            this.btnAgregarEspecialidad.Text = "Agregar Especialidad";
-            this.btnAgregarEspecialidad.UseVisualStyleBackColor = true;
-            this.btnAgregarEspecialidad.Click += new System.EventHandler(this.btnAgregarEspecialidad_Click);
-            // 
-            // openFoto
-            // 
-            this.openFoto.FileName = "openFileDialog1";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(331, 318);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(25, 23);
-            this.button1.TabIndex = 49;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // cId
-            // 
-            this.cId.HeaderText = "Id";
-            this.cId.Name = "cId";
-            this.cId.Visible = false;
-            // 
-            // cNombre
-            // 
-            this.cNombre.HeaderText = "Especialidad";
-            this.cNombre.Name = "cNombre";
-            // 
-            // dgvDisponibles
-            // 
-            this.dgvDisponibles.AllowUserToAddRows = false;
-            this.dgvDisponibles.AllowUserToDeleteRows = false;
-            this.dgvDisponibles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDisponibles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cH_Entrada,
-            this.cH_Salida,
-            this.cLunes,
-            this.cMartes,
-            this.cMiercoles,
-            this.cJueves,
-            this.cViernes,
-            this.cSabado,
-            this.cDomingo,
-            this.cMedico});
-            this.dgvDisponibles.Location = new System.Drawing.Point(417, 404);
-            this.dgvDisponibles.Name = "dgvDisponibles";
-            this.dgvDisponibles.RowHeadersVisible = false;
-            this.dgvDisponibles.Size = new System.Drawing.Size(341, 114);
-            this.dgvDisponibles.TabIndex = 50;
-            // 
-            // lblDisponibles
-            // 
-            this.lblDisponibles.AutoSize = true;
-            this.lblDisponibles.Location = new System.Drawing.Point(532, 388);
-            this.lblDisponibles.Name = "lblDisponibles";
-            this.lblDisponibles.Size = new System.Drawing.Size(143, 13);
-            this.lblDisponibles.TabIndex = 51;
-            this.lblDisponibles.Text = "Disponibilidad del consultorio";
-            // 
-            // cH_Entrada
-            // 
-            this.cH_Entrada.HeaderText = "H_Entrada";
-            this.cH_Entrada.Name = "cH_Entrada";
-            this.cH_Entrada.Width = 80;
-            // 
-            // cH_Salida
-            // 
-            this.cH_Salida.HeaderText = "H_Salida";
-            this.cH_Salida.Name = "cH_Salida";
-            this.cH_Salida.Width = 80;
-            // 
-            // cLunes
-            // 
-            this.cLunes.HeaderText = "Lu";
-            this.cLunes.Name = "cLunes";
-            this.cLunes.Width = 30;
-            // 
-            // cMartes
-            // 
-            this.cMartes.HeaderText = "Ma";
-            this.cMartes.Name = "cMartes";
-            this.cMartes.Width = 30;
-            // 
-            // cMiercoles
-            // 
-            this.cMiercoles.HeaderText = "Mi";
-            this.cMiercoles.Name = "cMiercoles";
-            this.cMiercoles.Width = 30;
-            // 
-            // cJueves
-            // 
-            this.cJueves.HeaderText = "Ju";
-            this.cJueves.Name = "cJueves";
-            this.cJueves.Width = 30;
-            // 
-            // cViernes
-            // 
-            this.cViernes.HeaderText = "Vi";
-            this.cViernes.Name = "cViernes";
-            this.cViernes.Width = 30;
-            // 
-            // cSabado
-            // 
-            this.cSabado.HeaderText = "Sa";
-            this.cSabado.Name = "cSabado";
-            this.cSabado.Width = 30;
-            // 
-            // cDomingo
-            // 
-            this.cDomingo.HeaderText = "Do";
-            this.cDomingo.Name = "cDomingo";
-            this.cDomingo.Width = 30;
-            // 
-            // cMedico
-            // 
-            this.cMedico.HeaderText = "Medico";
-            this.cMedico.Name = "cMedico";
-            this.cMedico.Width = 80;
-            // 
-            // H_Entradatxt
-            // 
-            this.H_Entradatxt.Location = new System.Drawing.Point(99, 42);
-            this.H_Entradatxt.Mask = "00:00";
-            this.H_Entradatxt.Name = "H_Entradatxt";
-            this.H_Entradatxt.Size = new System.Drawing.Size(100, 20);
-            this.H_Entradatxt.TabIndex = 52;
-            this.H_Entradatxt.ValidatingType = typeof(System.DateTime);
-            // 
-            // H_Salidatxt
-            // 
-            this.H_Salidatxt.Location = new System.Drawing.Point(97, 67);
-            this.H_Salidatxt.Mask = "00:00";
-            this.H_Salidatxt.Name = "H_Salidatxt";
-            this.H_Salidatxt.Size = new System.Drawing.Size(100, 20);
-            this.H_Salidatxt.TabIndex = 53;
-            this.H_Salidatxt.ValidatingType = typeof(System.DateTime);
-            // 
             // H_Entrada
             // 
             this.H_Entrada.HeaderText = "H_Entrada";
@@ -805,6 +615,210 @@
             this.idCon.Name = "idCon";
             this.idCon.Visible = false;
             // 
+            // btnAgregarHorario
+            // 
+            this.btnAgregarHorario.BackColor = System.Drawing.Color.Navy;
+            this.btnAgregarHorario.Enabled = false;
+            this.btnAgregarHorario.Location = new System.Drawing.Point(168, 159);
+            this.btnAgregarHorario.Name = "btnAgregarHorario";
+            this.btnAgregarHorario.Size = new System.Drawing.Size(114, 23);
+            this.btnAgregarHorario.TabIndex = 44;
+            this.btnAgregarHorario.Text = "Agregar horario";
+            this.btnAgregarHorario.UseVisualStyleBackColor = false;
+            this.btnAgregarHorario.Click += new System.EventHandler(this.btnAgregarHorario_Click);
+            // 
+            // panelHorarios
+            // 
+            this.panelHorarios.Controls.Add(this.H_Salidatxt);
+            this.panelHorarios.Controls.Add(this.H_Entradatxt);
+            this.panelHorarios.Controls.Add(this.cbConsultorios);
+            this.panelHorarios.Controls.Add(this.btnAgregarHorario);
+            this.panelHorarios.Controls.Add(this.domingoCheckBox);
+            this.panelHorarios.Controls.Add(domingoLabel);
+            this.panelHorarios.Controls.Add(this.sabadoCheckBox);
+            this.panelHorarios.Controls.Add(label1);
+            this.panelHorarios.Controls.Add(sabadoLabel);
+            this.panelHorarios.Controls.Add(h_EntradaLabel);
+            this.panelHorarios.Controls.Add(this.viernesCheckBox);
+            this.panelHorarios.Controls.Add(viernesLabel);
+            this.panelHorarios.Controls.Add(h_SalidaLabel);
+            this.panelHorarios.Controls.Add(this.juevesCheckBox);
+            this.panelHorarios.Controls.Add(juevesLabel);
+            this.panelHorarios.Controls.Add(lunesLabel);
+            this.panelHorarios.Controls.Add(this.miercolesCheckBox);
+            this.panelHorarios.Controls.Add(this.lunesCheckBox);
+            this.panelHorarios.Controls.Add(miercolesLabel);
+            this.panelHorarios.Controls.Add(martesLabel);
+            this.panelHorarios.Controls.Add(this.martesCheckBox);
+            this.panelHorarios.Location = new System.Drawing.Point(417, 61);
+            this.panelHorarios.Name = "panelHorarios";
+            this.panelHorarios.Size = new System.Drawing.Size(322, 186);
+            this.panelHorarios.TabIndex = 45;
+            // 
+            // H_Salidatxt
+            // 
+            this.H_Salidatxt.Location = new System.Drawing.Point(97, 67);
+            this.H_Salidatxt.Mask = "00:00";
+            this.H_Salidatxt.Name = "H_Salidatxt";
+            this.H_Salidatxt.Size = new System.Drawing.Size(38, 20);
+            this.H_Salidatxt.TabIndex = 53;
+            this.H_Salidatxt.ValidatingType = typeof(System.DateTime);
+            // 
+            // H_Entradatxt
+            // 
+            this.H_Entradatxt.Location = new System.Drawing.Point(97, 42);
+            this.H_Entradatxt.Mask = "00:00";
+            this.H_Entradatxt.Name = "H_Entradatxt";
+            this.H_Entradatxt.Size = new System.Drawing.Size(36, 20);
+            this.H_Entradatxt.TabIndex = 52;
+            this.H_Entradatxt.ValidatingType = typeof(System.DateTime);
+            // 
+            // cbEspecialidad
+            // 
+            this.cbEspecialidad.FormattingEnabled = true;
+            this.cbEspecialidad.Location = new System.Drawing.Point(156, 396);
+            this.cbEspecialidad.Name = "cbEspecialidad";
+            this.cbEspecialidad.Size = new System.Drawing.Size(200, 21);
+            this.cbEspecialidad.TabIndex = 46;
+            this.cbEspecialidad.DropDownClosed += new System.EventHandler(this.cbEspecialidad_DropDownClosed);
+            // 
+            // dgvEspecialidades
+            // 
+            this.dgvEspecialidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEspecialidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cId,
+            this.cNombre});
+            this.dgvEspecialidades.Location = new System.Drawing.Point(156, 423);
+            this.dgvEspecialidades.Name = "dgvEspecialidades";
+            this.dgvEspecialidades.Size = new System.Drawing.Size(212, 59);
+            this.dgvEspecialidades.TabIndex = 47;
+            // 
+            // cId
+            // 
+            this.cId.HeaderText = "Id";
+            this.cId.Name = "cId";
+            this.cId.Visible = false;
+            // 
+            // cNombre
+            // 
+            this.cNombre.HeaderText = "Especialidad";
+            this.cNombre.Name = "cNombre";
+            // 
+            // btnAgregarEspecialidad
+            // 
+            this.btnAgregarEspecialidad.Location = new System.Drawing.Point(198, 488);
+            this.btnAgregarEspecialidad.Name = "btnAgregarEspecialidad";
+            this.btnAgregarEspecialidad.Size = new System.Drawing.Size(138, 23);
+            this.btnAgregarEspecialidad.TabIndex = 48;
+            this.btnAgregarEspecialidad.Text = "Agregar Especialidad";
+            this.btnAgregarEspecialidad.UseVisualStyleBackColor = true;
+            this.btnAgregarEspecialidad.Click += new System.EventHandler(this.btnAgregarEspecialidad_Click);
+            // 
+            // openFoto
+            // 
+            this.openFoto.FileName = "openFileDialog1";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(331, 318);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(25, 23);
+            this.button1.TabIndex = 49;
+            this.button1.Text = "...";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dgvDisponibles
+            // 
+            this.dgvDisponibles.AllowUserToAddRows = false;
+            this.dgvDisponibles.AllowUserToDeleteRows = false;
+            this.dgvDisponibles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDisponibles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cH_Entrada,
+            this.cH_Salida,
+            this.cLunes,
+            this.cMartes,
+            this.cMiercoles,
+            this.cJueves,
+            this.cViernes,
+            this.cSabado,
+            this.cDomingo,
+            this.cMedico});
+            this.dgvDisponibles.Location = new System.Drawing.Point(417, 404);
+            this.dgvDisponibles.Name = "dgvDisponibles";
+            this.dgvDisponibles.RowHeadersVisible = false;
+            this.dgvDisponibles.Size = new System.Drawing.Size(341, 114);
+            this.dgvDisponibles.TabIndex = 50;
+            // 
+            // cH_Entrada
+            // 
+            this.cH_Entrada.HeaderText = "H_Entrada";
+            this.cH_Entrada.Name = "cH_Entrada";
+            this.cH_Entrada.Width = 80;
+            // 
+            // cH_Salida
+            // 
+            this.cH_Salida.HeaderText = "H_Salida";
+            this.cH_Salida.Name = "cH_Salida";
+            this.cH_Salida.Width = 80;
+            // 
+            // cLunes
+            // 
+            this.cLunes.HeaderText = "Lu";
+            this.cLunes.Name = "cLunes";
+            this.cLunes.Width = 30;
+            // 
+            // cMartes
+            // 
+            this.cMartes.HeaderText = "Ma";
+            this.cMartes.Name = "cMartes";
+            this.cMartes.Width = 30;
+            // 
+            // cMiercoles
+            // 
+            this.cMiercoles.HeaderText = "Mi";
+            this.cMiercoles.Name = "cMiercoles";
+            this.cMiercoles.Width = 30;
+            // 
+            // cJueves
+            // 
+            this.cJueves.HeaderText = "Ju";
+            this.cJueves.Name = "cJueves";
+            this.cJueves.Width = 30;
+            // 
+            // cViernes
+            // 
+            this.cViernes.HeaderText = "Vi";
+            this.cViernes.Name = "cViernes";
+            this.cViernes.Width = 30;
+            // 
+            // cSabado
+            // 
+            this.cSabado.HeaderText = "Sa";
+            this.cSabado.Name = "cSabado";
+            this.cSabado.Width = 30;
+            // 
+            // cDomingo
+            // 
+            this.cDomingo.HeaderText = "Do";
+            this.cDomingo.Name = "cDomingo";
+            this.cDomingo.Width = 30;
+            // 
+            // cMedico
+            // 
+            this.cMedico.HeaderText = "Medico";
+            this.cMedico.Name = "cMedico";
+            this.cMedico.Width = 80;
+            // 
+            // lblDisponibles
+            // 
+            this.lblDisponibles.AutoSize = true;
+            this.lblDisponibles.Location = new System.Drawing.Point(532, 388);
+            this.lblDisponibles.Name = "lblDisponibles";
+            this.lblDisponibles.Size = new System.Drawing.Size(143, 13);
+            this.lblDisponibles.TabIndex = 51;
+            this.lblDisponibles.Text = "Disponibilidad del consultorio";
+            // 
             // AltaMedico
             // 
             this.AcceptButton = this.btnAgregar;
@@ -859,6 +873,7 @@
             this.panelAlta.PerformLayout();
             this.panelLabels.ResumeLayout(false);
             this.panelLabels.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMuestraFoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHorarios)).EndInit();
             this.panelHorarios.ResumeLayout(false);
             this.panelHorarios.PerformLayout();
@@ -926,5 +941,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Do;
         private System.Windows.Forms.DataGridViewTextBoxColumn cConsultorio;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCon;
+        private System.Windows.Forms.PictureBox picMuestraFoto;
     }
 }

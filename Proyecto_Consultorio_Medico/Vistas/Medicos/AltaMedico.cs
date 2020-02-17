@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Proyecto_Consultorio_Medico.Modelo;
-
+using System.IO;
 
 namespace Proyecto_Consultorio_Medico.Vistas.Medicos
 {
@@ -48,12 +48,14 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
         {
             if (Validaciones.NoEsNullNiVacio(panelAlta))
             {
+                string pathFoto = GuardarFoto();
+
                 medico = new Modelo.Medicos()
                 {
                     Nombre = nombreTextBox.Text,
                     Apellido = apellidoTextBox.Text,
                     DNI = dNITextBox.Text,
-                    Foto = fotoTextBox.Text,
+                    Foto = pathFoto,
                     Curricula = curriculaTextBox.Text,
                     Matricula = matriculaTextBox.Text,
                     FechaNac = fechaNacDateTimePicker.Value,
@@ -192,6 +194,37 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
         private void cbConsultorios_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            openFoto.FileName = "";
+            openFoto.Filter = "Archivos de Imagen | *.jpg";
+            openFoto.RestoreDirectory = true;
+            if (openFoto.ShowDialog() == DialogResult.OK && openFoto.FileName != "")
+            {
+                string dir = openFoto.FileName;
+                Bitmap picture = new Bitmap(dir);
+                picMuestraFoto.Image = (Image)picture;
+                fotoTextBox.Text = openFoto.FileName;
+            }
+        }
+
+        private string GuardarFoto()
+        {
+            string destino = "";
+            if (fotoTextBox.Text != "")
+            {
+                destino = Path.Combine(Application.StartupPath, string.Format("Imagenes\\{0}", Path.GetFileName(fotoTextBox.Text)));
+                if (File.Exists(destino))
+                {
+                    MessageBox.Show("Ya existe un archivo con ese nombre");
+                }
+                else
+                    File.Copy(fotoTextBox.Text, destino);
+            }
+
+            return destino;
         }
     }
 }
