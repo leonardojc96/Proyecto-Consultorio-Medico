@@ -62,7 +62,7 @@ namespace Proyecto_Consultorio_Medico.Modelo
             }
         }
 
-        public Pacientes Get(int  id)
+        public Pacientes Get(int id)
         {
             using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
             {
@@ -101,7 +101,5 @@ namespace Proyecto_Consultorio_Medico.Modelo
                 return false;
             }
         }
-
-
     }
 }

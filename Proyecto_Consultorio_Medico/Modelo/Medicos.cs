@@ -12,7 +12,7 @@ namespace Proyecto_Consultorio_Medico.Modelo
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     public partial class Medicos
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -43,7 +43,6 @@ namespace Proyecto_Consultorio_Medico.Modelo
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MedicoEspecialidad> MedicoEspecialidad { get; set; }
 
-
         public void SaveMedico(Medicos med)
         {
 
@@ -70,6 +69,5 @@ namespace Proyecto_Consultorio_Medico.Modelo
                 return db.Medicos.Find(id);
             }
         }
-
     }
 }

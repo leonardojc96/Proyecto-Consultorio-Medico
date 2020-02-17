@@ -12,7 +12,7 @@ namespace Proyecto_Consultorio_Medico.Modelo
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     public partial class Especialidades
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -40,7 +40,7 @@ namespace Proyecto_Consultorio_Medico.Modelo
             }
         }
 
-        
+
         public void RemoveEspecialidad(Especialidades x)
         {
             using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
@@ -49,7 +49,7 @@ namespace Proyecto_Consultorio_Medico.Modelo
             }
         }
 
-        public ICollection<Especialidades>GetEspecialidades()
+        public ICollection<Especialidades> GetEspecialidades()
         {
             using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
             {

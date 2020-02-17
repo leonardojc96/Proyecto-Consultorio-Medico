@@ -96,7 +96,7 @@
     <Property Name="Matricula" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Telefono" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
     <Property Name="ContactoAux" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-    <Property Name="Foto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Foto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="Curricula" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="ConsultaMedica" Relationship="Self.FK_ConsultaMedica_Medicos" FromRole="Medicos" ToRole="ConsultaMedica" />
     <NavigationProperty Name="MedicoConsultorio" Relationship="Self.FK_MedicoConsultorio_Medicos" FromRole="Medicos" ToRole="MedicoConsultorio" />
@@ -115,7 +115,7 @@
     <Property Name="ObraSocial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Telefono" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="Foto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Foto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="UltimaVisita" Type="DateTime" Precision="3" />
     <Property Name="Detalles" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="HistorialConsultas" Relationship="Self.FK_HistorialConsultas_Pacientes" FromRole="Pacientes" ToRole="HistorialConsultas" />

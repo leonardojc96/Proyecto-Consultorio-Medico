@@ -34,7 +34,5 @@ namespace Proyecto_Consultorio_Medico.Modelo
                 return false;
             }
         }
-
-
     }
 }
