@@ -40,7 +40,7 @@ namespace Proyecto_Consultorio_Medico.Negocios
             {
                 if (string.IsNullOrEmpty(item.Text) || item is null && item is TextBox)
                 {
-                    MessageBox.Show("Completa todos los campos");
+                    MessageBox.Show("Completa los campos obligatorios");
                     return false;
                 }
             }

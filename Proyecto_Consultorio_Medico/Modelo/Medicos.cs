@@ -11,7 +11,9 @@ namespace Proyecto_Consultorio_Medico.Modelo
 {
     using System;
     using System.Collections.Generic;
+    using System.Data.Entity;
     using System.Linq;
+    using System.Windows.Forms;
 
     public partial class Medicos
     {
@@ -67,6 +69,58 @@ namespace Proyecto_Consultorio_Medico.Modelo
             using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
             {
                 return db.Medicos.Find(id);
+            }
+        }
+
+        public ICollection<Medicos> Get()
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                return db.Medicos.ToList();
+            }
+        }
+
+        public void Remove(Medicos medicos)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                try
+                {
+                    db.Entry(medicos).State = System.Data.Entity.EntityState.Deleted;
+                    db.SaveChanges();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+
+        public bool Update(int id, Medicos medicos)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                Medicos m = db.Medicos.Where(x => x.Id == id).FirstOrDefault();
+
+                m.Nombre = medicos.Nombre;
+                m.Apellido = medicos.Apellido;
+                m.DNI = medicos.DNI;
+                m.Direccion = medicos.Direccion;
+                m.Curricula = medicos.Curricula;
+                m.Foto = medicos.Foto;
+                m.FechaNac = medicos.FechaNac;
+                m.Matricula = medicos.Matricula;
+                m.Telefono = medicos.Telefono;
+                m.ContactoAux = medicos.ContactoAux;
+                m.CantidadTurnos = medicos.CantidadTurnos;
+
+
+                if (db.SaveChanges() == 1)
+                {
+                    return true;
+                }
+                return false;
             }
         }
     }

@@ -9,9 +9,16 @@ namespace Proyecto_Consultorio_Medico.Negocios
 {
     class MedicoEspecialidadNegocio
     {
+        MedicoEspecialidad medicoEspecialidad = new MedicoEspecialidad();
+
         public bool Save(MedicoEspecialidad medicoEspecialidad)
         {
             return medicoEspecialidad.Save(medicoEspecialidad);
+        }
+
+        public ICollection<MedicoEspecialidad> GetByMedico(int id)
+        {
+            return medicoEspecialidad.GetByMedico(id);
         }
     }
 }

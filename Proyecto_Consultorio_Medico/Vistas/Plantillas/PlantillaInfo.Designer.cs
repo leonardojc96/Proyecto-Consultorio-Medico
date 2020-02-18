@@ -32,11 +32,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxFoto)).BeginInit();
             this.SuspendLayout();
             // 
+            // panelHeader
+            // 
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(32)))), ((int)(((byte)(61)))));
+            this.panelHeader.ForeColor = System.Drawing.Color.White;
+            this.panelHeader.Size = new System.Drawing.Size(768, 55);
+            // 
             // picBoxFoto
             // 
-            this.picBoxFoto.Location = new System.Drawing.Point(604, 61);
+            this.picBoxFoto.Location = new System.Drawing.Point(12, 61);
             this.picBoxFoto.Name = "picBoxFoto";
             this.picBoxFoto.Size = new System.Drawing.Size(152, 122);
+            this.picBoxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxFoto.TabIndex = 1;
             this.picBoxFoto.TabStop = false;
             // 
@@ -44,13 +51,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(793, 373);
+            this.ClientSize = new System.Drawing.Size(768, 367);
             this.Controls.Add(this.picBoxFoto);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PlantillaInfo";
             this.Text = "PlantillaInfo";
             this.Load += new System.EventHandler(this.PlantillaInfo_Load);
+            this.Controls.SetChildIndex(this.panelHeader, 0);
             this.Controls.SetChildIndex(this.picBoxFoto, 0);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxFoto)).EndInit();
             this.ResumeLayout(false);
@@ -59,6 +67,6 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox picBoxFoto;
+        public System.Windows.Forms.PictureBox picBoxFoto;
     }
 }

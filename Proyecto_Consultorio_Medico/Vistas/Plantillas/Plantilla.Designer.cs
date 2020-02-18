@@ -67,8 +67,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Label lblTitulo;
+        public System.Windows.Forms.Panel panelHeader;
     }
 }

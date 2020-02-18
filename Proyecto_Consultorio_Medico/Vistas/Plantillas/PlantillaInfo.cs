@@ -18,9 +18,20 @@ namespace Proyecto_Consultorio_Medico.Vistas.Plantillas
             //hacer metodo cargar foto al abrir
         }
 
+        public PlantillaInfo(string titulo) : base(titulo)
+        {
+            InitializeComponent();
+        }
+
         private void PlantillaInfo_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public void CargarFoto(string foto)
+        {
+            Bitmap picture = new Bitmap(foto);
+            picBoxFoto.Image = (Image)picture;
         }
     }
 }

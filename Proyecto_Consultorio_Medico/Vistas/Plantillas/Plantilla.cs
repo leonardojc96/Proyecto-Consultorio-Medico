@@ -36,5 +36,10 @@ namespace Proyecto_Consultorio_Medico.Vistas.Plantillas
         {
             this.Close();
         }
+
+        public void CambiarTitulo(string titulo)
+        {
+            lblTitulo.Text = titulo;
+        }
     }
 }

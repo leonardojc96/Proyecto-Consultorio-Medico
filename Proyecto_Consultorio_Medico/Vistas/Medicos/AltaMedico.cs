@@ -15,6 +15,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
 {
     public partial class AltaMedico : Plantillas.PlantillaAlta
     {
+        int idMedicoModificar;
         Modelo.Medicos medico = new Modelo.Medicos();
         MedicosNegocio medicosNegocio = new MedicosNegocio();
         Nespecialidades nespecialidades = new Nespecialidades();
@@ -31,6 +32,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
 
         private void AltaMedico_Load(object sender, EventArgs e)
         {
+            btnEliminar.Visible = false;
             Inicioadores.Labels(lblDisponibles);
             Inicioadores.DataGrid(dgvEspecialidades);
             Inicioadores.TextoBlanco(panelLabels);
@@ -46,81 +48,64 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (Validaciones.NoEsNullNiVacio(panelAlta))
+            try
             {
-                string pathFoto = GuardarFoto();
-
-                medico = new Modelo.Medicos()
+                if (Validaciones.NoEsNullNiVacio(panelAlta))
                 {
-                    Nombre = nombreTextBox.Text,
-                    Apellido = apellidoTextBox.Text,
-                    DNI = dNITextBox.Text,
-                    Foto = pathFoto,
-                    Curricula = curriculaTextBox.Text,
-                    Matricula = matriculaTextBox.Text,
-                    FechaNac = fechaNacDateTimePicker.Value,
-                    CantidadTurnos = int.Parse(cantidadTurnosTextBox.Text),
-                    ContactoAux = contactoAuxTextBox.Text,
-                    Direccion = direccionTextBox.Text,
-                    Telefono = telefonoTextBox.Text,
-                };
+                    string pathFoto = GuardarFoto();
 
-                medicosNegocio.SaveMedico(medico);
+                    medico = CargarMedico();
 
-                foreach (DataGridViewRow item in dgvEspecialidades.Rows)
-                {
-                    Modelo.MedicoEspecialidad medicoEspecialidad = new MedicoEspecialidad();
-                    medicoEspecialidad.Id_Especialidad = int.Parse(item.Cells[0].Value.ToString());
-                    medicoEspecialidad.Id_Medico = medico.Id;
+                    medicosNegocio.SaveMedico(medico);
 
-                    if (!medicoEspecialidadNegocio.Save(medicoEspecialidad))
+                    foreach (DataGridViewRow item in dgvEspecialidades.Rows)
                     {
-                        MessageBox.Show("Hubo un error");
+                        Modelo.MedicoEspecialidad medicoEspecialidad = new MedicoEspecialidad();
+                        medicoEspecialidad.Id_Especialidad = int.Parse(item.Cells[0].Value.ToString());
+                        medicoEspecialidad.Id_Medico = medico.Id;
+
+                        if (!medicoEspecialidadNegocio.Save(medicoEspecialidad))
+                        {
+                            MessageBox.Show("Hubo un error");
+                        }
+                    }
+
+                    foreach (DataGridViewRow item in dgvHorarios.Rows)
+                    {
+                        TimeSpan Hentrada;
+                        TimeSpan.TryParseExact(item.Cells["H_Entrada"].Value.ToString(), @"mm\:ss", null, out Hentrada);
+                        TimeSpan HSalida;
+                        TimeSpan.TryParseExact(item.Cells["H_Salida"].Value.ToString(), @"mm\:ss", null, out HSalida);
+
+                        medicoConsultorio = new MedicoConsultorio()
+                        {
+                            Id_Medico = medico.Id,
+                            Id_Consultorio = (int)item.Cells["idCon"].Value,
+                            H_Entrada = Hentrada,
+                            H_Salida = HSalida,
+                            Lunes = (bool)item.Cells["Lu"].Value,
+                            Martes = (bool)item.Cells["Ma"].Value,
+                            Miercoles = (bool)item.Cells["Mi"].Value,
+                            Jueves = (bool)item.Cells["Ju"].Value,
+                            Viernes = (bool)item.Cells["Vi"].Value,
+                            Sabado = (bool)item.Cells["Sa"].Value,
+                            Domingo = (bool)item.Cells["Do"].Value,
+                        };
+
+
+
+                        MedicoConsultorioNegocio medicoConsultorioNegocio = new MedicoConsultorioNegocio();
+
+                        medicoConsultorioNegocio.Save(medicoConsultorio);
                     }
                 }
-
-                foreach (DataGridViewRow item in dgvHorarios.Rows)
-                {
-                    TimeSpan Hentrada;
-                    TimeSpan.TryParseExact(item.Cells["H_Entrada"].Value.ToString(), @"mm\:ss", null, out Hentrada);
-                    TimeSpan HSalida;
-                    TimeSpan.TryParseExact(item.Cells["H_Salida"].Value.ToString(), @"mm\:ss", null, out HSalida);
-
-                    medicoConsultorio = new MedicoConsultorio()
-                    {
-                        Id_Medico = medico.Id,
-                        Id_Consultorio = (int)item.Cells["idCon"].Value,
-                        H_Entrada = Hentrada,
-                        H_Salida = HSalida,
-                        Lunes = (bool)item.Cells["Lu"].Value,
-                        Martes = (bool)item.Cells["Ma"].Value,
-                        Miercoles = (bool)item.Cells["Mi"].Value,
-                        Jueves = (bool)item.Cells["Ju"].Value,
-                        Viernes = (bool)item.Cells["Vi"].Value,
-                        Sabado = (bool)item.Cells["Sa"].Value,
-                        Domingo = (bool)item.Cells["Do"].Value,
-                    };
-
-                    
-
-                    MedicoConsultorioNegocio medicoConsultorioNegocio = new MedicoConsultorioNegocio();
-
-                    medicoConsultorioNegocio.Save(medicoConsultorio);
-                }
             }
-        }
-
-        private void cbEspecialidad_DropDownClosed(object sender, EventArgs e)
-        {
-            if (cbConsultorios.Enabled == false)
+            catch (Exception)
             {
-                cbConsultorios.Enabled = true;
-                btnAgregarHorario.Enabled = true;
+                MessageBox.Show("Ha ocurrido un error");
+                
             }
-
-            idEspecialidad = int.Parse(cbEspecialidad.SelectedValue.ToString());
-
-            Inicioadores.ComboBox(cbConsultorios, consultoriosNegocio.GetByEspecialidad(idEspecialidad));
+            
         }
 
         private void btnAgregarEspecialidad_Click(object sender, EventArgs e)
@@ -133,38 +118,6 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
             };
 
             dgvEspecialidades.Rows.Insert(0, elemetos);
-        }
-
-        private void cbConsultorios_DropDownClosed(object sender, EventArgs e)
-        {
-            idConsultorio = int.Parse(cbConsultorios.SelectedValue.ToString());
-            dgvDisponibles.Rows.Clear();
-            //dgvDisponibles.DataSource = medicoConsultorio.GetByConsultorio(idConsultorio);
-
-            foreach (var item in medicoConsultorio.GetByConsultorio(idConsultorio))
-            {
-                Modelo.Medicos med = medicosNegocio.Get(item.Id_Medico);
-                object[] elementos =
-                {
-                    item.H_Entrada,
-                    item.H_Salida,
-                    item.Lunes,
-                    item.Martes,
-                    item.Miercoles,
-                    item.Jueves,
-                    item.Viernes,
-                    item.Sabado,
-                    item.Domingo,
-                    med.Apellido +" "+med.Nombre
-                };
-
-                dgvDisponibles.Rows.Insert(0, elementos);
-            }
-        }
-
-        public void CargarData(ICollection<object> datos)
-        {
-            
         }
 
         private void btnAgregarHorario_Click(object sender, EventArgs e)
@@ -193,7 +146,39 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
 
         private void cbConsultorios_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cbConsultorios.SelectedValue.ToString() != "0")
+            {
+                try
+                {
+                    idConsultorio = int.Parse(cbConsultorios.SelectedValue.ToString());
+                    dgvDisponibles.Rows.Clear();
+                    //dgvDisponibles.DataSource = medicoConsultorio.GetByConsultorio(idConsultorio);
 
+                    foreach (var item in medicoConsultorio.GetByConsultorio(idConsultorio))
+                    {
+                        Modelo.Medicos med = medicosNegocio.Get(item.Id_Medico);
+                        object[] elementos =
+                        {
+                            item.H_Entrada,
+                            item.H_Salida,
+                            item.Lunes,
+                            item.Martes,
+                            item.Miercoles,
+                            item.Jueves,
+                            item.Viernes,
+                            item.Sabado,
+                            item.Domingo,
+                            med.Apellido +" "+med.Nombre
+                        };
+
+                        dgvDisponibles.Rows.Insert(0, elementos);
+                    }
+                }
+                catch (Exception)
+                {
+
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -225,6 +210,112 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
             }
 
             return destino;
+        }
+
+        private void cbEspecialidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbEspecialidad.SelectedValue.ToString() != "0")
+            {
+                try
+                {
+                    if (cbConsultorios.Enabled == false)
+                    {
+                        cbConsultorios.Enabled = true;
+                        btnAgregarHorario.Enabled = true;
+                    }
+
+                    idEspecialidad = int.Parse(cbEspecialidad.SelectedValue.ToString());
+
+                    Inicioadores.ComboBox(cbConsultorios, consultoriosNegocio.GetByEspecialidad(idEspecialidad));
+                }
+                catch (Exception)
+                {
+                    cbConsultorios.Enabled = false;
+                    btnAgregarHorario.Enabled = false;
+                }
+                
+            }
+        }
+
+        public void ModificarMedico(int id)
+        {
+            idMedicoModificar = id;
+            btnAgregar.Enabled = false;
+
+            Modelo.Medicos medicoEditar = medicosNegocio.Get(id);
+            nombreTextBox.Text = medicoEditar.Nombre;
+            apellidoTextBox.Text = medicoEditar.Apellido;
+            dNITextBox.Text = medicoEditar.DNI;
+            direccionTextBox.Text = medicoEditar.Direccion;
+            cantidadTurnosTextBox.Text = medicoEditar.CantidadTurnos.ToString();
+            fechaNacDateTimePicker.Value = medicoEditar.FechaNac.Value;
+            matriculaTextBox.Text = medicoEditar.Matricula;
+            telefonoTextBox.Text = medicoEditar.Telefono;
+            contactoAuxTextBox.Text = medicoEditar.ContactoAux;
+            fotoTextBox.Text = medicoEditar.Foto;
+            curriculaTextBox.Text = medicoEditar.Curricula;
+            foreach (var item in medicoEspecialidadNegocio.GetByMedico(id))
+            {
+                Modelo.Especialidades especialidad = nespecialidades.Get(item.Id_Especialidad);
+                object[] elementos =
+                {
+                    especialidad.Id,
+                    especialidad.Nombre
+                };
+
+                dgvEspecialidades.Rows.Insert(0, elementos);
+            }
+
+            foreach (var item in medicoConsultorio.GetByMedico(id))
+            {
+                Modelo.Consultorios con = consultoriosNegocio.Get(item.Id_Consultorio);
+                object[] elementos =
+                {
+                            item.H_Entrada,
+                            item.H_Salida,
+                            item.Lunes,
+                            item.Martes,
+                            item.Miercoles,
+                            item.Jueves,
+                            item.Viernes,
+                            item.Sabado,
+                            item.Domingo,
+                            con.Nombre
+                        };
+
+                dgvHorarios.Rows.Insert(0, elementos);
+            }
+            
+        }
+
+        public Modelo.Medicos CargarMedico() 
+        {
+            string pathFoto = GuardarFoto();
+
+            return medico = new Modelo.Medicos()
+            {
+                Nombre = nombreTextBox.Text,
+                Apellido = apellidoTextBox.Text,
+                DNI = dNITextBox.Text,
+                Foto = pathFoto,
+                Curricula = curriculaTextBox.Text,
+                Matricula = matriculaTextBox.Text,
+                FechaNac = fechaNacDateTimePicker.Value,
+                CantidadTurnos = int.Parse(cantidadTurnosTextBox.Text),
+                ContactoAux = contactoAuxTextBox.Text,
+                Direccion = direccionTextBox.Text,
+                Telefono = telefonoTextBox.Text,
+            };
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            medico = CargarMedico();
+
+            if (medicosNegocio.Update(idMedicoModificar, medico))
+                MessageBox.Show("Se modifico el medico");
+            else
+                MessageBox.Show("No se pudo guardar");
         }
     }
 }

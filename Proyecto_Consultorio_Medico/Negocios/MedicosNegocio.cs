@@ -25,5 +25,20 @@ namespace Proyecto_Consultorio_Medico.Negocios
         {
             return medico.Get(id);
         }
+
+        public ICollection<Medicos> Get()
+        {
+            return medico.Get();
+        }
+
+        public void Remove(Medicos med)
+        {
+            medico.Remove(med);
+        }
+
+        public bool Update(int id, Medicos medicos)
+        {
+            return medico.Update(id, medicos);
+        }
     }
 }

@@ -153,6 +153,16 @@
             // 
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             // 
+            // btnModificar
+            // 
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // panelHeader
+            // 
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(32)))), ((int)(((byte)(61)))));
+            this.panelHeader.ForeColor = System.Drawing.Color.White;
+            this.panelHeader.Size = new System.Drawing.Size(758, 55);
+            // 
             // nombreLabel
             // 
             nombreLabel.AutoSize = true;
@@ -525,7 +535,6 @@
             this.cbConsultorios.Size = new System.Drawing.Size(204, 21);
             this.cbConsultorios.TabIndex = 42;
             this.cbConsultorios.SelectedIndexChanged += new System.EventHandler(this.cbConsultorios_SelectedIndexChanged);
-            this.cbConsultorios.DropDownClosed += new System.EventHandler(this.cbConsultorios_DropDownClosed);
             // 
             // dgvHorarios
             // 
@@ -680,7 +689,7 @@
             this.cbEspecialidad.Name = "cbEspecialidad";
             this.cbEspecialidad.Size = new System.Drawing.Size(200, 21);
             this.cbEspecialidad.TabIndex = 46;
-            this.cbEspecialidad.DropDownClosed += new System.EventHandler(this.cbEspecialidad_DropDownClosed);
+            this.cbEspecialidad.SelectedIndexChanged += new System.EventHandler(this.cbEspecialidad_SelectedIndexChanged);
             // 
             // dgvEspecialidades
             // 
@@ -847,6 +856,7 @@
             this.Name = "AltaMedico";
             this.Text = "AltaMedico";
             this.Load += new System.EventHandler(this.AltaMedico_Load);
+            this.Controls.SetChildIndex(this.panelHeader, 0);
             this.Controls.SetChildIndex(this.telefonoTextBox, 0);
             this.Controls.SetChildIndex(this.matriculaTextBox, 0);
             this.Controls.SetChildIndex(this.contactoAuxTextBox, 0);

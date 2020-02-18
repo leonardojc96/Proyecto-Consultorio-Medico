@@ -39,5 +39,15 @@ namespace Proyecto_Consultorio_Medico
                 altaMedico.Show();
             }
         }
+
+        private void listasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Validaciones.FormularioNoAbierto("ListaMedicos"))
+            {
+                Vistas.Medicos.ListaMedicos lista = new Vistas.Medicos.ListaMedicos();
+                lista.MdiParent = this;
+                lista.Show();
+            }
+        }
     }
 }

@@ -11,6 +11,7 @@ namespace Proyecto_Consultorio_Medico.Modelo
 {
     using System;
     using System.Collections.Generic;
+    using System.Data.Entity;
     using System.Linq;
 
     public partial class Pacientes
@@ -83,6 +84,7 @@ namespace Proyecto_Consultorio_Medico.Modelo
             using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
             {
                 db.Pacientes.Remove(paciente);
+                db.SaveChanges();
             }
         }
 
@@ -90,9 +92,11 @@ namespace Proyecto_Consultorio_Medico.Modelo
         {
             using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
             {
-                Pacientes p = paciente.Get(id);
+                Pacientes pac = db.Pacientes.Find(id);
+                db.Entry(pac).State = EntityState.Modified;
 
-                p = paciente;
+                pac = paciente;
+
 
                 if (db.SaveChanges() == 1)
                 {

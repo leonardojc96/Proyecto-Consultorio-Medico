@@ -11,7 +11,8 @@ namespace Proyecto_Consultorio_Medico.Modelo
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+
     public partial class MedicoEspecialidad
     {
         public int Id { get; set; }
@@ -32,6 +33,14 @@ namespace Proyecto_Consultorio_Medico.Modelo
                     return true;
                 }
                 return false;
+            }
+        }
+
+        public ICollection<MedicoEspecialidad> GetByMedico(int id)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                return db.MedicoEspecialidad.Where(x => x.Id_Medico == id).ToList();
             }
         }
     }
