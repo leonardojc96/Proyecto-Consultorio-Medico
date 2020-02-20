@@ -36,9 +36,9 @@ namespace Proyecto_Consultorio_Medico.Negocios
             paciente.Remove(paciente);
         }
 
-        public bool Update(int id, Pacientes paciente)
-        {
-            return paciente.Update(id, paciente);
-        }
+        //public bool Update(int id, Pacientes paciente)
+        //{
+        //    return paciente.Update(id, paciente);
+        //}
     }
 }
