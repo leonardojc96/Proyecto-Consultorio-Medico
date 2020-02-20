@@ -106,6 +106,10 @@
             this.cDomingo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.cMedico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblDisponibles = new System.Windows.Forms.Label();
+            this.btnCurricula = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
             dNILabel = new System.Windows.Forms.Label();
@@ -139,8 +143,11 @@
             // 
             // panelAlta
             // 
+            this.panelAlta.Controls.Add(this.label5);
             this.panelAlta.Controls.Add(this.nombreTextBox);
+            this.panelAlta.Controls.Add(this.label4);
             this.panelAlta.Controls.Add(this.apellidoTextBox);
+            this.panelAlta.Controls.Add(this.label3);
             this.panelAlta.Controls.Add(this.dNITextBox);
             this.panelAlta.Location = new System.Drawing.Point(141, 61);
             this.panelAlta.Size = new System.Drawing.Size(232, 101);
@@ -437,7 +444,8 @@
             // 
             this.curriculaTextBox.Location = new System.Drawing.Point(156, 346);
             this.curriculaTextBox.Name = "curriculaTextBox";
-            this.curriculaTextBox.Size = new System.Drawing.Size(200, 20);
+            this.curriculaTextBox.ReadOnly = true;
+            this.curriculaTextBox.Size = new System.Drawing.Size(180, 20);
             this.curriculaTextBox.TabIndex = 21;
             // 
             // panelLabels
@@ -553,7 +561,7 @@
             this.Do,
             this.cConsultorio,
             this.idCon});
-            this.dgvHorarios.Location = new System.Drawing.Point(417, 249);
+            this.dgvHorarios.Location = new System.Drawing.Point(417, 272);
             this.dgvHorarios.Name = "dgvHorarios";
             this.dgvHorarios.RowHeadersVisible = false;
             this.dgvHorarios.Size = new System.Drawing.Size(341, 113);
@@ -626,9 +634,9 @@
             // 
             // btnAgregarHorario
             // 
-            this.btnAgregarHorario.BackColor = System.Drawing.Color.Navy;
+            this.btnAgregarHorario.BackColor = System.Drawing.Color.AliceBlue;
             this.btnAgregarHorario.Enabled = false;
-            this.btnAgregarHorario.Location = new System.Drawing.Point(168, 159);
+            this.btnAgregarHorario.Location = new System.Drawing.Point(623, 244);
             this.btnAgregarHorario.Name = "btnAgregarHorario";
             this.btnAgregarHorario.Size = new System.Drawing.Size(114, 23);
             this.btnAgregarHorario.TabIndex = 44;
@@ -641,7 +649,6 @@
             this.panelHorarios.Controls.Add(this.H_Salidatxt);
             this.panelHorarios.Controls.Add(this.H_Entradatxt);
             this.panelHorarios.Controls.Add(this.cbConsultorios);
-            this.panelHorarios.Controls.Add(this.btnAgregarHorario);
             this.panelHorarios.Controls.Add(this.domingoCheckBox);
             this.panelHorarios.Controls.Add(domingoLabel);
             this.panelHorarios.Controls.Add(this.sabadoCheckBox);
@@ -661,7 +668,7 @@
             this.panelHorarios.Controls.Add(this.martesCheckBox);
             this.panelHorarios.Location = new System.Drawing.Point(417, 61);
             this.panelHorarios.Name = "panelHorarios";
-            this.panelHorarios.Size = new System.Drawing.Size(322, 186);
+            this.panelHorarios.Size = new System.Drawing.Size(320, 182);
             this.panelHorarios.TabIndex = 45;
             // 
             // H_Salidatxt
@@ -755,6 +762,7 @@
             this.cMedico});
             this.dgvDisponibles.Location = new System.Drawing.Point(417, 404);
             this.dgvDisponibles.Name = "dgvDisponibles";
+            this.dgvDisponibles.ReadOnly = true;
             this.dgvDisponibles.RowHeadersVisible = false;
             this.dgvDisponibles.Size = new System.Drawing.Size(341, 114);
             this.dgvDisponibles.TabIndex = 50;
@@ -763,60 +771,70 @@
             // 
             this.cH_Entrada.HeaderText = "H_Entrada";
             this.cH_Entrada.Name = "cH_Entrada";
+            this.cH_Entrada.ReadOnly = true;
             this.cH_Entrada.Width = 80;
             // 
             // cH_Salida
             // 
             this.cH_Salida.HeaderText = "H_Salida";
             this.cH_Salida.Name = "cH_Salida";
+            this.cH_Salida.ReadOnly = true;
             this.cH_Salida.Width = 80;
             // 
             // cLunes
             // 
             this.cLunes.HeaderText = "Lu";
             this.cLunes.Name = "cLunes";
+            this.cLunes.ReadOnly = true;
             this.cLunes.Width = 30;
             // 
             // cMartes
             // 
             this.cMartes.HeaderText = "Ma";
             this.cMartes.Name = "cMartes";
+            this.cMartes.ReadOnly = true;
             this.cMartes.Width = 30;
             // 
             // cMiercoles
             // 
             this.cMiercoles.HeaderText = "Mi";
             this.cMiercoles.Name = "cMiercoles";
+            this.cMiercoles.ReadOnly = true;
             this.cMiercoles.Width = 30;
             // 
             // cJueves
             // 
             this.cJueves.HeaderText = "Ju";
             this.cJueves.Name = "cJueves";
+            this.cJueves.ReadOnly = true;
             this.cJueves.Width = 30;
             // 
             // cViernes
             // 
             this.cViernes.HeaderText = "Vi";
             this.cViernes.Name = "cViernes";
+            this.cViernes.ReadOnly = true;
             this.cViernes.Width = 30;
             // 
             // cSabado
             // 
             this.cSabado.HeaderText = "Sa";
             this.cSabado.Name = "cSabado";
+            this.cSabado.ReadOnly = true;
             this.cSabado.Width = 30;
             // 
             // cDomingo
             // 
             this.cDomingo.HeaderText = "Do";
             this.cDomingo.Name = "cDomingo";
+            this.cDomingo.ReadOnly = true;
             this.cDomingo.Width = 30;
             // 
             // cMedico
             // 
             this.cMedico.HeaderText = "Medico";
             this.cMedico.Name = "cMedico";
+            this.cMedico.ReadOnly = true;
             this.cMedico.Width = 80;
             // 
             // lblDisponibles
@@ -828,6 +846,42 @@
             this.lblDisponibles.TabIndex = 51;
             this.lblDisponibles.Text = "Disponibilidad del consultorio";
             // 
+            // btnCurricula
+            // 
+            this.btnCurricula.Location = new System.Drawing.Point(331, 343);
+            this.btnCurricula.Name = "btnCurricula";
+            this.btnCurricula.Size = new System.Drawing.Size(25, 23);
+            this.btnCurricula.TabIndex = 52;
+            this.btnCurricula.Text = "...";
+            this.btnCurricula.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(218, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(11, 13);
+            this.label3.TabIndex = 53;
+            this.label3.Text = "*";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(218, 52);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(11, 13);
+            this.label4.TabIndex = 54;
+            this.label4.Text = "*";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(218, 78);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(11, 13);
+            this.label5.TabIndex = 55;
+            this.label5.Text = "*";
+            // 
             // AltaMedico
             // 
             this.AcceptButton = this.btnAgregar;
@@ -836,6 +890,8 @@
             this.AutoScroll = true;
             this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(768, 284);
+            this.Controls.Add(this.btnCurricula);
+            this.Controls.Add(this.btnAgregarHorario);
             this.Controls.Add(this.lblDisponibles);
             this.Controls.Add(this.dgvDisponibles);
             this.Controls.Add(this.button1);
@@ -876,9 +932,11 @@
             this.Controls.SetChildIndex(this.lblDisponibles, 0);
             this.Controls.SetChildIndex(this.panelAlta, 0);
             this.Controls.SetChildIndex(this.btnAgregar, 0);
+            this.Controls.SetChildIndex(this.btnAgregarHorario, 0);
             this.Controls.SetChildIndex(this.btnSalir, 0);
             this.Controls.SetChildIndex(this.btnModificar, 0);
             this.Controls.SetChildIndex(this.btnEliminar, 0);
+            this.Controls.SetChildIndex(this.btnCurricula, 0);
             this.panelAlta.ResumeLayout(false);
             this.panelAlta.PerformLayout();
             this.panelLabels.ResumeLayout(false);
@@ -952,5 +1010,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cConsultorio;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCon;
         private System.Windows.Forms.PictureBox picMuestraFoto;
+        private System.Windows.Forms.Button btnCurricula;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

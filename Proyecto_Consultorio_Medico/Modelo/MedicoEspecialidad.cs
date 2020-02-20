@@ -40,7 +40,7 @@ namespace Proyecto_Consultorio_Medico.Modelo
         {
             using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
             {
-                return db.MedicoEspecialidad.Where(x => x.Id_Medico == id).ToList();
+                return db.MedicoEspecialidad.Include("Especialidades").Where(x => x.Id_Medico == id).ToList();
             }
         }
     }

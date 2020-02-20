@@ -59,7 +59,7 @@ namespace Proyecto_Consultorio_Medico.Modelo
         {
             using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
             {
-                return db.Consultorios.Find(id);
+                return db.Consultorios.Include("Especialidades").Where(x => x.Id == id).FirstOrDefault();
             }
         }
 

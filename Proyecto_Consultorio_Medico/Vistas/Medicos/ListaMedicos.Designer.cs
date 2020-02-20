@@ -30,6 +30,10 @@
         {
             this.SuspendLayout();
             // 
+            // txtBuscar
+            // 
+            this.txtBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyUp);
+            // 
             // btnModificar
             // 
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);

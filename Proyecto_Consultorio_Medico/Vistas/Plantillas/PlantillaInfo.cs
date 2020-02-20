@@ -30,8 +30,16 @@ namespace Proyecto_Consultorio_Medico.Vistas.Plantillas
 
         public void CargarFoto(string foto)
         {
-            Bitmap picture = new Bitmap(foto);
-            picBoxFoto.Image = (Image)picture;
+            try
+            {
+                Bitmap picture = new Bitmap(foto);
+                picBoxFoto.Image = (Image)picture;
+            }
+            catch (Exception)
+            {
+
+            }
+            
         }
     }
 }
