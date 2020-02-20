@@ -40,5 +40,10 @@ namespace Proyecto_Consultorio_Medico.Negocios
         {
             return medico.Update(id, medicos);
         }
+
+        public ICollection<Medicos> Search(string nombreBuscar)
+        {
+            return medico.Search(nombreBuscar);
+        }
     }
 }

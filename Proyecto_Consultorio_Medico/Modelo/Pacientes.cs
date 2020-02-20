@@ -88,6 +88,32 @@ namespace Proyecto_Consultorio_Medico.Modelo
             }
         }
 
+        public bool Update (int id, Pacientes paciente)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                Pacientes p = db.Pacientes.Where(x => x.Id == id).FirstOrDefault();
+
+                p.Nombre = paciente.Nombre;
+                p.Apellido = paciente.Apellido;
+                p.DNI = paciente.DNI;
+                p.Telefono = paciente.Telefono;
+                p.FechaIngreso = paciente.FechaIngreso;
+                p.FechaNac = paciente.FechaNac;
+                p.ObraSocial = paciente.ObraSocial;
+                p.Direccion = paciente.Direccion;
+                p.Foto = paciente.Foto;
+
+                if (db.SaveChanges() == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
         //public bool Update(int id, Pacientes pacientes)
         //{
         //    using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())

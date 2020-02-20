@@ -144,6 +144,12 @@
     <Compile Include="Vistas\Pacientes\AltaPacientes.Designer.cs">
       <DependentUpon>AltaPacientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Pacientes\ListaPacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Pacientes\ListaPacientes.Designer.cs">
+      <DependentUpon>ListaPacientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Plantillas\Plantilla.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Pacientes\AltaPacientes.resx">
       <DependentUpon>AltaPacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Pacientes\ListaPacientes.resx">
+      <DependentUpon>ListaPacientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Plantillas\Plantilla.resx">
       <DependentUpon>Plantilla.cs</DependentUpon>

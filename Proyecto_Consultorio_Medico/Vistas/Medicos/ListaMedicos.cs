@@ -38,16 +38,16 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
 
             Inicioadores.DataGrid(dgvLista);
 
-            RefreshData();
+            RefreshData(medicosNegocio.Get());
             
         }
 
-        public void RefreshData()
+        public void RefreshData(ICollection<Modelo.Medicos> datos)
         {
             dgvLista.Rows.Clear();
 
 
-            foreach (var item in medicosNegocio.Get())
+            foreach (var item in datos)
             {
                 object[] elementos =
                 {
@@ -78,7 +78,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
                     if (result == System.Windows.Forms.DialogResult.Yes)
                     {
                         medicosNegocio.Remove(medicos);
-                        RefreshData();
+                        RefreshData(medicosNegocio.Get());
                     }
                 }
                 catch (Exception ex)
@@ -98,7 +98,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
         public override void dgvLista_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             base.dgvLista_CellClick(sender, e);
-            if (e.RowIndex != 0)
+            if (e.RowIndex != -1)
             {
                 idMedico = int.Parse(dgvLista.Rows[e.RowIndex].Cells[0].Value.ToString());
             }
@@ -134,10 +134,22 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
             if (e.RowIndex != -1)
             {
                 int id = int.Parse(dgvLista.Rows[e.RowIndex].Cells[0].Value.ToString());
-                Vistas.Medicos.InfoMedico info = new InfoMedico(id);
-                info.MdiParent = this.Parent.FindForm();
-                info.Show();
+                if (Validaciones.FormularioNoAbierto("InfoMedico"))
+                {
+                    Vistas.Medicos.InfoMedico info = new InfoMedico(id);
+                    info.MdiParent = this.Parent.FindForm();
+                    info.Show();
+                }
             }
+        }
+
+        private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txtBuscar.Text != "")
+                RefreshData(medicosNegocio.Search(txtBuscar.Text));
+
+            else
+                RefreshData(medicosNegocio.Get());
         }
     }
 }

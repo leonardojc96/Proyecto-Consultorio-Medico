@@ -123,5 +123,21 @@ namespace Proyecto_Consultorio_Medico.Modelo
                 return false;
             }
         }
+
+        public Medicos GetFull(int id)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                return db.Medicos.Find(id);
+            }
+        }
+
+        public ICollection<Medicos> Search(string nombreBuscar)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                return db.Medicos.Where(x => x.Nombre.StartsWith(nombreBuscar)).ToList();
+            }
+        }
     }
 }

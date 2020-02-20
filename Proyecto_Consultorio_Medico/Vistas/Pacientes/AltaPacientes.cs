@@ -17,6 +17,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
     {
 
         Modelo.Pacientes paciente = new Modelo.Pacientes();
+        int idpacientemod;
         
 
         public AltaPacientes()
@@ -117,7 +118,11 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            paciente = CargarPaciente();
+            //paciente = CargarPaciente();
+            //Negocios.PacienteNegocio pac = new PacienteNegocio();
+            //if (pac.Update(paciente){
+
+            //}
 
         }
     }
