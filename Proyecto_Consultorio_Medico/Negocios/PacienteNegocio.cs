@@ -23,6 +23,7 @@ namespace Proyecto_Consultorio_Medico.Negocios
 
         public Pacientes Get(int id)
         {
+
             return paciente.Get(id);
         }
 
@@ -39,6 +40,10 @@ namespace Proyecto_Consultorio_Medico.Negocios
         public bool Update(int id, Pacientes paciente)
         {
             return paciente.Update(id, paciente);
+        }
+        public ICollection<Pacientes> Search(string nombre)
+        {
+            return paciente.Search(nombre);
         }
     }
 }

@@ -85,6 +85,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
                 Telefono = telefonoTextBox.Text,
                 FechaIngreso = fechaIngresoDateTimePicker.Value,
                 FechaNac = fechaNacDateTimePicker.Value,
+                UltimaVisita = ultimaVisitaDateTimePicker.Value,
                 ObraSocial = obraSocialTextBox.Text,
                 Direccion = direccionTextBox.Text,
                 Foto = foto,
@@ -118,11 +119,35 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            //paciente = CargarPaciente();
-            //Negocios.PacienteNegocio pac = new PacienteNegocio();
-            //if (pac.Update(paciente){
+            paciente = CargarPaciente();
+            Negocios.PacienteNegocio pac = new PacienteNegocio();
+            if (pac.Update(idpacientemod, paciente))
+            {
+                MessageBox.Show("Se modifico el medico");
+            }
+            else MessageBox.Show("No se pudo guardar");
+        }
 
-            //}
+        public void Modificar( int id)
+        {
+            int idPacModificar = id;
+            btnAgregar.Enabled = false;
+            PacienteNegocio p = new PacienteNegocio();
+            Modelo.Pacientes pacienteEditar = p.Get(id);
+            nombreTextBox.Text = pacienteEditar.Nombre;
+            apellidoTextBox.Text = pacienteEditar.Apellido;
+            dNITextBox.Text = pacienteEditar.DNI;
+            telefonoTextBox.Text = pacienteEditar.Telefono;
+            fechaIngresoDateTimePicker.Value = pacienteEditar.FechaIngreso;
+            //fechaNacDateTimePicker.Value = pacienteEditar.FechaNac;
+            direccionTextBox.Text = pacienteEditar.Direccion;
+            obraSocialTextBox.Text = pacienteEditar.ObraSocial;
+            // ultimaVisitaDateTimePicker.Value = pacienteEditar.UltimaVisita;
+            fotoTextBox.Text = pacienteEditar.Foto;
+            richTextBox1.Text = pacienteEditar.Detalles;
+
+
+
 
         }
     }

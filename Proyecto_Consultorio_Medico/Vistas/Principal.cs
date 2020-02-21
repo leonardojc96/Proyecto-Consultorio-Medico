@@ -56,5 +56,12 @@ namespace Proyecto_Consultorio_Medico
             altaPaciente.MdiParent = this;
             altaPaciente.Show();
         }
+
+        private void listaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vistas.Pacientes.ListaPacientes listaPaciente = new Vistas.Pacientes.ListaPacientes();
+            listaPaciente.MdiParent = this;
+            listaPaciente.Show();
+        }
     }
 }

@@ -50,9 +50,6 @@
             this.dgvEspecialidades = new System.Windows.Forms.DataGridView();
             this.Especialidades = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvHorarios = new System.Windows.Forms.DataGridView();
-            this.lblHorarios = new System.Windows.Forms.Label();
-            this.lblEspecialidades = new System.Windows.Forms.Label();
-            this.btnAbrirCurricula = new System.Windows.Forms.Button();
             this.H_Entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.H_Salida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lunes = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -63,11 +60,14 @@
             this.Sabado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Domingo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Consultorio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblHorarios = new System.Windows.Forms.Label();
+            this.lblEspecialidades = new System.Windows.Forms.Label();
+            this.btnAbrirCurricula = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.dgvPacientes = new System.Windows.Forms.DataGridView();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnTurnos = new System.Windows.Forms.Button();
             this.lblPacientes = new System.Windows.Forms.Label();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             nombreLabel = new System.Windows.Forms.Label();
             dNILabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
@@ -91,7 +91,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.Size = new System.Drawing.Size(985, 55);
+            this.panelHeader.Size = new System.Drawing.Size(1370, 55);
             // 
             // nombreLabel
             // 
@@ -305,33 +305,6 @@
             this.dgvHorarios.Size = new System.Drawing.Size(469, 253);
             this.dgvHorarios.TabIndex = 35;
             // 
-            // lblHorarios
-            // 
-            this.lblHorarios.AutoSize = true;
-            this.lblHorarios.Location = new System.Drawing.Point(483, 332);
-            this.lblHorarios.Name = "lblHorarios";
-            this.lblHorarios.Size = new System.Drawing.Size(46, 13);
-            this.lblHorarios.TabIndex = 36;
-            this.lblHorarios.Text = "Horarios";
-            // 
-            // lblEspecialidades
-            // 
-            this.lblEspecialidades.AutoSize = true;
-            this.lblEspecialidades.Location = new System.Drawing.Point(309, 65);
-            this.lblEspecialidades.Name = "lblEspecialidades";
-            this.lblEspecialidades.Size = new System.Drawing.Size(78, 13);
-            this.lblEspecialidades.TabIndex = 37;
-            this.lblEspecialidades.Text = "Especialidades";
-            // 
-            // btnAbrirCurricula
-            // 
-            this.btnAbrirCurricula.Location = new System.Drawing.Point(12, 494);
-            this.btnAbrirCurricula.Name = "btnAbrirCurricula";
-            this.btnAbrirCurricula.Size = new System.Drawing.Size(252, 23);
-            this.btnAbrirCurricula.TabIndex = 38;
-            this.btnAbrirCurricula.Text = "Ver curricula (PDF)";
-            this.btnAbrirCurricula.UseVisualStyleBackColor = true;
-            // 
             // H_Entrada
             // 
             this.H_Entrada.HeaderText = "H_Entrada";
@@ -415,6 +388,33 @@
             this.Consultorio.Name = "Consultorio";
             this.Consultorio.ReadOnly = true;
             // 
+            // lblHorarios
+            // 
+            this.lblHorarios.AutoSize = true;
+            this.lblHorarios.Location = new System.Drawing.Point(483, 332);
+            this.lblHorarios.Name = "lblHorarios";
+            this.lblHorarios.Size = new System.Drawing.Size(46, 13);
+            this.lblHorarios.TabIndex = 36;
+            this.lblHorarios.Text = "Horarios";
+            // 
+            // lblEspecialidades
+            // 
+            this.lblEspecialidades.AutoSize = true;
+            this.lblEspecialidades.Location = new System.Drawing.Point(309, 65);
+            this.lblEspecialidades.Name = "lblEspecialidades";
+            this.lblEspecialidades.Size = new System.Drawing.Size(78, 13);
+            this.lblEspecialidades.TabIndex = 37;
+            this.lblEspecialidades.Text = "Especialidades";
+            // 
+            // btnAbrirCurricula
+            // 
+            this.btnAbrirCurricula.Location = new System.Drawing.Point(12, 494);
+            this.btnAbrirCurricula.Name = "btnAbrirCurricula";
+            this.btnAbrirCurricula.Size = new System.Drawing.Size(252, 23);
+            this.btnAbrirCurricula.TabIndex = 38;
+            this.btnAbrirCurricula.Text = "Ver curricula (PDF)";
+            this.btnAbrirCurricula.UseVisualStyleBackColor = true;
+            // 
             // btnSalir
             // 
             this.btnSalir.Location = new System.Drawing.Point(659, 81);
@@ -438,6 +438,12 @@
             this.dgvPacientes.Size = new System.Drawing.Size(214, 232);
             this.dgvPacientes.TabIndex = 40;
             // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre y Apellido";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
             // btnTurnos
             // 
             this.btnTurnos.Location = new System.Drawing.Point(659, 122);
@@ -456,17 +462,11 @@
             this.lblPacientes.TabIndex = 42;
             this.lblPacientes.Text = "Pacientes";
             // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre y Apellido";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
             // InfoMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(985, 530);
+            this.ClientSize = new System.Drawing.Size(1370, 892);
             this.Controls.Add(this.lblPacientes);
             this.Controls.Add(this.btnTurnos);
             this.Controls.Add(this.dgvPacientes);

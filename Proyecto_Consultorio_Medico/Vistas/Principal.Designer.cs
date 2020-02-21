@@ -34,6 +34,7 @@
             this.listasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.altaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,7 +75,8 @@
             // pacientesToolStripMenuItem
             // 
             this.pacientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.altaToolStripMenuItem1});
+            this.altaToolStripMenuItem1,
+            this.listaToolStripMenuItem});
             this.pacientesToolStripMenuItem.Name = "pacientesToolStripMenuItem";
             this.pacientesToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.pacientesToolStripMenuItem.Text = "Pacientes";
@@ -85,6 +87,13 @@
             this.altaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.altaToolStripMenuItem1.Text = "Alta";
             this.altaToolStripMenuItem1.Click += new System.EventHandler(this.altaToolStripMenuItem1_Click);
+            // 
+            // listaToolStripMenuItem
+            // 
+            this.listaToolStripMenuItem.Name = "listaToolStripMenuItem";
+            this.listaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listaToolStripMenuItem.Text = "Lista";
+            this.listaToolStripMenuItem.Click += new System.EventHandler(this.listaToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -112,6 +121,7 @@
         private System.Windows.Forms.ToolStripMenuItem listasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pacientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem altaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem listaToolStripMenuItem;
     }
 }
 

@@ -13,6 +13,7 @@ namespace Proyecto_Consultorio_Medico.Modelo
     using System.Collections.Generic;
     using System.Data.Entity;
     using System.Linq;
+    using System.Windows.Forms;
 
     public partial class Pacientes
     {
@@ -83,8 +84,15 @@ namespace Proyecto_Consultorio_Medico.Modelo
         {
             using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
             {
-                db.Pacientes.Remove(paciente);
-                db.SaveChanges();
+                try
+                {
+                    db.Entry(paciente).State = System.Data.Entity.EntityState.Deleted;
+                    db.SaveChanges();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message); 
+                }
             }
         }
 
@@ -114,31 +122,14 @@ namespace Proyecto_Consultorio_Medico.Modelo
                 }
             }
         }
-        //public bool Update(int id, Pacientes pacientes)
-        //{
-        //    using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
-        //    {
-        //        Medicos m = db.Medicos.Where(x => x.Id == id).FirstOrDefault();
+        
 
-        //        m.Nombre = pacientes.Nombre;
-        //        m.Apellido = pacientes.Apellido;
-        //        m.DNI = pacientes.DNI;
-        //        m.Direccion = pacientes.Direccion;
-        //        m.Curricula = pacientes.Curricula;
-        //        m.Foto = pacientes.Foto;
-        //        m.FechaNac = pacientes.FechaNac;
-        //        m.Matricula = pacientes.Matricula;
-        //        m.Telefono = pacientes.Telefono;
-        //        m.ContactoAux = pacientes.ContactoAux;
-        //        m.CantidadTurnos = pacientes.CantidadTurnos;
-
-
-        //        if (db.SaveChanges() == 1)
-        //        {
-        //            return true;
-        //        }
-        //        return false;
-        //    }
-        //}
+        public ICollection<Pacientes> Search(string nombre)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                return db.Pacientes.Where(x => x.Nombre.StartsWith(nombre)).ToList();
+            }
+        }
     }
 }

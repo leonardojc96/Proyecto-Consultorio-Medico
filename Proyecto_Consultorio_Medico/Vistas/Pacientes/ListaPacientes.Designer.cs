@@ -30,15 +30,29 @@
         {
             this.SuspendLayout();
             // 
+            // btnModificar
+            // 
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            // 
             // ListaPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.CancelButton = this.btnSalir;
+            this.ClientSize = new System.Drawing.Size(1370, 892);
             this.Name = "ListaPacientes";
             this.Text = "ListaPacientes";
             this.Load += new System.EventHandler(this.ListaPacientes_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
