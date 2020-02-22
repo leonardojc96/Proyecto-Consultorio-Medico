@@ -43,5 +43,13 @@ namespace Proyecto_Consultorio_Medico.Modelo
                 return db.MedicoEspecialidad.Include("Especialidades").Where(x => x.Id_Medico == id).ToList();
             }
         }
+
+        public ICollection<MedicoEspecialidad> GeyByEspecialidad(int id)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                return db.MedicoEspecialidad.Include("Medicos").Where(x => x.Id_Especialidad == id).ToList();
+            }
+        }
     }
 }

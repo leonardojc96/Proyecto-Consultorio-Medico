@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.lblFiltrar = new System.Windows.Forms.Label();
+            this.cbFiltroEspecialidades = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtBuscar
@@ -42,9 +44,31 @@
             // 
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // btnInfo
+            // 
+            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
+            // 
             // btnSalir
             // 
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            // 
+            // lblFiltrar
+            // 
+            this.lblFiltrar.AutoSize = true;
+            this.lblFiltrar.Location = new System.Drawing.Point(45, 109);
+            this.lblFiltrar.Name = "lblFiltrar";
+            this.lblFiltrar.Size = new System.Drawing.Size(35, 13);
+            this.lblFiltrar.TabIndex = 8;
+            this.lblFiltrar.Text = "Filtrar:";
+            // 
+            // cbFiltroEspecialidades
+            // 
+            this.cbFiltroEspecialidades.FormattingEnabled = true;
+            this.cbFiltroEspecialidades.Location = new System.Drawing.Point(113, 106);
+            this.cbFiltroEspecialidades.Name = "cbFiltroEspecialidades";
+            this.cbFiltroEspecialidades.Size = new System.Drawing.Size(209, 21);
+            this.cbFiltroEspecialidades.TabIndex = 9;
+            this.cbFiltroEspecialidades.SelectedIndexChanged += new System.EventHandler(this.cbFiltroEspecialidades_SelectedIndexChanged);
             // 
             // ListaMedicos
             // 
@@ -52,14 +76,27 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(768, 367);
+            this.Controls.Add(this.cbFiltroEspecialidades);
+            this.Controls.Add(this.lblFiltrar);
             this.Name = "ListaMedicos";
             this.Text = "ListaMedicos";
             this.Load += new System.EventHandler(this.ListaMedicos_Load);
+            this.Controls.SetChildIndex(this.panelHeader, 0);
+            this.Controls.SetChildIndex(this.txtBuscar, 0);
+            this.Controls.SetChildIndex(this.btnModificar, 0);
+            this.Controls.SetChildIndex(this.btnEliminar, 0);
+            this.Controls.SetChildIndex(this.btnInfo, 0);
+            this.Controls.SetChildIndex(this.btnSalir, 0);
+            this.Controls.SetChildIndex(this.lblFiltrar, 0);
+            this.Controls.SetChildIndex(this.cbFiltroEspecialidades, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lblFiltrar;
+        private System.Windows.Forms.ComboBox cbFiltroEspecialidades;
     }
 }
