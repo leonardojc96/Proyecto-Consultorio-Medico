@@ -52,8 +52,6 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
             {
                 if (Validaciones.NoEsNullNiVacio(panelAlta))
                 {
-                    string pathFoto = GuardarFoto();
-
                     medico = CargarMedico();
 
                     medicosNegocio.SaveMedico(medico);

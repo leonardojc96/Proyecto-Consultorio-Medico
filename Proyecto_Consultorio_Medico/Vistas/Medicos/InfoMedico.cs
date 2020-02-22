@@ -85,6 +85,8 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
                 };
 
                 dgvHorarios.Rows.Insert(0, elementos);
+
+                //carga pacientes
             }
 
         }
