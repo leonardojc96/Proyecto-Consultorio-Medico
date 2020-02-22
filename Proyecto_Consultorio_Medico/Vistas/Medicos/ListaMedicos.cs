@@ -14,6 +14,8 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
     public partial class ListaMedicos : Plantillas.PlantillaListas
     {
         Negocios.MedicosNegocio medicosNegocio = new Negocios.MedicosNegocio();
+        Nespecialidades especialidadNegocio = new Nespecialidades();
+        MedicoEspecialidadNegocio medicoEspecialidadNegocio = new MedicoEspecialidadNegocio(); 
         int idMedico = 0;
 
         public ListaMedicos(): base("Medicos")
@@ -23,6 +25,15 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
 
         private void ListaMedicos_Load(object sender, EventArgs e)
         {
+            Inicioadores.Labels(lblFiltrar);
+
+            ICollection<Modelo.Especialidades> especialidades = especialidadNegocio.GetEspecialidades();
+            especialidades.Add(new Modelo.Especialidades()
+            {
+                Id = 0,
+                Nombre = "Todas Las Especialidades"
+            });
+            Inicioadores.ComboBox(cbFiltroEspecialidades, especialidades);
             
 
             CargarData();
@@ -150,6 +161,46 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
 
             else
                 RefreshData(medicosNegocio.Get());
+        }
+
+        private void cbFiltroEspecialidades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbFiltroEspecialidades.SelectedValue.ToString() != "0")
+            {
+                try
+                {
+                    dgvLista.Rows.Clear();
+
+                    int idEsp = int.Parse(cbFiltroEspecialidades.SelectedValue.ToString());
+
+                    foreach (var item in medicoEspecialidadNegocio.GeyByEspecialidad(idEsp))
+                    {
+                        object[] elementos =
+                        {
+                            item.Medicos.Id,
+                            item.Medicos.Nombre + " "+ item.Medicos.Apellido,
+                            item.Medicos.DNI,
+                            item.Medicos.Telefono
+                        };
+
+                        dgvLista.Rows.Insert(0, elementos);
+                    }
+                }
+                catch (Exception)
+                {
+
+                }
+            }
+            else
+            {
+                RefreshData(medicosNegocio.Get());
+            }
+            
+        }
+
+        private void btnInfo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

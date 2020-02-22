@@ -20,5 +20,10 @@ namespace Proyecto_Consultorio_Medico.Negocios
         {
             return medicoEspecialidad.GetByMedico(id);
         }
+
+        public ICollection<MedicoEspecialidad> GeyByEspecialidad(int id)
+        {
+            return medicoEspecialidad.GeyByEspecialidad(id);
+        }
     }
 }
