@@ -34,13 +34,5 @@ namespace Proyecto_Consultorio_Medico.Modelo
                 return false;
             }
         }
-
-        //public IEnumerable<dynamic> GetTunosPendientes(int idMedico)
-        //{
-        //    using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
-        //    {
-
-        //    }
-        //}
     }
 }

@@ -894,7 +894,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(781, 472);
+            this.ClientSize = new System.Drawing.Size(781, 284);
             this.Controls.Add(this.btnCurricula);
             this.Controls.Add(this.btnAgregarHorario);
             this.Controls.Add(this.lblDisponibles);

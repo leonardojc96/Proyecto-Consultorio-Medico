@@ -20,6 +20,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
         MedicoConsultorioNegocio medicoConsultorioNegocio = new MedicoConsultorioNegocio();
         ConsultoriosNegocio consultoriosNegocio = new ConsultoriosNegocio();
         PacienteNegocio pacienteNegocio = new PacienteNegocio();
+        ConsultaMedicaNegocio consultaMedicaNegocio = new ConsultaMedicaNegocio();
 
         public InfoMedico()
         {
@@ -93,7 +94,17 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
             // carga turnos pendientes
             try
             {
+                foreach (var item in consultaMedicaNegocio.GetTunosPendientes(medicos.Id))
+                {
+                    object[] elementos =
+                    {
+                        item.Id,
+                        item.Nombre + " "+ item.Apellido,
+                        item.DNI
+                    };
 
+                    dgvPacientes.Rows.Insert(0, elementos);
+                }
             }
             catch (Exception ex)
             {

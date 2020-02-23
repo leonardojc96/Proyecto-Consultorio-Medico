@@ -65,12 +65,12 @@
             this.btnAbrirCurricula = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.dgvPacientes = new System.Windows.Forms.DataGridView();
-            this.btnAbrirConsulta = new System.Windows.Forms.Button();
-            this.lblPacientes = new System.Windows.Forms.Label();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdConsulta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nTurnos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAbrirConsulta = new System.Windows.Forms.Button();
+            this.lblPacientes = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             dNILabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
@@ -435,7 +435,7 @@
             this.dgvPacientes.AllowUserToDeleteRows = false;
             this.dgvPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPacientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
+            this.IdConsulta,
             this.Nombre,
             this.DNI,
             this.nTurnos});
@@ -444,6 +444,31 @@
             this.dgvPacientes.ReadOnly = true;
             this.dgvPacientes.Size = new System.Drawing.Size(255, 232);
             this.dgvPacientes.TabIndex = 40;
+            // 
+            // IdConsulta
+            // 
+            this.IdConsulta.HeaderText = "Id de la consulta";
+            this.IdConsulta.Name = "IdConsulta";
+            this.IdConsulta.ReadOnly = true;
+            this.IdConsulta.Visible = false;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre y Apellido";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // DNI
+            // 
+            this.DNI.HeaderText = "DNI";
+            this.DNI.Name = "DNI";
+            this.DNI.ReadOnly = true;
+            // 
+            // nTurnos
+            // 
+            this.nTurnos.HeaderText = "Nº de turno";
+            this.nTurnos.Name = "nTurnos";
+            this.nTurnos.ReadOnly = true;
             // 
             // btnAbrirConsulta
             // 
@@ -463,31 +488,6 @@
             this.lblPacientes.TabIndex = 42;
             this.lblPacientes.Text = "Ultimos pacientes";
             this.lblPacientes.Click += new System.EventHandler(this.lblPacientes_Click);
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre y Apellido";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // DNI
-            // 
-            this.DNI.HeaderText = "DNI";
-            this.DNI.Name = "DNI";
-            this.DNI.ReadOnly = true;
-            // 
-            // nTurnos
-            // 
-            this.nTurnos.HeaderText = "Nº de turno";
-            this.nTurnos.Name = "nTurnos";
-            this.nTurnos.ReadOnly = true;
             // 
             // InfoMedico
             // 
@@ -579,7 +579,7 @@
         private System.Windows.Forms.DataGridView dgvPacientes;
         private System.Windows.Forms.Button btnAbrirConsulta;
         private System.Windows.Forms.Label lblPacientes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdConsulta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
         private System.Windows.Forms.DataGridViewTextBoxColumn nTurnos;

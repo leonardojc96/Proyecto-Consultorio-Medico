@@ -288,8 +288,8 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
                             item.Viernes,
                             item.Sabado,
                             item.Domingo,
-                            con.Nombre
-                        };
+                            con.Id
+                 };
 
                 dgvHorarios.Rows.Insert(0, elementos);
             }
@@ -325,6 +325,35 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
                 MessageBox.Show("Se modifico el medico");
             else
                 MessageBox.Show("No se pudo guardar");
+
+            foreach (DataGridViewRow item in dgvHorarios.Rows)
+            {
+                TimeSpan Hentrada;
+                TimeSpan.TryParseExact(item.Cells["H_Entrada"].Value.ToString(), @"hh\:mm", null, out Hentrada);
+                TimeSpan HSalida;
+                TimeSpan.TryParseExact(item.Cells["H_Salida"].Value.ToString(), @"hh\:mm", null, out HSalida);
+
+                medicoConsultorio = new MedicoConsultorio()
+                {
+                    Id_Medico = idMedicoModificar,
+                    Id_Consultorio = (int)item.Cells["idCon"].Value,
+                    H_Entrada = Hentrada,
+                    H_Salida = HSalida,
+                    Lunes = (bool)item.Cells["Lu"].Value,
+                    Martes = (bool)item.Cells["Ma"].Value,
+                    Miercoles = (bool)item.Cells["Mi"].Value,
+                    Jueves = (bool)item.Cells["Ju"].Value,
+                    Viernes = (bool)item.Cells["Vi"].Value,
+                    Sabado = (bool)item.Cells["Sa"].Value,
+                    Domingo = (bool)item.Cells["Do"].Value,
+                };
+
+
+
+                MedicoConsultorioNegocio medicoConsultorioNegocio = new MedicoConsultorioNegocio();
+                if (!medico.MedicoConsultorio.Contains(medicoConsultorio))
+                    medicoConsultorioNegocio.Save(medicoConsultorio);
+            }
         }
 
         private void btnCurricula_Click(object sender, EventArgs e)
