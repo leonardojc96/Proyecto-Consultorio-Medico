@@ -18,6 +18,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
         MedicoEspecialidadNegocio medicoEspecialidad = new MedicoEspecialidadNegocio();
         MedicoConsultorioNegocio medicoConsultorioNegocio = new MedicoConsultorioNegocio();
         ConsultoriosNegocio consultoriosNegocio = new ConsultoriosNegocio();
+        PacienteNegocio pacienteNegocio = new PacienteNegocio();
 
         public InfoMedico()
         {
@@ -35,6 +36,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
         private void InfoMedico_Load(object sender, EventArgs e)
         {
             Inicioadores.DataGrid(dgvEspecialidades);
+            Inicioadores.DataGrid(dgvPacientes);
             Inicioadores.Labels(lblEspecialidades);
             Inicioadores.Labels(lblHorarios);
             Inicioadores.Labels(lblPacientes);
@@ -85,9 +87,42 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
                 };
 
                 dgvHorarios.Rows.Insert(0, elementos);
-
-                //carga pacientes
             }
+
+            // carga ultimos pacientes
+            try
+            {
+                foreach (var item in pacienteNegocio.GetByMedicos(medicos.Id).ToList())
+                {
+                    object[] elementos;
+                    try
+                    {
+                        elementos = new object[]
+                        {   
+                            item.Nombre +" "+item.Apellido,
+                            item.DNI,
+                            item.Fecha.Value.ToString("dd/MM/yyyy")
+                        };
+                    }
+                    catch (Exception)
+                    {
+                        elementos = new object[]
+                        {
+                            item.Nombre +" "+item.Apellido,
+                            item.DNI
+                        };
+                    }
+                    
+                    
+
+                    dgvPacientes.Rows.Insert(0, elementos);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
 
         }
 
@@ -99,6 +134,11 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lblPacientes_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

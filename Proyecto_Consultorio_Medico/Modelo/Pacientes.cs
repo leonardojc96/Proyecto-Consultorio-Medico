@@ -13,6 +13,7 @@ namespace Proyecto_Consultorio_Medico.Modelo
     using System.Collections.Generic;
     using System.Data.Entity;
     using System.Linq;
+    using System.Windows.Forms;
 
     public partial class Pacientes
     {
@@ -83,26 +84,65 @@ namespace Proyecto_Consultorio_Medico.Modelo
         {
             using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
             {
-                db.Pacientes.Remove(paciente);
-                db.SaveChanges();
+                try
+                {
+                    db.Entry(paciente).State = System.Data.Entity.EntityState.Deleted;
+                    db.SaveChanges();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message); 
+                }
             }
         }
 
-        public bool Update(int id, Pacientes paciente)
+        public bool Update (int id, Pacientes paciente)
         {
             using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
             {
-                Pacientes pac = db.Pacientes.Find(id);
-                db.Entry(pac).State = EntityState.Modified;
+                Pacientes p = db.Pacientes.Where(x => x.Id == id).FirstOrDefault();
 
-                pac = paciente;
-
+                p.Nombre = paciente.Nombre;
+                p.Apellido = paciente.Apellido;
+                p.DNI = paciente.DNI;
+                p.Telefono = paciente.Telefono;
+                p.FechaIngreso = paciente.FechaIngreso;
+                p.FechaNac = paciente.FechaNac;
+                p.ObraSocial = paciente.ObraSocial;
+                p.Direccion = paciente.Direccion;
+                p.Foto = paciente.Foto;
 
                 if (db.SaveChanges() == 1)
                 {
                     return true;
                 }
-                return false;
+                else
+                {
+                    return false;
+                }
+            }
+        }
+        
+
+        public ICollection<Pacientes> Search(string nombre)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                return db.Pacientes.Where(x => x.Nombre.StartsWith(nombre)).ToList();
+            }
+        }
+
+        public IEnumerable<dynamic> GetByMedicos (int idMedico)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                var pacientes = (from p in db.Pacientes
+                       join h in db.HistorialConsultas on p.Id equals h.Id_Paciente
+                       join c in db.ConsultaMedica on h.Id equals c.Id_Historico
+                       where c.Id_Medico == idMedico
+                       select new { p.Nombre, p.Apellido, p.DNI, c.Fecha }).ToList();
+
+                return pacientes;
             }
         }
     }

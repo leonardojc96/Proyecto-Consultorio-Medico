@@ -42,7 +42,7 @@
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(32)))), ((int)(((byte)(61)))));
             this.panelHeader.ForeColor = System.Drawing.Color.White;
-            this.panelHeader.Size = new System.Drawing.Size(768, 55);
+            this.panelHeader.Size = new System.Drawing.Size(1370, 55);
             // 
             // dgvLista
             // 
@@ -52,6 +52,7 @@
             this.dgvLista.Size = new System.Drawing.Size(744, 382);
             this.dgvLista.TabIndex = 1;
             this.dgvLista.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLista_CellClick);
+            this.dgvLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLista_CellContentClick);
             this.dgvLista.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLista_CellDoubleClick);
             // 
             // lblBuscar
@@ -113,7 +114,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 367);
+            this.ClientSize = new System.Drawing.Size(1370, 892);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnInfo);
             this.Controls.Add(this.btnEliminar);

@@ -52,5 +52,10 @@ namespace Proyecto_Consultorio_Medico.Vistas.Plantillas
         {
 
         }
+
+        private void dgvLista_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace Proyecto_Consultorio_Medico.Vistas
+﻿namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
 {
-    partial class Menu
+    partial class ListaPacientes
     {
         /// <summary>
         /// Required designer variable.
@@ -30,23 +30,33 @@
         {
             this.SuspendLayout();
             // 
+            // btnModificar
+            // 
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(32)))), ((int)(((byte)(61)))));
-            this.panelHeader.ForeColor = System.Drawing.Color.White;
-            this.panelHeader.Size = new System.Drawing.Size(1370, 55);
+            this.panelHeader.Size = new System.Drawing.Size(768, 55);
             // 
-            // Menu
+            // ListaPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 892);
-            this.ForeColor = System.Drawing.Color.Black;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Menu";
-            this.Text = "Menu";
-            this.Load += new System.EventHandler(this.Menu_Load);
+            this.CancelButton = this.btnSalir;
+            this.ClientSize = new System.Drawing.Size(768, 367);
+            this.Name = "ListaPacientes";
+            this.Text = "ListaPacientes";
+            this.Load += new System.EventHandler(this.ListaPacientes_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

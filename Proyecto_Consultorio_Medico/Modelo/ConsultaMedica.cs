@@ -11,7 +11,8 @@ namespace Proyecto_Consultorio_Medico.Modelo
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+
     public partial class ConsultaMedica
     {
         public int Id { get; set; }
@@ -47,5 +48,6 @@ namespace Proyecto_Consultorio_Medico.Modelo
                 return false;
             }
         }
+
     }
 }

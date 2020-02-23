@@ -33,6 +33,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Plantillas
             try
             {
                 Bitmap picture = new Bitmap(foto);
+                picBoxFoto.SizeMode = PictureBoxSizeMode.Zoom;
                 picBoxFoto.Image = (Image)picture;
             }
             catch (Exception)

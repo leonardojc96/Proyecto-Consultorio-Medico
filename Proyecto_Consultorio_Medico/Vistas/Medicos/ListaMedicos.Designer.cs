@@ -52,6 +52,10 @@
             // 
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             // 
+            // panelHeader
+            // 
+            this.panelHeader.Size = new System.Drawing.Size(768, 55);
+            // 
             // lblFiltrar
             // 
             this.lblFiltrar.AutoSize = true;

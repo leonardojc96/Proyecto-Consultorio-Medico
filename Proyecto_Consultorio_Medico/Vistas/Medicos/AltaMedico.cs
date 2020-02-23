@@ -108,14 +108,20 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
 
         private void btnAgregarEspecialidad_Click(object sender, EventArgs e)
         {
-            Modelo.Especialidades especialid = nespecialidades.Get(idEspecialidad);
-            object[] elemetos =
+            try
             {
+                Modelo.Especialidades especialid = nespecialidades.Get(idEspecialidad);
+                object[] elemetos =
+                {
                 especialid.Id,
                 especialid.Nombre
             };
 
-            dgvEspecialidades.Rows.Insert(0, elemetos);
+                dgvEspecialidades.Rows.Insert(0, elemetos);
+            }catch(Exception ex)
+            {
+                MessageBox.Show("No seleccionó ninguna especialidad o no hay ninguna cargada");
+            }
         }
 
         private void btnAgregarHorario_Click(object sender, EventArgs e)
