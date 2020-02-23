@@ -295,6 +295,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
         public Modelo.Medicos CargarMedico() 
         {
             string pathFoto = GuardarFoto();
+            string pathCurricula = GuardarCurricula();
 
             return medico = new Modelo.Medicos()
             {
@@ -302,7 +303,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
                 Apellido = apellidoTextBox.Text,
                 DNI = dNITextBox.Text,
                 Foto = pathFoto,
-                Curricula = curriculaTextBox.Text,
+                Curricula = pathCurricula,
                 Matricula = matriculaTextBox.Text,
                 FechaNac = fechaNacDateTimePicker.Value,
                 CantidadTurnos = int.Parse(cantidadTurnosTextBox.Text),
@@ -320,6 +321,35 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
                 MessageBox.Show("Se modifico el medico");
             else
                 MessageBox.Show("No se pudo guardar");
+        }
+
+        private void btnCurricula_Click(object sender, EventArgs e)
+        {
+            openCurricula.FileName = "";
+            openCurricula.Filter = "Archivos PDF | *.pdf";
+            openCurricula.RestoreDirectory = true;
+            if (openCurricula.ShowDialog() == DialogResult.OK && openCurricula.FileName != "")
+            {
+                string dir = openCurricula.FileName;
+                curriculaTextBox.Text = openCurricula.FileName;
+            }
+        }
+
+        public string GuardarCurricula()
+        {
+            string destino = "";
+            if (curriculaTextBox.Text != "")
+            {
+                destino = Path.Combine(Application.StartupPath, string.Format("Archivos\\{0}", Path.GetFileName(curriculaTextBox.Text)));
+                if (File.Exists(destino))
+                {
+                    MessageBox.Show("Ya existe un archivo con ese nombre");
+                }
+                else
+                    File.Copy(curriculaTextBox.Text, destino);
+            }
+
+            return destino;
         }
     }
 }

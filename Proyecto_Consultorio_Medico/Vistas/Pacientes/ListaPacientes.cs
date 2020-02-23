@@ -114,13 +114,17 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
 
                 }
             }
+            else
+                MessageBox.Show("Debe seleccionar un paciente primero.");
         }
 
         public override void dgvLista_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             base.dgvLista_CellClick(sender, e);
-            idPaciente = int.Parse(dgvLista.Rows[e.RowIndex].Cells[0].Value.ToString());
-
+            if (e.RowIndex != -1)
+            {
+                idPaciente = int.Parse(dgvLista.Rows[e.RowIndex].Cells[0].Value.ToString());
+            }
         }
         public override void dgvLista_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {

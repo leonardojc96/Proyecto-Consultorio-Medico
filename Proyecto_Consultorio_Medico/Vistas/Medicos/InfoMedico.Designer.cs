@@ -416,6 +416,7 @@
             this.btnAbrirCurricula.TabIndex = 38;
             this.btnAbrirCurricula.Text = "Ver curricula (PDF)";
             this.btnAbrirCurricula.UseVisualStyleBackColor = true;
+            this.btnAbrirCurricula.Click += new System.EventHandler(this.btnAbrirCurricula_Click);
             // 
             // btnSalir
             // 
@@ -483,7 +484,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 367);
+            this.ClientSize = new System.Drawing.Size(768, 555);
             this.Controls.Add(this.lblPacientes);
             this.Controls.Add(this.btnTurnos);
             this.Controls.Add(this.dgvPacientes);

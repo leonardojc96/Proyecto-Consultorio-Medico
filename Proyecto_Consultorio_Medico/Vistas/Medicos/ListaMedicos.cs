@@ -128,15 +128,16 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
                 }
                 else
                 {
-                    Vistas.Medicos.AltaMedico alta = (Vistas.Medicos.AltaMedico) Application.OpenForms["AltaMedico"];
+                    Vistas.Medicos.AltaMedico alta = (Vistas.Medicos.AltaMedico)Application.OpenForms["AltaMedico"];
                     alta = new AltaMedico();
                     alta.MdiParent = this.Parent.FindForm();
                     alta.ModificarMedico(idMedico);
                     alta.Show();
 
                 }
-
             }
+            else
+                MessageBox.Show("Debe seleccionar un medico primero.");
         }
         public override void dgvLista_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {

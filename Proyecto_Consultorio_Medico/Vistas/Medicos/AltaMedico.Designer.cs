@@ -110,6 +110,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.openCurricula = new System.Windows.Forms.OpenFileDialog();
             nombreLabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
             dNILabel = new System.Windows.Forms.Label();
@@ -168,7 +169,7 @@
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(32)))), ((int)(((byte)(61)))));
             this.panelHeader.ForeColor = System.Drawing.Color.White;
-            this.panelHeader.Size = new System.Drawing.Size(1370, 55);
+            this.panelHeader.Size = new System.Drawing.Size(758, 55);
             // 
             // nombreLabel
             // 
@@ -854,6 +855,7 @@
             this.btnCurricula.TabIndex = 52;
             this.btnCurricula.Text = "...";
             this.btnCurricula.UseVisualStyleBackColor = true;
+            this.btnCurricula.Click += new System.EventHandler(this.btnCurricula_Click);
             // 
             // label3
             // 
@@ -882,6 +884,10 @@
             this.label5.TabIndex = 55;
             this.label5.Text = "*";
             // 
+            // openCurricula
+            // 
+            this.openCurricula.FileName = "openFileDialog1";
+            // 
             // AltaMedico
             // 
             this.AcceptButton = this.btnAgregar;
@@ -889,7 +895,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(1370, 809);
+            this.ClientSize = new System.Drawing.Size(768, 284);
             this.Controls.Add(this.btnCurricula);
             this.Controls.Add(this.btnAgregarHorario);
             this.Controls.Add(this.lblDisponibles);
@@ -1014,5 +1020,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.OpenFileDialog openCurricula;
     }
 }
