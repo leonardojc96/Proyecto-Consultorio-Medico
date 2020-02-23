@@ -65,11 +65,12 @@
             this.btnAbrirCurricula = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.dgvPacientes = new System.Windows.Forms.DataGridView();
+            this.btnAbrirConsulta = new System.Windows.Forms.Button();
+            this.lblPacientes = new System.Windows.Forms.Label();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnTurnos = new System.Windows.Forms.Button();
-            this.lblPacientes = new System.Windows.Forms.Label();
+            this.nTurnos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             nombreLabel = new System.Windows.Forms.Label();
             dNILabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
@@ -93,7 +94,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.Size = new System.Drawing.Size(768, 55);
+            this.panelHeader.Size = new System.Drawing.Size(781, 55);
             // 
             // nombreLabel
             // 
@@ -434,14 +435,41 @@
             this.dgvPacientes.AllowUserToDeleteRows = false;
             this.dgvPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPacientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
             this.Nombre,
             this.DNI,
-            this.Fecha});
+            this.nTurnos});
             this.dgvPacientes.Location = new System.Drawing.Point(432, 80);
             this.dgvPacientes.Name = "dgvPacientes";
             this.dgvPacientes.ReadOnly = true;
             this.dgvPacientes.Size = new System.Drawing.Size(255, 232);
             this.dgvPacientes.TabIndex = 40;
+            // 
+            // btnAbrirConsulta
+            // 
+            this.btnAbrirConsulta.Location = new System.Drawing.Point(693, 122);
+            this.btnAbrirConsulta.Name = "btnAbrirConsulta";
+            this.btnAbrirConsulta.Size = new System.Drawing.Size(88, 23);
+            this.btnAbrirConsulta.TabIndex = 41;
+            this.btnAbrirConsulta.Text = "Abrir consulta";
+            this.btnAbrirConsulta.UseVisualStyleBackColor = true;
+            // 
+            // lblPacientes
+            // 
+            this.lblPacientes.AutoSize = true;
+            this.lblPacientes.Location = new System.Drawing.Point(527, 65);
+            this.lblPacientes.Name = "lblPacientes";
+            this.lblPacientes.Size = new System.Drawing.Size(90, 13);
+            this.lblPacientes.TabIndex = 42;
+            this.lblPacientes.Text = "Ultimos pacientes";
+            this.lblPacientes.Click += new System.EventHandler(this.lblPacientes_Click);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
             // 
             // Nombre
             // 
@@ -455,38 +483,19 @@
             this.DNI.Name = "DNI";
             this.DNI.ReadOnly = true;
             // 
-            // Fecha
+            // nTurnos
             // 
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            this.Fecha.ReadOnly = true;
-            // 
-            // btnTurnos
-            // 
-            this.btnTurnos.Location = new System.Drawing.Point(693, 122);
-            this.btnTurnos.Name = "btnTurnos";
-            this.btnTurnos.Size = new System.Drawing.Size(75, 23);
-            this.btnTurnos.TabIndex = 41;
-            this.btnTurnos.Text = "Sacar turno";
-            this.btnTurnos.UseVisualStyleBackColor = true;
-            // 
-            // lblPacientes
-            // 
-            this.lblPacientes.AutoSize = true;
-            this.lblPacientes.Location = new System.Drawing.Point(527, 65);
-            this.lblPacientes.Name = "lblPacientes";
-            this.lblPacientes.Size = new System.Drawing.Size(90, 13);
-            this.lblPacientes.TabIndex = 42;
-            this.lblPacientes.Text = "Ultimos pacientes";
-            this.lblPacientes.Click += new System.EventHandler(this.lblPacientes_Click);
+            this.nTurnos.HeaderText = "Nº de turno";
+            this.nTurnos.Name = "nTurnos";
+            this.nTurnos.ReadOnly = true;
             // 
             // InfoMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 555);
+            this.ClientSize = new System.Drawing.Size(781, 367);
             this.Controls.Add(this.lblPacientes);
-            this.Controls.Add(this.btnTurnos);
+            this.Controls.Add(this.btnAbrirConsulta);
             this.Controls.Add(this.dgvPacientes);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAbrirCurricula);
@@ -526,7 +535,7 @@
             this.Controls.SetChildIndex(this.btnAbrirCurricula, 0);
             this.Controls.SetChildIndex(this.btnSalir, 0);
             this.Controls.SetChildIndex(this.dgvPacientes, 0);
-            this.Controls.SetChildIndex(this.btnTurnos, 0);
+            this.Controls.SetChildIndex(this.btnAbrirConsulta, 0);
             this.Controls.SetChildIndex(this.lblPacientes, 0);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxFoto)).EndInit();
             this.panelLabels.ResumeLayout(false);
@@ -568,10 +577,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Consultorio;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.DataGridView dgvPacientes;
-        private System.Windows.Forms.Button btnTurnos;
+        private System.Windows.Forms.Button btnAbrirConsulta;
         private System.Windows.Forms.Label lblPacientes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nTurnos;
     }
 }

@@ -39,6 +39,10 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
             Inicioadores.TextoBlanco(panelHorarios);
             Inicioadores.ComboBox(cbEspecialidad, nespecialidades.GetEspecialidades());
             dataGridView1.Visible = false;
+
+            cbEspecialidad.SelectedIndex = 1;
+            cbEspecialidad.SelectedIndex = 0;
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -71,9 +75,9 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
                     foreach (DataGridViewRow item in dgvHorarios.Rows)
                     {
                         TimeSpan Hentrada;
-                        TimeSpan.TryParseExact(item.Cells["H_Entrada"].Value.ToString(), @"mm\:ss", null, out Hentrada);
+                        TimeSpan.TryParseExact(item.Cells["H_Entrada"].Value.ToString(), @"hh\:mm", null, out Hentrada);
                         TimeSpan HSalida;
-                        TimeSpan.TryParseExact(item.Cells["H_Salida"].Value.ToString(), @"mm\:ss", null, out HSalida);
+                        TimeSpan.TryParseExact(item.Cells["H_Salida"].Value.ToString(), @"hh\:mm", null, out HSalida);
 
                         medicoConsultorio = new MedicoConsultorio()
                         {

@@ -169,7 +169,7 @@
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(32)))), ((int)(((byte)(61)))));
             this.panelHeader.ForeColor = System.Drawing.Color.White;
-            this.panelHeader.Size = new System.Drawing.Size(758, 55);
+            this.panelHeader.Size = new System.Drawing.Size(764, 55);
             // 
             // nombreLabel
             // 
@@ -686,9 +686,8 @@
             this.H_Entradatxt.Location = new System.Drawing.Point(97, 42);
             this.H_Entradatxt.Mask = "00:00";
             this.H_Entradatxt.Name = "H_Entradatxt";
-            this.H_Entradatxt.Size = new System.Drawing.Size(36, 20);
+            this.H_Entradatxt.Size = new System.Drawing.Size(38, 20);
             this.H_Entradatxt.TabIndex = 52;
-            this.H_Entradatxt.ValidatingType = typeof(System.DateTime);
             // 
             // cbEspecialidad
             // 
@@ -895,7 +894,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(768, 284);
+            this.ClientSize = new System.Drawing.Size(781, 472);
             this.Controls.Add(this.btnCurricula);
             this.Controls.Add(this.btnAgregarHorario);
             this.Controls.Add(this.lblDisponibles);

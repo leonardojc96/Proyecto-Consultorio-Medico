@@ -63,3 +63,4 @@ C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto
 C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Pacientes.AltaPacientes.resources
 C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Pacientes.InfoPacientes.resources
 C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Pacientes.ListaPacientes.resources
+C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Pacientes.ConsultaMedica.resources

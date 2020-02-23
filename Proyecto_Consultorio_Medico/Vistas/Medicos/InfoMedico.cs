@@ -90,34 +90,10 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
                 dgvHorarios.Rows.Insert(0, elementos);
             }
 
-            // carga ultimos pacientes
+            // carga turnos pendientes
             try
             {
-                foreach (var item in pacienteNegocio.GetByMedicos(medicos.Id).ToList())
-                {
-                    object[] elementos;
-                    try
-                    {
-                        elementos = new object[]
-                        {   
-                            item.Nombre +" "+item.Apellido,
-                            item.DNI,
-                            item.Fecha.Value.ToString("dd/MM/yyyy")
-                        };
-                    }
-                    catch (Exception)
-                    {
-                        elementos = new object[]
-                        {
-                            item.Nombre +" "+item.Apellido,
-                            item.DNI
-                        };
-                    }
-                    
-                    
 
-                    dgvPacientes.Rows.Insert(0, elementos);
-                }
             }
             catch (Exception ex)
             {
