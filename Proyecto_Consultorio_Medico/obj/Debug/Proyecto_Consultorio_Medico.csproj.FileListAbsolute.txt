@@ -60,4 +60,11 @@ C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto
 C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Pacientes.AltaPacientes.resources
 C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Pacientes.ListaPacientes.resources
 C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Pacientes.InfoPacientes.resources
+<<<<<<< HEAD
 C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Pacientes.NuevoTurno.resources
+=======
+C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Pacientes.AltaPacientes.resources
+C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Pacientes.InfoPacientes.resources
+C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Pacientes.ListaPacientes.resources
+C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Pacientes.ConsultaMedica.resources
+>>>>>>> c9b418580a1c6b78a75cbeceb99204f98fad9cb9

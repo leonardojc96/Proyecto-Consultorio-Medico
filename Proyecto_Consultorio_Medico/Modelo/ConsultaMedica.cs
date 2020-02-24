@@ -11,7 +11,8 @@ namespace Proyecto_Consultorio_Medico.Modelo
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+
     public partial class ConsultaMedica
     {
         public int Id { get; set; }
@@ -47,5 +48,21 @@ namespace Proyecto_Consultorio_Medico.Modelo
                 return false;
             }
         }
+
+        public IEnumerable<dynamic> GetTunosPendientes(int idMedico)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                return (from t in db.Turnos
+                       join p in db.Pacientes on t.Id_Paciente equals p.Id
+                       join h in db.HistorialConsultas on p.Id equals h.Id_Paciente
+                       join c in db.ConsultaMedica on h.Id equals c.Id_Historico
+                       join m in db.Medicos on c.Id_Medico equals m.Id
+                       join mc in db.MedicoConsultorio on m.Id equals mc.Id_Medico
+                       where c.Estado == "Pendiente" && (DateTime.Now.Hour >= mc.H_Entrada.Hours && DateTime.Now.Hour <= mc.H_Salida.Hours) && m.Id == idMedico
+                       select new { p.Nombre, p.Apellido, p.DNI, c.Estado, c.Id }).ToList();
+            }
+        }
+
     }
 }

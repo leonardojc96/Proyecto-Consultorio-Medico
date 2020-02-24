@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,8 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
         MedicoEspecialidadNegocio medicoEspecialidad = new MedicoEspecialidadNegocio();
         MedicoConsultorioNegocio medicoConsultorioNegocio = new MedicoConsultorioNegocio();
         ConsultoriosNegocio consultoriosNegocio = new ConsultoriosNegocio();
+        PacienteNegocio pacienteNegocio = new PacienteNegocio();
+        ConsultaMedicaNegocio consultaMedicaNegocio = new ConsultaMedicaNegocio();
 
         public InfoMedico()
         {
@@ -35,6 +38,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
         private void InfoMedico_Load(object sender, EventArgs e)
         {
             Inicioadores.DataGrid(dgvEspecialidades);
+            Inicioadores.DataGrid(dgvPacientes);
             Inicioadores.Labels(lblEspecialidades);
             Inicioadores.Labels(lblHorarios);
             Inicioadores.Labels(lblPacientes);
@@ -87,6 +91,27 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
                 dgvHorarios.Rows.Insert(0, elementos);
             }
 
+            // carga turnos pendientes
+            try
+            {
+                foreach (var item in consultaMedicaNegocio.GetTunosPendientes(medicos.Id))
+                {
+                    object[] elementos =
+                    {
+                        item.Id,
+                        item.Nombre + " "+ item.Apellido,
+                        item.DNI
+                    };
+
+                    dgvPacientes.Rows.Insert(0, elementos);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -97,6 +122,23 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lblPacientes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAbrirCurricula_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process.Start(medicos.Curricula);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("El medico no tiene curricula cargada");
+            }
         }
     }
 }

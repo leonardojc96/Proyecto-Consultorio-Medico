@@ -39,6 +39,10 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
             Inicioadores.TextoBlanco(panelHorarios);
             Inicioadores.ComboBox(cbEspecialidad, nespecialidades.GetEspecialidades());
             dataGridView1.Visible = false;
+
+            cbEspecialidad.SelectedIndex = 1;
+            cbEspecialidad.SelectedIndex = 0;
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -52,8 +56,6 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
             {
                 if (Validaciones.NoEsNullNiVacio(panelAlta))
                 {
-                    string pathFoto = GuardarFoto();
-
                     medico = CargarMedico();
 
                     medicosNegocio.SaveMedico(medico);
@@ -73,9 +75,9 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
                     foreach (DataGridViewRow item in dgvHorarios.Rows)
                     {
                         TimeSpan Hentrada;
-                        TimeSpan.TryParseExact(item.Cells["H_Entrada"].Value.ToString(), @"mm\:ss", null, out Hentrada);
+                        TimeSpan.TryParseExact(item.Cells["H_Entrada"].Value.ToString(), @"hh\:mm", null, out Hentrada);
                         TimeSpan HSalida;
-                        TimeSpan.TryParseExact(item.Cells["H_Salida"].Value.ToString(), @"mm\:ss", null, out HSalida);
+                        TimeSpan.TryParseExact(item.Cells["H_Salida"].Value.ToString(), @"hh\:mm", null, out HSalida);
 
                         medicoConsultorio = new MedicoConsultorio()
                         {
@@ -286,8 +288,8 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
                             item.Viernes,
                             item.Sabado,
                             item.Domingo,
-                            con.Nombre
-                        };
+                            con.Id
+                 };
 
                 dgvHorarios.Rows.Insert(0, elementos);
             }
@@ -297,6 +299,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
         public Modelo.Medicos CargarMedico() 
         {
             string pathFoto = GuardarFoto();
+            string pathCurricula = GuardarCurricula();
 
             return medico = new Modelo.Medicos()
             {
@@ -304,7 +307,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
                 Apellido = apellidoTextBox.Text,
                 DNI = dNITextBox.Text,
                 Foto = pathFoto,
-                Curricula = curriculaTextBox.Text,
+                Curricula = pathCurricula,
                 Matricula = matriculaTextBox.Text,
                 FechaNac = fechaNacDateTimePicker.Value,
                 CantidadTurnos = int.Parse(cantidadTurnosTextBox.Text),
@@ -322,6 +325,64 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
                 MessageBox.Show("Se modifico el medico");
             else
                 MessageBox.Show("No se pudo guardar");
+
+            foreach (DataGridViewRow item in dgvHorarios.Rows)
+            {
+                TimeSpan Hentrada;
+                TimeSpan.TryParseExact(item.Cells["H_Entrada"].Value.ToString(), @"hh\:mm", null, out Hentrada);
+                TimeSpan HSalida;
+                TimeSpan.TryParseExact(item.Cells["H_Salida"].Value.ToString(), @"hh\:mm", null, out HSalida);
+
+                medicoConsultorio = new MedicoConsultorio()
+                {
+                    Id_Medico = idMedicoModificar,
+                    Id_Consultorio = (int)item.Cells["idCon"].Value,
+                    H_Entrada = Hentrada,
+                    H_Salida = HSalida,
+                    Lunes = (bool)item.Cells["Lu"].Value,
+                    Martes = (bool)item.Cells["Ma"].Value,
+                    Miercoles = (bool)item.Cells["Mi"].Value,
+                    Jueves = (bool)item.Cells["Ju"].Value,
+                    Viernes = (bool)item.Cells["Vi"].Value,
+                    Sabado = (bool)item.Cells["Sa"].Value,
+                    Domingo = (bool)item.Cells["Do"].Value,
+                };
+
+
+
+                MedicoConsultorioNegocio medicoConsultorioNegocio = new MedicoConsultorioNegocio();
+                if (!medico.MedicoConsultorio.Contains(medicoConsultorio))
+                    medicoConsultorioNegocio.Save(medicoConsultorio);
+            }
+        }
+
+        private void btnCurricula_Click(object sender, EventArgs e)
+        {
+            openCurricula.FileName = "";
+            openCurricula.Filter = "Archivos PDF | *.pdf";
+            openCurricula.RestoreDirectory = true;
+            if (openCurricula.ShowDialog() == DialogResult.OK && openCurricula.FileName != "")
+            {
+                string dir = openCurricula.FileName;
+                curriculaTextBox.Text = openCurricula.FileName;
+            }
+        }
+
+        public string GuardarCurricula()
+        {
+            string destino = "";
+            if (curriculaTextBox.Text != "")
+            {
+                destino = Path.Combine(Application.StartupPath, string.Format("Archivos\\{0}", Path.GetFileName(curriculaTextBox.Text)));
+                if (File.Exists(destino))
+                {
+                    MessageBox.Show("Ya existe un archivo con ese nombre");
+                }
+                else
+                    File.Copy(curriculaTextBox.Text, destino);
+            }
+
+            return destino;
         }
     }
 }

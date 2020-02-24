@@ -36,6 +36,15 @@ namespace Proyecto_Consultorio_Medico
             {
                 Vistas.Medicos.AltaMedico altaMedico = new Vistas.Medicos.AltaMedico();
                 altaMedico.MdiParent = this;
+                altaMedico.btnModificar.Enabled = false;
+                altaMedico.Show();
+            }
+            else
+            {
+                Vistas.Medicos.AltaMedico altaMedico = (Vistas.Medicos.AltaMedico) Application.OpenForms["AltaMedico"];
+                altaMedico = new Vistas.Medicos.AltaMedico();
+                altaMedico.MdiParent = this;
+                altaMedico.btnModificar.Enabled = false;
                 altaMedico.Show();
             }
         }
@@ -52,16 +61,32 @@ namespace Proyecto_Consultorio_Medico
 
         private void altaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Vistas.Pacientes.AltaPacientes altaPaciente = new Vistas.Pacientes.AltaPacientes();
-            altaPaciente.MdiParent = this;
-            altaPaciente.Show();
+            if (Validaciones.FormularioNoAbierto("AltaPacientes"))
+            {
+                Vistas.Pacientes.AltaPacientes altaPaciente = new Vistas.Pacientes.AltaPacientes();
+                altaPaciente.MdiParent = this;
+                altaPaciente.btnModificar.Enabled = false;
+                altaPaciente.Show();
+            }
+            else
+            {
+                Vistas.Pacientes.AltaPacientes altaPaciente = (Vistas.Pacientes.AltaPacientes)Application.OpenForms["AltaPacientes"];
+                altaPaciente = new Vistas.Pacientes.AltaPacientes();
+                altaPaciente.MdiParent = this;
+                altaPaciente.btnModificar.Enabled = false;
+                altaPaciente.Show();
+            }
+            
         }
 
         private void listaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Vistas.Pacientes.ListaPacientes listaPaciente = new Vistas.Pacientes.ListaPacientes();
-            listaPaciente.MdiParent = this;
-            listaPaciente.Show();
+            if (Validaciones.FormularioNoAbierto("AltaPacientes"))
+            {
+                Vistas.Pacientes.ListaPacientes listaPaciente = new Vistas.Pacientes.ListaPacientes();
+                listaPaciente.MdiParent = this;
+                listaPaciente.Show();
+            }
         }
     }
 }

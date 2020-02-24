@@ -45,5 +45,10 @@ namespace Proyecto_Consultorio_Medico.Negocios
         {
             return paciente.Search(nombre);
         }
+
+        public IEnumerable<dynamic> GetByMedicos(int idMedico)
+        {
+            return paciente.GetByMedicos(idMedico);
+        }
     }
 }

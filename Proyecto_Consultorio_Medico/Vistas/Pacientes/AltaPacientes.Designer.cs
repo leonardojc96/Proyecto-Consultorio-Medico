@@ -97,12 +97,12 @@
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(32)))), ((int)(((byte)(61)))));
             this.panelHeader.ForeColor = System.Drawing.Color.White;
-            this.panelHeader.Size = new System.Drawing.Size(1370, 55);
+            this.panelHeader.Size = new System.Drawing.Size(751, 55);
             // 
             // nombreLabel
             // 
             nombreLabel.AutoSize = true;
-            nombreLabel.Location = new System.Drawing.Point(31, 97);
+            nombreLabel.Location = new System.Drawing.Point(17, 18);
             nombreLabel.Name = "nombreLabel";
             nombreLabel.Size = new System.Drawing.Size(47, 13);
             nombreLabel.TabIndex = 10;
@@ -277,6 +277,7 @@
             this.panelLabels.Controls.Add(detallesLabel);
             this.panelLabels.Controls.Add(fotoLabel);
             this.panelLabels.Controls.Add(ultimaVisitaLabel);
+            this.panelLabels.Controls.Add(nombreLabel);
             this.panelLabels.Location = new System.Drawing.Point(14, 79);
             this.panelLabels.Name = "panelLabels";
             this.panelLabels.Size = new System.Drawing.Size(97, 335);
@@ -320,7 +321,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(1370, 809);
+            this.ClientSize = new System.Drawing.Size(768, 284);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnFoto);
             this.Controls.Add(this.richTextBox1);
@@ -328,7 +329,6 @@
             this.Controls.Add(this.dNITextBox);
             this.Controls.Add(this.ultimaVisitaDateTimePicker);
             this.Controls.Add(telefonoLabel);
-            this.Controls.Add(nombreLabel);
             this.Controls.Add(this.fotoTextBox);
             this.Controls.Add(this.telefonoTextBox);
             this.Controls.Add(this.nombreTextBox);
@@ -356,7 +356,6 @@
             this.Controls.SetChildIndex(this.nombreTextBox, 0);
             this.Controls.SetChildIndex(this.telefonoTextBox, 0);
             this.Controls.SetChildIndex(this.fotoTextBox, 0);
-            this.Controls.SetChildIndex(nombreLabel, 0);
             this.Controls.SetChildIndex(telefonoLabel, 0);
             this.Controls.SetChildIndex(this.ultimaVisitaDateTimePicker, 0);
             this.Controls.SetChildIndex(this.dNITextBox, 0);

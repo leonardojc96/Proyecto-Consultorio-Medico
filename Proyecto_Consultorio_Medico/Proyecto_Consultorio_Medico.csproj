@@ -100,6 +100,7 @@
     <Compile Include="Modelo\Turnos.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Negocios\ConsultaMedicaNegocio.cs" />
     <Compile Include="Negocios\ConsultoriosNegocio.cs" />
     <Compile Include="Negocios\HistorialNegocios.cs" />
     <Compile Include="Negocios\Inicioadores.cs" />
@@ -143,6 +144,12 @@
     </Compile>
     <Compile Include="Vistas\Pacientes\AltaPacientes.Designer.cs">
       <DependentUpon>AltaPacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Pacientes\ConsultaMedica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Pacientes\ConsultaMedica.Designer.cs">
+      <DependentUpon>ConsultaMedica.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Pacientes\InfoPacientes.cs">
       <SubType>Form</SubType>
@@ -208,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Pacientes\AltaPacientes.resx">
       <DependentUpon>AltaPacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Pacientes\ConsultaMedica.resx">
+      <DependentUpon>ConsultaMedica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Pacientes\InfoPacientes.resx">
       <DependentUpon>InfoPacientes.cs</DependentUpon>

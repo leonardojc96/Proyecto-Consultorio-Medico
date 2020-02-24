@@ -65,8 +65,11 @@
             this.btnAbrirCurricula = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.dgvPacientes = new System.Windows.Forms.DataGridView();
+            this.IdConsulta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnTurnos = new System.Windows.Forms.Button();
+            this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nTurnos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAbrirConsulta = new System.Windows.Forms.Button();
             this.lblPacientes = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             dNILabel = new System.Windows.Forms.Label();
@@ -91,7 +94,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.Size = new System.Drawing.Size(1370, 55);
+            this.panelHeader.Size = new System.Drawing.Size(781, 55);
             // 
             // nombreLabel
             // 
@@ -414,10 +417,11 @@
             this.btnAbrirCurricula.TabIndex = 38;
             this.btnAbrirCurricula.Text = "Ver curricula (PDF)";
             this.btnAbrirCurricula.UseVisualStyleBackColor = true;
+            this.btnAbrirCurricula.Click += new System.EventHandler(this.btnAbrirCurricula_Click);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(659, 81);
+            this.btnSalir.Location = new System.Drawing.Point(693, 81);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 39;
@@ -431,12 +435,22 @@
             this.dgvPacientes.AllowUserToDeleteRows = false;
             this.dgvPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPacientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nombre});
-            this.dgvPacientes.Location = new System.Drawing.Point(439, 80);
+            this.IdConsulta,
+            this.Nombre,
+            this.DNI,
+            this.nTurnos});
+            this.dgvPacientes.Location = new System.Drawing.Point(432, 80);
             this.dgvPacientes.Name = "dgvPacientes";
             this.dgvPacientes.ReadOnly = true;
-            this.dgvPacientes.Size = new System.Drawing.Size(214, 232);
+            this.dgvPacientes.Size = new System.Drawing.Size(255, 232);
             this.dgvPacientes.TabIndex = 40;
+            // 
+            // IdConsulta
+            // 
+            this.IdConsulta.HeaderText = "Id de la consulta";
+            this.IdConsulta.Name = "IdConsulta";
+            this.IdConsulta.ReadOnly = true;
+            this.IdConsulta.Visible = false;
             // 
             // Nombre
             // 
@@ -444,31 +458,44 @@
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
             // 
-            // btnTurnos
+            // DNI
             // 
-            this.btnTurnos.Location = new System.Drawing.Point(659, 122);
-            this.btnTurnos.Name = "btnTurnos";
-            this.btnTurnos.Size = new System.Drawing.Size(75, 23);
-            this.btnTurnos.TabIndex = 41;
-            this.btnTurnos.Text = "Sacar turno";
-            this.btnTurnos.UseVisualStyleBackColor = true;
+            this.DNI.HeaderText = "DNI";
+            this.DNI.Name = "DNI";
+            this.DNI.ReadOnly = true;
+            // 
+            // nTurnos
+            // 
+            this.nTurnos.HeaderText = "Nº de turno";
+            this.nTurnos.Name = "nTurnos";
+            this.nTurnos.ReadOnly = true;
+            // 
+            // btnAbrirConsulta
+            // 
+            this.btnAbrirConsulta.Location = new System.Drawing.Point(693, 122);
+            this.btnAbrirConsulta.Name = "btnAbrirConsulta";
+            this.btnAbrirConsulta.Size = new System.Drawing.Size(88, 23);
+            this.btnAbrirConsulta.TabIndex = 41;
+            this.btnAbrirConsulta.Text = "Abrir consulta";
+            this.btnAbrirConsulta.UseVisualStyleBackColor = true;
             // 
             // lblPacientes
             // 
             this.lblPacientes.AutoSize = true;
             this.lblPacientes.Location = new System.Drawing.Point(527, 65);
             this.lblPacientes.Name = "lblPacientes";
-            this.lblPacientes.Size = new System.Drawing.Size(54, 13);
+            this.lblPacientes.Size = new System.Drawing.Size(90, 13);
             this.lblPacientes.TabIndex = 42;
-            this.lblPacientes.Text = "Pacientes";
+            this.lblPacientes.Text = "Ultimos pacientes";
+            this.lblPacientes.Click += new System.EventHandler(this.lblPacientes_Click);
             // 
             // InfoMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 892);
+            this.ClientSize = new System.Drawing.Size(781, 367);
             this.Controls.Add(this.lblPacientes);
-            this.Controls.Add(this.btnTurnos);
+            this.Controls.Add(this.btnAbrirConsulta);
             this.Controls.Add(this.dgvPacientes);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAbrirCurricula);
@@ -508,7 +535,7 @@
             this.Controls.SetChildIndex(this.btnAbrirCurricula, 0);
             this.Controls.SetChildIndex(this.btnSalir, 0);
             this.Controls.SetChildIndex(this.dgvPacientes, 0);
-            this.Controls.SetChildIndex(this.btnTurnos, 0);
+            this.Controls.SetChildIndex(this.btnAbrirConsulta, 0);
             this.Controls.SetChildIndex(this.lblPacientes, 0);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxFoto)).EndInit();
             this.panelLabels.ResumeLayout(false);
@@ -550,8 +577,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Consultorio;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.DataGridView dgvPacientes;
-        private System.Windows.Forms.Button btnTurnos;
+        private System.Windows.Forms.Button btnAbrirConsulta;
         private System.Windows.Forms.Label lblPacientes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdConsulta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nTurnos;
     }
 }

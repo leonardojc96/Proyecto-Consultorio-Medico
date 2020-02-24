@@ -131,5 +131,19 @@ namespace Proyecto_Consultorio_Medico.Modelo
                 return db.Pacientes.Where(x => x.Nombre.StartsWith(nombre)).ToList();
             }
         }
+
+        public IEnumerable<dynamic> GetByMedicos (int idMedico)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                var pacientes = (from p in db.Pacientes
+                       join h in db.HistorialConsultas on p.Id equals h.Id_Paciente
+                       join c in db.ConsultaMedica on h.Id equals c.Id_Historico
+                       where c.Id_Medico == idMedico
+                       select new { p.Nombre, p.Apellido, p.DNI, c.Fecha }).ToList();
+
+                return pacientes;
+            }
+        }
     }
 }
