@@ -75,13 +75,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnSalir;
-<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1370, 892);
-=======
-            this.ClientSize = new System.Drawing.Size(768, 367);
             this.Controls.Add(this.cbFiltroEspecialidades);
             this.Controls.Add(this.lblFiltrar);
->>>>>>> c35ae9d19745de469e1c2a1fd1b2beeb8d50637c
             this.Name = "ListaMedicos";
             this.Text = "ListaMedicos";
             this.Load += new System.EventHandler(this.ListaMedicos_Load);

@@ -164,12 +164,6 @@
             // 
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
-            // panelHeader
-            // 
-            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(32)))), ((int)(((byte)(61)))));
-            this.panelHeader.ForeColor = System.Drawing.Color.White;
-            this.panelHeader.Size = new System.Drawing.Size(1370, 55);
-            // 
             // nombreLabel
             // 
             nombreLabel.AutoSize = true;
