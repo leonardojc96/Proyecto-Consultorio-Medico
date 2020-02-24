@@ -21,6 +21,8 @@ namespace Proyecto_Consultorio_Medico
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             Inicioadores.FormInicio(this);
+            Modelo.Turnos turnos = new Modelo.Turnos();
+            MessageBox.Show(turnos.GetCantidadTurnos(1).ToString());
 
             if (Validaciones.FormularioNoAbierto("Menu"))
             {

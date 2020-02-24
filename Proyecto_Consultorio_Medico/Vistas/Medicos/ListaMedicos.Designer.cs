@@ -54,7 +54,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.Size = new System.Drawing.Size(781, 55);
+            this.panelHeader.Size = new System.Drawing.Size(806, 55);
             // 
             // lblFiltrar
             // 
@@ -79,7 +79,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(781, 367);
+            this.ClientSize = new System.Drawing.Size(806, 321);
             this.Controls.Add(this.cbFiltroEspecialidades);
             this.Controls.Add(this.lblFiltrar);
             this.Name = "ListaMedicos";

@@ -10,6 +10,7 @@
 namespace Proyecto_Consultorio_Medico.Modelo
 {
     using System;
+    using System.Linq;
     using System.Collections.Generic;
     
     public partial class Turnos
@@ -40,6 +41,18 @@ namespace Proyecto_Consultorio_Medico.Modelo
                     return true;
                 }
                 return false;
+            }
+        }
+
+        public int GetCantidadTurnos(int idMedico)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                return (from t in db.Turnos
+                       join c in db.ConsultaMedica on t.Id equals c.Id_Turno
+                       join m in db.Medicos on c.Id_Medico equals m.Id
+                       where DateTime.Today == c.Fecha && m.Id == idMedico
+                       select t).Count();
             }
         }
     }

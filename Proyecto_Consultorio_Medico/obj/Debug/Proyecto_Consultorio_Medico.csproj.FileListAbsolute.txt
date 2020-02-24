@@ -1,18 +1,3 @@
-C:\Users\Leonardo\source\repos\Proyecto_Consultorio_Medico\Proyecto_Consultorio_Medico\bin\Debug\Proyecto_Consultorio_Medico.exe.config
-C:\Users\Leonardo\source\repos\Proyecto_Consultorio_Medico\Proyecto_Consultorio_Medico\bin\Debug\Proyecto_Consultorio_Medico.exe
-C:\Users\Leonardo\source\repos\Proyecto_Consultorio_Medico\Proyecto_Consultorio_Medico\bin\Debug\Proyecto_Consultorio_Medico.pdb
-C:\Users\Leonardo\source\repos\Proyecto_Consultorio_Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.csprojAssemblyReference.cache
-C:\Users\Leonardo\source\repos\Proyecto_Consultorio_Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Properties.Resources.resources
-C:\Users\Leonardo\source\repos\Proyecto_Consultorio_Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.csproj.GenerateResource.cache
-C:\Users\Leonardo\source\repos\Proyecto_Consultorio_Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.exe
-C:\Users\Leonardo\source\repos\Proyecto_Consultorio_Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.pdb
-C:\Users\Leonardo\source\repos\Proyecto_Consultorio_Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.frmPrincipal.resources
-C:\Users\Leonardo\source\repos\Proyecto_Consultorio_Medico\Proyecto_Consultorio_Medico\bin\Debug\EntityFramework.dll
-C:\Users\Leonardo\source\repos\Proyecto_Consultorio_Medico\Proyecto_Consultorio_Medico\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Leonardo\source\repos\Proyecto_Consultorio_Medico\Proyecto_Consultorio_Medico\bin\Debug\EntityFramework.xml
-C:\Users\Leonardo\source\repos\Proyecto_Consultorio_Medico\Proyecto_Consultorio_Medico\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Leonardo\source\repos\Proyecto_Consultorio_Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.csproj.CopyComplete
-C:\Users\Leonardo\source\repos\Proyecto_Consultorio_Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Plantilla.resources
 C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\bin\Debug\Proyecto_Consultorio_Medico.exe.config
 C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\bin\Debug\Proyecto_Consultorio_Medico.exe
 C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\bin\Debug\Proyecto_Consultorio_Medico.pdb
@@ -21,51 +6,22 @@ C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Med
 C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\bin\Debug\EntityFramework.xml
 C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.csprojAssemblyReference.cache
+C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Medicos.AltaMedico.resources
+C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Medicos.InfoMedico.resources
+C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Medicos.ListaMedicos.resources
+C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Menu.resources
+C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Pacientes.AltaPacientes.resources
+C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Pacientes.ConsultaMedica.resources
+C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Pacientes.InfoPacientes.resources
+C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Pacientes.ListaPacientes.resources
+C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Pacientes.NuevoTurno.resources
+C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Plantillas.Plantilla.resources
+C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Plantillas.PlantillaAlta.resources
+C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Plantillas.PlantillaInfo.resources
+C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Plantillas.PlantillaListas.resources
 C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.frmPrincipal.resources
 C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Properties.Resources.resources
 C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.csproj.GenerateResource.cache
 C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.csproj.CopyComplete
 C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.exe
 C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.pdb
-C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Menu.resources
-C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Medicos.AltaMedico.resources
-C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Plantillas.Plantilla.resources
-C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Plantillas.PlantillaAlta.resources
-C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Plantillas.PlantillaInfo.resources
-C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Medicos.ListaMedicos.resources
-C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Plantillas.PlantillaListas.resources
-C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Medicos.InfoMedico.resources
-C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\bin\Debug\Proyecto_Consultorio_Medico.exe.config
-C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\bin\Debug\Proyecto_Consultorio_Medico.exe
-C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\bin\Debug\Proyecto_Consultorio_Medico.pdb
-C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\bin\Debug\EntityFramework.dll
-C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\bin\Debug\EntityFramework.xml
-C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.csprojAssemblyReference.cache
-C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Medicos.AltaMedico.resources
-C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Medicos.InfoMedico.resources
-C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Medicos.ListaMedicos.resources
-C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Menu.resources
-C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Plantillas.Plantilla.resources
-C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Plantillas.PlantillaAlta.resources
-C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Plantillas.PlantillaInfo.resources
-C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Plantillas.PlantillaListas.resources
-C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.frmPrincipal.resources
-C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Properties.Resources.resources
-C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.csproj.GenerateResource.cache
-C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.csproj.CopyComplete
-C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.exe
-C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.pdb
-C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Pacientes.AltaPacientes.resources
-C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Pacientes.ListaPacientes.resources
-C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Pacientes.InfoPacientes.resources
-<<<<<<< HEAD
-C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Pacientes.NuevoTurno.resources
-=======
-C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Pacientes.AltaPacientes.resources
-C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Pacientes.InfoPacientes.resources
-C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Pacientes.ListaPacientes.resources
-C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Pacientes.ConsultaMedica.resources
->>>>>>> c9b418580a1c6b78a75cbeceb99204f98fad9cb9
-C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Pacientes.NuevoTurno.resources
