@@ -25,6 +25,7 @@
         <AssociationConnector Association="Model.FK_MedicoConsultorio_Medicos" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK_MedicoEspecialidad_Medicos" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK_Turnos_Pacientes" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ConsultaMedica_Turnos" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

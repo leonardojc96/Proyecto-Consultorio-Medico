@@ -21,12 +21,12 @@ namespace Proyecto_Consultorio_Medico.Modelo
             this.MedicoConsultorio = new HashSet<MedicoConsultorio>();
             this.Turnos = new HashSet<Turnos>();
         }
-    
+
         public int Id { get; set; }
         public int Id_Especialidad { get; set; }
         public string Nombre { get; set; }
         public Nullable<bool> HayTurnos { get; set; }
-    
+
         public virtual Especialidades Especialidades { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MedicoConsultorio> MedicoConsultorio { get; set; }

@@ -13,20 +13,56 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
 {
     public partial class ConsultaMedica : Plantillas.PlantillaAlta
     {
+        ConsultaMedicaNegocio consultaMedicaNegocio = new ConsultaMedicaNegocio();
+        MedicosNegocio medicosNegocio = new MedicosNegocio();
+        PacienteNegocio pacienteNegocio = new PacienteNegocio();
+        Modelo.ConsultaMedica consulta = new Modelo.ConsultaMedica();
+        Modelo.Medicos medicos = new Modelo.Medicos();
+        Modelo.Pacientes pacientes = new Modelo.Pacientes();
+
         public ConsultaMedica()
         {
             InitializeComponent();
         }
 
-        public ConsultaMedica(string titulo) : base(titulo)
+        public ConsultaMedica(string titulo, int idConsulta) : base(titulo)
         {
+            consulta = consultaMedicaNegocio.Get(idConsulta);
+            medicos = medicosNegocio.Get(consulta.Id_Medico);
+            var pac = pacienteNegocio.GetByHistorial(consulta.Id_Historico);
+            pacientes = pacienteNegocio.Get(pac.Id);
+
             InitializeComponent();
         }
 
+        
+
         private void ConsultaMedica_Load(object sender, EventArgs e)
         {
+            dataGridView1.Visible = false;
             Inicioadores.TextoBlanco(panelAlta);
+            CambiarTitulo("Consulta medica: "+pacientes.Nombre + " " + pacientes.Apellido);
+
+            id_MedicoTextBox.Text = medicos.Nombre + " " + medicos.Apellido;
+            txtPaciente.Text = pacientes.Nombre + pacientes.Apellido;
         }
 
+        private void btnEstudios_Click(object sender, EventArgs e)
+        {
+            openEstudios.FileName = "";
+            openEstudios.Filter = "Archivos PDF | *.pdf";
+            openEstudios.RestoreDirectory = true;
+            if (openEstudios.ShowDialog() == DialogResult.OK && openEstudios.FileName != "")
+            {
+                string dir = openEstudios.FileName;
+                estudiosTextBox.Text = openEstudios.FileName;
+            }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            consulta.Diagnostico = diagnosticoTextBox.Text;
+
+        }
     }
 }

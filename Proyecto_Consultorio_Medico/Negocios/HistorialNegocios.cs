@@ -25,5 +25,11 @@ namespace Proyecto_Consultorio_Medico.Negocios
         {
             return historial.Get(id);
         }
+
+        public IEnumerable<dynamic> GetTunosPendientes(int idMedico)
+        {
+            return historial.GetTunosPendientes(idMedico);
+        }
+
     }
 }

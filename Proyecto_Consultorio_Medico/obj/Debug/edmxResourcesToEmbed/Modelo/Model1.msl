@@ -4,6 +4,7 @@
     <EntitySetMapping Name="ConsultaMedica">
       <EntityTypeMapping TypeName="Model.ConsultaMedica">
         <MappingFragment StoreEntitySet="ConsultaMedica">
+          <ScalarProperty Name="Id_Turno" ColumnName="Id_Turno" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Id_Medico" ColumnName="Id_Medico" />
           <ScalarProperty Name="Id_Historico" ColumnName="Id_Historico" />

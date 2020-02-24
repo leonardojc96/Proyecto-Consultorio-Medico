@@ -20,6 +20,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
         MedicoConsultorioNegocio medicoConsultorioNegocio = new MedicoConsultorioNegocio();
         ConsultoriosNegocio consultoriosNegocio = new ConsultoriosNegocio();
         PacienteNegocio pacienteNegocio = new PacienteNegocio();
+        HistorialNegocios historialNegocios = new HistorialNegocios();
         ConsultaMedicaNegocio consultaMedicaNegocio = new ConsultaMedicaNegocio();
 
         public InfoMedico()
@@ -38,7 +39,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
         private void InfoMedico_Load(object sender, EventArgs e)
         {
             Inicioadores.DataGrid(dgvEspecialidades);
-            Inicioadores.DataGrid(dgvPacientes);
+            Inicioadores.DataGrid(dgvConsultasPendientes);
             Inicioadores.Labels(lblEspecialidades);
             Inicioadores.Labels(lblHorarios);
             Inicioadores.Labels(lblPacientes);
@@ -94,7 +95,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
             // carga turnos pendientes
             try
             {
-                foreach (var item in consultaMedicaNegocio.GetTunosPendientes(medicos.Id))
+                foreach (var item in historialNegocios.GetTunosPendientes(medicos.Id))
                 {
                     object[] elementos =
                     {
@@ -103,7 +104,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
                         item.DNI
                     };
 
-                    dgvPacientes.Rows.Insert(0, elementos);
+                    dgvConsultasPendientes.Rows.Insert(0, elementos);
                 }
             }
             catch (Exception ex)
@@ -138,6 +139,23 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
             catch (Exception)
             {
                 MessageBox.Show("El medico no tiene curricula cargada");
+            }
+        }
+
+        private void btnAbrirConsulta_Click(object sender, EventArgs e)
+        {
+            if (dgvConsultasPendientes.CurrentRow.Index != -1)
+            {
+                int index = dgvConsultasPendientes.CurrentRow.Index;
+                int idConsulta = int.Parse(dgvConsultasPendientes.Rows[index].Cells["IdConsulta"].Value.ToString());
+
+
+                if (Validaciones.FormularioNoAbierto("ConsultaMedica"))
+                {
+                    Vistas.Pacientes.ConsultaMedica consultaMedica = new Pacientes.ConsultaMedica("", idConsulta);
+                    consultaMedica.MdiParent = this.Parent.FindForm();
+                    consultaMedica.Show();
+                }
             }
         }
     }

@@ -50,5 +50,10 @@ namespace Proyecto_Consultorio_Medico.Negocios
         {
             return paciente.GetByMedicos(idMedico);
         }
+
+        public dynamic GetByHistorial(int idHistorial)
+        {
+            return paciente.GetByHistorial(idHistorial);
+        }
     }
 }

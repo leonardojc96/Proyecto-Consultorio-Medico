@@ -11,9 +11,14 @@ namespace Proyecto_Consultorio_Medico.Negocios
     {
         ConsultaMedica consulta = new ConsultaMedica();
 
-        public IEnumerable<dynamic> GetTunosPendientes(int idMedico)
+        public ConsultaMedica Get(int id)
         {
-            return consulta.GetTunosPendientes(idMedico);
+            return consulta.Get(id);
+        }
+
+        public bool Save(ConsultaMedica consultaMedica)
+        {
+            return consulta.Save(consultaMedica);
         }
     }
 }

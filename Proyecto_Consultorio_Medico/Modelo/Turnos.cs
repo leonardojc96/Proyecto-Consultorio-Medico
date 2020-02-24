@@ -14,12 +14,21 @@ namespace Proyecto_Consultorio_Medico.Modelo
     
     public partial class Turnos
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Turnos()
+        {
+            this.ConsultaMedica = new HashSet<ConsultaMedica>();
+        }
+    
         public int Id { get; set; }
         public int Id_Paciente { get; set; }
         public int Id_Consultorio { get; set; }
     
         public virtual Consultorios Consultorios { get; set; }
         public virtual Pacientes Pacientes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ConsultaMedica> ConsultaMedica { get; set; }
+
 
         public bool Save(Turnos turno)
         {

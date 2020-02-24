@@ -24,7 +24,7 @@ namespace Proyecto_Consultorio_Medico.Modelo
             this.MedicoConsultorio = new HashSet<MedicoConsultorio>();
             this.MedicoEspecialidad = new HashSet<MedicoEspecialidad>();
         }
-    
+
         public int Id { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
@@ -37,7 +37,7 @@ namespace Proyecto_Consultorio_Medico.Modelo
         public string ContactoAux { get; set; }
         public string Foto { get; set; }
         public string Curricula { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ConsultaMedica> ConsultaMedica { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -89,7 +89,7 @@ namespace Proyecto_Consultorio_Medico.Modelo
                     db.Entry(medicos).State = System.Data.Entity.EntityState.Deleted;
                     db.SaveChanges();
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }

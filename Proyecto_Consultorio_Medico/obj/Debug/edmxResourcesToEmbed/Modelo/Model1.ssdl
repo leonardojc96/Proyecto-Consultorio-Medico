@@ -19,6 +19,7 @@
     <Property Name="EstudiosSolicitados" Type="varchar" MaxLength="100" />
     <Property Name="EstudiosResibidos" Type="varchar" MaxLength="100" />
     <Property Name="ResultadosEstudiosResibidos" Type="varchar" MaxLength="100" />
+    <Property Name="Id_Turno" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Consultorios">
     <Key>
@@ -145,6 +146,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ConsultaMedica_Turnos">
+    <End Role="Turnos" Type="Self.Turnos" Multiplicity="1" />
+    <End Role="ConsultaMedica" Type="Self.ConsultaMedica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Turnos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ConsultaMedica">
+        <PropertyRef Name="Id_Turno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Consultorios_Especialidades">
     <End Role="Especialidades" Type="Self.Especialidades" Multiplicity="1" />
     <End Role="Consultorios" Type="Self.Consultorios" Multiplicity="*" />
@@ -258,6 +271,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_ConsultaMedica_Medicos" Association="Self.FK_ConsultaMedica_Medicos">
       <End Role="Medicos" EntitySet="Medicos" />
+      <End Role="ConsultaMedica" EntitySet="ConsultaMedica" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConsultaMedica_Turnos" Association="Self.FK_ConsultaMedica_Turnos">
+      <End Role="Turnos" EntitySet="Turnos" />
       <End Role="ConsultaMedica" EntitySet="ConsultaMedica" />
     </AssociationSet>
     <AssociationSet Name="FK_Consultorios_Especialidades" Association="Self.FK_Consultorios_Especialidades">

@@ -23,7 +23,7 @@ namespace Proyecto_Consultorio_Medico.Modelo
             this.HistorialConsultas = new HashSet<HistorialConsultas>();
             this.Turnos = new HashSet<Turnos>();
         }
-    
+
         public int Id { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
@@ -36,7 +36,7 @@ namespace Proyecto_Consultorio_Medico.Modelo
         public string Foto { get; set; }
         public Nullable<System.DateTime> UltimaVisita { get; set; }
         public string Detalles { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HistorialConsultas> HistorialConsultas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -61,6 +61,17 @@ namespace Proyecto_Consultorio_Medico.Modelo
             using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
             {
                 return db.Pacientes.ToList();
+            }
+        }
+
+        public dynamic GetByHistorial(int idHistorial)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                return (from p in db.Pacientes 
+                       join h in db.HistorialConsultas on p.Id equals h.Id_Paciente
+                       where h.Id == idHistorial
+                       select new { p.Id, p.Nombre, p.Apellido, p.DNI }).FirstOrDefault();
             }
         }
 
@@ -89,14 +100,14 @@ namespace Proyecto_Consultorio_Medico.Modelo
                     db.Entry(paciente).State = System.Data.Entity.EntityState.Deleted;
                     db.SaveChanges();
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message); 
+                    MessageBox.Show(ex.Message);
                 }
             }
         }
 
-        public bool Update (int id, Pacientes paciente)
+        public bool Update(int id, Pacientes paciente)
         {
             using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
             {
@@ -122,7 +133,7 @@ namespace Proyecto_Consultorio_Medico.Modelo
                 }
             }
         }
-        
+
 
         public ICollection<Pacientes> Search(string nombre)
         {
@@ -132,15 +143,15 @@ namespace Proyecto_Consultorio_Medico.Modelo
             }
         }
 
-        public IEnumerable<dynamic> GetByMedicos (int idMedico)
+        public IEnumerable<dynamic> GetByMedicos(int idMedico)
         {
             using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
             {
                 var pacientes = (from p in db.Pacientes
-                       join h in db.HistorialConsultas on p.Id equals h.Id_Paciente
-                       join c in db.ConsultaMedica on h.Id equals c.Id_Historico
-                       where c.Id_Medico == idMedico
-                       select new { p.Nombre, p.Apellido, p.DNI, c.Fecha }).ToList();
+                                 join h in db.HistorialConsultas on p.Id equals h.Id_Paciente
+                                 join c in db.ConsultaMedica on h.Id equals c.Id_Historico
+                                 where c.Id_Medico == idMedico
+                                 select new { p.Nombre, p.Apellido, p.DNI, c.Fecha }).ToList();
 
                 return pacientes;
             }

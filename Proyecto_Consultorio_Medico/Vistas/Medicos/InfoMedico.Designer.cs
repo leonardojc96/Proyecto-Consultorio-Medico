@@ -64,7 +64,7 @@
             this.lblEspecialidades = new System.Windows.Forms.Label();
             this.btnAbrirCurricula = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.dgvPacientes = new System.Windows.Forms.DataGridView();
+            this.dgvConsultasPendientes = new System.Windows.Forms.DataGridView();
             this.IdConsulta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,7 +84,7 @@
             this.panelLabels.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEspecialidades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHorarios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultasPendientes)).BeginInit();
             this.SuspendLayout();
             // 
             // picBoxFoto
@@ -429,21 +429,21 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // dgvPacientes
+            // dgvConsultasPendientes
             // 
-            this.dgvPacientes.AllowUserToAddRows = false;
-            this.dgvPacientes.AllowUserToDeleteRows = false;
-            this.dgvPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPacientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvConsultasPendientes.AllowUserToAddRows = false;
+            this.dgvConsultasPendientes.AllowUserToDeleteRows = false;
+            this.dgvConsultasPendientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvConsultasPendientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdConsulta,
             this.Nombre,
             this.DNI,
             this.nTurnos});
-            this.dgvPacientes.Location = new System.Drawing.Point(432, 80);
-            this.dgvPacientes.Name = "dgvPacientes";
-            this.dgvPacientes.ReadOnly = true;
-            this.dgvPacientes.Size = new System.Drawing.Size(255, 232);
-            this.dgvPacientes.TabIndex = 40;
+            this.dgvConsultasPendientes.Location = new System.Drawing.Point(432, 80);
+            this.dgvConsultasPendientes.Name = "dgvConsultasPendientes";
+            this.dgvConsultasPendientes.ReadOnly = true;
+            this.dgvConsultasPendientes.Size = new System.Drawing.Size(255, 232);
+            this.dgvConsultasPendientes.TabIndex = 40;
             // 
             // IdConsulta
             // 
@@ -478,6 +478,7 @@
             this.btnAbrirConsulta.TabIndex = 41;
             this.btnAbrirConsulta.Text = "Abrir consulta";
             this.btnAbrirConsulta.UseVisualStyleBackColor = true;
+            this.btnAbrirConsulta.Click += new System.EventHandler(this.btnAbrirConsulta_Click);
             // 
             // lblPacientes
             // 
@@ -496,7 +497,7 @@
             this.ClientSize = new System.Drawing.Size(781, 367);
             this.Controls.Add(this.lblPacientes);
             this.Controls.Add(this.btnAbrirConsulta);
-            this.Controls.Add(this.dgvPacientes);
+            this.Controls.Add(this.dgvConsultasPendientes);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAbrirCurricula);
             this.Controls.Add(this.lblEspecialidades);
@@ -534,7 +535,7 @@
             this.Controls.SetChildIndex(this.lblEspecialidades, 0);
             this.Controls.SetChildIndex(this.btnAbrirCurricula, 0);
             this.Controls.SetChildIndex(this.btnSalir, 0);
-            this.Controls.SetChildIndex(this.dgvPacientes, 0);
+            this.Controls.SetChildIndex(this.dgvConsultasPendientes, 0);
             this.Controls.SetChildIndex(this.btnAbrirConsulta, 0);
             this.Controls.SetChildIndex(this.lblPacientes, 0);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxFoto)).EndInit();
@@ -542,7 +543,7 @@
             this.panelLabels.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEspecialidades)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHorarios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultasPendientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -576,7 +577,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Domingo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Consultorio;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.DataGridView dgvPacientes;
+        private System.Windows.Forms.DataGridView dgvConsultasPendientes;
         private System.Windows.Forms.Button btnAbrirConsulta;
         private System.Windows.Forms.Label lblPacientes;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdConsulta;

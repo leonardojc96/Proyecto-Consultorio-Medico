@@ -18,7 +18,7 @@ namespace Proyecto_Consultorio_Medico.Modelo
         public int Id { get; set; }
         public int Id_Medico { get; set; }
         public int Id_Especialidad { get; set; }
-    
+
         public virtual Especialidades Especialidades { get; set; }
         public virtual Medicos Medicos { get; set; }
 

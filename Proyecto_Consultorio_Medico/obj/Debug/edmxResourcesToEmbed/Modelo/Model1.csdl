@@ -21,6 +21,8 @@
     <Property Name="ResultadosEstudiosResibidos" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="HistorialConsultas" Relationship="Self.FK_ConsultaMedica_HistorialConsultas" FromRole="ConsultaMedica" ToRole="HistorialConsultas" />
     <NavigationProperty Name="Medicos" Relationship="Self.FK_ConsultaMedica_Medicos" FromRole="ConsultaMedica" ToRole="Medicos" />
+    <Property Name="Id_Turno" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Turnos" Relationship="Model.FK_ConsultaMedica_Turnos" FromRole="ConsultaMedica" ToRole="Turnos" />
   </EntityType>
   <EntityType Name="Consultorios">
     <Key>
@@ -140,6 +142,7 @@
     <Property Name="Id_Consultorio" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Consultorios" Relationship="Self.FK_Turnos_Consultorios" FromRole="Turnos" ToRole="Consultorios" />
     <NavigationProperty Name="Pacientes" Relationship="Self.FK_Turnos_Pacientes" FromRole="Turnos" ToRole="Pacientes" />
+    <NavigationProperty Name="ConsultaMedica" Relationship="Model.FK_ConsultaMedica_Turnos" FromRole="Turnos" ToRole="ConsultaMedica" />
   </EntityType>
   <Association Name="FK_ConsultaMedica_HistorialConsultas">
     <End Role="HistorialConsultas" Type="Self.HistorialConsultas" Multiplicity="1" />
@@ -312,5 +315,21 @@
       <End Role="Pacientes" EntitySet="Pacientes" />
       <End Role="Turnos" EntitySet="Turnos" />
     </AssociationSet>
+    <AssociationSet Name="FK_ConsultaMedica_Turnos" Association="Model.FK_ConsultaMedica_Turnos">
+      <End Role="Turnos" EntitySet="Turnos" />
+      <End Role="ConsultaMedica" EntitySet="ConsultaMedica" />
+    </AssociationSet>
   </EntityContainer>
+  <Association Name="FK_ConsultaMedica_Turnos">
+    <End Type="Model.Turnos" Role="Turnos" Multiplicity="1" />
+    <End Type="Model.ConsultaMedica" Role="ConsultaMedica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Turnos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ConsultaMedica">
+        <PropertyRef Name="Id_Turno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
