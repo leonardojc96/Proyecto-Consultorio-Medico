@@ -40,8 +40,15 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
             Inicioadores.ComboBox(cbEspecialidad, nespecialidades.GetEspecialidades());
             dataGridView1.Visible = false;
 
-            cbEspecialidad.SelectedIndex = 1;
-            cbEspecialidad.SelectedIndex = 0;
+            try
+            {
+                cbEspecialidad.SelectedIndex = 1;
+                cbEspecialidad.SelectedIndex = 0;
+            }
+            catch (Exception)
+            {
+            }
+            
 
         }
 
