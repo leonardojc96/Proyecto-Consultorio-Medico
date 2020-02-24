@@ -21,6 +21,11 @@ namespace Proyecto_Consultorio_Medico.Negocios
             return medico.GetMedicoByName(nombre);
         }
 
+        public Medicos GetMedicoByLastName(string apellido)
+        {
+            return medico.GetMedicoByLastName(apellido);
+        }
+
         public Medicos Get(int id)
         {
             return medico.Get(id);

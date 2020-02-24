@@ -109,6 +109,7 @@
     <Compile Include="Negocios\MedicosNegocio.cs" />
     <Compile Include="Negocios\Nespecialidades.cs" />
     <Compile Include="Negocios\PacienteNegocio.cs" />
+    <Compile Include="Negocios\TurnoNegocio.cs" />
     <Compile Include="Negocios\Validaciones.cs" />
     <Compile Include="Proyecto_centro_medicoDataSet.Designer.cs">
       <AutoGen>True</AutoGen>

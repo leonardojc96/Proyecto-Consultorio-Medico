@@ -28,26 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbMedicos = new System.Windows.Forms.ComboBox();
-            this.proyecto_centro_medicoDataSet = new Proyecto_Consultorio_Medico.Proyecto_centro_medicoDataSet();
-            this.medicosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.medicosTableAdapter = new Proyecto_Consultorio_Medico.Proyecto_centro_medicoDataSetTableAdapters.MedicosTableAdapter();
             this.cmbEspecialidad = new System.Windows.Forms.ComboBox();
-            this.especialidadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.especialidadesTableAdapter = new Proyecto_Consultorio_Medico.Proyecto_centro_medicoDataSetTableAdapters.EspecialidadesTableAdapter();
-            this.fKConsultoriosEspecialidadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.consultoriosTableAdapter = new Proyecto_Consultorio_Medico.Proyecto_centro_medicoDataSetTableAdapters.ConsultoriosTableAdapter();
-            this.especialidadesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.Label3 = new System.Windows.Forms.Label();
+            this.lblTurno = new System.Windows.Forms.Label();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.txtTurnos = new System.Windows.Forms.TextBox();
             this.panelHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.proyecto_centro_medicoDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.medicosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.especialidadesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKConsultoriosEspecialidadesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.especialidadesBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHeader
@@ -85,55 +76,62 @@
             this.cmbMedicos.Name = "cmbMedicos";
             this.cmbMedicos.Size = new System.Drawing.Size(167, 21);
             this.cmbMedicos.TabIndex = 3;
-            // 
-            // proyecto_centro_medicoDataSet
-            // 
-            this.proyecto_centro_medicoDataSet.DataSetName = "Proyecto_centro_medicoDataSet";
-            this.proyecto_centro_medicoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // medicosBindingSource
-            // 
-            this.medicosBindingSource.DataMember = "Medicos";
-            this.medicosBindingSource.DataSource = this.proyecto_centro_medicoDataSet;
-            // 
-            // medicosTableAdapter
-            // 
-            this.medicosTableAdapter.ClearBeforeFill = true;
+            this.cmbMedicos.SelectedIndexChanged += new System.EventHandler(this.cmbMedicos_SelectedIndexChanged);
             // 
             // cmbEspecialidad
             // 
-            this.cmbEspecialidad.DataSource = this.especialidadesBindingSource1;
-            this.cmbEspecialidad.DisplayMember = "Nombre";
             this.cmbEspecialidad.FormattingEnabled = true;
             this.cmbEspecialidad.Location = new System.Drawing.Point(106, 78);
             this.cmbEspecialidad.Name = "cmbEspecialidad";
             this.cmbEspecialidad.Size = new System.Drawing.Size(158, 21);
             this.cmbEspecialidad.TabIndex = 4;
-            this.cmbEspecialidad.ValueMember = "Id";
             this.cmbEspecialidad.SelectedIndexChanged += new System.EventHandler(this.cmbEspecialidad_SelectedIndexChanged);
+            this.cmbEspecialidad.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cmbEspecialidad_MouseClick);
             // 
-            // especialidadesBindingSource
+            // btnAceptar
             // 
-            this.especialidadesBindingSource.DataMember = "Especialidades";
-            this.especialidadesBindingSource.DataSource = this.proyecto_centro_medicoDataSet;
+            this.btnAceptar.Location = new System.Drawing.Point(606, 334);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(89, 28);
+            this.btnAceptar.TabIndex = 5;
+            this.btnAceptar.Text = "Dar turno";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // especialidadesTableAdapter
+            // Label3
             // 
-            this.especialidadesTableAdapter.ClearBeforeFill = true;
+            this.Label3.AutoSize = true;
+            this.Label3.Location = new System.Drawing.Point(46, 164);
+            this.Label3.Name = "Label3";
+            this.Label3.Size = new System.Drawing.Size(98, 13);
+            this.Label3.TabIndex = 6;
+            this.Label3.Text = "Turnos disponibles:";
             // 
-            // fKConsultoriosEspecialidadesBindingSource
+            // lblTurno
             // 
-            this.fKConsultoriosEspecialidadesBindingSource.DataMember = "FK_Consultorios_Especialidades";
-            this.fKConsultoriosEspecialidadesBindingSource.DataSource = this.especialidadesBindingSource;
+            this.lblTurno.AutoSize = true;
+            this.lblTurno.Location = new System.Drawing.Point(176, 163);
+            this.lblTurno.Name = "lblTurno";
+            this.lblTurno.Size = new System.Drawing.Size(35, 13);
+            this.lblTurno.TabIndex = 7;
+            this.lblTurno.Text = "label2";
             // 
-            // consultoriosTableAdapter
+            // btnSalir
             // 
-            this.consultoriosTableAdapter.ClearBeforeFill = true;
+            this.btnSalir.Location = new System.Drawing.Point(747, 334);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(89, 28);
+            this.btnSalir.TabIndex = 8;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
             // 
-            // especialidadesBindingSource1
+            // txtTurnos
             // 
-            this.especialidadesBindingSource1.DataMember = "Especialidades";
-            this.especialidadesBindingSource1.DataSource = this.proyecto_centro_medicoDataSet;
+            this.txtTurnos.Enabled = false;
+            this.txtTurnos.Location = new System.Drawing.Point(230, 157);
+            this.txtTurnos.Name = "txtTurnos";
+            this.txtTurnos.Size = new System.Drawing.Size(66, 20);
+            this.txtTurnos.TabIndex = 9;
             // 
             // NuevoTurno
             // 
@@ -141,6 +139,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(94)))), ((int)(((byte)(150)))));
             this.ClientSize = new System.Drawing.Size(945, 532);
+            this.Controls.Add(this.txtTurnos);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.lblTurno);
+            this.Controls.Add(this.Label3);
+            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.cmbEspecialidad);
             this.Controls.Add(this.cmbMedicos);
             this.Controls.Add(this.label1);
@@ -150,11 +153,6 @@
             this.Load += new System.EventHandler(this.NuevoTurno_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.proyecto_centro_medicoDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.medicosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.especialidadesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKConsultoriosEspecialidadesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.especialidadesBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,14 +164,11 @@
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbMedicos;
-        private Proyecto_centro_medicoDataSet proyecto_centro_medicoDataSet;
-        private System.Windows.Forms.BindingSource medicosBindingSource;
-        private Proyecto_centro_medicoDataSetTableAdapters.MedicosTableAdapter medicosTableAdapter;
         private System.Windows.Forms.ComboBox cmbEspecialidad;
-        private System.Windows.Forms.BindingSource especialidadesBindingSource;
-        private Proyecto_centro_medicoDataSetTableAdapters.EspecialidadesTableAdapter especialidadesTableAdapter;
-        private System.Windows.Forms.BindingSource fKConsultoriosEspecialidadesBindingSource;
-        private Proyecto_centro_medicoDataSetTableAdapters.ConsultoriosTableAdapter consultoriosTableAdapter;
-        private System.Windows.Forms.BindingSource especialidadesBindingSource1;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Label Label3;
+        private System.Windows.Forms.Label lblTurno;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.TextBox txtTurnos;
     }
 }
