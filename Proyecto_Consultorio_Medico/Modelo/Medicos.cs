@@ -63,6 +63,17 @@ namespace Proyecto_Consultorio_Medico.Modelo
             return m;
         }
 
+        public Medicos GetMedicoByLastName(string apellido)
+        {
+            apellido = apellido.ToLower().Trim();
+            Medicos m = new Medicos();
+            Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities();
+            m = db.Medicos.Where(x => x.Nombre.ToLower().Trim() == apellido).FirstOrDefault();
+
+
+            return m;
+        }
+
         public Medicos Get(int id)
         {
             using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
