@@ -21,9 +21,9 @@ namespace Proyecto_Consultorio_Medico.Negocios
             return consulta.Save(consultaMedica);
         }
 
-        public void Update()
+        public void Update(ConsultaMedica consulta)
         {
-            consulta.Update();
+            consulta.Update(consulta);
         }
     }
 }

@@ -83,7 +83,8 @@ namespace Proyecto_Consultorio_Medico.Modelo
         {
             using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
             {
-                db.Consultorios.Remove(consultorio);
+                db.Entry(consultorio).State = System.Data.Entity.EntityState.Deleted;
+
 
                 if (db.SaveChanges() == 1)
                 {
@@ -97,9 +98,12 @@ namespace Proyecto_Consultorio_Medico.Modelo
         {
             using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
             {
-                Consultorios p = consultorio.Get(id);
+                Consultorios consultoriosMod = db.Consultorios.Find(id);
 
-                p = consultorio;
+                consultoriosMod.Nombre = consultorio.Nombre;
+                consultoriosMod.Id_Especialidad = consultorio.Id_Especialidad;
+                consultoriosMod.HayTurnos = consultorio.HayTurnos;
+
 
                 if (db.SaveChanges() == 1)
                 {

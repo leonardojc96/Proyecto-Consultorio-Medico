@@ -52,11 +52,6 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             try
@@ -65,7 +60,11 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
                 {
                     medico = CargarMedico();
 
-                    medicosNegocio.SaveMedico(medico);
+                    if (medicosNegocio.SaveMedico(medico))
+                    {
+                        MessageBox.Show("Se guardo el medico");
+                    }
+                    else MessageBox.Show("No se pudo guardar");
 
                     foreach (DataGridViewRow item in dgvEspecialidades.Rows)
                     {
@@ -335,31 +334,34 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
 
             foreach (DataGridViewRow item in dgvHorarios.Rows)
             {
-                TimeSpan Hentrada;
-                TimeSpan.TryParseExact(item.Cells["H_Entrada"].Value.ToString(), @"hh\:mm", null, out Hentrada);
-                TimeSpan HSalida;
-                TimeSpan.TryParseExact(item.Cells["H_Salida"].Value.ToString(), @"hh\:mm", null, out HSalida);
-
-                medicoConsultorio = new MedicoConsultorio()
+                if (item.Cells["idCon"].Value != null)
                 {
-                    Id_Medico = idMedicoModificar,
-                    Id_Consultorio = (int)item.Cells["idCon"].Value,
-                    H_Entrada = Hentrada,
-                    H_Salida = HSalida,
-                    Lunes = (bool)item.Cells["Lu"].Value,
-                    Martes = (bool)item.Cells["Ma"].Value,
-                    Miercoles = (bool)item.Cells["Mi"].Value,
-                    Jueves = (bool)item.Cells["Ju"].Value,
-                    Viernes = (bool)item.Cells["Vi"].Value,
-                    Sabado = (bool)item.Cells["Sa"].Value,
-                    Domingo = (bool)item.Cells["Do"].Value,
-                };
+                    TimeSpan Hentrada;
+                    TimeSpan.TryParseExact(item.Cells["H_Entrada"].Value.ToString(), @"hh\:mm", null, out Hentrada);
+                    TimeSpan HSalida;
+                    TimeSpan.TryParseExact(item.Cells["H_Salida"].Value.ToString(), @"hh\:mm", null, out HSalida);
+
+                    medicoConsultorio = new MedicoConsultorio()
+                    {
+                        Id_Medico = idMedicoModificar,
+                        Id_Consultorio = (int)item.Cells["idCon"].Value,
+                        H_Entrada = Hentrada,
+                        H_Salida = HSalida,
+                        Lunes = (bool)item.Cells["Lu"].Value,
+                        Martes = (bool)item.Cells["Ma"].Value,
+                        Miercoles = (bool)item.Cells["Mi"].Value,
+                        Jueves = (bool)item.Cells["Ju"].Value,
+                        Viernes = (bool)item.Cells["Vi"].Value,
+                        Sabado = (bool)item.Cells["Sa"].Value,
+                        Domingo = (bool)item.Cells["Do"].Value,
+                    };
 
 
 
-                MedicoConsultorioNegocio medicoConsultorioNegocio = new MedicoConsultorioNegocio();
-                if (!medico.MedicoConsultorio.Contains(medicoConsultorio))
-                    medicoConsultorioNegocio.Save(medicoConsultorio);
+                    MedicoConsultorioNegocio medicoConsultorioNegocio = new MedicoConsultorioNegocio();
+                    if (!medico.MedicoConsultorio.Contains(medicoConsultorio))
+                        medicoConsultorioNegocio.Save(medicoConsultorio);
+                }            
             }
         }
 
@@ -370,7 +372,6 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
             openCurricula.RestoreDirectory = true;
             if (openCurricula.ShowDialog() == DialogResult.OK && openCurricula.FileName != "")
             {
-                string dir = openCurricula.FileName;
                 curriculaTextBox.Text = openCurricula.FileName;
             }
         }

@@ -44,12 +44,14 @@ namespace Proyecto_Consultorio_Medico.Modelo
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MedicoEspecialidad> MedicoEspecialidad { get; set; }
 
-        public void SaveMedico(Medicos med)
+        public bool SaveMedico(Medicos med)
         {
 
             Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities();
             db.Medicos.Add(med);
-            db.SaveChanges();
+
+            if (db.SaveChanges() == 1) return true;
+            else return false;
         }
 
         public Medicos GetMedicoByName(string nombre)

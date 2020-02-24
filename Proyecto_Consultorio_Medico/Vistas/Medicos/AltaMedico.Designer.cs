@@ -466,7 +466,6 @@
             this.panelLabels.Name = "panelLabels";
             this.panelLabels.Size = new System.Drawing.Size(113, 457);
             this.panelLabels.TabIndex = 22;
-            this.panelLabels.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // picMuestraFoto
             // 

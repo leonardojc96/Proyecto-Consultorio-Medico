@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -73,13 +74,24 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
             consulta.Sintomas = sintomasTextBox.Text;
             consulta.MedicacionSugerida = medicacionSugeridaTextBox.Text;
 
-            consultaMedicaNegocio.Update();
+            consultaMedicaNegocio.Update(consulta);
         }
 
         private string GuardarEstudios()
         {
-            //Todo:
-            return "";
+            string destino = "";
+            if (estudiosTextBox.Text != "")
+            {
+                destino = Path.Combine(Application.StartupPath, string.Format("Archivos\\{0}", Path.GetFileName(estudiosTextBox.Text)));
+                if (File.Exists(destino))
+                {
+                    MessageBox.Show("Ya existe un archivo con ese nombre");
+                }
+                else
+                    File.Copy(estudiosTextBox.Text, destino);
+            }
+
+            return destino;
         }
     }
 }

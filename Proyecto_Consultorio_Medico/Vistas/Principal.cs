@@ -88,5 +88,25 @@ namespace Proyecto_Consultorio_Medico
                 listaPaciente.Show();
             }
         }
+
+        private void altaToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            if (Validaciones.FormularioNoAbierto("AltaEspecialidades"))
+            {
+                Vistas.Especialidades.AltaEspecialidades altaEspecialidades = new Vistas.Especialidades.AltaEspecialidades();
+                altaEspecialidades.MdiParent = this;
+                altaEspecialidades.Show();
+            }
+        }
+
+        private void altaToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            if (Validaciones.FormularioNoAbierto("AltaConsultorios"))
+            {
+                Vistas.Consultorios.AltaConsultorios altaConsultorios = new Vistas.Consultorios.AltaConsultorios();
+                altaConsultorios.MdiParent = this;
+                altaConsultorios.Show();
+            }
+        }
     }
 }

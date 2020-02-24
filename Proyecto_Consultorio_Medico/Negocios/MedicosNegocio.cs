@@ -11,9 +11,9 @@ namespace Proyecto_Consultorio_Medico.Negocios
     {
         Medicos medico = new Medicos();
 
-        public void SaveMedico(Medicos med)
+        public bool SaveMedico(Medicos med)
         {
-            med.SaveMedico(med);
+            return med.SaveMedico(med);
         }
 
         public Medicos GetMedicoByName(string nombre)

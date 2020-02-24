@@ -116,9 +116,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(32)))), ((int)(((byte)(61)))));
-            this.panelHeader.ForeColor = System.Drawing.Color.White;
-            this.panelHeader.Size = new System.Drawing.Size(789, 55);
+            this.panelHeader.Size = new System.Drawing.Size(764, 55);
             // 
             // id_MedicoLabel
             // 
@@ -336,7 +334,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(806, 472);
+            this.ClientSize = new System.Drawing.Size(781, 238);
             this.Name = "ConsultaMedica";
             this.Text = "ConsultaMedica";
             this.Load += new System.EventHandler(this.ConsultaMedica_Load);

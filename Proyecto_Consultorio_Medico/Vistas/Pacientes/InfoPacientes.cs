@@ -51,9 +51,9 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
 
         private void btnNuevoTur_Click(object sender, EventArgs e)
         {
-            Vistas.Pacientes.NuevoTurno nuevoturno = new NuevoTurno();
-            nuevoturno.MdiParent = this.Parent.FindForm();
-            nuevoturno.Show();
+            //Vistas.Pacientes.NuevoTurno nuevoturno = new NuevoTurno();
+            //nuevoturno.MdiParent = this.Parent.FindForm();
+            //nuevoturno.Show();
 
         }
     }

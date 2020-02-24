@@ -116,6 +116,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Proyecto_centro_medicoDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Consultorios\AltaConsultorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Consultorios\AltaConsultorios.Designer.cs">
+      <DependentUpon>AltaConsultorios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Especialidades\AltaEspecialidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Especialidades\AltaEspecialidades.Designer.cs">
+      <DependentUpon>AltaEspecialidades.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Medicos\AltaMedico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +214,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Vistas\Consultorios\AltaConsultorios.resx">
+      <DependentUpon>AltaConsultorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Especialidades\AltaEspecialidades.resx">
+      <DependentUpon>AltaEspecialidades.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Medicos\AltaMedico.resx">
       <DependentUpon>AltaMedico.cs</DependentUpon>
     </EmbeddedResource>
