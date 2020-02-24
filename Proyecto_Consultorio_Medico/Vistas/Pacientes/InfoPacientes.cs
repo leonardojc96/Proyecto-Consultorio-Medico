@@ -49,6 +49,12 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
             detallesTextBox.Text = paciente.Detalles;
         }
 
-        
+        private void btnNuevoTur_Click(object sender, EventArgs e)
+        {
+            Vistas.Pacientes.NuevoTurno nuevoturno = new NuevoTurno();
+            nuevoturno.MdiParent = this.Parent.FindForm();
+            nuevoturno.Show();
+
+        }
     }
 }

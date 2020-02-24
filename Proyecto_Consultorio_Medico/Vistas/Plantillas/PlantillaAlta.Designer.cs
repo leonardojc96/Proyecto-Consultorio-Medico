@@ -37,6 +37,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
+            // panelHeader
+            // 
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(32)))), ((int)(((byte)(61)))));
+            this.panelHeader.ForeColor = System.Drawing.Color.White;
+            this.panelHeader.Size = new System.Drawing.Size(1370, 55);
+            // 
             // panelAlta
             // 
             this.panelAlta.Location = new System.Drawing.Point(12, 61);
@@ -70,7 +76,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(438, 61);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(340, 486);
+            this.dataGridView1.Size = new System.Drawing.Size(942, 486);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
@@ -97,7 +103,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 373);
+            this.ClientSize = new System.Drawing.Size(1370, 892);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.dataGridView1);
@@ -109,6 +115,7 @@
             this.Name = "PlantillaAlta";
             this.Text = "PlantillaAlta";
             this.Load += new System.EventHandler(this.PlantillaAlta_Load);
+            this.Controls.SetChildIndex(this.panelHeader, 0);
             this.Controls.SetChildIndex(this.panelAlta, 0);
             this.Controls.SetChildIndex(this.btnAgregar, 0);
             this.Controls.SetChildIndex(this.btnSalir, 0);
