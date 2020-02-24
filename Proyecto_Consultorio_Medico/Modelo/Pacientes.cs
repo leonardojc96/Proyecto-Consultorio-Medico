@@ -11,7 +11,6 @@ namespace Proyecto_Consultorio_Medico.Modelo
 {
     using System;
     using System.Collections.Generic;
-    using System.Data.Entity;
     using System.Linq;
     using System.Windows.Forms;
 
@@ -23,7 +22,7 @@ namespace Proyecto_Consultorio_Medico.Modelo
             this.HistorialConsultas = new HashSet<HistorialConsultas>();
             this.Turnos = new HashSet<Turnos>();
         }
-
+    
         public int Id { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
@@ -36,7 +35,7 @@ namespace Proyecto_Consultorio_Medico.Modelo
         public string Foto { get; set; }
         public Nullable<System.DateTime> UltimaVisita { get; set; }
         public string Detalles { get; set; }
-
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HistorialConsultas> HistorialConsultas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -68,10 +67,10 @@ namespace Proyecto_Consultorio_Medico.Modelo
         {
             using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
             {
-                return (from p in db.Pacientes 
-                       join h in db.HistorialConsultas on p.Id equals h.Id_Paciente
-                       where h.Id == idHistorial
-                       select new { p.Id, p.Nombre, p.Apellido, p.DNI }).FirstOrDefault();
+                return (from p in db.Pacientes
+                        join h in db.HistorialConsultas on p.Id equals h.Id_Paciente
+                        where h.Id == idHistorial
+                        select new { p.Id, p.Nombre, p.Apellido, p.DNI }).FirstOrDefault();
             }
         }
 

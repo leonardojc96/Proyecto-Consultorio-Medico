@@ -27,7 +27,7 @@ namespace Proyecto_Consultorio_Medico.Modelo
         public Nullable<bool> Viernes { get; set; }
         public Nullable<bool> Sabado { get; set; }
         public Nullable<bool> Domingo { get; set; }
-
+    
         public virtual Consultorios Consultorios { get; set; }
         public virtual Medicos Medicos { get; set; }
 

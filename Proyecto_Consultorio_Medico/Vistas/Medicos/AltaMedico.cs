@@ -122,7 +122,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
             };
 
                 dgvEspecialidades.Rows.Insert(0, elemetos);
-            }catch(Exception ex)
+            }catch(Exception)
             {
                 MessageBox.Show("No seleccionó ninguna especialidad o no hay ninguna cargada");
             }

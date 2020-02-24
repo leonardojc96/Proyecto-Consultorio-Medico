@@ -29,7 +29,6 @@ namespace Proyecto_Consultorio_Medico.Modelo
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ConsultaMedica> ConsultaMedica { get; set; }
 
-
         public bool Save(Turnos turno)
         {
             using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())

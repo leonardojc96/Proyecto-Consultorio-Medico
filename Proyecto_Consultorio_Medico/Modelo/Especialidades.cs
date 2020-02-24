@@ -21,10 +21,10 @@ namespace Proyecto_Consultorio_Medico.Modelo
             this.Consultorios = new HashSet<Consultorios>();
             this.MedicoEspecialidad = new HashSet<MedicoEspecialidad>();
         }
-
+    
         public int Id { get; set; }
         public string Nombre { get; set; }
-
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Consultorios> Consultorios { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

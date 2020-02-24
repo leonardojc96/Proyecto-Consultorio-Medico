@@ -20,11 +20,11 @@ namespace Proyecto_Consultorio_Medico.Modelo
         {
             this.ConsultaMedica = new HashSet<ConsultaMedica>();
         }
-
+    
         public int Id { get; set; }
         public int Id_Paciente { get; set; }
         public string AntecedentesFliares { get; set; }
-
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ConsultaMedica> ConsultaMedica { get; set; }
         public virtual Pacientes Pacientes { get; set; }
