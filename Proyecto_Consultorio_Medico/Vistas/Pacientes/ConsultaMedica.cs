@@ -62,7 +62,24 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             consulta.Diagnostico = diagnosticoTextBox.Text;
+            consulta.Estado = "finalizado";
+            consulta.Estudios = GuardarEstudios();
+            consulta.EstudiosResibidos = estudiosResibidosTextBox.Text;
+            consulta.EstudiosSolicitados = estudiosSolicitadosTextBox.Text;
+            consulta.Fecha = DateTime.Now;
+            consulta.FechaProxConsulta = fechaProxConsultaDateTimePicker.Value;
+            consulta.Notas = rtxtNotas.Text;
+            consulta.Observaciones = observacionesTextBox.Text;
+            consulta.Sintomas = sintomasTextBox.Text;
+            consulta.MedicacionSugerida = medicacionSugeridaTextBox.Text;
 
+            consultaMedicaNegocio.Update();
+        }
+
+        private string GuardarEstudios()
+        {
+            //Todo:
+            return "";
         }
     }
 }

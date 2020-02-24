@@ -53,7 +53,7 @@
             this.btnEstudios = new System.Windows.Forms.Button();
             this.txtPaciente = new System.Windows.Forms.TextBox();
             this.openEstudios = new System.Windows.Forms.OpenFileDialog();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtxtNotas = new System.Windows.Forms.RichTextBox();
             id_MedicoLabel = new System.Windows.Forms.Label();
             estudiosLabel = new System.Windows.Forms.Label();
             fechaProxConsultaLabel = new System.Windows.Forms.Label();
@@ -71,7 +71,7 @@
             // 
             // panelAlta
             // 
-            this.panelAlta.Controls.Add(this.richTextBox1);
+            this.panelAlta.Controls.Add(this.rtxtNotas);
             this.panelAlta.Controls.Add(this.btnEstudios);
             this.panelAlta.Controls.Add(this.txtPaciente);
             this.panelAlta.Controls.Add(lblPaciente);
@@ -118,7 +118,7 @@
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(32)))), ((int)(((byte)(61)))));
             this.panelHeader.ForeColor = System.Drawing.Color.White;
-            this.panelHeader.Size = new System.Drawing.Size(764, 55);
+            this.panelHeader.Size = new System.Drawing.Size(789, 55);
             // 
             // id_MedicoLabel
             // 
@@ -219,6 +219,15 @@
             resultadosEstudiosResibidosLabel.TabIndex = 22;
             resultadosEstudiosResibidosLabel.Text = "Resultados Estudios Resibidos:";
             // 
+            // lblPaciente
+            // 
+            lblPaciente.AutoSize = true;
+            lblPaciente.Location = new System.Drawing.Point(105, 31);
+            lblPaciente.Name = "lblPaciente";
+            lblPaciente.Size = new System.Drawing.Size(52, 13);
+            lblPaciente.TabIndex = 24;
+            lblPaciente.Text = "Paciente:";
+            // 
             // id_MedicoTextBox
             // 
             this.id_MedicoTextBox.Location = new System.Drawing.Point(185, 54);
@@ -308,26 +317,17 @@
             this.txtPaciente.Size = new System.Drawing.Size(200, 20);
             this.txtPaciente.TabIndex = 25;
             // 
-            // lblPaciente
-            // 
-            lblPaciente.AutoSize = true;
-            lblPaciente.Location = new System.Drawing.Point(105, 31);
-            lblPaciente.Name = "lblPaciente";
-            lblPaciente.Size = new System.Drawing.Size(52, 13);
-            lblPaciente.TabIndex = 24;
-            lblPaciente.Text = "Paciente:";
-            // 
             // openEstudios
             // 
             this.openEstudios.FileName = "openFileDialog1";
             // 
-            // richTextBox1
+            // rtxtNotas
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(185, 345);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(200, 96);
-            this.richTextBox1.TabIndex = 26;
-            this.richTextBox1.Text = "";
+            this.rtxtNotas.Location = new System.Drawing.Point(185, 345);
+            this.rtxtNotas.Name = "rtxtNotas";
+            this.rtxtNotas.Size = new System.Drawing.Size(200, 96);
+            this.rtxtNotas.TabIndex = 26;
+            this.rtxtNotas.Text = "";
             // 
             // ConsultaMedica
             // 
@@ -336,7 +336,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(781, 472);
+            this.ClientSize = new System.Drawing.Size(806, 472);
             this.Name = "ConsultaMedica";
             this.Text = "ConsultaMedica";
             this.Load += new System.EventHandler(this.ConsultaMedica_Load);
@@ -361,6 +361,6 @@
         private System.Windows.Forms.TextBox txtPaciente;
         private System.Windows.Forms.Button btnEstudios;
         private System.Windows.Forms.OpenFileDialog openEstudios;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtxtNotas;
     }
 }

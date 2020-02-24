@@ -58,5 +58,12 @@ namespace Proyecto_Consultorio_Medico.Modelo
             }
         }
 
+        public void Update()
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                db.SaveChanges();
+            }
+        }
     }
 }
