@@ -44,6 +44,14 @@ namespace Proyecto_Consultorio_Medico.Modelo
             }
         }
 
+        public Turnos GetTurnoById(int id)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                return db.Turnos.Where(x => x.Id_Paciente == id).FirstOrDefault();
+            }
+        }
+
         public int GetCantidadTurnos(int idMedico)
         {
             using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())

@@ -55,7 +55,8 @@ namespace Proyecto_Consultorio_Medico.Modelo
         {
             using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
             {
-                return db.HistorialConsultas.Find(id);
+                return db.HistorialConsultas.Where(x => x.Id_Paciente == id).FirstOrDefault();
+                
             }
         }
 

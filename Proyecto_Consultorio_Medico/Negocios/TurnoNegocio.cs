@@ -15,5 +15,15 @@ namespace Proyecto_Consultorio_Medico.Negocios
         {
             return turnos.GetCantidadTurnos(idMedico);
         }
+
+        public Modelo.Turnos GetTurnoByIdPaciente(int id)
+        {
+            return turnos.GetTurnoById(id);
+        }
+
+        public bool Save(Modelo.Turnos turno)
+        {
+            return turno.Save(turno);
+        }
     }
 }

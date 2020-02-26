@@ -30,7 +30,6 @@
         {
             this.txtTurnos = new System.Windows.Forms.TextBox();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.lblTurno = new System.Windows.Forms.Label();
             this.Label3 = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.cmbEspecialidad = new System.Windows.Forms.ComboBox();
@@ -42,12 +41,12 @@
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(32)))), ((int)(((byte)(61)))));
             this.panelHeader.ForeColor = System.Drawing.Color.White;
-            this.panelHeader.Size = new System.Drawing.Size(781, 55);
+            this.panelHeader.Size = new System.Drawing.Size(1395, 55);
             // 
             // txtTurnos
             // 
             this.txtTurnos.Enabled = false;
-            this.txtTurnos.Location = new System.Drawing.Point(241, 180);
+            this.txtTurnos.Location = new System.Drawing.Point(161, 180);
             this.txtTurnos.Name = "txtTurnos";
             this.txtTurnos.Size = new System.Drawing.Size(66, 20);
             this.txtTurnos.TabIndex = 17;
@@ -60,15 +59,6 @@
             this.btnSalir.TabIndex = 16;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
-            // 
-            // lblTurno
-            // 
-            this.lblTurno.AutoSize = true;
-            this.lblTurno.Location = new System.Drawing.Point(187, 186);
-            this.lblTurno.Name = "lblTurno";
-            this.lblTurno.Size = new System.Drawing.Size(35, 13);
-            this.lblTurno.TabIndex = 15;
-            this.lblTurno.Text = "label2";
             // 
             // Label3
             // 
@@ -87,6 +77,7 @@
             this.btnAceptar.TabIndex = 13;
             this.btnAceptar.Text = "Dar turno";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // cmbEspecialidad
             // 
@@ -95,6 +86,7 @@
             this.cmbEspecialidad.Name = "cmbEspecialidad";
             this.cmbEspecialidad.Size = new System.Drawing.Size(158, 21);
             this.cmbEspecialidad.TabIndex = 12;
+            this.cmbEspecialidad.SelectedIndexChanged += new System.EventHandler(this.cmbEspecialidad_SelectedIndexChanged);
             // 
             // cmbMedicos
             // 
@@ -117,10 +109,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(781, 321);
+            this.ClientSize = new System.Drawing.Size(1395, 892);
             this.Controls.Add(this.txtTurnos);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.lblTurno);
             this.Controls.Add(this.Label3);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.cmbEspecialidad);
@@ -137,7 +128,6 @@
             this.Controls.SetChildIndex(this.cmbEspecialidad, 0);
             this.Controls.SetChildIndex(this.btnAceptar, 0);
             this.Controls.SetChildIndex(this.Label3, 0);
-            this.Controls.SetChildIndex(this.lblTurno, 0);
             this.Controls.SetChildIndex(this.btnSalir, 0);
             this.Controls.SetChildIndex(this.txtTurnos, 0);
             this.ResumeLayout(false);
@@ -149,7 +139,6 @@
 
         private System.Windows.Forms.TextBox txtTurnos;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Label lblTurno;
         private System.Windows.Forms.Label Label3;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.ComboBox cmbEspecialidad;
