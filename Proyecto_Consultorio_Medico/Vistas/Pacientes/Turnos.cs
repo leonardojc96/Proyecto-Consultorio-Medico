@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_Consultorio_Medico.Negocios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
 {
     public partial class Turnos : Plantillas.Plantilla
     {
+        int ConsultorioId;
         Negocios.HistorialNegocios historial = new Negocios.HistorialNegocios();
         Modelo.HistorialConsultas historialModelo = new Modelo.HistorialConsultas();
         Modelo.Pacientes pacienteModelo = new Modelo.Pacientes();
@@ -46,20 +48,22 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
             InitializeComponent();
             espLista = especialidadNegocio.GetEspecialidades();
             pacienteModelo = pNegocio.Get(id);
+            btnAceptar.Enabled = false;
         }
 
         private void Turnos_Load(object sender, EventArgs e)
         {
-           
+            Inicioadores.DataGrid(dgvMedicos);
             Negocios.Inicioadores.ComboBox(cmbEspecialidad, espLista);
             listaVacio.Add("");
+            
         }
        
         private void cmbEspecialidad_SelectedIndexChanged(object sender, EventArgs e)
         {
            
             
-            if (cmbEspecialidad.SelectedIndex.ToString() != "0")
+            if (cmbEspecialidad.SelectedIndex.ToString() != "-1")
             {
                 cmbMedicos.DataSource = listaVacio;
                 medicosLista = new List<Modelo.Medicos>();
@@ -70,17 +74,19 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
                     
                      id = int.Parse(cmbEspecialidad.SelectedValue.ToString());
                     medEspLista = medEspecialidad.GeyByEspecialidad(id);
-                    foreach (var item in medEspLista)
-                    {
-                        m.Nombre = item.Medicos.Nombre + " " + item.Medicos.Apellido;
-                        m.Id = item.Medicos.Id;
-                        medicosLista.Add(m);
-                    }
+                    RefreshData(medEspLista);
+                    //foreach (var item in medEspLista)
+                    //{
+                    //    m.Nombre = item.Medicos.Nombre + " " + item.Medicos.Apellido;
+                    //    m.Id = item.Medicos.Id;
+                    //    medicosLista.Add(m);
+                    //}
                     //medEspLista = medEspecialidad.GeyByEspecialidad(id);
                     // Negocios.Inicioadores.ComboBox(cmbMedicos, medEspLista);
-                    cmbMedicos.DataSource = medicosLista;
-                    cmbMedicos.DisplayMember = "Nombre";
-                    cmbMedicos.ValueMember = "Id";
+
+                    //cmbMedicos.DataSource = medicosLista;
+                    //cmbMedicos.DisplayMember = "Nombre";
+                    //cmbMedicos.ValueMember = "Id";
 
                 }
                 catch(Exception ex)
@@ -97,7 +103,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
             if (historialModelo != null)
             {
                 turnoModelo.Id_Paciente = historialModelo.Id_Paciente;
-                turnoModelo.Id_Consultorio = GetIdConsultorio(int.Parse(cmbMedicos.SelectedValue.ToString()));
+                turnoModelo.Id_Consultorio = ConsultorioId;
                 turnoModelo.Id_Paciente = historialModelo.Id_Paciente;
                 turnoNegocio.Save(turnoModelo);
                 consulModelo.Id_Medico = int.Parse(cmbMedicos.SelectedValue.ToString());
@@ -116,6 +122,28 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
             }
 
             this.Close();
+        }
+
+
+        public void RefreshData(ICollection<Modelo.MedicoEspecialidad> datos)
+        {
+            dgvMedicos.Rows.Clear();
+
+
+            foreach (var item in datos)
+            {
+                object[] elementos =
+                {
+                    item.Medicos.Nombre,
+                    item.Medicos.Apellido,
+                    item.Medicos.CantidadTurnos,
+                    item.Medicos.Id
+                    
+                   
+                };
+
+                dgvMedicos.Rows.Insert(0, elementos);
+            }
         }
 
         public int GetIDTurnoByIdPaciente(int id)
