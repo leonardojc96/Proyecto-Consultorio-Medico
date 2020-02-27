@@ -31,12 +31,9 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtTurnos = new System.Windows.Forms.TextBox();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.Label3 = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.cmbEspecialidad = new System.Windows.Forms.ComboBox();
-            this.cmbMedicos = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvMedicos = new System.Windows.Forms.DataGridView();
             this.ColumnaNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,14 +49,6 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
             this.panelHeader.ForeColor = System.Drawing.Color.White;
             this.panelHeader.Size = new System.Drawing.Size(781, 55);
             // 
-            // txtTurnos
-            // 
-            this.txtTurnos.Enabled = false;
-            this.txtTurnos.Location = new System.Drawing.Point(161, 180);
-            this.txtTurnos.Name = "txtTurnos";
-            this.txtTurnos.Size = new System.Drawing.Size(66, 20);
-            this.txtTurnos.TabIndex = 17;
-            // 
             // btnSalir
             // 
             this.btnSalir.Location = new System.Drawing.Point(758, 357);
@@ -68,15 +57,6 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
             this.btnSalir.TabIndex = 16;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
-            // 
-            // Label3
-            // 
-            this.Label3.AutoSize = true;
-            this.Label3.Location = new System.Drawing.Point(57, 187);
-            this.Label3.Name = "Label3";
-            this.Label3.Size = new System.Drawing.Size(98, 13);
-            this.Label3.TabIndex = 14;
-            this.Label3.Text = "Turnos disponibles:";
             // 
             // btnAceptar
             // 
@@ -96,14 +76,6 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
             this.cmbEspecialidad.Size = new System.Drawing.Size(158, 21);
             this.cmbEspecialidad.TabIndex = 12;
             this.cmbEspecialidad.SelectedIndexChanged += new System.EventHandler(this.cmbEspecialidad_SelectedIndexChanged);
-            // 
-            // cmbMedicos
-            // 
-            this.cmbMedicos.FormattingEnabled = true;
-            this.cmbMedicos.Location = new System.Drawing.Point(343, 101);
-            this.cmbMedicos.Name = "cmbMedicos";
-            this.cmbMedicos.Size = new System.Drawing.Size(167, 21);
-            this.cmbMedicos.TabIndex = 11;
             // 
             // label1
             // 
@@ -155,12 +127,9 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(781, 321);
             this.Controls.Add(this.dgvMedicos);
-            this.Controls.Add(this.txtTurnos);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.Label3);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.cmbEspecialidad);
-            this.Controls.Add(this.cmbMedicos);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -169,12 +138,9 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
             this.Load += new System.EventHandler(this.Turnos_Load);
             this.Controls.SetChildIndex(this.panelHeader, 0);
             this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.cmbMedicos, 0);
             this.Controls.SetChildIndex(this.cmbEspecialidad, 0);
             this.Controls.SetChildIndex(this.btnAceptar, 0);
-            this.Controls.SetChildIndex(this.Label3, 0);
             this.Controls.SetChildIndex(this.btnSalir, 0);
-            this.Controls.SetChildIndex(this.txtTurnos, 0);
             this.Controls.SetChildIndex(this.dgvMedicos, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicos)).EndInit();
             this.ResumeLayout(false);
@@ -182,19 +148,15 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
 
         }
 
-        private void dgvMedicos_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        //private void dgvMedicos_CellClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtTurnos;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Label Label3;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.ComboBox cmbEspecialidad;
-        private System.Windows.Forms.ComboBox cmbMedicos;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvMedicos;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaNombre;
