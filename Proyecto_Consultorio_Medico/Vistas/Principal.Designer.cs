@@ -39,6 +39,8 @@
             this.altaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultoriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.altaToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuPrincipalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +50,9 @@
             this.medicosToolStripMenuItem,
             this.pacientesToolStripMenuItem,
             this.especialidadesToolStripMenuItem,
-            this.consultoriosToolStripMenuItem});
+            this.consultoriosToolStripMenuItem,
+            this.menuPrincipalToolStripMenuItem,
+            this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -131,6 +135,20 @@
             this.altaToolStripMenuItem3.Text = "Alta";
             this.altaToolStripMenuItem3.Click += new System.EventHandler(this.altaToolStripMenuItem3_Click);
             // 
+            // menuPrincipalToolStripMenuItem
+            // 
+            this.menuPrincipalToolStripMenuItem.Name = "menuPrincipalToolStripMenuItem";
+            this.menuPrincipalToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
+            this.menuPrincipalToolStripMenuItem.Text = "Menu principal";
+            this.menuPrincipalToolStripMenuItem.Click += new System.EventHandler(this.menuPrincipalToolStripMenuItem_Click);
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -162,6 +180,8 @@
         private System.Windows.Forms.ToolStripMenuItem altaToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem consultoriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem altaToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem menuPrincipalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
 }
 

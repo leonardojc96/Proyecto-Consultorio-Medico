@@ -31,5 +31,12 @@ namespace Proyecto_Consultorio_Medico.Vistas
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Vistas.Pacientes.Turnos turnos = new Pacientes.Turnos();
+            turnos.MdiParent = this.Parent.FindForm();
+            turnos.Show();
+        }
     }
 }

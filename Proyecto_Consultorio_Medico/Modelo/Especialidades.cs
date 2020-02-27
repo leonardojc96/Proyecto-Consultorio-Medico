@@ -27,16 +27,38 @@ namespace Proyecto_Consultorio_Medico.Modelo
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Consultorios> Consultorios { get; set; }
+
+        internal bool Update(int id, Especialidades especialidades)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                Especialidades especialidadesMod = db.Especialidades.Find(id);
+
+                especialidadesMod.Nombre = especialidades.Nombre;
+
+                if (db.SaveChanges() == 1)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MedicoEspecialidad> MedicoEspecialidad { get; set; }
 
-        public void SaveEspecialidades(Especialidades x)
+        public bool SaveEspecialidades(Especialidades x)
         {
             Especialidades mesp = new Especialidades();
             using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
             {
                 db.Especialidades.Add(x);
-                db.SaveChanges();
+
+                if (db.SaveChanges() == 1)
+                {
+                    return true;
+                }
+                return false;
             }
         }
 

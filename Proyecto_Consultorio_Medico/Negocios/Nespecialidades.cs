@@ -11,9 +11,9 @@ namespace Proyecto_Consultorio_Medico.Negocios
     {
         Especialidades especialidades = new Especialidades();
 
-        public void SaveEspecialidad(Modelo.Especialidades es)
+        public bool SaveEspecialidad(Modelo.Especialidades es)
         {
-            es.SaveEspecialidades(es);
+            return es.SaveEspecialidades(es);
         }
 
         public void RemoveEspecialidad(Modelo.Especialidades es)
@@ -32,6 +32,11 @@ namespace Proyecto_Consultorio_Medico.Negocios
         public Especialidades Get(int id)
         {
             return especialidades.Get(id);
+        }
+
+        internal bool Update(int id, Especialidades especialidades)
+        {
+            return especialidades.Update(id, especialidades);
         }
     }
 }
