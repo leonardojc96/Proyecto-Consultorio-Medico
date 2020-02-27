@@ -42,7 +42,13 @@ namespace Proyecto_Consultorio_Medico.Modelo
                 return false;
             }
         }
-
+        public ICollection<HistorialConsultas> GetByIdPaciente( int id)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                return db.HistorialConsultas.Include("ConsultaMedica").Where(x => x.Id_Paciente == id).ToList();
+            }
+        }
         public ICollection<HistorialConsultas> Get()
         {
             using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
@@ -51,7 +57,7 @@ namespace Proyecto_Consultorio_Medico.Modelo
             }
         }
 
-        public HistorialConsultas Get(int id)
+        public HistorialConsultas GetIdPaciente(int id)
         {
             using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
             {

@@ -38,7 +38,6 @@
             System.Windows.Forms.Label direccionLabel;
             System.Windows.Forms.Label ultimaVisitaLabel;
             System.Windows.Forms.Label detallesLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InfoPacientes));
             this.nombreTextBox = new System.Windows.Forms.TextBox();
             this.apellidoTextBox = new System.Windows.Forms.TextBox();
             this.dNITextBox = new System.Windows.Forms.TextBox();
@@ -50,12 +49,12 @@
             this.txtFechaNac = new System.Windows.Forms.TextBox();
             this.txtFecIngreso = new System.Windows.Forms.TextBox();
             this.txtFecUltimaVis = new System.Windows.Forms.TextBox();
-            this.dvgConsultas = new System.Windows.Forms.DataGridView();
-            this.ClmDoc = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ClmFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClmMedico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvConsultas = new System.Windows.Forms.DataGridView();
             this.btnNuevoTur = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.ClmDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClmFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClmMedico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             nombreLabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
             fechaNacLabel = new System.Windows.Forms.Label();
@@ -68,7 +67,7 @@
             detallesLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxFoto)).BeginInit();
             this.panelLabels.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgConsultas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultas)).BeginInit();
             this.SuspendLayout();
             // 
             // picBoxFoto
@@ -256,35 +255,17 @@
             this.txtFecUltimaVis.Size = new System.Drawing.Size(200, 20);
             this.txtFecUltimaVis.TabIndex = 30;
             // 
-            // dvgConsultas
+            // dgvConsultas
             // 
-            this.dvgConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgConsultas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvConsultas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ClmDoc,
             this.ClmFecha,
             this.ClmMedico});
-            this.dvgConsultas.Location = new System.Drawing.Point(455, 101);
-            this.dvgConsultas.Name = "dvgConsultas";
-            this.dvgConsultas.Size = new System.Drawing.Size(674, 371);
-            this.dvgConsultas.TabIndex = 31;
-            // 
-            // ClmDoc
-            // 
-            this.ClmDoc.HeaderText = "Doc";
-            this.ClmDoc.Image = ((System.Drawing.Image)(resources.GetObject("ClmDoc.Image")));
-            this.ClmDoc.Name = "ClmDoc";
-            this.ClmDoc.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ClmDoc.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // ClmFecha
-            // 
-            this.ClmFecha.HeaderText = "Fecha";
-            this.ClmFecha.Name = "ClmFecha";
-            // 
-            // ClmMedico
-            // 
-            this.ClmMedico.HeaderText = "Medico";
-            this.ClmMedico.Name = "ClmMedico";
+            this.dgvConsultas.Location = new System.Drawing.Point(455, 101);
+            this.dgvConsultas.Name = "dgvConsultas";
+            this.dgvConsultas.Size = new System.Drawing.Size(674, 371);
+            this.dgvConsultas.TabIndex = 31;
             // 
             // btnNuevoTur
             // 
@@ -305,6 +286,22 @@
             this.btnSalir.Text = "Volver";
             this.btnSalir.UseVisualStyleBackColor = true;
             // 
+            // ClmDoc
+            // 
+            this.ClmDoc.HeaderText = "Doc";
+            this.ClmDoc.Name = "ClmDoc";
+            this.ClmDoc.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // ClmFecha
+            // 
+            this.ClmFecha.HeaderText = "Fecha";
+            this.ClmFecha.Name = "ClmFecha";
+            // 
+            // ClmMedico
+            // 
+            this.ClmMedico.HeaderText = "Medico";
+            this.ClmMedico.Name = "ClmMedico";
+            // 
             // InfoPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,7 +309,7 @@
             this.ClientSize = new System.Drawing.Size(1395, 892);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnNuevoTur);
-            this.Controls.Add(this.dvgConsultas);
+            this.Controls.Add(this.dgvConsultas);
             this.Controls.Add(this.txtFecUltimaVis);
             this.Controls.Add(this.txtFecIngreso);
             this.Controls.Add(this.txtFechaNac);
@@ -340,13 +337,13 @@
             this.Controls.SetChildIndex(this.txtFechaNac, 0);
             this.Controls.SetChildIndex(this.txtFecIngreso, 0);
             this.Controls.SetChildIndex(this.txtFecUltimaVis, 0);
-            this.Controls.SetChildIndex(this.dvgConsultas, 0);
+            this.Controls.SetChildIndex(this.dgvConsultas, 0);
             this.Controls.SetChildIndex(this.btnNuevoTur, 0);
             this.Controls.SetChildIndex(this.btnSalir, 0);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxFoto)).EndInit();
             this.panelLabels.ResumeLayout(false);
             this.panelLabels.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgConsultas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -364,11 +361,11 @@
         private System.Windows.Forms.TextBox txtFechaNac;
         private System.Windows.Forms.TextBox txtFecIngreso;
         private System.Windows.Forms.TextBox txtFecUltimaVis;
-        private System.Windows.Forms.DataGridView dvgConsultas;
+        private System.Windows.Forms.DataGridView dgvConsultas;
         private System.Windows.Forms.Button btnNuevoTur;
-        private System.Windows.Forms.DataGridViewImageColumn ClmDoc;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClmDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClmFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClmMedico;
-        private System.Windows.Forms.Button btnSalir;
     }
 }
