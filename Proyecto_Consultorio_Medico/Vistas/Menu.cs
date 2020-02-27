@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_Consultorio_Medico.Negocios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,23 @@ namespace Proyecto_Consultorio_Medico.Vistas
 
         private void Menu_Load(object sender, EventArgs e)
         {
+            foreach (var item in tableLayoutPanel1.Controls)
+            {
+                if (item is Button)
+                {
+                    Button item2 = (Button)item;
+                    item2.BackColor = Color.FromArgb(28, 162, 162);
+                    item2.Font = new Font("calibri", 24, FontStyle.Bold);
+                    item2.ForeColor = Color.White;
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Vistas.Pacientes.Turnos turnos = new Pacientes.Turnos();
+            turnos.MdiParent = this.Parent.FindForm();
+            turnos.Show();
         }
     }
 }

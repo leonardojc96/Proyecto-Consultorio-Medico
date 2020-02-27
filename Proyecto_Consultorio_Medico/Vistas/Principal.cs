@@ -108,5 +108,20 @@ namespace Proyecto_Consultorio_Medico
                 altaConsultorios.Show();
             }
         }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void menuPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Validaciones.FormularioNoAbierto("Menu"))
+            {
+                Vistas.Menu menu = new Vistas.Menu();
+                menu.MdiParent = this;
+                menu.Show();
+            }
+        }
     }
 }
