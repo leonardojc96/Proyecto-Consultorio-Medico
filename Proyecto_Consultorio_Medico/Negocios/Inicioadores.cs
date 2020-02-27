@@ -20,11 +20,11 @@ namespace Proyecto_Consultorio_Medico.Negocios
             {
                 item.BackColor = Color.FromArgb(28, 162, 162);
                 item.AutoSize = false;
-                item.Width = 130;
-                item.Height = 50;
+                item.Width = Application.OpenForms["frmPrincipal"].Width;
+                item.Height = Application.OpenForms["frmPrincipal"].Width / 10;
                 item.Margin = new Padding(0, 20, 10, 0);
-                item.Font = new Font("calibri", 14, FontStyle.Bold);
-                //item.ForeColor = Color.White;
+                item.Font = new Font("calibri", 24, FontStyle.Bold);
+                item.ForeColor = Color.White;
             }
         }
 
