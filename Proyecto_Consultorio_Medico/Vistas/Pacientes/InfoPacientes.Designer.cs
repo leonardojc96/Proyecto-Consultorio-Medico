@@ -73,7 +73,7 @@
             // 
             // picBoxFoto
             // 
-            this.picBoxFoto.Size = new System.Drawing.Size(228, 207);
+            this.picBoxFoto.Size = new System.Drawing.Size(162, 137);
             // 
             // panelHeader
             // 
@@ -171,49 +171,49 @@
             // 
             // nombreTextBox
             // 
-            this.nombreTextBox.Location = new System.Drawing.Point(134, 311);
+            this.nombreTextBox.Location = new System.Drawing.Point(133, 261);
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(200, 20);
             this.nombreTextBox.TabIndex = 6;
             // 
             // apellidoTextBox
             // 
-            this.apellidoTextBox.Location = new System.Drawing.Point(134, 350);
+            this.apellidoTextBox.Location = new System.Drawing.Point(133, 300);
             this.apellidoTextBox.Name = "apellidoTextBox";
             this.apellidoTextBox.Size = new System.Drawing.Size(200, 20);
             this.apellidoTextBox.TabIndex = 8;
             // 
             // dNITextBox
             // 
-            this.dNITextBox.Location = new System.Drawing.Point(134, 466);
+            this.dNITextBox.Location = new System.Drawing.Point(133, 416);
             this.dNITextBox.Name = "dNITextBox";
             this.dNITextBox.Size = new System.Drawing.Size(200, 20);
             this.dNITextBox.TabIndex = 14;
             // 
             // obraSocialTextBox
             // 
-            this.obraSocialTextBox.Location = new System.Drawing.Point(134, 502);
+            this.obraSocialTextBox.Location = new System.Drawing.Point(133, 452);
             this.obraSocialTextBox.Name = "obraSocialTextBox";
             this.obraSocialTextBox.Size = new System.Drawing.Size(200, 20);
             this.obraSocialTextBox.TabIndex = 16;
             // 
             // telefonoTextBox
             // 
-            this.telefonoTextBox.Location = new System.Drawing.Point(134, 537);
+            this.telefonoTextBox.Location = new System.Drawing.Point(133, 487);
             this.telefonoTextBox.Name = "telefonoTextBox";
             this.telefonoTextBox.Size = new System.Drawing.Size(200, 20);
             this.telefonoTextBox.TabIndex = 18;
             // 
             // direccionTextBox
             // 
-            this.direccionTextBox.Location = new System.Drawing.Point(134, 573);
+            this.direccionTextBox.Location = new System.Drawing.Point(133, 523);
             this.direccionTextBox.Name = "direccionTextBox";
             this.direccionTextBox.Size = new System.Drawing.Size(200, 20);
             this.direccionTextBox.TabIndex = 20;
             // 
             // detallesTextBox
             // 
-            this.detallesTextBox.Location = new System.Drawing.Point(134, 650);
+            this.detallesTextBox.Location = new System.Drawing.Point(133, 600);
             this.detallesTextBox.Name = "detallesTextBox";
             this.detallesTextBox.Size = new System.Drawing.Size(200, 20);
             this.detallesTextBox.TabIndex = 26;
@@ -230,28 +230,28 @@
             this.panelLabels.Controls.Add(dNILabel);
             this.panelLabels.Controls.Add(fechaNacLabel);
             this.panelLabels.Controls.Add(fechaIngresoLabel);
-            this.panelLabels.Location = new System.Drawing.Point(13, 291);
+            this.panelLabels.Location = new System.Drawing.Point(12, 241);
             this.panelLabels.Name = "panelLabels";
             this.panelLabels.Size = new System.Drawing.Size(100, 456);
             this.panelLabels.TabIndex = 27;
             // 
             // txtFechaNac
             // 
-            this.txtFechaNac.Location = new System.Drawing.Point(134, 388);
+            this.txtFechaNac.Location = new System.Drawing.Point(133, 338);
             this.txtFechaNac.Name = "txtFechaNac";
             this.txtFechaNac.Size = new System.Drawing.Size(200, 20);
             this.txtFechaNac.TabIndex = 28;
             // 
             // txtFecIngreso
             // 
-            this.txtFecIngreso.Location = new System.Drawing.Point(134, 427);
+            this.txtFecIngreso.Location = new System.Drawing.Point(133, 377);
             this.txtFecIngreso.Name = "txtFecIngreso";
             this.txtFecIngreso.Size = new System.Drawing.Size(200, 20);
             this.txtFecIngreso.TabIndex = 29;
             // 
             // txtFecUltimaVis
             // 
-            this.txtFecUltimaVis.Location = new System.Drawing.Point(134, 610);
+            this.txtFecUltimaVis.Location = new System.Drawing.Point(133, 560);
             this.txtFecUltimaVis.Name = "txtFecUltimaVis";
             this.txtFecUltimaVis.Size = new System.Drawing.Size(200, 20);
             this.txtFecUltimaVis.TabIndex = 30;
@@ -265,7 +265,7 @@
             this.ClmMedico});
             this.dvgConsultas.Location = new System.Drawing.Point(455, 101);
             this.dvgConsultas.Name = "dvgConsultas";
-            this.dvgConsultas.Size = new System.Drawing.Size(830, 550);
+            this.dvgConsultas.Size = new System.Drawing.Size(674, 371);
             this.dvgConsultas.TabIndex = 31;
             // 
             // ClmDoc
@@ -288,7 +288,7 @@
             // 
             // btnNuevoTur
             // 
-            this.btnNuevoTur.Location = new System.Drawing.Point(863, 753);
+            this.btnNuevoTur.Location = new System.Drawing.Point(716, 572);
             this.btnNuevoTur.Name = "btnNuevoTur";
             this.btnNuevoTur.Size = new System.Drawing.Size(144, 48);
             this.btnNuevoTur.TabIndex = 32;
@@ -298,7 +298,7 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(1123, 753);
+            this.btnSalir.Location = new System.Drawing.Point(976, 572);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(144, 48);
             this.btnSalir.TabIndex = 33;

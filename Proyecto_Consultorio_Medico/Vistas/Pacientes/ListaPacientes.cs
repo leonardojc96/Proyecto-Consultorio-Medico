@@ -153,5 +153,9 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
                 RefreshData(p.Get());
         }
 
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
