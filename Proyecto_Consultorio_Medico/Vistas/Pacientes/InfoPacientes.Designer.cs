@@ -51,10 +51,10 @@
             this.txtFecIngreso = new System.Windows.Forms.TextBox();
             this.txtFecUltimaVis = new System.Windows.Forms.TextBox();
             this.dvgConsultas = new System.Windows.Forms.DataGridView();
-            this.btnNuevoTur = new System.Windows.Forms.Button();
             this.ClmDoc = new System.Windows.Forms.DataGridViewImageColumn();
             this.ClmFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClmMedico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnNuevoTur = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             nombreLabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
@@ -77,7 +77,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.Size = new System.Drawing.Size(1370, 55);
+            this.panelHeader.Size = new System.Drawing.Size(1395, 55);
             // 
             // nombreLabel
             // 
@@ -268,16 +268,6 @@
             this.dvgConsultas.Size = new System.Drawing.Size(830, 550);
             this.dvgConsultas.TabIndex = 31;
             // 
-            // btnNuevoTur
-            // 
-            this.btnNuevoTur.Location = new System.Drawing.Point(863, 753);
-            this.btnNuevoTur.Name = "btnNuevoTur";
-            this.btnNuevoTur.Size = new System.Drawing.Size(144, 48);
-            this.btnNuevoTur.TabIndex = 32;
-            this.btnNuevoTur.Text = "Nuevo Turno";
-            this.btnNuevoTur.UseVisualStyleBackColor = true;
-            this.btnNuevoTur.Click += new System.EventHandler(this.btnNuevoTur_Click);
-            // 
             // ClmDoc
             // 
             this.ClmDoc.HeaderText = "Doc";
@@ -296,6 +286,16 @@
             this.ClmMedico.HeaderText = "Medico";
             this.ClmMedico.Name = "ClmMedico";
             // 
+            // btnNuevoTur
+            // 
+            this.btnNuevoTur.Location = new System.Drawing.Point(863, 753);
+            this.btnNuevoTur.Name = "btnNuevoTur";
+            this.btnNuevoTur.Size = new System.Drawing.Size(144, 48);
+            this.btnNuevoTur.TabIndex = 32;
+            this.btnNuevoTur.Text = "Nuevo Turno";
+            this.btnNuevoTur.UseVisualStyleBackColor = true;
+            this.btnNuevoTur.Click += new System.EventHandler(this.btnNuevoTur_Click);
+            // 
             // btnSalir
             // 
             this.btnSalir.Location = new System.Drawing.Point(1123, 753);
@@ -309,7 +309,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 892);
+            this.ClientSize = new System.Drawing.Size(1395, 892);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnNuevoTur);
             this.Controls.Add(this.dvgConsultas);
