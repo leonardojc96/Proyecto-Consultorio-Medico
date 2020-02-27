@@ -65,7 +65,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
             
             if (cmbEspecialidad.SelectedIndex.ToString() != "-1")
             {
-                cmbMedicos.DataSource = listaVacio;
+                
                 medicosLista = new List<Modelo.Medicos>();
                 medEspLista = new List<Modelo.MedicoEspecialidad>();
                 int id = -1;
@@ -98,6 +98,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+           
 
             historialModelo = historial.Get(pacienteModelo.Id);
             if (historialModelo != null)
@@ -106,15 +107,16 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
                 turnoModelo.Id_Consultorio = ConsultorioId;
                 turnoModelo.Id_Paciente = historialModelo.Id_Paciente;
                 turnoNegocio.Save(turnoModelo);
-                consulModelo.Id_Medico = int.Parse(cmbMedicos.SelectedValue.ToString());
+                consulModelo.Id_Medico = ConsultorioId;
                 consulModelo.Id_Historico = historialModelo.Id;
                 consulModelo.Id_Turno = GetIDTurnoByIdPaciente(historialModelo.Id_Paciente);
                 consulModelo.Estado = "Pendiente";
                 consulNegocio.Save(consulModelo);
 
             }
-            else
+            else if(historialModelo == null)
             {
+                historialModelo = new Modelo.HistorialConsultas();
                 historialModelo.Id_Paciente = pacienteModelo.Id;
                 historial.Save(historialModelo);
                 btnAceptar_Click(sender, e);
@@ -145,7 +147,15 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
                 dgvMedicos.Rows.Insert(0, elementos);
             }
         }
-
+        public void dgvMedicos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnAceptar.Enabled = true;
+            
+            if (e.RowIndex != 0)
+            {
+                ConsultorioId = int.Parse(dgvMedicos.Rows[e.RowIndex].Cells[3].Value.ToString());
+            }
+        }
         public int GetIDTurnoByIdPaciente(int id)
         {
             turnoModelo = turnoNegocio.GetTurnoByIdPaciente(id);
