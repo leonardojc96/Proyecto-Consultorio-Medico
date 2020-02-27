@@ -485,16 +485,16 @@
             this.lblPacientes.AutoSize = true;
             this.lblPacientes.Location = new System.Drawing.Point(527, 65);
             this.lblPacientes.Name = "lblPacientes";
-            this.lblPacientes.Size = new System.Drawing.Size(90, 13);
+            this.lblPacientes.Size = new System.Drawing.Size(95, 13);
             this.lblPacientes.TabIndex = 42;
-            this.lblPacientes.Text = "Ultimos pacientes";
+            this.lblPacientes.Text = "Turnos pendientes";
             this.lblPacientes.Click += new System.EventHandler(this.lblPacientes_Click);
             // 
             // InfoMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(781, 367);
+            this.ClientSize = new System.Drawing.Size(781, 321);
             this.Controls.Add(this.lblPacientes);
             this.Controls.Add(this.btnAbrirConsulta);
             this.Controls.Add(this.dgvConsultasPendientes);
