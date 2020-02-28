@@ -58,6 +58,8 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
 
             foreach (var item in ConsultasListas)
             {
+                //todo: agregar columna id
+
                 if (item.Estado == "Finalizado")
                 {
                     object[] elementos =
@@ -91,6 +93,14 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
             nuevoturno.MdiParent = this.Parent.FindForm();
             nuevoturno.Show();
 
+        }
+
+        private void dgvConsultas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                //todo: abrir pantalla detalle consulta
+            }
         }
     }
 }

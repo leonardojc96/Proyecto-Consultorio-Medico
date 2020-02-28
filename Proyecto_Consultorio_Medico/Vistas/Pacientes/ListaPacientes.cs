@@ -1,12 +1,6 @@
 ﻿using Proyecto_Consultorio_Medico.Negocios;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
@@ -14,7 +8,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
     public partial class ListaPacientes : Plantillas.PlantillaListas
     {
         int idPaciente = -1;
-        public ListaPacientes()
+        public ListaPacientes(): base("Pacientes")
         {
             InitializeComponent();
         }
@@ -22,15 +16,17 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
         private void ListaPacientes_Load(object sender, EventArgs e)
         {
             CargarDatos();
+            lblBuscar.Text = "Bustar por DNI:";
         }
 
         public void CargarDatos()
         {
             PacienteNegocio p = new PacienteNegocio();
             dgvLista.Columns.Add("Id", "Id");
-            dgvLista.Columns.Add("Nombre", "Nombre");
-            dgvLista.Columns.Add("Apellido", "Apellido");
+            dgvLista.Columns["Id"].Visible = false;
+            dgvLista.Columns.Add("Nombre", "Nombre y apellido");
             dgvLista.Columns.Add("DNI", "DNI");
+            dgvLista.Columns.Add("Telefono", "Telefono");
             dgvLista.Columns.Add("O. Social", "OSocial");
             Inicioadores.DataGrid(dgvLista);
 
@@ -51,7 +47,8 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
                     item.Id,
                     item.Nombre + " "+ item.Apellido,
                     item.DNI,
-                    item.Telefono
+                    item.Telefono,
+                    item.ObraSocial
                 };
 
                 dgvLista.Rows.Insert(0, elementos);
@@ -60,7 +57,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if(idPaciente != -1)
+            if (idPaciente != -1)
             {
                 try
                 {
@@ -72,14 +69,14 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
                     DialogResult result;
 
                     result = MessageBox.Show(mensaje, caption, buttons);
-                    if(result == System.Windows.Forms.DialogResult.Yes)
+                    if (result == System.Windows.Forms.DialogResult.Yes)
                     {
-                        
+
                         paciente.Remove(p);
                         RefreshData(p.Get());
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
@@ -95,7 +92,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if(idPaciente != -1)
+            if (idPaciente != -1)
             {
                 if (Validaciones.FormularioNoAbierto("AltaPacientes"))
                 {
@@ -133,29 +130,40 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
             {
                 int id = int.Parse(dgvLista.Rows[e.RowIndex].Cells[0].Value.ToString());
                 if (Validaciones.FormularioNoAbierto("InfoPaciente"))
-                {            
+                {
                     Vistas.Pacientes.InfoPacientes info = new InfoPacientes(id);
-                    info.MdiParent = this.Parent.FindForm();         
+                    info.MdiParent = this.Parent.FindForm();
                     info.Show();
-                    
+
 
                 }
             }
         }
 
-        private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
-        {
-            PacienteNegocio p = new PacienteNegocio();
-            if (txtBuscar.Text != "")
-                RefreshData(p.Search(txtBuscar.Text));
-
-            else
-                RefreshData(p.Get());
-        }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtBuscar_KeyUp_1(object sender, KeyEventArgs e)
+        {
+            PacienteNegocio pacienteNegocio = new PacienteNegocio();
+            if (txtBuscar.Text != "")
+                RefreshData(pacienteNegocio.SearchByDNI(txtBuscar.Text));
+
+            else
+                RefreshData(pacienteNegocio.Get());
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            //Todo: agregar nuevo paciente
+
+        }
+
+        private void btnNuevoTurno_Click(object sender, EventArgs e)
+        {
+            //todo: agregar nuevo turno
         }
     }
 }

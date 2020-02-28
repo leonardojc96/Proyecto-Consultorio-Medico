@@ -63,14 +63,14 @@ namespace Proyecto_Consultorio_Medico.Modelo
             }
         }
 
-        public dynamic GetByHistorial(int idHistorial)
+        public Pacientes GetByHistorial(int idHistorial)
         {
             using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
             {
                 return (from p in db.Pacientes
                         join h in db.HistorialConsultas on p.Id equals h.Id_Paciente
                         where h.Id == idHistorial
-                        select new { p.Id, p.Nombre, p.Apellido, p.DNI }).FirstOrDefault();
+                        select p).FirstOrDefault();
             }
         }
 
@@ -139,6 +139,14 @@ namespace Proyecto_Consultorio_Medico.Modelo
             using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
             {
                 return db.Pacientes.Where(x => x.Nombre.StartsWith(nombre)).ToList();
+            }
+        }
+
+        public ICollection<Pacientes> SearchByDNI(string dni)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                return db.Pacientes.Where(x => x.DNI.StartsWith(dni)).ToList();
             }
         }
 

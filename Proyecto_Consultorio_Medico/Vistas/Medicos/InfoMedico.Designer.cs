@@ -65,12 +65,12 @@
             this.btnAbrirCurricula = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.dgvConsultasPendientes = new System.Windows.Forms.DataGridView();
+            this.btnAbrirConsulta = new System.Windows.Forms.Button();
+            this.lblPacientes = new System.Windows.Forms.Label();
             this.IdConsulta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nTurnos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAbrirConsulta = new System.Windows.Forms.Button();
-            this.lblPacientes = new System.Windows.Forms.Label();
+            this.cConsultorio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             nombreLabel = new System.Windows.Forms.Label();
             dNILabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
@@ -94,7 +94,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.Size = new System.Drawing.Size(1395, 55);
+            this.panelHeader.Size = new System.Drawing.Size(766, 55);
             // 
             // nombreLabel
             // 
@@ -438,37 +438,12 @@
             this.IdConsulta,
             this.Nombre,
             this.DNI,
-            this.nTurnos});
+            this.cConsultorio});
             this.dgvConsultasPendientes.Location = new System.Drawing.Point(432, 80);
             this.dgvConsultasPendientes.Name = "dgvConsultasPendientes";
             this.dgvConsultasPendientes.ReadOnly = true;
             this.dgvConsultasPendientes.Size = new System.Drawing.Size(255, 232);
             this.dgvConsultasPendientes.TabIndex = 40;
-            // 
-            // IdConsulta
-            // 
-            this.IdConsulta.HeaderText = "Id de la consulta";
-            this.IdConsulta.Name = "IdConsulta";
-            this.IdConsulta.ReadOnly = true;
-            this.IdConsulta.Visible = false;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre y Apellido";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // DNI
-            // 
-            this.DNI.HeaderText = "DNI";
-            this.DNI.Name = "DNI";
-            this.DNI.ReadOnly = true;
-            // 
-            // nTurnos
-            // 
-            this.nTurnos.HeaderText = "Nº de turno";
-            this.nTurnos.Name = "nTurnos";
-            this.nTurnos.ReadOnly = true;
             // 
             // btnAbrirConsulta
             // 
@@ -490,11 +465,36 @@
             this.lblPacientes.Text = "Turnos pendientes";
             this.lblPacientes.Click += new System.EventHandler(this.lblPacientes_Click);
             // 
+            // IdConsulta
+            // 
+            this.IdConsulta.HeaderText = "Id de la consulta";
+            this.IdConsulta.Name = "IdConsulta";
+            this.IdConsulta.ReadOnly = true;
+            this.IdConsulta.Visible = false;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre y Apellido";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // DNI
+            // 
+            this.DNI.HeaderText = "DNI";
+            this.DNI.Name = "DNI";
+            this.DNI.ReadOnly = true;
+            // 
+            // cConsultorio
+            // 
+            this.cConsultorio.HeaderText = "Consultorio";
+            this.cConsultorio.Name = "cConsultorio";
+            this.cConsultorio.ReadOnly = true;
+            // 
             // InfoMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1395, 892);
+            this.ClientSize = new System.Drawing.Size(766, 555);
             this.Controls.Add(this.lblPacientes);
             this.Controls.Add(this.btnAbrirConsulta);
             this.Controls.Add(this.dgvConsultasPendientes);
@@ -583,6 +583,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IdConsulta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nTurnos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cConsultorio;
     }
 }

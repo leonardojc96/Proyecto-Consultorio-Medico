@@ -37,7 +37,7 @@
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(32)))), ((int)(((byte)(61)))));
             this.panelHeader.ForeColor = System.Drawing.Color.White;
-            this.panelHeader.Size = new System.Drawing.Size(876, 55);
+            this.panelHeader.Size = new System.Drawing.Size(729, 55);
             // 
             // picBoxFoto
             // 
@@ -61,7 +61,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(876, 555);
+            this.ClientSize = new System.Drawing.Size(729, 321);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.picBoxFoto);
             this.ForeColor = System.Drawing.Color.Black;

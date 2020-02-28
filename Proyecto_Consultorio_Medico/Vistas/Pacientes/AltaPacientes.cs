@@ -20,7 +20,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
         int idpacientemod;
         
 
-        public AltaPacientes()
+        public AltaPacientes(): base("Alta pacientes")
         {
             InitializeComponent();
             

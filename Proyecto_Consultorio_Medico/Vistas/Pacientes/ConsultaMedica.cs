@@ -63,7 +63,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             consulta.Diagnostico = diagnosticoTextBox.Text;
-            consulta.Estado = "finalizado";
+            consulta.Estado = "Finalizado";
             consulta.Estudios = GuardarEstudios();
             consulta.EstudiosResibidos = estudiosResibidosTextBox.Text;
             consulta.EstudiosSolicitados = estudiosSolicitadosTextBox.Text;
