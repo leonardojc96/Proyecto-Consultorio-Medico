@@ -51,6 +51,7 @@
             // btnSalir
             // 
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // panelHeader
             // 

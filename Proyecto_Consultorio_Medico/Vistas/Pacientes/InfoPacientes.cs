@@ -16,6 +16,10 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
     {
         Modelo.Pacientes paciente = new Modelo.Pacientes();
         PacienteNegocio pacienteNegocio = new PacienteNegocio();
+        HistorialNegocios historialNegocio = new HistorialNegocios();
+        HistorialConsultas historial = new HistorialConsultas();
+        ICollection<Modelo.ConsultaMedica> ConsultasListas = new List<Modelo.ConsultaMedica>();
+        Modelo.ConsultaMedica consulta = new Modelo.ConsultaMedica();
         public InfoPacientes()
         {
             InitializeComponent();
@@ -25,15 +29,47 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
            paciente = pacienteNegocio.Get(id);
             InitializeComponent();
             CargarFoto(paciente.Foto);
+            historial = historialNegocio.Get(id);
 
         }
-
+        //public void CargaConsultas(ICollection<HistorialConsultas> datos)
+        //{
+        //    ICollection<ConsultaMedica> consultaMedicaModeloLista = new List<ConsultaMedica>();
+        //    Negocios.ConsultaMedicaNegocio consNegocio = new ConsultaMedicaNegocio();
+        //    consultaMedicaModeloLista = consNegocio.Get
+        //}
         private void InfoPacientes_Load(object sender, EventArgs e)
         {
             Inicioadores.TextoBlanco(panelLabels);
+            Inicioadores.DataGrid(dgvConsultas);
+           
             MostrarDatos();
+            CargaDgv();
+
         }
 
+        public void CargaDgv()
+        {
+            ConsultasListas = new List<Modelo.ConsultaMedica>();
+            dgvConsultas.Rows.Clear();
+            int id = historial.Id;
+            ConsultasListas = consulta.GetByIdHistorio(id);
+
+
+            foreach (var item in ConsultasListas)
+            {
+                if (item.Estado == "Finalizado")
+                {
+                    object[] elementos =
+                    {
+                    item.Observaciones,
+                    item.Fecha.Value,
+                    item.Medicos.Nombre + " " + item.Medicos.Apellido
+                };
+                    dgvConsultas.Rows.Insert(0, elementos);
+                }
+            }
+        }
 
         public void MostrarDatos()
         {

@@ -47,7 +47,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(32)))), ((int)(((byte)(61)))));
             this.panelHeader.ForeColor = System.Drawing.Color.White;
-            this.panelHeader.Size = new System.Drawing.Size(781, 55);
+            this.panelHeader.Size = new System.Drawing.Size(1395, 55);
             // 
             // btnSalir
             // 
@@ -125,7 +125,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(781, 321);
+            this.ClientSize = new System.Drawing.Size(1395, 892);
             this.Controls.Add(this.dgvMedicos);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAceptar);

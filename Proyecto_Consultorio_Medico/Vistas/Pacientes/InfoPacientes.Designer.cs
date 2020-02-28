@@ -38,7 +38,6 @@
             System.Windows.Forms.Label direccionLabel;
             System.Windows.Forms.Label ultimaVisitaLabel;
             System.Windows.Forms.Label detallesLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InfoPacientes));
             this.nombreTextBox = new System.Windows.Forms.TextBox();
             this.apellidoTextBox = new System.Windows.Forms.TextBox();
             this.dNITextBox = new System.Windows.Forms.TextBox();
@@ -50,12 +49,12 @@
             this.txtFechaNac = new System.Windows.Forms.TextBox();
             this.txtFecIngreso = new System.Windows.Forms.TextBox();
             this.txtFecUltimaVis = new System.Windows.Forms.TextBox();
-            this.dvgConsultas = new System.Windows.Forms.DataGridView();
-            this.ClmDoc = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ClmFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClmMedico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvConsultas = new System.Windows.Forms.DataGridView();
             this.btnNuevoTur = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.ClmDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClmFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClmMedico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             nombreLabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
             fechaNacLabel = new System.Windows.Forms.Label();
@@ -68,12 +67,12 @@
             detallesLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxFoto)).BeginInit();
             this.panelLabels.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgConsultas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultas)).BeginInit();
             this.SuspendLayout();
             // 
             // picBoxFoto
             // 
-            this.picBoxFoto.Size = new System.Drawing.Size(228, 207);
+            this.picBoxFoto.Size = new System.Drawing.Size(162, 137);
             // 
             // panelHeader
             // 
@@ -171,49 +170,49 @@
             // 
             // nombreTextBox
             // 
-            this.nombreTextBox.Location = new System.Drawing.Point(134, 311);
+            this.nombreTextBox.Location = new System.Drawing.Point(133, 261);
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(200, 20);
             this.nombreTextBox.TabIndex = 6;
             // 
             // apellidoTextBox
             // 
-            this.apellidoTextBox.Location = new System.Drawing.Point(134, 350);
+            this.apellidoTextBox.Location = new System.Drawing.Point(133, 300);
             this.apellidoTextBox.Name = "apellidoTextBox";
             this.apellidoTextBox.Size = new System.Drawing.Size(200, 20);
             this.apellidoTextBox.TabIndex = 8;
             // 
             // dNITextBox
             // 
-            this.dNITextBox.Location = new System.Drawing.Point(134, 466);
+            this.dNITextBox.Location = new System.Drawing.Point(133, 416);
             this.dNITextBox.Name = "dNITextBox";
             this.dNITextBox.Size = new System.Drawing.Size(200, 20);
             this.dNITextBox.TabIndex = 14;
             // 
             // obraSocialTextBox
             // 
-            this.obraSocialTextBox.Location = new System.Drawing.Point(134, 502);
+            this.obraSocialTextBox.Location = new System.Drawing.Point(133, 452);
             this.obraSocialTextBox.Name = "obraSocialTextBox";
             this.obraSocialTextBox.Size = new System.Drawing.Size(200, 20);
             this.obraSocialTextBox.TabIndex = 16;
             // 
             // telefonoTextBox
             // 
-            this.telefonoTextBox.Location = new System.Drawing.Point(134, 537);
+            this.telefonoTextBox.Location = new System.Drawing.Point(133, 487);
             this.telefonoTextBox.Name = "telefonoTextBox";
             this.telefonoTextBox.Size = new System.Drawing.Size(200, 20);
             this.telefonoTextBox.TabIndex = 18;
             // 
             // direccionTextBox
             // 
-            this.direccionTextBox.Location = new System.Drawing.Point(134, 573);
+            this.direccionTextBox.Location = new System.Drawing.Point(133, 523);
             this.direccionTextBox.Name = "direccionTextBox";
             this.direccionTextBox.Size = new System.Drawing.Size(200, 20);
             this.direccionTextBox.TabIndex = 20;
             // 
             // detallesTextBox
             // 
-            this.detallesTextBox.Location = new System.Drawing.Point(134, 650);
+            this.detallesTextBox.Location = new System.Drawing.Point(133, 600);
             this.detallesTextBox.Name = "detallesTextBox";
             this.detallesTextBox.Size = new System.Drawing.Size(200, 20);
             this.detallesTextBox.TabIndex = 26;
@@ -230,51 +229,68 @@
             this.panelLabels.Controls.Add(dNILabel);
             this.panelLabels.Controls.Add(fechaNacLabel);
             this.panelLabels.Controls.Add(fechaIngresoLabel);
-            this.panelLabels.Location = new System.Drawing.Point(13, 291);
+            this.panelLabels.Location = new System.Drawing.Point(12, 241);
             this.panelLabels.Name = "panelLabels";
             this.panelLabels.Size = new System.Drawing.Size(100, 456);
             this.panelLabels.TabIndex = 27;
             // 
             // txtFechaNac
             // 
-            this.txtFechaNac.Location = new System.Drawing.Point(134, 388);
+            this.txtFechaNac.Location = new System.Drawing.Point(133, 338);
             this.txtFechaNac.Name = "txtFechaNac";
             this.txtFechaNac.Size = new System.Drawing.Size(200, 20);
             this.txtFechaNac.TabIndex = 28;
             // 
             // txtFecIngreso
             // 
-            this.txtFecIngreso.Location = new System.Drawing.Point(134, 427);
+            this.txtFecIngreso.Location = new System.Drawing.Point(133, 377);
             this.txtFecIngreso.Name = "txtFecIngreso";
             this.txtFecIngreso.Size = new System.Drawing.Size(200, 20);
             this.txtFecIngreso.TabIndex = 29;
             // 
             // txtFecUltimaVis
             // 
-            this.txtFecUltimaVis.Location = new System.Drawing.Point(134, 610);
+            this.txtFecUltimaVis.Location = new System.Drawing.Point(133, 560);
             this.txtFecUltimaVis.Name = "txtFecUltimaVis";
             this.txtFecUltimaVis.Size = new System.Drawing.Size(200, 20);
             this.txtFecUltimaVis.TabIndex = 30;
             // 
-            // dvgConsultas
+            // dgvConsultas
             // 
-            this.dvgConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgConsultas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvConsultas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ClmDoc,
             this.ClmFecha,
             this.ClmMedico});
-            this.dvgConsultas.Location = new System.Drawing.Point(455, 101);
-            this.dvgConsultas.Name = "dvgConsultas";
-            this.dvgConsultas.Size = new System.Drawing.Size(830, 550);
-            this.dvgConsultas.TabIndex = 31;
+            this.dgvConsultas.Location = new System.Drawing.Point(455, 101);
+            this.dgvConsultas.Name = "dgvConsultas";
+            this.dgvConsultas.Size = new System.Drawing.Size(674, 371);
+            this.dgvConsultas.TabIndex = 31;
+            // 
+            // btnNuevoTur
+            // 
+            this.btnNuevoTur.Location = new System.Drawing.Point(716, 572);
+            this.btnNuevoTur.Name = "btnNuevoTur";
+            this.btnNuevoTur.Size = new System.Drawing.Size(144, 48);
+            this.btnNuevoTur.TabIndex = 32;
+            this.btnNuevoTur.Text = "Nuevo Turno";
+            this.btnNuevoTur.UseVisualStyleBackColor = true;
+            this.btnNuevoTur.Click += new System.EventHandler(this.btnNuevoTur_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(976, 572);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(144, 48);
+            this.btnSalir.TabIndex = 33;
+            this.btnSalir.Text = "Volver";
+            this.btnSalir.UseVisualStyleBackColor = true;
             // 
             // ClmDoc
             // 
             this.ClmDoc.HeaderText = "Doc";
-            this.ClmDoc.Image = ((System.Drawing.Image)(resources.GetObject("ClmDoc.Image")));
             this.ClmDoc.Name = "ClmDoc";
             this.ClmDoc.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ClmDoc.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // ClmFecha
             // 
@@ -286,25 +302,6 @@
             this.ClmMedico.HeaderText = "Medico";
             this.ClmMedico.Name = "ClmMedico";
             // 
-            // btnNuevoTur
-            // 
-            this.btnNuevoTur.Location = new System.Drawing.Point(863, 753);
-            this.btnNuevoTur.Name = "btnNuevoTur";
-            this.btnNuevoTur.Size = new System.Drawing.Size(144, 48);
-            this.btnNuevoTur.TabIndex = 32;
-            this.btnNuevoTur.Text = "Nuevo Turno";
-            this.btnNuevoTur.UseVisualStyleBackColor = true;
-            this.btnNuevoTur.Click += new System.EventHandler(this.btnNuevoTur_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Location = new System.Drawing.Point(1123, 753);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(144, 48);
-            this.btnSalir.TabIndex = 33;
-            this.btnSalir.Text = "Volver";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            // 
             // InfoPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,7 +309,7 @@
             this.ClientSize = new System.Drawing.Size(1395, 892);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnNuevoTur);
-            this.Controls.Add(this.dvgConsultas);
+            this.Controls.Add(this.dgvConsultas);
             this.Controls.Add(this.txtFecUltimaVis);
             this.Controls.Add(this.txtFecIngreso);
             this.Controls.Add(this.txtFechaNac);
@@ -340,13 +337,13 @@
             this.Controls.SetChildIndex(this.txtFechaNac, 0);
             this.Controls.SetChildIndex(this.txtFecIngreso, 0);
             this.Controls.SetChildIndex(this.txtFecUltimaVis, 0);
-            this.Controls.SetChildIndex(this.dvgConsultas, 0);
+            this.Controls.SetChildIndex(this.dgvConsultas, 0);
             this.Controls.SetChildIndex(this.btnNuevoTur, 0);
             this.Controls.SetChildIndex(this.btnSalir, 0);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxFoto)).EndInit();
             this.panelLabels.ResumeLayout(false);
             this.panelLabels.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgConsultas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -364,11 +361,11 @@
         private System.Windows.Forms.TextBox txtFechaNac;
         private System.Windows.Forms.TextBox txtFecIngreso;
         private System.Windows.Forms.TextBox txtFecUltimaVis;
-        private System.Windows.Forms.DataGridView dvgConsultas;
+        private System.Windows.Forms.DataGridView dgvConsultas;
         private System.Windows.Forms.Button btnNuevoTur;
-        private System.Windows.Forms.DataGridViewImageColumn ClmDoc;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClmDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClmFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClmMedico;
-        private System.Windows.Forms.Button btnSalir;
     }
 }

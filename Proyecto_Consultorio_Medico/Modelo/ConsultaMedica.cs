@@ -11,6 +11,7 @@ namespace Proyecto_Consultorio_Medico.Modelo
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     
     public partial class ConsultaMedica
     {
@@ -55,6 +56,14 @@ namespace Proyecto_Consultorio_Medico.Modelo
             using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
             {
                 return db.ConsultaMedica.Find(id);
+            }
+        }
+
+        public ICollection<ConsultaMedica> GetByIdHistorio(int id)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                return db.ConsultaMedica.Include("Medicos").Where(x => x.Id_Historico == id).ToList();
             }
         }
 

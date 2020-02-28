@@ -16,14 +16,14 @@ namespace Proyecto_Consultorio_Medico.Negocios
             return historial.Save(historial);
         }
 
-        public ICollection<HistorialConsultas> Get()
+        public ICollection<HistorialConsultas> GetByIdPaciente( int id )
         {
-            return historial.Get();
+            return historial.GetByIdPaciente(id);
         }
 
         public HistorialConsultas Get(int id)
         {
-            return historial.Get(id);
+            return historial.GetIdPaciente(id);
         }
 
         public IEnumerable<dynamic> GetTunosPendientes(int idMedico)

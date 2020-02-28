@@ -202,5 +202,10 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
         {
 
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
