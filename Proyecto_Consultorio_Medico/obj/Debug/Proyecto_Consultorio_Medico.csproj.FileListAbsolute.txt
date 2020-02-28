@@ -56,3 +56,9 @@ C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto Dos\Proyecto-Consultorio-Me
 C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto Dos\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.csproj.CopyComplete
 C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto Dos\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.exe
 C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto Dos\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.pdb
+C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Pacientes.DetalleConsultaMedica.resources
+C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\bin\Debug\Interop.AcroPDFLib.dll
+C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\bin\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Interop.AcroPDFLib.dll
+C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Leonardo\Documents\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.csproj.ResolveComReference.cache

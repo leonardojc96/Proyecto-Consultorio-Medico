@@ -95,9 +95,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(32)))), ((int)(((byte)(61)))));
-            this.panelHeader.ForeColor = System.Drawing.Color.White;
-            this.panelHeader.Size = new System.Drawing.Size(751, 55);
+            this.panelHeader.Size = new System.Drawing.Size(749, 55);
             // 
             // nombreLabel
             // 
@@ -321,7 +319,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(768, 284);
+            this.ClientSize = new System.Drawing.Size(766, 238);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnFoto);
             this.Controls.Add(this.richTextBox1);

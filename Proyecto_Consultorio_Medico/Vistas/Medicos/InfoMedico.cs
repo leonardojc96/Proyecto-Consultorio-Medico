@@ -97,11 +97,14 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
             {
                 foreach (var item in historialNegocios.GetTunosPendientes(medicos.Id))
                 {
+                    Modelo.Consultorios consultorios = consultoriosNegocio.Get(item.Id_Consultorio);
+
                     object[] elementos =
                     {
                         item.Id,
                         item.Nombre + " "+ item.Apellido,
-                        item.DNI
+                        item.DNI,
+                        consultorios.Nombre + " "+consultorios.Especialidades.Nombre
                     };
 
                     dgvConsultasPendientes.Rows.Insert(0, elementos);

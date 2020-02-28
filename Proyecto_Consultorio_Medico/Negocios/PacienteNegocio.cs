@@ -51,9 +51,14 @@ namespace Proyecto_Consultorio_Medico.Negocios
             return paciente.GetByMedicos(idMedico);
         }
 
-        public dynamic GetByHistorial(int idHistorial)
+        public Pacientes GetByHistorial(int idHistorial)
         {
             return paciente.GetByHistorial(idHistorial);
+        }
+
+        public ICollection<Pacientes> SearchByDNI(string dni)
+        {
+            return paciente.SearchByDNI(dni);
         }
     }
 }

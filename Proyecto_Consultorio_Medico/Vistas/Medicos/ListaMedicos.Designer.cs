@@ -46,7 +46,7 @@
             // 
             // btnInfo
             // 
-            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
+            this.btnNuevo.Click += new System.EventHandler(this.btnInfo_Click);
             // 
             // btnSalir
             // 
@@ -90,7 +90,7 @@
             this.Controls.SetChildIndex(this.txtBuscar, 0);
             this.Controls.SetChildIndex(this.btnModificar, 0);
             this.Controls.SetChildIndex(this.btnEliminar, 0);
-            this.Controls.SetChildIndex(this.btnInfo, 0);
+            this.Controls.SetChildIndex(this.btnNuevo, 0);
             this.Controls.SetChildIndex(this.btnSalir, 0);
             this.Controls.SetChildIndex(this.lblFiltrar, 0);
             this.Controls.SetChildIndex(this.cbFiltroEspecialidades, 0);

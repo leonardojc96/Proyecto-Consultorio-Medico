@@ -33,7 +33,7 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnInfo = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.SuspendLayout();
@@ -42,7 +42,7 @@
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(32)))), ((int)(((byte)(61)))));
             this.panelHeader.ForeColor = System.Drawing.Color.White;
-            this.panelHeader.Size = new System.Drawing.Size(1370, 55);
+            this.panelHeader.Size = new System.Drawing.Size(766, 55);
             // 
             // dgvLista
             // 
@@ -91,14 +91,14 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // btnInfo
+            // btnNuevo
             // 
-            this.btnInfo.Location = new System.Drawing.Point(572, 78);
-            this.btnInfo.Name = "btnInfo";
-            this.btnInfo.Size = new System.Drawing.Size(75, 23);
-            this.btnInfo.TabIndex = 6;
-            this.btnInfo.Text = "Ver mas info";
-            this.btnInfo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Location = new System.Drawing.Point(572, 78);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevo.TabIndex = 6;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = true;
             // 
             // btnSalir
             // 
@@ -114,9 +114,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 892);
+            this.ClientSize = new System.Drawing.Size(766, 321);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnInfo);
+            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.txtBuscar);
@@ -133,7 +133,7 @@
             this.Controls.SetChildIndex(this.txtBuscar, 0);
             this.Controls.SetChildIndex(this.btnModificar, 0);
             this.Controls.SetChildIndex(this.btnEliminar, 0);
-            this.Controls.SetChildIndex(this.btnInfo, 0);
+            this.Controls.SetChildIndex(this.btnNuevo, 0);
             this.Controls.SetChildIndex(this.btnSalir, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.ResumeLayout(false);
@@ -142,12 +142,12 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lblBuscar;
         public System.Windows.Forms.DataGridView dgvLista;
         public System.Windows.Forms.TextBox txtBuscar;
         public System.Windows.Forms.Button btnModificar;
         public System.Windows.Forms.Button btnEliminar;
-        public System.Windows.Forms.Button btnInfo;
+        public System.Windows.Forms.Button btnNuevo;
         public System.Windows.Forms.Button btnSalir;
+        public System.Windows.Forms.Label lblBuscar;
     }
 }

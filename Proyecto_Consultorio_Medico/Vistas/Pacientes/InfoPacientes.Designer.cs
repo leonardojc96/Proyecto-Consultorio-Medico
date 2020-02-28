@@ -50,11 +50,11 @@
             this.txtFecIngreso = new System.Windows.Forms.TextBox();
             this.txtFecUltimaVis = new System.Windows.Forms.TextBox();
             this.dgvConsultas = new System.Windows.Forms.DataGridView();
-            this.btnNuevoTur = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.ClmDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClmFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClmMedico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnNuevoTur = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             nombreLabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
             fechaNacLabel = new System.Windows.Forms.Label();
@@ -76,7 +76,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.Size = new System.Drawing.Size(1395, 55);
+            this.panelHeader.Size = new System.Drawing.Size(766, 55);
             // 
             // nombreLabel
             // 
@@ -266,6 +266,23 @@
             this.dgvConsultas.Name = "dgvConsultas";
             this.dgvConsultas.Size = new System.Drawing.Size(674, 371);
             this.dgvConsultas.TabIndex = 31;
+            this.dgvConsultas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultas_CellDoubleClick);
+            // 
+            // ClmDoc
+            // 
+            this.ClmDoc.HeaderText = "Doc";
+            this.ClmDoc.Name = "ClmDoc";
+            this.ClmDoc.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // ClmFecha
+            // 
+            this.ClmFecha.HeaderText = "Fecha";
+            this.ClmFecha.Name = "ClmFecha";
+            // 
+            // ClmMedico
+            // 
+            this.ClmMedico.HeaderText = "Medico";
+            this.ClmMedico.Name = "ClmMedico";
             // 
             // btnNuevoTur
             // 
@@ -286,27 +303,11 @@
             this.btnSalir.Text = "Volver";
             this.btnSalir.UseVisualStyleBackColor = true;
             // 
-            // ClmDoc
-            // 
-            this.ClmDoc.HeaderText = "Doc";
-            this.ClmDoc.Name = "ClmDoc";
-            this.ClmDoc.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // ClmFecha
-            // 
-            this.ClmFecha.HeaderText = "Fecha";
-            this.ClmFecha.Name = "ClmFecha";
-            // 
-            // ClmMedico
-            // 
-            this.ClmMedico.HeaderText = "Medico";
-            this.ClmMedico.Name = "ClmMedico";
-            // 
             // InfoPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1395, 892);
+            this.ClientSize = new System.Drawing.Size(766, 555);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnNuevoTur);
             this.Controls.Add(this.dgvConsultas);

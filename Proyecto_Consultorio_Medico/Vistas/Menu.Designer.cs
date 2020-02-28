@@ -40,7 +40,7 @@
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(32)))), ((int)(((byte)(61)))));
             this.panelHeader.ForeColor = System.Drawing.Color.White;
-            this.panelHeader.Size = new System.Drawing.Size(781, 55);
+            this.panelHeader.Size = new System.Drawing.Size(766, 55);
             // 
             // tableLayoutPanel1
             // 
@@ -59,7 +59,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(781, 266);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(766, 266);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // button4
@@ -112,7 +112,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(781, 321);
+            this.ClientSize = new System.Drawing.Size(766, 321);
             this.Controls.Add(this.tableLayoutPanel1);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

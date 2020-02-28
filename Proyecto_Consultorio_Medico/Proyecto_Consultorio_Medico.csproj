@@ -164,6 +164,12 @@
     <Compile Include="Vistas\Pacientes\ConsultaMedica.Designer.cs">
       <DependentUpon>ConsultaMedica.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Pacientes\DetalleConsultaMedica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Pacientes\DetalleConsultaMedica.Designer.cs">
+      <DependentUpon>DetalleConsultaMedica.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Pacientes\InfoPacientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +244,9 @@
     <EmbeddedResource Include="Vistas\Pacientes\ConsultaMedica.resx">
       <DependentUpon>ConsultaMedica.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Pacientes\DetalleConsultaMedica.resx">
+      <DependentUpon>DetalleConsultaMedica.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Pacientes\InfoPacientes.resx">
       <DependentUpon>InfoPacientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -303,7 +312,25 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Modelo\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

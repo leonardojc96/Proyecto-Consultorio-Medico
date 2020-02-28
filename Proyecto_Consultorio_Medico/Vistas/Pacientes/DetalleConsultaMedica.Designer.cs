@@ -1,6 +1,6 @@
 ﻿namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
 {
-    partial class ConsultaMedica
+    partial class DetalleConsultaMedica
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Label id_MedicoLabel;
-            System.Windows.Forms.Label estudiosLabel;
             System.Windows.Forms.Label fechaProxConsultaLabel;
             System.Windows.Forms.Label sintomasLabel;
             System.Windows.Forms.Label diagnosticoLabel;
@@ -39,10 +38,8 @@
             System.Windows.Forms.Label estudiosSolicitadosLabel;
             System.Windows.Forms.Label estudiosResibidosLabel;
             System.Windows.Forms.Label resultadosEstudiosResibidosLabel;
-            System.Windows.Forms.Label lblPaciente;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetalleConsultaMedica));
             this.id_MedicoTextBox = new System.Windows.Forms.TextBox();
-            this.estudiosTextBox = new System.Windows.Forms.TextBox();
-            this.fechaProxConsultaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.sintomasTextBox = new System.Windows.Forms.TextBox();
             this.diagnosticoTextBox = new System.Windows.Forms.TextBox();
             this.medicacionSugeridaTextBox = new System.Windows.Forms.TextBox();
@@ -50,12 +47,13 @@
             this.estudiosSolicitadosTextBox = new System.Windows.Forms.TextBox();
             this.estudiosResibidosTextBox = new System.Windows.Forms.TextBox();
             this.resultadosEstudiosResibidosTextBox = new System.Windows.Forms.TextBox();
-            this.btnEstudios = new System.Windows.Forms.Button();
-            this.txtPaciente = new System.Windows.Forms.TextBox();
-            this.openEstudios = new System.Windows.Forms.OpenFileDialog();
-            this.rtxtNotas = new System.Windows.Forms.RichTextBox();
+            this.txtFechaProx = new System.Windows.Forms.TextBox();
+            this.richTxtNotas = new System.Windows.Forms.RichTextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pdfEstudios = new AxAcroPDFLib.AxAcroPDF();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.lblEstudios = new System.Windows.Forms.Label();
             id_MedicoLabel = new System.Windows.Forms.Label();
-            estudiosLabel = new System.Windows.Forms.Label();
             fechaProxConsultaLabel = new System.Windows.Forms.Label();
             sintomasLabel = new System.Windows.Forms.Label();
             diagnosticoLabel = new System.Windows.Forms.Label();
@@ -65,81 +63,29 @@
             estudiosSolicitadosLabel = new System.Windows.Forms.Label();
             estudiosResibidosLabel = new System.Windows.Forms.Label();
             resultadosEstudiosResibidosLabel = new System.Windows.Forms.Label();
-            lblPaciente = new System.Windows.Forms.Label();
-            this.panelAlta.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pdfEstudios)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panelAlta
-            // 
-            this.panelAlta.Controls.Add(this.rtxtNotas);
-            this.panelAlta.Controls.Add(this.btnEstudios);
-            this.panelAlta.Controls.Add(this.txtPaciente);
-            this.panelAlta.Controls.Add(lblPaciente);
-            this.panelAlta.Controls.Add(this.id_MedicoTextBox);
-            this.panelAlta.Controls.Add(this.resultadosEstudiosResibidosTextBox);
-            this.panelAlta.Controls.Add(resultadosEstudiosResibidosLabel);
-            this.panelAlta.Controls.Add(this.estudiosResibidosTextBox);
-            this.panelAlta.Controls.Add(estudiosResibidosLabel);
-            this.panelAlta.Controls.Add(this.estudiosSolicitadosTextBox);
-            this.panelAlta.Controls.Add(estudiosSolicitadosLabel);
-            this.panelAlta.Controls.Add(id_MedicoLabel);
-            this.panelAlta.Controls.Add(notasLabel);
-            this.panelAlta.Controls.Add(estudiosLabel);
-            this.panelAlta.Controls.Add(this.observacionesTextBox);
-            this.panelAlta.Controls.Add(this.estudiosTextBox);
-            this.panelAlta.Controls.Add(observacionesLabel);
-            this.panelAlta.Controls.Add(fechaProxConsultaLabel);
-            this.panelAlta.Controls.Add(this.medicacionSugeridaTextBox);
-            this.panelAlta.Controls.Add(this.fechaProxConsultaDateTimePicker);
-            this.panelAlta.Controls.Add(medicacionSugeridaLabel);
-            this.panelAlta.Controls.Add(sintomasLabel);
-            this.panelAlta.Controls.Add(this.diagnosticoTextBox);
-            this.panelAlta.Controls.Add(this.sintomasTextBox);
-            this.panelAlta.Controls.Add(diagnosticoLabel);
-            this.panelAlta.Location = new System.Drawing.Point(47, 53);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Visible = false;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Visible = false;
             // 
             // panelHeader
             // 
-            this.panelHeader.Size = new System.Drawing.Size(749, 55);
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(32)))), ((int)(((byte)(61)))));
+            this.panelHeader.ForeColor = System.Drawing.Color.White;
+            this.panelHeader.Size = new System.Drawing.Size(845, 55);
             // 
             // id_MedicoLabel
             // 
             id_MedicoLabel.AutoSize = true;
-            id_MedicoLabel.Location = new System.Drawing.Point(105, 57);
+            id_MedicoLabel.Location = new System.Drawing.Point(83, 37);
             id_MedicoLabel.Name = "id_MedicoLabel";
             id_MedicoLabel.Size = new System.Drawing.Size(45, 13);
             id_MedicoLabel.TabIndex = 2;
             id_MedicoLabel.Text = "Medico:";
             // 
-            // estudiosLabel
-            // 
-            estudiosLabel.AutoSize = true;
-            estudiosLabel.Location = new System.Drawing.Point(100, 96);
-            estudiosLabel.Name = "estudiosLabel";
-            estudiosLabel.Size = new System.Drawing.Size(50, 13);
-            estudiosLabel.TabIndex = 4;
-            estudiosLabel.Text = "Estudios:";
-            // 
             // fechaProxConsultaLabel
             // 
             fechaProxConsultaLabel.AutoSize = true;
-            fechaProxConsultaLabel.Location = new System.Drawing.Point(42, 320);
+            fechaProxConsultaLabel.Location = new System.Drawing.Point(32, 68);
             fechaProxConsultaLabel.Name = "fechaProxConsultaLabel";
             fechaProxConsultaLabel.Size = new System.Drawing.Size(108, 13);
             fechaProxConsultaLabel.TabIndex = 6;
@@ -148,7 +94,7 @@
             // sintomasLabel
             // 
             sintomasLabel.AutoSize = true;
-            sintomasLabel.Location = new System.Drawing.Point(97, 124);
+            sintomasLabel.Location = new System.Drawing.Point(87, 99);
             sintomasLabel.Name = "sintomasLabel";
             sintomasLabel.Size = new System.Drawing.Size(53, 13);
             sintomasLabel.TabIndex = 8;
@@ -157,7 +103,7 @@
             // diagnosticoLabel
             // 
             diagnosticoLabel.AutoSize = true;
-            diagnosticoLabel.Location = new System.Drawing.Point(84, 152);
+            diagnosticoLabel.Location = new System.Drawing.Point(74, 130);
             diagnosticoLabel.Name = "diagnosticoLabel";
             diagnosticoLabel.Size = new System.Drawing.Size(66, 13);
             diagnosticoLabel.TabIndex = 10;
@@ -166,7 +112,7 @@
             // medicacionSugeridaLabel
             // 
             medicacionSugeridaLabel.AutoSize = true;
-            medicacionSugeridaLabel.Location = new System.Drawing.Point(40, 180);
+            medicacionSugeridaLabel.Location = new System.Drawing.Point(30, 161);
             medicacionSugeridaLabel.Name = "medicacionSugeridaLabel";
             medicacionSugeridaLabel.Size = new System.Drawing.Size(110, 13);
             medicacionSugeridaLabel.TabIndex = 12;
@@ -175,7 +121,7 @@
             // observacionesLabel
             // 
             observacionesLabel.AutoSize = true;
-            observacionesLabel.Location = new System.Drawing.Point(69, 208);
+            observacionesLabel.Location = new System.Drawing.Point(59, 192);
             observacionesLabel.Name = "observacionesLabel";
             observacionesLabel.Size = new System.Drawing.Size(81, 13);
             observacionesLabel.TabIndex = 14;
@@ -184,7 +130,7 @@
             // notasLabel
             // 
             notasLabel.AutoSize = true;
-            notasLabel.Location = new System.Drawing.Point(112, 348);
+            notasLabel.Location = new System.Drawing.Point(102, 311);
             notasLabel.Name = "notasLabel";
             notasLabel.Size = new System.Drawing.Size(38, 13);
             notasLabel.TabIndex = 16;
@@ -193,7 +139,7 @@
             // estudiosSolicitadosLabel
             // 
             estudiosSolicitadosLabel.AutoSize = true;
-            estudiosSolicitadosLabel.Location = new System.Drawing.Point(46, 236);
+            estudiosSolicitadosLabel.Location = new System.Drawing.Point(36, 223);
             estudiosSolicitadosLabel.Name = "estudiosSolicitadosLabel";
             estudiosSolicitadosLabel.Size = new System.Drawing.Size(104, 13);
             estudiosSolicitadosLabel.TabIndex = 18;
@@ -202,7 +148,7 @@
             // estudiosResibidosLabel
             // 
             estudiosResibidosLabel.AutoSize = true;
-            estudiosResibidosLabel.Location = new System.Drawing.Point(51, 264);
+            estudiosResibidosLabel.Location = new System.Drawing.Point(41, 254);
             estudiosResibidosLabel.Name = "estudiosResibidosLabel";
             estudiosResibidosLabel.Size = new System.Drawing.Size(99, 13);
             estudiosResibidosLabel.TabIndex = 20;
@@ -211,144 +157,190 @@
             // resultadosEstudiosResibidosLabel
             // 
             resultadosEstudiosResibidosLabel.AutoSize = true;
-            resultadosEstudiosResibidosLabel.Location = new System.Drawing.Point(-5, 292);
+            resultadosEstudiosResibidosLabel.Location = new System.Drawing.Point(-15, 285);
             resultadosEstudiosResibidosLabel.Name = "resultadosEstudiosResibidosLabel";
             resultadosEstudiosResibidosLabel.Size = new System.Drawing.Size(155, 13);
             resultadosEstudiosResibidosLabel.TabIndex = 22;
             resultadosEstudiosResibidosLabel.Text = "Resultados Estudios Resibidos:";
             // 
-            // lblPaciente
-            // 
-            lblPaciente.AutoSize = true;
-            lblPaciente.Location = new System.Drawing.Point(105, 31);
-            lblPaciente.Name = "lblPaciente";
-            lblPaciente.Size = new System.Drawing.Size(52, 13);
-            lblPaciente.TabIndex = 24;
-            lblPaciente.Text = "Paciente:";
-            // 
             // id_MedicoTextBox
             // 
-            this.id_MedicoTextBox.Location = new System.Drawing.Point(185, 54);
+            this.id_MedicoTextBox.Location = new System.Drawing.Point(192, 109);
             this.id_MedicoTextBox.Name = "id_MedicoTextBox";
             this.id_MedicoTextBox.ReadOnly = true;
             this.id_MedicoTextBox.Size = new System.Drawing.Size(200, 20);
             this.id_MedicoTextBox.TabIndex = 3;
             // 
-            // estudiosTextBox
-            // 
-            this.estudiosTextBox.Location = new System.Drawing.Point(185, 93);
-            this.estudiosTextBox.Name = "estudiosTextBox";
-            this.estudiosTextBox.Size = new System.Drawing.Size(200, 20);
-            this.estudiosTextBox.TabIndex = 5;
-            // 
-            // fechaProxConsultaDateTimePicker
-            // 
-            this.fechaProxConsultaDateTimePicker.Location = new System.Drawing.Point(185, 317);
-            this.fechaProxConsultaDateTimePicker.Name = "fechaProxConsultaDateTimePicker";
-            this.fechaProxConsultaDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.fechaProxConsultaDateTimePicker.TabIndex = 7;
-            // 
             // sintomasTextBox
             // 
-            this.sintomasTextBox.Location = new System.Drawing.Point(185, 121);
+            this.sintomasTextBox.Location = new System.Drawing.Point(192, 171);
             this.sintomasTextBox.Name = "sintomasTextBox";
+            this.sintomasTextBox.ReadOnly = true;
             this.sintomasTextBox.Size = new System.Drawing.Size(200, 20);
             this.sintomasTextBox.TabIndex = 9;
             // 
             // diagnosticoTextBox
             // 
-            this.diagnosticoTextBox.Location = new System.Drawing.Point(185, 149);
+            this.diagnosticoTextBox.Location = new System.Drawing.Point(192, 202);
             this.diagnosticoTextBox.Name = "diagnosticoTextBox";
+            this.diagnosticoTextBox.ReadOnly = true;
             this.diagnosticoTextBox.Size = new System.Drawing.Size(200, 20);
             this.diagnosticoTextBox.TabIndex = 11;
             // 
             // medicacionSugeridaTextBox
             // 
-            this.medicacionSugeridaTextBox.Location = new System.Drawing.Point(185, 177);
+            this.medicacionSugeridaTextBox.Location = new System.Drawing.Point(192, 233);
             this.medicacionSugeridaTextBox.Name = "medicacionSugeridaTextBox";
+            this.medicacionSugeridaTextBox.ReadOnly = true;
             this.medicacionSugeridaTextBox.Size = new System.Drawing.Size(200, 20);
             this.medicacionSugeridaTextBox.TabIndex = 13;
             // 
             // observacionesTextBox
             // 
-            this.observacionesTextBox.Location = new System.Drawing.Point(185, 205);
+            this.observacionesTextBox.Location = new System.Drawing.Point(192, 264);
             this.observacionesTextBox.Name = "observacionesTextBox";
+            this.observacionesTextBox.ReadOnly = true;
             this.observacionesTextBox.Size = new System.Drawing.Size(200, 20);
             this.observacionesTextBox.TabIndex = 15;
             // 
             // estudiosSolicitadosTextBox
             // 
-            this.estudiosSolicitadosTextBox.Location = new System.Drawing.Point(185, 233);
+            this.estudiosSolicitadosTextBox.Location = new System.Drawing.Point(192, 295);
             this.estudiosSolicitadosTextBox.Name = "estudiosSolicitadosTextBox";
+            this.estudiosSolicitadosTextBox.ReadOnly = true;
             this.estudiosSolicitadosTextBox.Size = new System.Drawing.Size(200, 20);
             this.estudiosSolicitadosTextBox.TabIndex = 19;
             // 
             // estudiosResibidosTextBox
             // 
-            this.estudiosResibidosTextBox.Location = new System.Drawing.Point(185, 261);
+            this.estudiosResibidosTextBox.Location = new System.Drawing.Point(192, 326);
             this.estudiosResibidosTextBox.Name = "estudiosResibidosTextBox";
+            this.estudiosResibidosTextBox.ReadOnly = true;
             this.estudiosResibidosTextBox.Size = new System.Drawing.Size(200, 20);
             this.estudiosResibidosTextBox.TabIndex = 21;
             // 
             // resultadosEstudiosResibidosTextBox
             // 
-            this.resultadosEstudiosResibidosTextBox.Location = new System.Drawing.Point(185, 289);
+            this.resultadosEstudiosResibidosTextBox.Location = new System.Drawing.Point(192, 357);
             this.resultadosEstudiosResibidosTextBox.Name = "resultadosEstudiosResibidosTextBox";
+            this.resultadosEstudiosResibidosTextBox.ReadOnly = true;
             this.resultadosEstudiosResibidosTextBox.Size = new System.Drawing.Size(200, 20);
             this.resultadosEstudiosResibidosTextBox.TabIndex = 23;
             // 
-            // btnEstudios
+            // txtFechaProx
             // 
-            this.btnEstudios.Location = new System.Drawing.Point(390, 91);
-            this.btnEstudios.Name = "btnEstudios";
-            this.btnEstudios.Size = new System.Drawing.Size(27, 23);
-            this.btnEstudios.TabIndex = 24;
-            this.btnEstudios.Text = "...";
-            this.btnEstudios.UseVisualStyleBackColor = true;
-            this.btnEstudios.Click += new System.EventHandler(this.btnEstudios_Click);
+            this.txtFechaProx.Location = new System.Drawing.Point(192, 140);
+            this.txtFechaProx.Name = "txtFechaProx";
+            this.txtFechaProx.ReadOnly = true;
+            this.txtFechaProx.Size = new System.Drawing.Size(200, 20);
+            this.txtFechaProx.TabIndex = 24;
             // 
-            // txtPaciente
+            // richTxtNotas
             // 
-            this.txtPaciente.Location = new System.Drawing.Point(185, 28);
-            this.txtPaciente.Name = "txtPaciente";
-            this.txtPaciente.ReadOnly = true;
-            this.txtPaciente.Size = new System.Drawing.Size(200, 20);
-            this.txtPaciente.TabIndex = 25;
+            this.richTxtNotas.Location = new System.Drawing.Point(192, 388);
+            this.richTxtNotas.Name = "richTxtNotas";
+            this.richTxtNotas.ReadOnly = true;
+            this.richTxtNotas.Size = new System.Drawing.Size(200, 96);
+            this.richTxtNotas.TabIndex = 26;
+            this.richTxtNotas.Text = "";
             // 
-            // openEstudios
+            // panel1
             // 
-            this.openEstudios.FileName = "openFileDialog1";
+            this.panel1.Controls.Add(id_MedicoLabel);
+            this.panel1.Controls.Add(resultadosEstudiosResibidosLabel);
+            this.panel1.Controls.Add(estudiosResibidosLabel);
+            this.panel1.Controls.Add(estudiosSolicitadosLabel);
+            this.panel1.Controls.Add(notasLabel);
+            this.panel1.Controls.Add(observacionesLabel);
+            this.panel1.Controls.Add(fechaProxConsultaLabel);
+            this.panel1.Controls.Add(medicacionSugeridaLabel);
+            this.panel1.Controls.Add(sintomasLabel);
+            this.panel1.Controls.Add(diagnosticoLabel);
+            this.panel1.Location = new System.Drawing.Point(12, 80);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(174, 375);
+            this.panel1.TabIndex = 27;
             // 
-            // rtxtNotas
+            // pdfEstudios
             // 
-            this.rtxtNotas.Location = new System.Drawing.Point(185, 345);
-            this.rtxtNotas.Name = "rtxtNotas";
-            this.rtxtNotas.Size = new System.Drawing.Size(200, 96);
-            this.rtxtNotas.TabIndex = 26;
-            this.rtxtNotas.Text = "";
+            this.pdfEstudios.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pdfEstudios.Enabled = true;
+            this.pdfEstudios.Location = new System.Drawing.Point(468, 55);
+            this.pdfEstudios.Name = "pdfEstudios";
+            this.pdfEstudios.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("pdfEstudios.OcxState")));
+            this.pdfEstudios.Size = new System.Drawing.Size(377, 483);
+            this.pdfEstudios.TabIndex = 28;
             // 
-            // ConsultaMedica
+            // btnSalir
             // 
-            this.AcceptButton = this.btnAgregar;
+            this.btnSalir.Location = new System.Drawing.Point(317, 515);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 29;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // lblEstudios
+            // 
+            this.lblEstudios.AutoSize = true;
+            this.lblEstudios.Location = new System.Drawing.Point(418, 295);
+            this.lblEstudios.Name = "lblEstudios";
+            this.lblEstudios.Size = new System.Drawing.Size(50, 13);
+            this.lblEstudios.TabIndex = 30;
+            this.lblEstudios.Text = "Estudios:";
+            // 
+            // DetalleConsultaMedica
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(766, 472);
-            this.Name = "ConsultaMedica";
-            this.Text = "ConsultaMedica";
-            this.Load += new System.EventHandler(this.ConsultaMedica_Load);
-            this.panelAlta.ResumeLayout(false);
-            this.panelAlta.PerformLayout();
+            this.ClientSize = new System.Drawing.Size(783, 338);
+            this.Controls.Add(this.lblEstudios);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.pdfEstudios);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.richTxtNotas);
+            this.Controls.Add(this.txtFechaProx);
+            this.Controls.Add(this.id_MedicoTextBox);
+            this.Controls.Add(this.sintomasTextBox);
+            this.Controls.Add(this.diagnosticoTextBox);
+            this.Controls.Add(this.medicacionSugeridaTextBox);
+            this.Controls.Add(this.observacionesTextBox);
+            this.Controls.Add(this.estudiosSolicitadosTextBox);
+            this.Controls.Add(this.estudiosResibidosTextBox);
+            this.Controls.Add(this.resultadosEstudiosResibidosTextBox);
+            this.ForeColor = System.Drawing.Color.Black;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "DetalleConsultaMedica";
+            this.Text = "DetalleConsultaMedica";
+            this.Load += new System.EventHandler(this.DetalleConsultaMedica_Load);
+            this.Controls.SetChildIndex(this.resultadosEstudiosResibidosTextBox, 0);
+            this.Controls.SetChildIndex(this.estudiosResibidosTextBox, 0);
+            this.Controls.SetChildIndex(this.estudiosSolicitadosTextBox, 0);
+            this.Controls.SetChildIndex(this.observacionesTextBox, 0);
+            this.Controls.SetChildIndex(this.medicacionSugeridaTextBox, 0);
+            this.Controls.SetChildIndex(this.diagnosticoTextBox, 0);
+            this.Controls.SetChildIndex(this.sintomasTextBox, 0);
+            this.Controls.SetChildIndex(this.id_MedicoTextBox, 0);
+            this.Controls.SetChildIndex(this.txtFechaProx, 0);
+            this.Controls.SetChildIndex(this.richTxtNotas, 0);
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.panelHeader, 0);
+            this.Controls.SetChildIndex(this.pdfEstudios, 0);
+            this.Controls.SetChildIndex(this.btnSalir, 0);
+            this.Controls.SetChildIndex(this.lblEstudios, 0);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pdfEstudios)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.TextBox id_MedicoTextBox;
-        private System.Windows.Forms.TextBox estudiosTextBox;
-        private System.Windows.Forms.DateTimePicker fechaProxConsultaDateTimePicker;
         private System.Windows.Forms.TextBox sintomasTextBox;
         private System.Windows.Forms.TextBox diagnosticoTextBox;
         private System.Windows.Forms.TextBox medicacionSugeridaTextBox;
@@ -356,9 +348,11 @@
         private System.Windows.Forms.TextBox estudiosSolicitadosTextBox;
         private System.Windows.Forms.TextBox estudiosResibidosTextBox;
         private System.Windows.Forms.TextBox resultadosEstudiosResibidosTextBox;
-        private System.Windows.Forms.TextBox txtPaciente;
-        private System.Windows.Forms.Button btnEstudios;
-        private System.Windows.Forms.OpenFileDialog openEstudios;
-        private System.Windows.Forms.RichTextBox rtxtNotas;
+        private System.Windows.Forms.TextBox txtFechaProx;
+        private System.Windows.Forms.RichTextBox richTxtNotas;
+        private System.Windows.Forms.Panel panel1;
+        private AxAcroPDFLib.AxAcroPDF pdfEstudios;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Label lblEstudios;
     }
 }
