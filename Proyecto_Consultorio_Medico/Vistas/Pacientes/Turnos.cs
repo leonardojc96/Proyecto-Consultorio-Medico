@@ -175,5 +175,10 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
             }
             return idConsultorio;
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

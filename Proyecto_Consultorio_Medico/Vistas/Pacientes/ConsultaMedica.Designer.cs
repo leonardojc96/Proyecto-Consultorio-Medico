@@ -116,7 +116,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.Size = new System.Drawing.Size(749, 55);
+            this.panelHeader.Size = new System.Drawing.Size(1395, 55);
             // 
             // id_MedicoLabel
             // 
@@ -334,7 +334,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(766, 472);
+            this.ClientSize = new System.Drawing.Size(1395, 809);
             this.Name = "ConsultaMedica";
             this.Text = "ConsultaMedica";
             this.Load += new System.EventHandler(this.ConsultaMedica_Load);

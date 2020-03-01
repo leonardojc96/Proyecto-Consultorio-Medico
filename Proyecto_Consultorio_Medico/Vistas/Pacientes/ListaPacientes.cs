@@ -96,7 +96,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
             {
                 if (Validaciones.FormularioNoAbierto("AltaPacientes"))
                 {
-                    Vistas.Pacientes.AltaPacientes alta = new AltaPacientes();
+                    Vistas.Pacientes.AltaPacientes alta = new AltaPacientes(idPaciente);
                     alta.MdiParent = this.Parent.FindForm();
                     alta.Modificar(idPaciente);
                     alta.Show();
@@ -104,7 +104,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
                 else
                 {
                     Vistas.Pacientes.AltaPacientes alta = (Vistas.Pacientes.AltaPacientes)Application.OpenForms["AltaPacientes"];
-                    alta = new AltaPacientes();
+                    alta = new AltaPacientes(idPaciente);
                     alta.MdiParent = this.Parent.FindForm();
                     alta.Modificar(idPaciente);
                     alta.Show();
@@ -158,12 +158,37 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             //Todo: agregar nuevo paciente
+            Vistas.Pacientes.AltaPacientes altaPaciente = new AltaPacientes();
+            altaPaciente.MdiParent = this.Parent.FindForm();
+            altaPaciente.Show();
 
         }
 
         private void btnNuevoTurno_Click(object sender, EventArgs e)
         {
             //todo: agregar nuevo turno
+            if(idPaciente !=-1)
+            {
+                if (Validaciones.FormularioNoAbierto("Turnos"))
+                {
+                    Vistas.Pacientes.Turnos Turnos = new Turnos(idPaciente);
+                    Turnos.MdiParent = this.Parent.FindForm();                  
+                    Turnos.Show();
+                }
+                else
+                {
+                    Vistas.Pacientes.Turnos Turnos = (Vistas.Pacientes.Turnos)Application.OpenForms["Turnos"];
+                    Turnos = new Turnos(idPaciente);
+                    Turnos.MdiParent = this.Parent.FindForm();               
+                    Turnos.Show();
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un paciente primero.");
+            }
+            
         }
     }
 }

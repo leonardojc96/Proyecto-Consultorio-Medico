@@ -61,6 +61,10 @@
             this.lblBuscar.Size = new System.Drawing.Size(115, 19);
             this.lblBuscar.Text = "Buscar por DNI:";
             // 
+            // panelHeader
+            // 
+            this.panelHeader.Size = new System.Drawing.Size(1395, 55);
+            // 
             // btnNuevoTurno
             // 
             this.btnNuevoTurno.Location = new System.Drawing.Point(374, 110);
@@ -76,7 +80,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(766, 321);
+            this.ClientSize = new System.Drawing.Size(1395, 892);
             this.Controls.Add(this.btnNuevoTurno);
             this.Name = "ListaPacientes";
             this.Text = "ListaPacientes";

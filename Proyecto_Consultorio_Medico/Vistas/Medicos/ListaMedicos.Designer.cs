@@ -44,7 +44,7 @@
             // 
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // btnInfo
+            // btnNuevo
             // 
             this.btnNuevo.Click += new System.EventHandler(this.btnInfo_Click);
             // 
@@ -52,6 +52,12 @@
             // 
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // lblBuscar
+            // 
+            this.lblBuscar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
+            this.lblBuscar.ForeColor = System.Drawing.Color.White;
+            this.lblBuscar.Size = new System.Drawing.Size(58, 19);
             // 
             // panelHeader
             // 
@@ -86,6 +92,7 @@
             this.Name = "ListaMedicos";
             this.Text = "ListaMedicos";
             this.Load += new System.EventHandler(this.ListaMedicos_Load);
+            this.Controls.SetChildIndex(this.lblBuscar, 0);
             this.Controls.SetChildIndex(this.panelHeader, 0);
             this.Controls.SetChildIndex(this.txtBuscar, 0);
             this.Controls.SetChildIndex(this.btnModificar, 0);

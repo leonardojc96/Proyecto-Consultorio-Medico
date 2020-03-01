@@ -50,6 +50,7 @@
             this.txtFecIngreso = new System.Windows.Forms.TextBox();
             this.txtFecUltimaVis = new System.Windows.Forms.TextBox();
             this.dgvConsultas = new System.Windows.Forms.DataGridView();
+            this.IdColumna = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClmDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClmFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClmMedico = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,16 +73,17 @@
             // 
             // picBoxFoto
             // 
-            this.picBoxFoto.Size = new System.Drawing.Size(162, 137);
+            this.picBoxFoto.Location = new System.Drawing.Point(12, 63);
+            this.picBoxFoto.Size = new System.Drawing.Size(160, 84);
             // 
             // panelHeader
             // 
-            this.panelHeader.Size = new System.Drawing.Size(766, 55);
+            this.panelHeader.Size = new System.Drawing.Size(1395, 55);
             // 
             // nombreLabel
             // 
             nombreLabel.AutoSize = true;
-            nombreLabel.Location = new System.Drawing.Point(10, 27);
+            nombreLabel.Location = new System.Drawing.Point(3, 2);
             nombreLabel.Name = "nombreLabel";
             nombreLabel.Size = new System.Drawing.Size(47, 13);
             nombreLabel.TabIndex = 5;
@@ -90,7 +92,7 @@
             // apellidoLabel
             // 
             apellidoLabel.AutoSize = true;
-            apellidoLabel.Location = new System.Drawing.Point(10, 66);
+            apellidoLabel.Location = new System.Drawing.Point(3, 41);
             apellidoLabel.Name = "apellidoLabel";
             apellidoLabel.Size = new System.Drawing.Size(47, 13);
             apellidoLabel.TabIndex = 7;
@@ -99,7 +101,7 @@
             // fechaNacLabel
             // 
             fechaNacLabel.AutoSize = true;
-            fechaNacLabel.Location = new System.Drawing.Point(10, 104);
+            fechaNacLabel.Location = new System.Drawing.Point(3, 79);
             fechaNacLabel.Name = "fechaNacLabel";
             fechaNacLabel.Size = new System.Drawing.Size(63, 13);
             fechaNacLabel.TabIndex = 9;
@@ -108,7 +110,7 @@
             // fechaIngresoLabel
             // 
             fechaIngresoLabel.AutoSize = true;
-            fechaIngresoLabel.Location = new System.Drawing.Point(10, 143);
+            fechaIngresoLabel.Location = new System.Drawing.Point(3, 118);
             fechaIngresoLabel.Name = "fechaIngresoLabel";
             fechaIngresoLabel.Size = new System.Drawing.Size(78, 13);
             fechaIngresoLabel.TabIndex = 11;
@@ -117,7 +119,7 @@
             // dNILabel
             // 
             dNILabel.AutoSize = true;
-            dNILabel.Location = new System.Drawing.Point(10, 182);
+            dNILabel.Location = new System.Drawing.Point(3, 157);
             dNILabel.Name = "dNILabel";
             dNILabel.Size = new System.Drawing.Size(29, 13);
             dNILabel.TabIndex = 13;
@@ -126,7 +128,7 @@
             // obraSocialLabel
             // 
             obraSocialLabel.AutoSize = true;
-            obraSocialLabel.Location = new System.Drawing.Point(12, 218);
+            obraSocialLabel.Location = new System.Drawing.Point(5, 193);
             obraSocialLabel.Name = "obraSocialLabel";
             obraSocialLabel.Size = new System.Drawing.Size(65, 13);
             obraSocialLabel.TabIndex = 15;
@@ -135,7 +137,7 @@
             // telefonoLabel
             // 
             telefonoLabel.AutoSize = true;
-            telefonoLabel.Location = new System.Drawing.Point(12, 253);
+            telefonoLabel.Location = new System.Drawing.Point(5, 228);
             telefonoLabel.Name = "telefonoLabel";
             telefonoLabel.Size = new System.Drawing.Size(52, 13);
             telefonoLabel.TabIndex = 17;
@@ -144,7 +146,7 @@
             // direccionLabel
             // 
             direccionLabel.AutoSize = true;
-            direccionLabel.Location = new System.Drawing.Point(10, 289);
+            direccionLabel.Location = new System.Drawing.Point(3, 264);
             direccionLabel.Name = "direccionLabel";
             direccionLabel.Size = new System.Drawing.Size(55, 13);
             direccionLabel.TabIndex = 19;
@@ -153,7 +155,7 @@
             // ultimaVisitaLabel
             // 
             ultimaVisitaLabel.AutoSize = true;
-            ultimaVisitaLabel.Location = new System.Drawing.Point(10, 326);
+            ultimaVisitaLabel.Location = new System.Drawing.Point(3, 301);
             ultimaVisitaLabel.Name = "ultimaVisitaLabel";
             ultimaVisitaLabel.Size = new System.Drawing.Size(67, 13);
             ultimaVisitaLabel.TabIndex = 23;
@@ -162,7 +164,7 @@
             // detallesLabel
             // 
             detallesLabel.AutoSize = true;
-            detallesLabel.Location = new System.Drawing.Point(10, 366);
+            detallesLabel.Location = new System.Drawing.Point(3, 341);
             detallesLabel.Name = "detallesLabel";
             detallesLabel.Size = new System.Drawing.Size(48, 13);
             detallesLabel.TabIndex = 25;
@@ -170,51 +172,51 @@
             // 
             // nombreTextBox
             // 
-            this.nombreTextBox.Location = new System.Drawing.Point(133, 261);
+            this.nombreTextBox.Location = new System.Drawing.Point(104, 152);
             this.nombreTextBox.Name = "nombreTextBox";
-            this.nombreTextBox.Size = new System.Drawing.Size(200, 20);
+            this.nombreTextBox.Size = new System.Drawing.Size(198, 20);
             this.nombreTextBox.TabIndex = 6;
             // 
             // apellidoTextBox
             // 
-            this.apellidoTextBox.Location = new System.Drawing.Point(133, 300);
+            this.apellidoTextBox.Location = new System.Drawing.Point(104, 191);
             this.apellidoTextBox.Name = "apellidoTextBox";
-            this.apellidoTextBox.Size = new System.Drawing.Size(200, 20);
+            this.apellidoTextBox.Size = new System.Drawing.Size(198, 20);
             this.apellidoTextBox.TabIndex = 8;
             // 
             // dNITextBox
             // 
-            this.dNITextBox.Location = new System.Drawing.Point(133, 416);
+            this.dNITextBox.Location = new System.Drawing.Point(104, 307);
             this.dNITextBox.Name = "dNITextBox";
-            this.dNITextBox.Size = new System.Drawing.Size(200, 20);
+            this.dNITextBox.Size = new System.Drawing.Size(198, 20);
             this.dNITextBox.TabIndex = 14;
             // 
             // obraSocialTextBox
             // 
-            this.obraSocialTextBox.Location = new System.Drawing.Point(133, 452);
+            this.obraSocialTextBox.Location = new System.Drawing.Point(104, 343);
             this.obraSocialTextBox.Name = "obraSocialTextBox";
-            this.obraSocialTextBox.Size = new System.Drawing.Size(200, 20);
+            this.obraSocialTextBox.Size = new System.Drawing.Size(198, 20);
             this.obraSocialTextBox.TabIndex = 16;
             // 
             // telefonoTextBox
             // 
-            this.telefonoTextBox.Location = new System.Drawing.Point(133, 487);
+            this.telefonoTextBox.Location = new System.Drawing.Point(104, 378);
             this.telefonoTextBox.Name = "telefonoTextBox";
-            this.telefonoTextBox.Size = new System.Drawing.Size(200, 20);
+            this.telefonoTextBox.Size = new System.Drawing.Size(198, 20);
             this.telefonoTextBox.TabIndex = 18;
             // 
             // direccionTextBox
             // 
-            this.direccionTextBox.Location = new System.Drawing.Point(133, 523);
+            this.direccionTextBox.Location = new System.Drawing.Point(104, 414);
             this.direccionTextBox.Name = "direccionTextBox";
-            this.direccionTextBox.Size = new System.Drawing.Size(200, 20);
+            this.direccionTextBox.Size = new System.Drawing.Size(198, 20);
             this.direccionTextBox.TabIndex = 20;
             // 
             // detallesTextBox
             // 
-            this.detallesTextBox.Location = new System.Drawing.Point(133, 600);
+            this.detallesTextBox.Location = new System.Drawing.Point(104, 491);
             this.detallesTextBox.Name = "detallesTextBox";
-            this.detallesTextBox.Size = new System.Drawing.Size(200, 20);
+            this.detallesTextBox.Size = new System.Drawing.Size(198, 20);
             this.detallesTextBox.TabIndex = 26;
             // 
             // panelLabels
@@ -229,44 +231,50 @@
             this.panelLabels.Controls.Add(dNILabel);
             this.panelLabels.Controls.Add(fechaNacLabel);
             this.panelLabels.Controls.Add(fechaIngresoLabel);
-            this.panelLabels.Location = new System.Drawing.Point(12, 241);
+            this.panelLabels.Location = new System.Drawing.Point(0, 153);
             this.panelLabels.Name = "panelLabels";
-            this.panelLabels.Size = new System.Drawing.Size(100, 456);
+            this.panelLabels.Size = new System.Drawing.Size(98, 397);
             this.panelLabels.TabIndex = 27;
             // 
             // txtFechaNac
             // 
-            this.txtFechaNac.Location = new System.Drawing.Point(133, 338);
+            this.txtFechaNac.Location = new System.Drawing.Point(104, 229);
             this.txtFechaNac.Name = "txtFechaNac";
-            this.txtFechaNac.Size = new System.Drawing.Size(200, 20);
+            this.txtFechaNac.Size = new System.Drawing.Size(198, 20);
             this.txtFechaNac.TabIndex = 28;
             // 
             // txtFecIngreso
             // 
-            this.txtFecIngreso.Location = new System.Drawing.Point(133, 377);
+            this.txtFecIngreso.Location = new System.Drawing.Point(104, 268);
             this.txtFecIngreso.Name = "txtFecIngreso";
-            this.txtFecIngreso.Size = new System.Drawing.Size(200, 20);
+            this.txtFecIngreso.Size = new System.Drawing.Size(198, 20);
             this.txtFecIngreso.TabIndex = 29;
             // 
             // txtFecUltimaVis
             // 
-            this.txtFecUltimaVis.Location = new System.Drawing.Point(133, 560);
+            this.txtFecUltimaVis.Location = new System.Drawing.Point(104, 451);
             this.txtFecUltimaVis.Name = "txtFecUltimaVis";
-            this.txtFecUltimaVis.Size = new System.Drawing.Size(200, 20);
+            this.txtFecUltimaVis.Size = new System.Drawing.Size(198, 20);
             this.txtFecUltimaVis.TabIndex = 30;
             // 
             // dgvConsultas
             // 
             this.dgvConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConsultas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdColumna,
             this.ClmDoc,
             this.ClmFecha,
             this.ClmMedico});
             this.dgvConsultas.Location = new System.Drawing.Point(455, 101);
             this.dgvConsultas.Name = "dgvConsultas";
-            this.dgvConsultas.Size = new System.Drawing.Size(674, 371);
+            this.dgvConsultas.Size = new System.Drawing.Size(539, 296);
             this.dgvConsultas.TabIndex = 31;
             this.dgvConsultas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultas_CellDoubleClick);
+            // 
+            // IdColumna
+            // 
+            this.IdColumna.HeaderText = "N°";
+            this.IdColumna.Name = "IdColumna";
             // 
             // ClmDoc
             // 
@@ -286,7 +294,7 @@
             // 
             // btnNuevoTur
             // 
-            this.btnNuevoTur.Location = new System.Drawing.Point(716, 572);
+            this.btnNuevoTur.Location = new System.Drawing.Point(574, 446);
             this.btnNuevoTur.Name = "btnNuevoTur";
             this.btnNuevoTur.Size = new System.Drawing.Size(144, 48);
             this.btnNuevoTur.TabIndex = 32;
@@ -296,18 +304,19 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(976, 572);
+            this.btnSalir.Location = new System.Drawing.Point(834, 446);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(144, 48);
             this.btnSalir.TabIndex = 33;
             this.btnSalir.Text = "Volver";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // InfoPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(766, 555);
+            this.ClientSize = new System.Drawing.Size(1395, 892);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnNuevoTur);
             this.Controls.Add(this.dgvConsultas);
@@ -365,6 +374,7 @@
         private System.Windows.Forms.DataGridView dgvConsultas;
         private System.Windows.Forms.Button btnNuevoTur;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdColumna;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClmDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClmFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClmMedico;

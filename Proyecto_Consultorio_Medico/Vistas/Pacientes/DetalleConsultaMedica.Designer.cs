@@ -71,7 +71,7 @@
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(32)))), ((int)(((byte)(61)))));
             this.panelHeader.ForeColor = System.Drawing.Color.White;
-            this.panelHeader.Size = new System.Drawing.Size(845, 55);
+            this.panelHeader.Size = new System.Drawing.Size(1395, 55);
             // 
             // id_MedicoLabel
             // 
@@ -265,10 +265,10 @@
             // 
             this.pdfEstudios.Dock = System.Windows.Forms.DockStyle.Right;
             this.pdfEstudios.Enabled = true;
-            this.pdfEstudios.Location = new System.Drawing.Point(468, 55);
+            this.pdfEstudios.Location = new System.Drawing.Point(1018, 55);
             this.pdfEstudios.Name = "pdfEstudios";
             this.pdfEstudios.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("pdfEstudios.OcxState")));
-            this.pdfEstudios.Size = new System.Drawing.Size(377, 483);
+            this.pdfEstudios.Size = new System.Drawing.Size(377, 837);
             this.pdfEstudios.TabIndex = 28;
             // 
             // btnSalir
@@ -295,7 +295,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(783, 338);
+            this.ClientSize = new System.Drawing.Size(1395, 892);
             this.Controls.Add(this.lblEstudios);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.pdfEstudios);

@@ -64,6 +64,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
                 {
                     object[] elementos =
                     {
+                    item.Id,
                     item.Observaciones,
                     item.Fecha.Value,
                     item.Medicos.Nombre + " " + item.Medicos.Apellido
@@ -100,7 +101,15 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
             if (e.RowIndex != -1)
             {
                 //todo: abrir pantalla detalle consulta
+                Vistas.Pacientes.DetalleConsultaMedica detalleConsulta = new DetalleConsultaMedica(int.Parse(dgvConsultas.Rows[e.RowIndex].Cells[0].Value.ToString()));
+                detalleConsulta.MdiParent = this.Parent.FindForm();
+                detalleConsulta.Show();
             }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

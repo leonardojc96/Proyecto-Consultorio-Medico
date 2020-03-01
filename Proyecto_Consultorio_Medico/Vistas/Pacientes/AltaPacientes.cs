@@ -26,6 +26,12 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
             
         }
 
+        public AltaPacientes(int id): base("Alta pacientes")
+        {
+            InitializeComponent();
+             idpacientemod = id;
+        }
+
         private void AltaPacientes_Load(object sender, EventArgs e)
         {
             
@@ -119,11 +125,13 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            paciente = new Modelo.Pacientes();
             paciente = CargarPaciente();
+            //idpacientemod = paciente.Id;
             Negocios.PacienteNegocio pac = new PacienteNegocio();
             if (pac.Update(idpacientemod, paciente))
             {
-                MessageBox.Show("Se modifico el medico");
+                MessageBox.Show("Se modifico el paciente");
             }
             else MessageBox.Show("No se pudo guardar");
         }
@@ -149,6 +157,11 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
 
 
 
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
