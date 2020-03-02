@@ -78,7 +78,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.Size = new System.Drawing.Size(766, 55);
+            this.panelHeader.Size = new System.Drawing.Size(985, 55);
             // 
             // nombreLabel
             // 
@@ -316,7 +316,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(766, 555);
+            this.ClientSize = new System.Drawing.Size(985, 530);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnNuevoTur);
             this.Controls.Add(this.dgvConsultas);

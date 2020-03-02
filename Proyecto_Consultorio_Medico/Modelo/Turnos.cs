@@ -63,5 +63,31 @@ namespace Proyecto_Consultorio_Medico.Modelo
                        select t).Count();
             }
         }
+
+        public ICollection<Medicos> GetLastMedicos(int idPaciente)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                return (from m in db.Medicos
+                        join c in db.ConsultaMedica on m.Id equals c.Id_Medico
+                        join h in db.HistorialConsultas on c.Id_Historico equals h.Id
+                        join p in db.Pacientes on h.Id_Paciente equals p.Id
+                        where p.Id == idPaciente
+                        select m).Distinct().ToList();
+            }
+        }
+
+        public Consultorios GetConsultoriosByMedicoYEspecialidad(int idMed, int idEsp)
+        {
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                return (from c in db.Consultorios
+                          join e in db.Especialidades on c.Id_Especialidad equals e.Id
+                          join mc in db.MedicoConsultorio on c.Id equals mc.Id_Consultorio
+                          join m in db.Medicos on mc.Id_Medico equals m.Id
+                          where m.Id == idMed && e.Id == idEsp
+                          select c).FirstOrDefault();
+            }
+        }
     }
 }

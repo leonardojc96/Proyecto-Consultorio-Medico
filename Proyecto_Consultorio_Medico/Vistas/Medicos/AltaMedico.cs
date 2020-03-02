@@ -58,54 +58,58 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
             {
                 if (Validaciones.NoEsNullNiVacio(panelAlta))
                 {
-                    medico = CargarMedico();
-
-                    if (medicosNegocio.SaveMedico(medico))
+                    if (dgvEspecialidades.Rows.Count != 0)
                     {
-                        MessageBox.Show("Se guardo el medico");
-                    }
-                    else MessageBox.Show("No se pudo guardar");
+                        medico = CargarMedico();
 
-                    foreach (DataGridViewRow item in dgvEspecialidades.Rows)
-                    {
-                        Modelo.MedicoEspecialidad medicoEspecialidad = new MedicoEspecialidad();
-                        medicoEspecialidad.Id_Especialidad = int.Parse(item.Cells[0].Value.ToString());
-                        medicoEspecialidad.Id_Medico = medico.Id;
-
-                        if (!medicoEspecialidadNegocio.Save(medicoEspecialidad))
+                        if (medicosNegocio.SaveMedico(medico))
                         {
-                            MessageBox.Show("Hubo un error");
+                            MessageBox.Show("Se guardo el medico");
+                        }
+                        else MessageBox.Show("No se pudo guardar");
+
+                        foreach (DataGridViewRow item in dgvEspecialidades.Rows)
+                        {
+                            Modelo.MedicoEspecialidad medicoEspecialidad = new MedicoEspecialidad();
+                            medicoEspecialidad.Id_Especialidad = int.Parse(item.Cells[0].Value.ToString());
+                            medicoEspecialidad.Id_Medico = medico.Id;
+
+                            if (!medicoEspecialidadNegocio.Save(medicoEspecialidad))
+                            {
+                                MessageBox.Show("Hubo un error");
+                            }
+                        }
+
+                        foreach (DataGridViewRow item in dgvHorarios.Rows)
+                        {
+                            TimeSpan Hentrada;
+                            TimeSpan.TryParseExact(item.Cells["H_Entrada"].Value.ToString(), @"hh\:mm", null, out Hentrada);
+                            TimeSpan HSalida;
+                            TimeSpan.TryParseExact(item.Cells["H_Salida"].Value.ToString(), @"hh\:mm", null, out HSalida);
+
+                            medicoConsultorio = new MedicoConsultorio()
+                            {
+                                Id_Medico = medico.Id,
+                                Id_Consultorio = (int)item.Cells["idCon"].Value,
+                                H_Entrada = Hentrada,
+                                H_Salida = HSalida,
+                                Lunes = (bool)item.Cells["Lu"].Value,
+                                Martes = (bool)item.Cells["Ma"].Value,
+                                Miercoles = (bool)item.Cells["Mi"].Value,
+                                Jueves = (bool)item.Cells["Ju"].Value,
+                                Viernes = (bool)item.Cells["Vi"].Value,
+                                Sabado = (bool)item.Cells["Sa"].Value,
+                                Domingo = (bool)item.Cells["Do"].Value,
+                            };
+
+
+
+                            MedicoConsultorioNegocio medicoConsultorioNegocio = new MedicoConsultorioNegocio();
+
+                            medicoConsultorioNegocio.Save(medicoConsultorio);
                         }
                     }
-
-                    foreach (DataGridViewRow item in dgvHorarios.Rows)
-                    {
-                        TimeSpan Hentrada;
-                        TimeSpan.TryParseExact(item.Cells["H_Entrada"].Value.ToString(), @"hh\:mm", null, out Hentrada);
-                        TimeSpan HSalida;
-                        TimeSpan.TryParseExact(item.Cells["H_Salida"].Value.ToString(), @"hh\:mm", null, out HSalida);
-
-                        medicoConsultorio = new MedicoConsultorio()
-                        {
-                            Id_Medico = medico.Id,
-                            Id_Consultorio = (int)item.Cells["idCon"].Value,
-                            H_Entrada = Hentrada,
-                            H_Salida = HSalida,
-                            Lunes = (bool)item.Cells["Lu"].Value,
-                            Martes = (bool)item.Cells["Ma"].Value,
-                            Miercoles = (bool)item.Cells["Mi"].Value,
-                            Jueves = (bool)item.Cells["Ju"].Value,
-                            Viernes = (bool)item.Cells["Vi"].Value,
-                            Sabado = (bool)item.Cells["Sa"].Value,
-                            Domingo = (bool)item.Cells["Do"].Value,
-                        };
-
-
-
-                        MedicoConsultorioNegocio medicoConsultorioNegocio = new MedicoConsultorioNegocio();
-
-                        medicoConsultorioNegocio.Save(medicoConsultorio);
-                    }
+                    else MessageBox.Show("Por favor elija al menos una especialidad");
                 }
             }
             catch (Exception)
@@ -332,6 +336,8 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
             else
                 MessageBox.Show("No se pudo guardar");
 
+            medico = medicosNegocio.Get(idMedicoModificar);
+
             foreach (DataGridViewRow item in dgvHorarios.Rows)
             {
                 if (item.Cells["idCon"].Value != null)
@@ -356,12 +362,24 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
                         Domingo = (bool)item.Cells["Do"].Value,
                     };
 
-
-
                     MedicoConsultorioNegocio medicoConsultorioNegocio = new MedicoConsultorioNegocio();
                     if (!medico.MedicoConsultorio.Contains(medicoConsultorio))
                         medicoConsultorioNegocio.Save(medicoConsultorio);
+
+
                 }            
+            }
+
+            foreach (DataGridViewRow item in dgvEspecialidades.Rows)
+            {
+                Modelo.MedicoEspecialidad medicoEspecialidad = new MedicoEspecialidad();
+                medicoEspecialidad.Id_Especialidad = int.Parse(item.Cells[0].Value.ToString());
+                medicoEspecialidad.Id_Medico = idMedicoModificar;
+
+                
+
+                if (!medico.MedicoEspecialidad.Contains(medicoEspecialidad))
+                    medicoEspecialidadNegocio.Save(medicoEspecialidad);
             }
         }
 

@@ -80,7 +80,7 @@ namespace Proyecto_Consultorio_Medico.Modelo
         {
             using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
             {
-                return db.Medicos.Find(id);
+                return db.Medicos.Include("MedicoEspecialidad").Include("MedicoConsultorio").Where(x => x.Id == id).FirstOrDefault();
             }
         }
 

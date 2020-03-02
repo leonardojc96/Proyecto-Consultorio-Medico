@@ -13,7 +13,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
 {
     public partial class Turnos : Plantillas.Plantilla
     {
-        int ConsultorioId;
+        int MedicoId;
         Negocios.HistorialNegocios historial = new Negocios.HistorialNegocios();
         Modelo.HistorialConsultas historialModelo = new Modelo.HistorialConsultas();
         Modelo.Pacientes pacienteModelo = new Modelo.Pacientes();
@@ -49,14 +49,34 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
             espLista = especialidadNegocio.GetEspecialidades();
             pacienteModelo = pNegocio.Get(id);
             btnAceptar.Enabled = false;
+            CambiarTitulo("Turno para " + pacienteModelo.Apellido + " " + pacienteModelo.Nombre);
         }
 
         private void Turnos_Load(object sender, EventArgs e)
         {
             Inicioadores.DataGrid(dgvMedicos);
+            Inicioadores.DataGrid(dgvUltimosMedicos);
+            Inicioadores.Labels(lblUltimos);
+            Inicioadores.Labels(lblMedicos);
             Negocios.Inicioadores.ComboBox(cmbEspecialidad, espLista);
             listaVacio.Add("");
-            
+
+
+            CargarUltimosMedicos();
+        }
+
+        public void CargarUltimosMedicos()
+        {
+            foreach (var item in turnoNegocio.GetLastMedicos(pacienteModelo.Id))
+            {
+                object[] elementos =
+                {
+                    item.Nombre,
+                    item.Apellido
+                };
+
+                dgvUltimosMedicos.Rows.Insert(0, elementos);
+            }
         }
        
         private void cmbEspecialidad_SelectedIndexChanged(object sender, EventArgs e)
@@ -101,17 +121,24 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
            
 
             historialModelo = historial.Get(pacienteModelo.Id);
+            int idEspecialidad = int.Parse(cmbEspecialidad.SelectedValue.ToString());
+            consultoriosModelo = turnoNegocio.GetConsultoriosByMedicoYEspecialidad(MedicoId, idEspecialidad);
+
             if (historialModelo != null)
             {
                 turnoModelo.Id_Paciente = historialModelo.Id_Paciente;
-                turnoModelo.Id_Consultorio = ConsultorioId;
-                turnoModelo.Id_Paciente = historialModelo.Id_Paciente;
+                turnoModelo.Id_Consultorio = consultoriosModelo.Id;
                 turnoNegocio.Save(turnoModelo);
-                consulModelo.Id_Medico = ConsultorioId;
+                consulModelo.Id_Medico = MedicoId;
                 consulModelo.Id_Historico = historialModelo.Id;
                 consulModelo.Id_Turno = GetIDTurnoByIdPaciente(historialModelo.Id_Paciente);
                 consulModelo.Estado = "Pendiente";
-                consulNegocio.Save(consulModelo);
+
+                if (consulNegocio.Save(consulModelo))
+                {
+                    MessageBox.Show("Se ha cargado el turno");
+
+                }
 
             }
             else if(historialModelo == null)
@@ -151,9 +178,9 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
         {
             btnAceptar.Enabled = true;
             
-            if (e.RowIndex != 0)
+            if (e.RowIndex != -1)
             {
-                ConsultorioId = int.Parse(dgvMedicos.Rows[e.RowIndex].Cells[3].Value.ToString());
+                MedicoId = int.Parse(dgvMedicos.Rows[e.RowIndex].Cells[3].Value.ToString());
             }
         }
         public int GetIDTurnoByIdPaciente(int id)
