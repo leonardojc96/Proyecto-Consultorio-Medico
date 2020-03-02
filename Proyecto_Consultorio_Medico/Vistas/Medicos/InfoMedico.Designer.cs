@@ -65,12 +65,12 @@
             this.btnAbrirCurricula = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.dgvConsultasPendientes = new System.Windows.Forms.DataGridView();
-            this.btnAbrirConsulta = new System.Windows.Forms.Button();
-            this.lblPacientes = new System.Windows.Forms.Label();
             this.IdConsulta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cConsultorio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAbrirConsulta = new System.Windows.Forms.Button();
+            this.lblPacientes = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             dNILabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
@@ -94,7 +94,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.Size = new System.Drawing.Size(766, 55);
+            this.panelHeader.Size = new System.Drawing.Size(785, 55);
             // 
             // nombreLabel
             // 
@@ -445,26 +445,6 @@
             this.dgvConsultasPendientes.Size = new System.Drawing.Size(255, 232);
             this.dgvConsultasPendientes.TabIndex = 40;
             // 
-            // btnAbrirConsulta
-            // 
-            this.btnAbrirConsulta.Location = new System.Drawing.Point(693, 122);
-            this.btnAbrirConsulta.Name = "btnAbrirConsulta";
-            this.btnAbrirConsulta.Size = new System.Drawing.Size(88, 23);
-            this.btnAbrirConsulta.TabIndex = 41;
-            this.btnAbrirConsulta.Text = "Abrir consulta";
-            this.btnAbrirConsulta.UseVisualStyleBackColor = true;
-            this.btnAbrirConsulta.Click += new System.EventHandler(this.btnAbrirConsulta_Click);
-            // 
-            // lblPacientes
-            // 
-            this.lblPacientes.AutoSize = true;
-            this.lblPacientes.Location = new System.Drawing.Point(527, 65);
-            this.lblPacientes.Name = "lblPacientes";
-            this.lblPacientes.Size = new System.Drawing.Size(95, 13);
-            this.lblPacientes.TabIndex = 42;
-            this.lblPacientes.Text = "Turnos pendientes";
-            this.lblPacientes.Click += new System.EventHandler(this.lblPacientes_Click);
-            // 
             // IdConsulta
             // 
             this.IdConsulta.HeaderText = "Id de la consulta";
@@ -490,11 +470,31 @@
             this.cConsultorio.Name = "cConsultorio";
             this.cConsultorio.ReadOnly = true;
             // 
+            // btnAbrirConsulta
+            // 
+            this.btnAbrirConsulta.Location = new System.Drawing.Point(693, 122);
+            this.btnAbrirConsulta.Name = "btnAbrirConsulta";
+            this.btnAbrirConsulta.Size = new System.Drawing.Size(88, 23);
+            this.btnAbrirConsulta.TabIndex = 41;
+            this.btnAbrirConsulta.Text = "Abrir consulta";
+            this.btnAbrirConsulta.UseVisualStyleBackColor = true;
+            this.btnAbrirConsulta.Click += new System.EventHandler(this.btnAbrirConsulta_Click);
+            // 
+            // lblPacientes
+            // 
+            this.lblPacientes.AutoSize = true;
+            this.lblPacientes.Location = new System.Drawing.Point(527, 65);
+            this.lblPacientes.Name = "lblPacientes";
+            this.lblPacientes.Size = new System.Drawing.Size(95, 13);
+            this.lblPacientes.TabIndex = 42;
+            this.lblPacientes.Text = "Turnos pendientes";
+            this.lblPacientes.Click += new System.EventHandler(this.lblPacientes_Click);
+            // 
             // InfoMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(766, 555);
+            this.ClientSize = new System.Drawing.Size(785, 321);
             this.Controls.Add(this.lblPacientes);
             this.Controls.Add(this.btnAbrirConsulta);
             this.Controls.Add(this.dgvConsultasPendientes);

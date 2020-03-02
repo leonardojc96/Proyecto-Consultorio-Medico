@@ -200,7 +200,12 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
 
         private void btnInfo_Click(object sender, EventArgs e)
         {
-
+            if (Validaciones.FormularioNoAbierto("AltaMedico"))
+            {
+                Vistas.Medicos.AltaMedico altaMedico = new AltaMedico();
+                altaMedico.MdiParent = this.Parent.FindForm();
+                altaMedico.Show();
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

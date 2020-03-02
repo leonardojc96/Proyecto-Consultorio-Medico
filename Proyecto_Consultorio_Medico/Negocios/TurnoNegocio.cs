@@ -25,5 +25,15 @@ namespace Proyecto_Consultorio_Medico.Negocios
         {
             return turno.Save(turno);
         }
+
+        public ICollection<Medicos> GetLastMedicos(int idPaciente)
+        {
+            return turnos.GetLastMedicos(idPaciente);
+        }
+
+        public Consultorios GetConsultoriosByMedicoYEspecialidad(int idMed, int idEsp)
+        {
+            return turnos.GetConsultoriosByMedicoYEspecialidad(idMed, idEsp);
+        }
     }
 }

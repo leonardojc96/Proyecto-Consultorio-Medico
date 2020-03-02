@@ -167,7 +167,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.Size = new System.Drawing.Size(764, 55);
+            this.panelHeader.Size = new System.Drawing.Size(778, 55);
             // 
             // nombreLabel
             // 
@@ -891,7 +891,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(781, 238);
+            this.ClientSize = new System.Drawing.Size(795, 238);
             this.Controls.Add(this.btnCurricula);
             this.Controls.Add(this.btnAgregarHorario);
             this.Controls.Add(this.lblDisponibles);

@@ -58,8 +58,6 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
 
             foreach (var item in ConsultasListas)
             {
-                //todo: agregar columna id
-
                 if (item.Estado == "Finalizado")
                 {
                     object[] elementos =
@@ -100,7 +98,6 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
         {
             if (e.RowIndex != -1)
             {
-                //todo: abrir pantalla detalle consulta
                 Vistas.Pacientes.DetalleConsultaMedica detalleConsulta = new DetalleConsultaMedica(int.Parse(dgvConsultas.Rows[e.RowIndex].Cells[0].Value.ToString()));
                 detalleConsulta.MdiParent = this.Parent.FindForm();
                 detalleConsulta.Show();
