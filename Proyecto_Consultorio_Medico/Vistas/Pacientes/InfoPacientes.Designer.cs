@@ -265,9 +265,9 @@
             this.ClmDoc,
             this.ClmFecha,
             this.ClmMedico});
-            this.dgvConsultas.Location = new System.Drawing.Point(347, 98);
+            this.dgvConsultas.Location = new System.Drawing.Point(455, 101);
             this.dgvConsultas.Name = "dgvConsultas";
-            this.dgvConsultas.Size = new System.Drawing.Size(449, 247);
+            this.dgvConsultas.Size = new System.Drawing.Size(539, 296);
             this.dgvConsultas.TabIndex = 31;
             this.dgvConsultas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultas_CellDoubleClick);
             // 
@@ -294,7 +294,7 @@
             // 
             // btnNuevoTur
             // 
-            this.btnNuevoTur.Location = new System.Drawing.Point(361, 399);
+            this.btnNuevoTur.Location = new System.Drawing.Point(574, 446);
             this.btnNuevoTur.Name = "btnNuevoTur";
             this.btnNuevoTur.Size = new System.Drawing.Size(144, 48);
             this.btnNuevoTur.TabIndex = 32;
@@ -304,7 +304,7 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(621, 399);
+            this.btnSalir.Location = new System.Drawing.Point(834, 446);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(144, 48);
             this.btnSalir.TabIndex = 33;
