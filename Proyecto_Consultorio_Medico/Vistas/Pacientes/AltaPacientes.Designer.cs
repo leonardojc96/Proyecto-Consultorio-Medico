@@ -96,7 +96,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.Size = new System.Drawing.Size(1395, 55);
+            this.panelHeader.Size = new System.Drawing.Size(574, 55);
             // 
             // nombreLabel
             // 
@@ -320,7 +320,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(1395, 809);
+            this.ClientSize = new System.Drawing.Size(17, 17);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnFoto);
             this.Controls.Add(this.richTextBox1);
