@@ -77,7 +77,7 @@ namespace Proyecto_Consultorio_Medico.Modelo
                         join m in db.Medicos on c.Id_Medico equals m.Id
                         join mc in db.MedicoConsultorio on m.Id equals mc.Id_Medico
                         where c.Estado == "Pendiente" && (DateTime.Now.Hour >= mc.H_Entrada.Hours && DateTime.Now.Hour <= mc.H_Salida.Hours) && m.Id == idMedico
-                        select new { p.Nombre, p.Apellido, p.DNI, c.Estado, c.Id, t.Id_Consultorio }).ToList();
+                        select new { p.Nombre, p.Apellido, p.DNI, c.Estado, c.Id, t.Id_Consultorio }).Distinct().ToList();
             }
         }
     }

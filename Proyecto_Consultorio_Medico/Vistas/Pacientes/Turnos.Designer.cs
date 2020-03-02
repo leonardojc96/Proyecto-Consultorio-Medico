@@ -41,6 +41,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
             this.ColumnaCantTurnos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvUltimosMedicos = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblUltimos = new System.Windows.Forms.Label();
@@ -52,7 +53,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(32)))), ((int)(((byte)(61)))));
             this.panelHeader.ForeColor = System.Drawing.Color.White;
-            this.panelHeader.Size = new System.Drawing.Size(778, 55);
+            this.panelHeader.Size = new System.Drawing.Size(785, 55);
             // 
             // btnSalir
             // 
@@ -119,25 +120,34 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
             // 
             // ColumnaCantTurnos
             // 
-            this.ColumnaCantTurnos.HeaderText = "C. de Turnos";
+            this.ColumnaCantTurnos.HeaderText = "Turnos disp. hoy";
             this.ColumnaCantTurnos.Name = "ColumnaCantTurnos";
             // 
             // ColumnaId
             // 
             this.ColumnaId.HeaderText = "N° identificacion";
             this.ColumnaId.Name = "ColumnaId";
+            this.ColumnaId.Visible = false;
             // 
             // dgvUltimosMedicos
             // 
             this.dgvUltimosMedicos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvUltimosMedicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUltimosMedicos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
             this.dgvUltimosMedicos.Location = new System.Drawing.Point(12, 195);
             this.dgvUltimosMedicos.Name = "dgvUltimosMedicos";
             this.dgvUltimosMedicos.Size = new System.Drawing.Size(263, 348);
             this.dgvUltimosMedicos.TabIndex = 19;
+            this.dgvUltimosMedicos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUltimosMedicos_CellClick);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -162,7 +172,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 321);
+            this.ClientSize = new System.Drawing.Size(785, 321);
             this.Controls.Add(this.lblUltimos);
             this.Controls.Add(this.dgvUltimosMedicos);
             this.Controls.Add(this.dgvMedicos);
@@ -201,13 +211,14 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
         private System.Windows.Forms.ComboBox cmbEspecialidad;
         private System.Windows.Forms.Label lblMedicos;
         private System.Windows.Forms.DataGridView dgvMedicos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaApellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCantTurnos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaId;
         private DataGridView dgvUltimosMedicos;
+        private Label lblUltimos;
+        private DataGridViewTextBoxColumn ColumnaNombre;
+        private DataGridViewTextBoxColumn ColumnaApellido;
+        private DataGridViewTextBoxColumn ColumnaCantTurnos;
+        private DataGridViewTextBoxColumn ColumnaId;
+        private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private Label lblUltimos;
     }
 }

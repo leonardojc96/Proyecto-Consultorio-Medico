@@ -157,7 +157,6 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            //Todo: agregar nuevo paciente
             Vistas.Pacientes.AltaPacientes altaPaciente = new AltaPacientes();
             altaPaciente.MdiParent = this.Parent.FindForm();
             altaPaciente.Show();
@@ -166,7 +165,6 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
 
         private void btnNuevoTurno_Click(object sender, EventArgs e)
         {
-            //todo: agregar nuevo turno
             if(idPaciente !=-1)
             {
                 if (Validaciones.FormularioNoAbierto("Turnos"))
