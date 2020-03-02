@@ -34,6 +34,7 @@
             // txtBuscar
             // 
             this.txtBuscar.Location = new System.Drawing.Point(135, 81);
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             this.txtBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyUp_1);
             // 
             // btnModificar

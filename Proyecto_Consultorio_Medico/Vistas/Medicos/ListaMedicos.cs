@@ -207,5 +207,10 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
         {
 
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
