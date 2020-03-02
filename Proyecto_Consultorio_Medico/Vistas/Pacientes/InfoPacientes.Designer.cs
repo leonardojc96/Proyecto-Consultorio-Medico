@@ -78,7 +78,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.Size = new System.Drawing.Size(1395, 55);
+            this.panelHeader.Size = new System.Drawing.Size(766, 55);
             // 
             // nombreLabel
             // 
@@ -265,7 +265,7 @@
             this.ClmDoc,
             this.ClmFecha,
             this.ClmMedico});
-            this.dgvConsultas.Location = new System.Drawing.Point(455, 101);
+            this.dgvConsultas.Location = new System.Drawing.Point(332, 113);
             this.dgvConsultas.Name = "dgvConsultas";
             this.dgvConsultas.Size = new System.Drawing.Size(539, 296);
             this.dgvConsultas.TabIndex = 31;
@@ -294,7 +294,7 @@
             // 
             // btnNuevoTur
             // 
-            this.btnNuevoTur.Location = new System.Drawing.Point(574, 446);
+            this.btnNuevoTur.Location = new System.Drawing.Point(332, 450);
             this.btnNuevoTur.Name = "btnNuevoTur";
             this.btnNuevoTur.Size = new System.Drawing.Size(144, 48);
             this.btnNuevoTur.TabIndex = 32;
@@ -304,7 +304,7 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(834, 446);
+            this.btnSalir.Location = new System.Drawing.Point(592, 450);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(144, 48);
             this.btnSalir.TabIndex = 33;
@@ -316,7 +316,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1395, 892);
+            this.ClientSize = new System.Drawing.Size(766, 555);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnNuevoTur);
             this.Controls.Add(this.dgvConsultas);
