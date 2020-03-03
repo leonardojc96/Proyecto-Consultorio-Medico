@@ -41,11 +41,13 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
         private void InfoPacientes_Load(object sender, EventArgs e)
         {
             Inicioadores.TextoBlanco(panelLabels);
+            Inicioadores.Labels(lblHistorial);
             Inicioadores.DataGrid(dgvConsultas);
            
             MostrarDatos();
             CargaDgv();
-
+            this.CancelButton = btnSalir;
+            CambiarTitulo(paciente.Apellido + " " + paciente.Nombre);
         }
 
         public void CargaDgv()

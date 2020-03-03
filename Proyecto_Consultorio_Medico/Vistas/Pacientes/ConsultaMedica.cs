@@ -46,6 +46,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
 
             id_MedicoTextBox.Text = medicos.Nombre + " " + medicos.Apellido;
             txtPaciente.Text = pacientes.Nombre + pacientes.Apellido;
+            consulta.Estado = "En proceso";
         }
 
         private void btnEstudios_Click(object sender, EventArgs e)

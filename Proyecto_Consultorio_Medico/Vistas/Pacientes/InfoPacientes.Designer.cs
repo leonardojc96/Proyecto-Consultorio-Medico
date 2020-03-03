@@ -56,6 +56,7 @@
             this.ClmMedico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNuevoTur = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.lblHistorial = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
             fechaNacLabel = new System.Windows.Forms.Label();
@@ -78,11 +79,7 @@
             // 
             // panelHeader
             // 
-<<<<<<< HEAD
-            this.panelHeader.Size = new System.Drawing.Size(1395, 55);
-=======
-            this.panelHeader.Size = new System.Drawing.Size(985, 55);
->>>>>>> 89b9ea6f3ba276d896640a97189505b8c6935141
+            this.panelHeader.Size = new System.Drawing.Size(785, 55);
             // 
             // nombreLabel
             // 
@@ -178,6 +175,7 @@
             // 
             this.nombreTextBox.Location = new System.Drawing.Point(104, 152);
             this.nombreTextBox.Name = "nombreTextBox";
+            this.nombreTextBox.ReadOnly = true;
             this.nombreTextBox.Size = new System.Drawing.Size(198, 20);
             this.nombreTextBox.TabIndex = 6;
             // 
@@ -185,6 +183,7 @@
             // 
             this.apellidoTextBox.Location = new System.Drawing.Point(104, 191);
             this.apellidoTextBox.Name = "apellidoTextBox";
+            this.apellidoTextBox.ReadOnly = true;
             this.apellidoTextBox.Size = new System.Drawing.Size(198, 20);
             this.apellidoTextBox.TabIndex = 8;
             // 
@@ -192,6 +191,7 @@
             // 
             this.dNITextBox.Location = new System.Drawing.Point(104, 307);
             this.dNITextBox.Name = "dNITextBox";
+            this.dNITextBox.ReadOnly = true;
             this.dNITextBox.Size = new System.Drawing.Size(198, 20);
             this.dNITextBox.TabIndex = 14;
             // 
@@ -199,6 +199,7 @@
             // 
             this.obraSocialTextBox.Location = new System.Drawing.Point(104, 343);
             this.obraSocialTextBox.Name = "obraSocialTextBox";
+            this.obraSocialTextBox.ReadOnly = true;
             this.obraSocialTextBox.Size = new System.Drawing.Size(198, 20);
             this.obraSocialTextBox.TabIndex = 16;
             // 
@@ -206,6 +207,7 @@
             // 
             this.telefonoTextBox.Location = new System.Drawing.Point(104, 378);
             this.telefonoTextBox.Name = "telefonoTextBox";
+            this.telefonoTextBox.ReadOnly = true;
             this.telefonoTextBox.Size = new System.Drawing.Size(198, 20);
             this.telefonoTextBox.TabIndex = 18;
             // 
@@ -213,6 +215,7 @@
             // 
             this.direccionTextBox.Location = new System.Drawing.Point(104, 414);
             this.direccionTextBox.Name = "direccionTextBox";
+            this.direccionTextBox.ReadOnly = true;
             this.direccionTextBox.Size = new System.Drawing.Size(198, 20);
             this.direccionTextBox.TabIndex = 20;
             // 
@@ -220,6 +223,7 @@
             // 
             this.detallesTextBox.Location = new System.Drawing.Point(104, 491);
             this.detallesTextBox.Name = "detallesTextBox";
+            this.detallesTextBox.ReadOnly = true;
             this.detallesTextBox.Size = new System.Drawing.Size(198, 20);
             this.detallesTextBox.TabIndex = 26;
             // 
@@ -244,6 +248,7 @@
             // 
             this.txtFechaNac.Location = new System.Drawing.Point(104, 229);
             this.txtFechaNac.Name = "txtFechaNac";
+            this.txtFechaNac.ReadOnly = true;
             this.txtFechaNac.Size = new System.Drawing.Size(198, 20);
             this.txtFechaNac.TabIndex = 28;
             // 
@@ -251,6 +256,7 @@
             // 
             this.txtFecIngreso.Location = new System.Drawing.Point(104, 268);
             this.txtFecIngreso.Name = "txtFecIngreso";
+            this.txtFecIngreso.ReadOnly = true;
             this.txtFecIngreso.Size = new System.Drawing.Size(198, 20);
             this.txtFecIngreso.TabIndex = 29;
             // 
@@ -258,6 +264,7 @@
             // 
             this.txtFecUltimaVis.Location = new System.Drawing.Point(104, 451);
             this.txtFecUltimaVis.Name = "txtFecUltimaVis";
+            this.txtFecUltimaVis.ReadOnly = true;
             this.txtFecUltimaVis.Size = new System.Drawing.Size(198, 20);
             this.txtFecUltimaVis.TabIndex = 30;
             // 
@@ -316,15 +323,21 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // lblHistorial
+            // 
+            this.lblHistorial.AutoSize = true;
+            this.lblHistorial.Location = new System.Drawing.Point(514, 97);
+            this.lblHistorial.Name = "lblHistorial";
+            this.lblHistorial.Size = new System.Drawing.Size(149, 13);
+            this.lblHistorial.TabIndex = 34;
+            this.lblHistorial.Text = "Historial de consultas medicas";
+            // 
             // InfoPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
-            this.ClientSize = new System.Drawing.Size(1395, 892);
-=======
-            this.ClientSize = new System.Drawing.Size(985, 530);
->>>>>>> 89b9ea6f3ba276d896640a97189505b8c6935141
+            this.ClientSize = new System.Drawing.Size(785, 555);
+            this.Controls.Add(this.lblHistorial);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnNuevoTur);
             this.Controls.Add(this.dgvConsultas);
@@ -358,6 +371,7 @@
             this.Controls.SetChildIndex(this.dgvConsultas, 0);
             this.Controls.SetChildIndex(this.btnNuevoTur, 0);
             this.Controls.SetChildIndex(this.btnSalir, 0);
+            this.Controls.SetChildIndex(this.lblHistorial, 0);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxFoto)).EndInit();
             this.panelLabels.ResumeLayout(false);
             this.panelLabels.PerformLayout();
@@ -386,5 +400,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ClmDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClmFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClmMedico;
+        private System.Windows.Forms.Label lblHistorial;
     }
 }
