@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -61,10 +62,8 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
         private void DetalleConsultaMedica_Load(object sender, EventArgs e)
         {
             this.CancelButton = btnSalir;
-            pdfEstudios.src = consultaMedica.Estudios;
             Inicioadores.TextoBlanco(panel1);
-            Inicioadores.Labels(lblEstudios);
-
+            
             CargarDatos();
 
         }
@@ -74,9 +73,26 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
             this.Close();
         }
 
+<<<<<<< HEAD
         private void pdfEstudios_OnError(object sender, EventArgs e)
         {
 
+=======
+        private void btnEstudios_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(consultaMedica.Estudios))
+            {
+                try
+                {
+                    Process.Start(consultaMedica.Estudios);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("No se pudo abrir el pdf");
+                }
+            }
+            else MessageBox.Show("No se cargaron estudios de la consulta");
+>>>>>>> e0b9f36d1e60a02b4ccbb424331b06cbaadbcf9f
         }
     }
 }

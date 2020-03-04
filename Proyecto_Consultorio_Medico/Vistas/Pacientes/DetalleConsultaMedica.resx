@@ -147,6 +147,7 @@
   <metadata name="resultadosEstudiosResibidosLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
+<<<<<<< HEAD
   <data name="pdfEstudios.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
@@ -155,4 +156,6 @@
         AAAAAQAAAAAAAAAAAAAAAAwAAAAACgAA9yYAAIJWAAAL
 </value>
   </data>
+=======
+>>>>>>> e0b9f36d1e60a02b4ccbb424331b06cbaadbcf9f
 </root>
