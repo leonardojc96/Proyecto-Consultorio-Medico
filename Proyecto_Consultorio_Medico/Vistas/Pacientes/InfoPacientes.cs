@@ -60,7 +60,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
 
             foreach (var item in ConsultasListas)
             {
-                if (item.Estado == "Finalizado")
+                if (item.Estado.ToLower().Trim() == "finalizado")
                 {
                     object[] elementos =
                     {

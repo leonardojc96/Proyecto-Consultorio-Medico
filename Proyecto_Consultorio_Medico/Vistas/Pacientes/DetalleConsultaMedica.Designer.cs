@@ -38,7 +38,6 @@
             System.Windows.Forms.Label estudiosSolicitadosLabel;
             System.Windows.Forms.Label estudiosResibidosLabel;
             System.Windows.Forms.Label resultadosEstudiosResibidosLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetalleConsultaMedica));
             this.id_MedicoTextBox = new System.Windows.Forms.TextBox();
             this.sintomasTextBox = new System.Windows.Forms.TextBox();
             this.diagnosticoTextBox = new System.Windows.Forms.TextBox();
@@ -50,9 +49,8 @@
             this.txtFechaProx = new System.Windows.Forms.TextBox();
             this.richTxtNotas = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pdfEstudios = new AxAcroPDFLib.AxAcroPDF();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.lblEstudios = new System.Windows.Forms.Label();
+            this.btnEstudios = new System.Windows.Forms.Button();
             id_MedicoLabel = new System.Windows.Forms.Label();
             fechaProxConsultaLabel = new System.Windows.Forms.Label();
             sintomasLabel = new System.Windows.Forms.Label();
@@ -64,14 +62,13 @@
             estudiosResibidosLabel = new System.Windows.Forms.Label();
             resultadosEstudiosResibidosLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pdfEstudios)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(32)))), ((int)(((byte)(61)))));
             this.panelHeader.ForeColor = System.Drawing.Color.White;
-            this.panelHeader.Size = new System.Drawing.Size(1395, 55);
+            this.panelHeader.Size = new System.Drawing.Size(785, 55);
             // 
             // id_MedicoLabel
             // 
@@ -261,16 +258,6 @@
             this.panel1.Size = new System.Drawing.Size(174, 375);
             this.panel1.TabIndex = 27;
             // 
-            // pdfEstudios
-            // 
-            this.pdfEstudios.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pdfEstudios.Enabled = true;
-            this.pdfEstudios.Location = new System.Drawing.Point(1018, 55);
-            this.pdfEstudios.Name = "pdfEstudios";
-            this.pdfEstudios.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("pdfEstudios.OcxState")));
-            this.pdfEstudios.Size = new System.Drawing.Size(377, 837);
-            this.pdfEstudios.TabIndex = 28;
-            // 
             // btnSalir
             // 
             this.btnSalir.Location = new System.Drawing.Point(317, 515);
@@ -281,24 +268,24 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // lblEstudios
+            // btnEstudios
             // 
-            this.lblEstudios.AutoSize = true;
-            this.lblEstudios.Location = new System.Drawing.Point(418, 295);
-            this.lblEstudios.Name = "lblEstudios";
-            this.lblEstudios.Size = new System.Drawing.Size(50, 13);
-            this.lblEstudios.TabIndex = 30;
-            this.lblEstudios.Text = "Estudios:";
+            this.btnEstudios.Location = new System.Drawing.Point(471, 233);
+            this.btnEstudios.Name = "btnEstudios";
+            this.btnEstudios.Size = new System.Drawing.Size(163, 52);
+            this.btnEstudios.TabIndex = 30;
+            this.btnEstudios.Text = "Ver estudios (PDF)";
+            this.btnEstudios.UseVisualStyleBackColor = true;
+            this.btnEstudios.Click += new System.EventHandler(this.btnEstudios_Click);
             // 
             // DetalleConsultaMedica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1395, 892);
-            this.Controls.Add(this.lblEstudios);
+            this.ClientSize = new System.Drawing.Size(785, 555);
+            this.Controls.Add(this.btnEstudios);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.pdfEstudios);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.richTxtNotas);
             this.Controls.Add(this.txtFechaProx);
@@ -327,12 +314,10 @@
             this.Controls.SetChildIndex(this.richTxtNotas, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.panelHeader, 0);
-            this.Controls.SetChildIndex(this.pdfEstudios, 0);
             this.Controls.SetChildIndex(this.btnSalir, 0);
-            this.Controls.SetChildIndex(this.lblEstudios, 0);
+            this.Controls.SetChildIndex(this.btnEstudios, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pdfEstudios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -351,8 +336,7 @@
         private System.Windows.Forms.TextBox txtFechaProx;
         private System.Windows.Forms.RichTextBox richTxtNotas;
         private System.Windows.Forms.Panel panel1;
-        private AxAcroPDFLib.AxAcroPDF pdfEstudios;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Label lblEstudios;
+        private System.Windows.Forms.Button btnEstudios;
     }
 }
