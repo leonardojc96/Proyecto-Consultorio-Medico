@@ -73,5 +73,10 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
         {
             this.Close();
         }
+
+        private void pdfEstudios_OnError(object sender, EventArgs e)
+        {
+
+        }
     }
 }

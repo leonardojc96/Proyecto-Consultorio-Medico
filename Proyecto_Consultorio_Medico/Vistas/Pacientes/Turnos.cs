@@ -112,7 +112,8 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    //todo: aqui esta el error del doble cartel
+                    //MessageBox.Show(ex.Message);
                 }
             }
         }

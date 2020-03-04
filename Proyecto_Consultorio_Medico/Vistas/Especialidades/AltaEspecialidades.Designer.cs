@@ -53,7 +53,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.Size = new System.Drawing.Size(764, 55);
+            this.panelHeader.Size = new System.Drawing.Size(1395, 55);
             // 
             // nombreLabel
             // 
@@ -78,7 +78,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(781, 321);
+            this.ClientSize = new System.Drawing.Size(1395, 892);
             this.Name = "AltaEspecialidades";
             this.Text = "AltaEspecialidades";
             this.Load += new System.EventHandler(this.AltaEspecialidades_Load);

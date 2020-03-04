@@ -270,6 +270,7 @@
             this.pdfEstudios.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("pdfEstudios.OcxState")));
             this.pdfEstudios.Size = new System.Drawing.Size(377, 837);
             this.pdfEstudios.TabIndex = 28;
+            this.pdfEstudios.OnError += new System.EventHandler(this.pdfEstudios_OnError);
             // 
             // btnSalir
             // 

@@ -108,5 +108,10 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
         {
             this.Close();
         }
+
+        private void dgvConsultas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
