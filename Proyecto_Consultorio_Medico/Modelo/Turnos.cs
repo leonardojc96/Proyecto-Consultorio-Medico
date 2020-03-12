@@ -77,6 +77,32 @@ namespace Proyecto_Consultorio_Medico.Modelo
             }
         }
 
+        public IEnumerable<dynamic> GetTurnos()
+        {
+            IEnumerable<dynamic> x = new List<dynamic>();
+            using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
+            {
+                x = (from c in db.Turnos
+                     join p in db.Pacientes on c.Id_Paciente equals p.Id
+                     join t in db.Consultorios on c.Id_Consultorio equals t.Id
+                     join e in db.Especialidades on t.Id_Especialidad equals e.Id
+                     join hc in db.HistorialConsultas on p.Id equals hc.Id_Paciente
+                     join co in db.ConsultaMedica on hc.Id equals co.Id_Historico
+                     join s in db.Medicos on co.Id_Medico equals s.Id
+                     where (co.Estado.ToLower() == "pendiente")
+
+                     select new
+                     {
+                         nombrePaciente = p.Nombre,
+                         nombreMedico = s.Nombre,
+                         nombreConsul = t.Nombre,
+                         nombreEspecial = e.Nombre
+                     }).Distinct().ToList();
+                return x;
+            }
+           
+        }
+
         public Consultorios GetConsultoriosByMedicoYEspecialidad(int idMed, int idEsp)
         {
             using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())

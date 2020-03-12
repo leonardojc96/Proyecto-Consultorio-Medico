@@ -92,6 +92,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(785, 321);
+
             this.Controls.Add(this.lblDetalles);
             this.Controls.Add(this.btnNuevoTurno);
             this.Name = "ListaPacientes";

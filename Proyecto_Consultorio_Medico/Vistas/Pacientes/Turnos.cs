@@ -108,7 +108,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
                     //cmbMedicos.ValueMember = "Id";
 
                 }
-                catch(Exception ex)
+                catch(Exception)
                 {
                 }
             }
