@@ -75,7 +75,10 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
             consulta.Sintomas = sintomasTextBox.Text;
             consulta.MedicacionSugerida = medicacionSugeridaTextBox.Text;
 
-            consultaMedicaNegocio.Update(consulta);
+            if (consultaMedicaNegocio.Update(consulta))
+                MessageBox.Show("Consulta guardada");
+            else
+                MessageBox.Show("No se pudo guardar la consulta");
         }
 
         private string GuardarEstudios()

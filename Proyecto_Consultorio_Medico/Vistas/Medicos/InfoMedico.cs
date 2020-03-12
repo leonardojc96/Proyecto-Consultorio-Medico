@@ -45,6 +45,8 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
             Inicioadores.Labels(lblHorarios);
             Inicioadores.Labels(lblPacientes);
             Inicioadores.TextoBlanco(panelLabels);
+            Inicioadores.Labels(lblDetalles);
+
             CargarDatos();
             CancelButton = btnSalir;
         }
@@ -87,7 +89,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
                     item.Viernes,
                     item.Sabado,
                     item.Domingo,
-                    consultorio.Nombre +" - "+consultorio.Especialidades.Nombre 
+                    consultorio.Nombre +" - "+consultorio.Especialidades.Nombre
                 };
 
                 dgvHorarios.Rows.Insert(0, elementos);
@@ -115,7 +117,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
             {
                 MessageBox.Show(ex.Message);
             }
-            
+
 
         }
 
@@ -149,6 +151,13 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
         private void btnAbrirConsulta_Click(object sender, EventArgs e)
         {
             try
+<<<<<<< HEAD
+            {
+                if (dgvConsultasPendientes.CurrentRow.Index != -1)
+                {
+                    int index = dgvConsultasPendientes.CurrentRow.Index;
+                    int idConsulta = int.Parse(dgvConsultasPendientes.Rows[index].Cells["IdConsulta"].Value.ToString());
+=======
             {
                 if (dgvConsultasPendientes.CurrentRow.Index != -1)
                 {
@@ -162,6 +171,49 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
                         consultaMedica.MdiParent = this.Parent.FindForm();
                         consultaMedica.Show();
                     }
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Por favor, seleccione un turno primero");
+            }
+        }
+
+        private void dgvConsultasPendientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                int idConsulta = int.Parse(dgvConsultasPendientes.Rows[e.RowIndex].Cells["IdConsulta"].Value.ToString());
+>>>>>>> 3e57bc8dd01d0a6a3b566352bc8b5a7bbb95932c
+
+                try
+                {
+                    if (dgvConsultasPendientes.CurrentRow.Index != -1)
+                    {
+                        int index = dgvConsultasPendientes.CurrentRow.Index;
+                        int idConsultaa = int.Parse(dgvConsultasPendientes.Rows[index].Cells["IdConsulta"].Value.ToString());
+
+<<<<<<< HEAD
+                    if (Validaciones.FormularioNoAbierto("ConsultaMedica"))
+                    {
+                        Vistas.Pacientes.ConsultaMedica consultaMedica = new Pacientes.ConsultaMedica("", idConsulta);
+                        consultaMedica.MdiParent = this.Parent.FindForm();
+                        consultaMedica.Show();
+                    }
+=======
+
+                        if (Validaciones.FormularioNoAbierto("ConsultaMedica"))
+                        {
+                            Vistas.Pacientes.ConsultaMedica consultaMedica = new Pacientes.ConsultaMedica("", idConsultaa);
+                            consultaMedica.MdiParent = this.Parent.FindForm();
+                            consultaMedica.Show();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+>>>>>>> 3e57bc8dd01d0a6a3b566352bc8b5a7bbb95932c
                 }
             }
             catch (Exception)

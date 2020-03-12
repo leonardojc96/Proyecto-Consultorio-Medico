@@ -71,6 +71,7 @@
             this.cConsultorio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAbrirConsulta = new System.Windows.Forms.Button();
             this.lblPacientes = new System.Windows.Forms.Label();
+            this.lblDetalles = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             dNILabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
@@ -94,7 +95,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.Size = new System.Drawing.Size(810, 55);
+            this.panelHeader.Size = new System.Drawing.Size(785, 55);
             // 
             // nombreLabel
             // 
@@ -272,7 +273,7 @@
             this.dgvEspecialidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEspecialidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Especialidades});
-            this.dgvEspecialidades.Location = new System.Drawing.Point(275, 81);
+            this.dgvEspecialidades.Location = new System.Drawing.Point(275, 87);
             this.dgvEspecialidades.Name = "dgvEspecialidades";
             this.dgvEspecialidades.ReadOnly = true;
             this.dgvEspecialidades.Size = new System.Drawing.Size(141, 232);
@@ -439,11 +440,12 @@
             this.Nombre,
             this.DNI,
             this.cConsultorio});
-            this.dgvConsultasPendientes.Location = new System.Drawing.Point(432, 80);
+            this.dgvConsultasPendientes.Location = new System.Drawing.Point(432, 87);
             this.dgvConsultasPendientes.Name = "dgvConsultasPendientes";
             this.dgvConsultasPendientes.ReadOnly = true;
             this.dgvConsultasPendientes.Size = new System.Drawing.Size(255, 232);
             this.dgvConsultasPendientes.TabIndex = 40;
+            this.dgvConsultasPendientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultasPendientes_CellDoubleClick);
             // 
             // IdConsulta
             // 
@@ -483,18 +485,28 @@
             // lblPacientes
             // 
             this.lblPacientes.AutoSize = true;
-            this.lblPacientes.Location = new System.Drawing.Point(527, 65);
+            this.lblPacientes.Location = new System.Drawing.Point(512, 58);
             this.lblPacientes.Name = "lblPacientes";
             this.lblPacientes.Size = new System.Drawing.Size(95, 13);
             this.lblPacientes.TabIndex = 42;
             this.lblPacientes.Text = "Turnos pendientes";
             this.lblPacientes.Click += new System.EventHandler(this.lblPacientes_Click);
             // 
+            // lblDetalles
+            // 
+            this.lblDetalles.AutoSize = true;
+            this.lblDetalles.Location = new System.Drawing.Point(480, 71);
+            this.lblDetalles.Name = "lblDetalles";
+            this.lblDetalles.Size = new System.Drawing.Size(140, 13);
+            this.lblDetalles.TabIndex = 43;
+            this.lblDetalles.Text = "(Doble click para abrir turno)";
+            // 
             // InfoMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(810, 555);
+            this.ClientSize = new System.Drawing.Size(785, 321);
+            this.Controls.Add(this.lblDetalles);
             this.Controls.Add(this.lblPacientes);
             this.Controls.Add(this.btnAbrirConsulta);
             this.Controls.Add(this.dgvConsultasPendientes);
@@ -538,6 +550,7 @@
             this.Controls.SetChildIndex(this.dgvConsultasPendientes, 0);
             this.Controls.SetChildIndex(this.btnAbrirConsulta, 0);
             this.Controls.SetChildIndex(this.lblPacientes, 0);
+            this.Controls.SetChildIndex(this.lblDetalles, 0);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxFoto)).EndInit();
             this.panelLabels.ResumeLayout(false);
             this.panelLabels.PerformLayout();
@@ -584,5 +597,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
         private System.Windows.Forms.DataGridViewTextBoxColumn cConsultorio;
+        private System.Windows.Forms.Label lblDetalles;
     }
 }

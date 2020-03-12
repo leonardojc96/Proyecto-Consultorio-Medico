@@ -67,13 +67,17 @@ namespace Proyecto_Consultorio_Medico.Modelo
             }
         }
 
-        public void Update(ConsultaMedica consulta)
+        public bool Update(ConsultaMedica consulta)
         {
             using (Proyecto_centro_medicoEntities db = new Proyecto_centro_medicoEntities())
             {
                 db.Entry(consulta).State = System.Data.Entity.EntityState.Modified;
-                 
-                db.SaveChanges();
+
+                if (db.SaveChanges() == 1)
+                {
+                    return true;
+                }
+                return false;
             }
         }
     }

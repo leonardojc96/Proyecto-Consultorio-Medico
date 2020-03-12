@@ -15,6 +15,8 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
 
         private void ListaPacientes_Load(object sender, EventArgs e)
         {
+            Inicioadores.Labels(lblDetalles);
+
             CargarDatos();
             lblBuscar.Text = "Bustar por DNI:";
         }

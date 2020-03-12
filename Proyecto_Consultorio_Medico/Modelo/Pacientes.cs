@@ -158,7 +158,7 @@ namespace Proyecto_Consultorio_Medico.Modelo
                                  join h in db.HistorialConsultas on p.Id equals h.Id_Paciente
                                  join c in db.ConsultaMedica on h.Id equals c.Id_Historico
                                  where c.Id_Medico == idMedico
-                                 select new { p.Nombre, p.Apellido, p.DNI, c.Fecha }).ToList();
+                                 select new { p.Nombre , p.Apellido, p.DNI, c.Fecha }).ToList();
 
                 return pacientes;
             }

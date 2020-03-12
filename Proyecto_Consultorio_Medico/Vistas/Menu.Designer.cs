@@ -40,7 +40,11 @@
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(32)))), ((int)(((byte)(61)))));
             this.panelHeader.ForeColor = System.Drawing.Color.White;
+<<<<<<< HEAD
             this.panelHeader.Size = new System.Drawing.Size(1370, 55);
+=======
+            this.panelHeader.Size = new System.Drawing.Size(785, 55);
+>>>>>>> 3e57bc8dd01d0a6a3b566352bc8b5a7bbb95932c
             // 
             // tableLayoutPanel1
             // 
@@ -59,16 +63,27 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+<<<<<<< HEAD
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1370, 837);
+=======
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(785, 266);
+>>>>>>> 3e57bc8dd01d0a6a3b566352bc8b5a7bbb95932c
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // btnNuevoPaciente
             // 
             this.btnNuevoPaciente.Dock = System.Windows.Forms.DockStyle.Fill;
+<<<<<<< HEAD
             this.btnNuevoPaciente.Location = new System.Drawing.Point(13, 640);
             this.btnNuevoPaciente.Margin = new System.Windows.Forms.Padding(13);
             this.btnNuevoPaciente.Name = "btnNuevoPaciente";
             this.btnNuevoPaciente.Size = new System.Drawing.Size(1344, 184);
+=======
+            this.btnNuevoPaciente.Location = new System.Drawing.Point(13, 211);
+            this.btnNuevoPaciente.Margin = new System.Windows.Forms.Padding(13);
+            this.btnNuevoPaciente.Name = "btnNuevoPaciente";
+            this.btnNuevoPaciente.Size = new System.Drawing.Size(759, 42);
+>>>>>>> 3e57bc8dd01d0a6a3b566352bc8b5a7bbb95932c
             this.btnNuevoPaciente.TabIndex = 3;
             this.btnNuevoPaciente.Text = "Nuevo paciente";
             this.btnNuevoPaciente.UseVisualStyleBackColor = true;
@@ -77,10 +92,17 @@
             // btnNuevoMedico
             // 
             this.btnNuevoMedico.Dock = System.Windows.Forms.DockStyle.Fill;
+<<<<<<< HEAD
             this.btnNuevoMedico.Location = new System.Drawing.Point(13, 431);
             this.btnNuevoMedico.Margin = new System.Windows.Forms.Padding(13);
             this.btnNuevoMedico.Name = "btnNuevoMedico";
             this.btnNuevoMedico.Size = new System.Drawing.Size(1344, 183);
+=======
+            this.btnNuevoMedico.Location = new System.Drawing.Point(13, 145);
+            this.btnNuevoMedico.Margin = new System.Windows.Forms.Padding(13);
+            this.btnNuevoMedico.Name = "btnNuevoMedico";
+            this.btnNuevoMedico.Size = new System.Drawing.Size(759, 40);
+>>>>>>> 3e57bc8dd01d0a6a3b566352bc8b5a7bbb95932c
             this.btnNuevoMedico.TabIndex = 2;
             this.btnNuevoMedico.Text = "Nuevo medico";
             this.btnNuevoMedico.UseVisualStyleBackColor = true;
@@ -89,10 +111,17 @@
             // btnListaPacientes
             // 
             this.btnListaPacientes.Dock = System.Windows.Forms.DockStyle.Fill;
+<<<<<<< HEAD
             this.btnListaPacientes.Location = new System.Drawing.Point(13, 222);
             this.btnListaPacientes.Margin = new System.Windows.Forms.Padding(13);
             this.btnListaPacientes.Name = "btnListaPacientes";
             this.btnListaPacientes.Size = new System.Drawing.Size(1344, 183);
+=======
+            this.btnListaPacientes.Location = new System.Drawing.Point(13, 79);
+            this.btnListaPacientes.Margin = new System.Windows.Forms.Padding(13);
+            this.btnListaPacientes.Name = "btnListaPacientes";
+            this.btnListaPacientes.Size = new System.Drawing.Size(759, 40);
+>>>>>>> 3e57bc8dd01d0a6a3b566352bc8b5a7bbb95932c
             this.btnListaPacientes.TabIndex = 1;
             this.btnListaPacientes.Text = "Lista de pacientes";
             this.btnListaPacientes.UseVisualStyleBackColor = true;
@@ -105,7 +134,11 @@
             this.btnListaMEdicos.Margin = new System.Windows.Forms.Padding(13);
             this.btnListaMEdicos.Name = "btnListaMEdicos";
             this.btnListaMEdicos.Padding = new System.Windows.Forms.Padding(10);
+<<<<<<< HEAD
             this.btnListaMEdicos.Size = new System.Drawing.Size(1344, 183);
+=======
+            this.btnListaMEdicos.Size = new System.Drawing.Size(759, 40);
+>>>>>>> 3e57bc8dd01d0a6a3b566352bc8b5a7bbb95932c
             this.btnListaMEdicos.TabIndex = 0;
             this.btnListaMEdicos.Text = "Lista de medicos";
             this.btnListaMEdicos.UseVisualStyleBackColor = true;
@@ -115,7 +148,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1370, 892);
+=======
+            this.ClientSize = new System.Drawing.Size(785, 321);
+>>>>>>> 3e57bc8dd01d0a6a3b566352bc8b5a7bbb95932c
             this.Controls.Add(this.tableLayoutPanel1);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

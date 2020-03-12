@@ -34,7 +34,6 @@ C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto Dos\Proyecto-Consultorio-Me
 C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto Dos\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto Dos\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\bin\Debug\EntityFramework.xml
 C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto Dos\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto Dos\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.csprojAssemblyReference.cache
 C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto Dos\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Consultorios.AltaConsultorios.resources
 C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto Dos\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Especialidades.AltaEspecialidades.resources
 C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto Dos\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Medicos.AltaMedico.resources
@@ -68,6 +67,7 @@ C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto Dos\Proyecto-Consultorio-Me
 C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto Dos\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\AxInterop.AcroPDFLib.dll
 C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto Dos\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.csproj.ResolveComReference.cache
 C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto Dos\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Pacientes.DetalleConsultaMedica.resources
+<<<<<<< HEAD
 C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto finalizado\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\bin\Debug\Proyecto_Consultorio_Medico.exe.config
 C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto finalizado\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\bin\Debug\Proyecto_Consultorio_Medico.exe
 C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto finalizado\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\bin\Debug\Proyecto_Consultorio_Medico.pdb
@@ -104,3 +104,6 @@ C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto finalizado\Proyecto-Consult
 C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto finalizado\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.exe
 C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto finalizado\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.pdb
 C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto finalizado\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.TurnosGenerales.TurnosGeneral.resources
+=======
+C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto Dos\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.csprojAssemblyReference.cache
+>>>>>>> 3e57bc8dd01d0a6a3b566352bc8b5a7bbb95932c

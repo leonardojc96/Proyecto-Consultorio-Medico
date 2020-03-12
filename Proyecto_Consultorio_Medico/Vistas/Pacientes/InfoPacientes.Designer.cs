@@ -57,6 +57,7 @@
             this.btnNuevoTur = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.lblHistorial = new System.Windows.Forms.Label();
+            this.lblDetalles = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
             fechaNacLabel = new System.Windows.Forms.Label();
@@ -280,6 +281,7 @@
             this.dgvConsultas.Name = "dgvConsultas";
             this.dgvConsultas.Size = new System.Drawing.Size(539, 296);
             this.dgvConsultas.TabIndex = 31;
+            this.dgvConsultas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultas_CellContentClick);
             this.dgvConsultas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultas_CellDoubleClick);
             // 
             // IdColumna
@@ -326,17 +328,27 @@
             // lblHistorial
             // 
             this.lblHistorial.AutoSize = true;
-            this.lblHistorial.Location = new System.Drawing.Point(514, 97);
+            this.lblHistorial.Location = new System.Drawing.Point(512, 84);
             this.lblHistorial.Name = "lblHistorial";
             this.lblHistorial.Size = new System.Drawing.Size(149, 13);
             this.lblHistorial.TabIndex = 34;
             this.lblHistorial.Text = "Historial de consultas medicas";
+            // 
+            // lblDetalles
+            // 
+            this.lblDetalles.AutoSize = true;
+            this.lblDetalles.Location = new System.Drawing.Point(522, 97);
+            this.lblDetalles.Name = "lblDetalles";
+            this.lblDetalles.Size = new System.Drawing.Size(129, 13);
+            this.lblDetalles.TabIndex = 35;
+            this.lblDetalles.Text = "(Doble click para detalles)";
             // 
             // InfoPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(785, 321);
+            this.Controls.Add(this.lblDetalles);
             this.Controls.Add(this.lblHistorial);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnNuevoTur);
@@ -372,6 +384,7 @@
             this.Controls.SetChildIndex(this.btnNuevoTur, 0);
             this.Controls.SetChildIndex(this.btnSalir, 0);
             this.Controls.SetChildIndex(this.lblHistorial, 0);
+            this.Controls.SetChildIndex(this.lblDetalles, 0);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxFoto)).EndInit();
             this.panelLabels.ResumeLayout(false);
             this.panelLabels.PerformLayout();
@@ -401,5 +414,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ClmFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClmMedico;
         private System.Windows.Forms.Label lblHistorial;
+        private System.Windows.Forms.Label lblDetalles;
     }
 }

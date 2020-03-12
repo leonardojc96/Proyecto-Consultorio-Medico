@@ -110,7 +110,10 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
                 }
                 catch(Exception ex)
                 {
+<<<<<<< HEAD
                     //MessageBox.Show(ex.Message);
+=======
+>>>>>>> 3e57bc8dd01d0a6a3b566352bc8b5a7bbb95932c
                 }
             }
         }
