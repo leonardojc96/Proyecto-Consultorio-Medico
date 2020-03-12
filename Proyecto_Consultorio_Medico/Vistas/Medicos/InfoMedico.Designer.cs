@@ -95,7 +95,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.Size = new System.Drawing.Size(785, 55);
+            this.panelHeader.Size = new System.Drawing.Size(766, 55);
             // 
             // nombreLabel
             // 
@@ -505,7 +505,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(785, 321);
+            this.ClientSize = new System.Drawing.Size(766, 530);
             this.Controls.Add(this.lblDetalles);
             this.Controls.Add(this.lblPacientes);
             this.Controls.Add(this.btnAbrirConsulta);
