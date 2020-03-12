@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.btnNuevoTurno = new System.Windows.Forms.Button();
+            this.lblDetalles = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtBuscar
@@ -64,7 +65,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.Size = new System.Drawing.Size(1395, 55);
+            this.panelHeader.Size = new System.Drawing.Size(785, 55);
             // 
             // btnNuevoTurno
             // 
@@ -76,12 +77,22 @@
             this.btnNuevoTurno.UseVisualStyleBackColor = true;
             this.btnNuevoTurno.Click += new System.EventHandler(this.btnNuevoTurno_Click);
             // 
+            // lblDetalles
+            // 
+            this.lblDetalles.AutoSize = true;
+            this.lblDetalles.Location = new System.Drawing.Point(142, 123);
+            this.lblDetalles.Name = "lblDetalles";
+            this.lblDetalles.Size = new System.Drawing.Size(129, 13);
+            this.lblDetalles.TabIndex = 11;
+            this.lblDetalles.Text = "(Doble click para detalles)";
+            // 
             // ListaPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(1395, 892);
+            this.ClientSize = new System.Drawing.Size(785, 321);
+            this.Controls.Add(this.lblDetalles);
             this.Controls.Add(this.btnNuevoTurno);
             this.Name = "ListaPacientes";
             this.Text = "ListaPacientes";
@@ -94,6 +105,7 @@
             this.Controls.SetChildIndex(this.btnNuevo, 0);
             this.Controls.SetChildIndex(this.btnSalir, 0);
             this.Controls.SetChildIndex(this.btnNuevoTurno, 0);
+            this.Controls.SetChildIndex(this.lblDetalles, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,5 +114,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnNuevoTurno;
+        private System.Windows.Forms.Label lblDetalles;
     }
 }

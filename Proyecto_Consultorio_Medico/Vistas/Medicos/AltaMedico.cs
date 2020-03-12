@@ -311,6 +311,11 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
             string pathFoto = GuardarFoto();
             string pathCurricula = GuardarCurricula();
 
+            if (string.IsNullOrEmpty(cantidadTurnosTextBox.Text))
+            {
+                cantidadTurnosTextBox.Text = 0.ToString();
+            }
+
             return medico = new Modelo.Medicos()
             {
                 Nombre = nombreTextBox.Text,
@@ -409,6 +414,21 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
             }
 
             return destino;
+        }
+
+        private void nombreTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validaciones.ValidaNombre(e);
+        }
+
+        private void dNITextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validaciones.ValidaEntero(e);
+        }
+
+        private void cantidadTurnosTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validaciones.ValidaEntero(e);
         }
     }
 }

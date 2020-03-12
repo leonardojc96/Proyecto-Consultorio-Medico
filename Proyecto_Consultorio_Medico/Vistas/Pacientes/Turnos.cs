@@ -60,7 +60,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
             Inicioadores.Labels(lblMedicos);
             Negocios.Inicioadores.ComboBox(cmbEspecialidad, espLista);
             listaVacio.Add("");
-
+            this.CancelButton = btnSalir;
 
             CargarUltimosMedicos();
         }
@@ -82,8 +82,6 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
        
         private void cmbEspecialidad_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
-            
             if (cmbEspecialidad.SelectedIndex.ToString() != "-1")
             {
                 
@@ -112,7 +110,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    //MessageBox.Show(ex.Message);
                 }
             }
         }

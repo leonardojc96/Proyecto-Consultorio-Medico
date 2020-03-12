@@ -55,6 +55,11 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
             fechaNacLabel = new System.Windows.Forms.Label();
@@ -73,8 +78,17 @@
             // 
             // panelAlta
             // 
+            this.panelAlta.Controls.Add(this.label2);
+            this.panelAlta.Controls.Add(this.label1);
+            this.panelAlta.Controls.Add(this.label5);
+            this.panelAlta.Controls.Add(this.label4);
             this.panelAlta.Controls.Add(this.fechaIngresoDateTimePicker);
-            this.panelAlta.Location = new System.Drawing.Point(115, 61);
+            this.panelAlta.Controls.Add(this.label3);
+            this.panelAlta.Controls.Add(this.nombreTextBox);
+            this.panelAlta.Controls.Add(this.apellidoTextBox);
+            this.panelAlta.Controls.Add(this.telefonoTextBox);
+            this.panelAlta.Controls.Add(this.dNITextBox);
+            this.panelAlta.Location = new System.Drawing.Point(115, 70);
             this.panelAlta.Size = new System.Drawing.Size(230, 175);
             // 
             // btnAgregar
@@ -96,7 +110,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.Size = new System.Drawing.Size(574, 55);
+            this.panelHeader.Size = new System.Drawing.Size(768, 55);
             // 
             // nombreLabel
             // 
@@ -199,17 +213,19 @@
             // 
             // nombreTextBox
             // 
-            this.nombreTextBox.Location = new System.Drawing.Point(115, 94);
+            this.nombreTextBox.Location = new System.Drawing.Point(3, 28);
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(200, 20);
             this.nombreTextBox.TabIndex = 11;
+            this.nombreTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombreTextBox_KeyPress);
             // 
             // apellidoTextBox
             // 
-            this.apellidoTextBox.Location = new System.Drawing.Point(115, 120);
+            this.apellidoTextBox.Location = new System.Drawing.Point(3, 54);
             this.apellidoTextBox.Name = "apellidoTextBox";
             this.apellidoTextBox.Size = new System.Drawing.Size(200, 20);
             this.apellidoTextBox.TabIndex = 13;
+            this.apellidoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombreTextBox_KeyPress);
             // 
             // fechaNacDateTimePicker
             // 
@@ -227,10 +243,11 @@
             // 
             // dNITextBox
             // 
-            this.dNITextBox.Location = new System.Drawing.Point(115, 146);
+            this.dNITextBox.Location = new System.Drawing.Point(3, 80);
             this.dNITextBox.Name = "dNITextBox";
             this.dNITextBox.Size = new System.Drawing.Size(200, 20);
             this.dNITextBox.TabIndex = 19;
+            this.dNITextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dNITextBox_KeyPress);
             // 
             // obraSocialTextBox
             // 
@@ -241,7 +258,7 @@
             // 
             // telefonoTextBox
             // 
-            this.telefonoTextBox.Location = new System.Drawing.Point(115, 172);
+            this.telefonoTextBox.Location = new System.Drawing.Point(3, 106);
             this.telefonoTextBox.Name = "telefonoTextBox";
             this.telefonoTextBox.Size = new System.Drawing.Size(200, 20);
             this.telefonoTextBox.TabIndex = 23;
@@ -257,6 +274,7 @@
             // 
             this.fotoTextBox.Location = new System.Drawing.Point(115, 321);
             this.fotoTextBox.Name = "fotoTextBox";
+            this.fotoTextBox.ReadOnly = true;
             this.fotoTextBox.Size = new System.Drawing.Size(167, 20);
             this.fotoTextBox.TabIndex = 27;
             // 
@@ -313,6 +331,51 @@
             this.pictureBox1.TabIndex = 35;
             this.pictureBox1.TabStop = false;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(209, 80);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(11, 13);
+            this.label5.TabIndex = 58;
+            this.label5.Text = "*";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(209, 54);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(11, 13);
+            this.label4.TabIndex = 57;
+            this.label4.Text = "*";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(209, 28);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(11, 13);
+            this.label3.TabIndex = 56;
+            this.label3.Text = "*";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(209, 109);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(11, 13);
+            this.label1.TabIndex = 58;
+            this.label1.Text = "*";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(209, 143);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(11, 13);
+            this.label2.TabIndex = 57;
+            this.label2.Text = "*";
+            // 
             // AltaPacientes
             // 
             this.AcceptButton = this.btnAgregar;
@@ -320,19 +383,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(17, 17);
+            this.ClientSize = new System.Drawing.Size(785, 472);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnFoto);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(dNILabel);
-            this.Controls.Add(this.dNITextBox);
             this.Controls.Add(this.ultimaVisitaDateTimePicker);
             this.Controls.Add(telefonoLabel);
             this.Controls.Add(this.fotoTextBox);
-            this.Controls.Add(this.telefonoTextBox);
-            this.Controls.Add(this.nombreTextBox);
             this.Controls.Add(this.fechaNacDateTimePicker);
-            this.Controls.Add(this.apellidoTextBox);
             this.Controls.Add(this.direccionTextBox);
             this.Controls.Add(apellidoLabel);
             this.Controls.Add(this.obraSocialTextBox);
@@ -350,19 +409,16 @@
             this.Controls.SetChildIndex(this.btnEliminar, 0);
             this.Controls.SetChildIndex(apellidoLabel, 0);
             this.Controls.SetChildIndex(this.direccionTextBox, 0);
-            this.Controls.SetChildIndex(this.apellidoTextBox, 0);
             this.Controls.SetChildIndex(this.fechaNacDateTimePicker, 0);
-            this.Controls.SetChildIndex(this.nombreTextBox, 0);
-            this.Controls.SetChildIndex(this.telefonoTextBox, 0);
             this.Controls.SetChildIndex(this.fotoTextBox, 0);
             this.Controls.SetChildIndex(telefonoLabel, 0);
             this.Controls.SetChildIndex(this.ultimaVisitaDateTimePicker, 0);
-            this.Controls.SetChildIndex(this.dNITextBox, 0);
             this.Controls.SetChildIndex(dNILabel, 0);
             this.Controls.SetChildIndex(this.richTextBox1, 0);
             this.Controls.SetChildIndex(this.btnFoto, 0);
             this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.panelAlta.ResumeLayout(false);
+            this.panelAlta.PerformLayout();
             this.panelLabels.ResumeLayout(false);
             this.panelLabels.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -388,5 +444,10 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }

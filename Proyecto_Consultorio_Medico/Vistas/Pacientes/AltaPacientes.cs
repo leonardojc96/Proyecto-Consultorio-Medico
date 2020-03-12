@@ -53,7 +53,13 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
                 {
                     paciente = CargarPaciente();
                     PacienteNegocio pac = new PacienteNegocio();
-                    pac.Save(paciente);
+
+                    if (pac.Save(paciente))
+                    {
+                        MessageBox.Show("Se ha guardado un nuevo paciente");
+                    }
+                    else
+                        MessageBox.Show("No se pudo guardar");
                 }
             }
             catch
@@ -162,6 +168,16 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dNITextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validaciones.ValidaEntero(e);
+        }
+
+        private void nombreTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validaciones.ValidaNombre(e);
         }
     }
 }

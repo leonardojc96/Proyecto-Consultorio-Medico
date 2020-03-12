@@ -34,9 +34,42 @@ namespace Proyecto_Consultorio_Medico.Vistas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Vistas.Pacientes.DetalleConsultaMedica consulta = new Pacientes.DetalleConsultaMedica(11);
-            consulta.MdiParent = this.Parent.FindForm();
-            consulta.Show();
+            if (Validaciones.FormularioNoAbierto("ListaMedicos"))
+            {
+                Vistas.Medicos.ListaMedicos listaMedicos = new Medicos.ListaMedicos();
+                listaMedicos.MdiParent = this.Parent.FindForm();
+                listaMedicos.Show();
+            }
+        }
+
+        private void btnListaPacientes_Click(object sender, EventArgs e)
+        {
+            if (Validaciones.FormularioNoAbierto("ListaPacientes"))
+            {
+                Vistas.Pacientes.ListaPacientes listaPacientes = new Pacientes.ListaPacientes();
+                listaPacientes.MdiParent = this.Parent.FindForm();
+                listaPacientes.Show();
+            }
+        }
+
+        private void btnNuevoMedico_Click(object sender, EventArgs e)
+        {
+            if (Validaciones.FormularioNoAbierto("AltaMedico"))
+            {
+                Vistas.Medicos.AltaMedico altaMedico = new Medicos.AltaMedico();
+                altaMedico.MdiParent = this.Parent.FindForm();
+                altaMedico.Show();
+            }
+        }
+
+        private void btnNuevoPaciente_Click(object sender, EventArgs e)
+        {
+            if (Validaciones.FormularioNoAbierto("AltaPacientes"))
+            {
+                Vistas.Pacientes.AltaPacientes altaPacientes = new Pacientes.AltaPacientes();
+                altaPacientes.MdiParent = this.Parent.FindForm();
+                altaPacientes.Show();
+            }
         }
     }
 }

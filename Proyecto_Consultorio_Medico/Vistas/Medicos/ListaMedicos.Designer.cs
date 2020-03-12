@@ -30,6 +30,7 @@
         {
             this.lblFiltrar = new System.Windows.Forms.Label();
             this.cbFiltroEspecialidades = new System.Windows.Forms.ComboBox();
+            this.lblDetalles = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtBuscar
@@ -82,12 +83,22 @@
             this.cbFiltroEspecialidades.TabIndex = 9;
             this.cbFiltroEspecialidades.SelectedIndexChanged += new System.EventHandler(this.cbFiltroEspecialidades_SelectedIndexChanged);
             // 
+            // lblDetalles
+            // 
+            this.lblDetalles.AutoSize = true;
+            this.lblDetalles.Location = new System.Drawing.Point(405, 123);
+            this.lblDetalles.Name = "lblDetalles";
+            this.lblDetalles.Size = new System.Drawing.Size(129, 13);
+            this.lblDetalles.TabIndex = 10;
+            this.lblDetalles.Text = "(Doble click para detalles)";
+            // 
             // ListaMedicos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(785, 321);
+            this.Controls.Add(this.lblDetalles);
             this.Controls.Add(this.cbFiltroEspecialidades);
             this.Controls.Add(this.lblFiltrar);
             this.Name = "ListaMedicos";
@@ -102,6 +113,7 @@
             this.Controls.SetChildIndex(this.btnSalir, 0);
             this.Controls.SetChildIndex(this.lblFiltrar, 0);
             this.Controls.SetChildIndex(this.cbFiltroEspecialidades, 0);
+            this.Controls.SetChildIndex(this.lblDetalles, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,5 +123,6 @@
 
         private System.Windows.Forms.Label lblFiltrar;
         private System.Windows.Forms.ComboBox cbFiltroEspecialidades;
+        private System.Windows.Forms.Label lblDetalles;
     }
 }

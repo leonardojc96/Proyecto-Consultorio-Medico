@@ -40,6 +40,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
         //}
         private void InfoPacientes_Load(object sender, EventArgs e)
         {
+            Inicioadores.Labels(lblDetalles);
             Inicioadores.TextoBlanco(panelLabels);
             Inicioadores.Labels(lblHistorial);
             Inicioadores.DataGrid(dgvConsultas);
@@ -52,26 +53,34 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
 
         public void CargaDgv()
         {
-            ConsultasListas = new List<Modelo.ConsultaMedica>();
-            dgvConsultas.Rows.Clear();
-            int id = historial.Id;
-            ConsultasListas = consulta.GetByIdHistorio(id);
-
-
-            foreach (var item in ConsultasListas)
+            try
             {
-                if (item.Estado.ToLower().Trim() == "finalizado")
+                ConsultasListas = new List<Modelo.ConsultaMedica>();
+                dgvConsultas.Rows.Clear();
+                int id = historial.Id;
+                ConsultasListas = consulta.GetByIdHistorio(id);
+
+
+                foreach (var item in ConsultasListas)
                 {
-                    object[] elementos =
+                    if (item.Estado.ToLower().Trim() == "finalizado")
                     {
+                        object[] elementos =
+                        {
                     item.Id,
                     item.Observaciones,
                     item.Fecha.Value,
                     item.Medicos.Nombre + " " + item.Medicos.Apellido
                 };
-                    dgvConsultas.Rows.Insert(0, elementos);
+                        dgvConsultas.Rows.Insert(0, elementos);
+                    }
                 }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("No se encontro historial del paciente");
+            }
+            
         }
 
         public void MostrarDatos()

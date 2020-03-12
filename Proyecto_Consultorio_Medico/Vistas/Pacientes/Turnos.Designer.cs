@@ -172,7 +172,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(785, 321);
+            this.ClientSize = new System.Drawing.Size(785, 555);
             this.Controls.Add(this.lblUltimos);
             this.Controls.Add(this.dgvUltimosMedicos);
             this.Controls.Add(this.dgvMedicos);

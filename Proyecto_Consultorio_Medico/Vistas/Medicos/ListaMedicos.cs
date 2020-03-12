@@ -26,6 +26,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
         private void ListaMedicos_Load(object sender, EventArgs e)
         {
             Inicioadores.Labels(lblFiltrar);
+            Inicioadores.Labels(lblDetalles);
 
             ICollection<Modelo.Especialidades> especialidades = especialidadNegocio.GetEspecialidades();
             especialidades.Add(new Modelo.Especialidades()
