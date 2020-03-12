@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnNuevoPaciente = new System.Windows.Forms.Button();
+            this.btnNuevoMedico = new System.Windows.Forms.Button();
+            this.btnListaPacientes = new System.Windows.Forms.Button();
+            this.btnListaMEdicos = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,16 +40,16 @@
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(32)))), ((int)(((byte)(61)))));
             this.panelHeader.ForeColor = System.Drawing.Color.White;
-            this.panelHeader.Size = new System.Drawing.Size(766, 55);
+            this.panelHeader.Size = new System.Drawing.Size(1370, 55);
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.button4, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.button3, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.button2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnNuevoPaciente, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btnNuevoMedico, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.btnListaPacientes, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnListaMEdicos, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 55);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(103);
@@ -59,60 +59,63 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(766, 266);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1370, 837);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // button4
+            // btnNuevoPaciente
             // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.Location = new System.Drawing.Point(13, 211);
-            this.button4.Margin = new System.Windows.Forms.Padding(13);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(755, 42);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnNuevoPaciente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNuevoPaciente.Location = new System.Drawing.Point(13, 640);
+            this.btnNuevoPaciente.Margin = new System.Windows.Forms.Padding(13);
+            this.btnNuevoPaciente.Name = "btnNuevoPaciente";
+            this.btnNuevoPaciente.Size = new System.Drawing.Size(1344, 184);
+            this.btnNuevoPaciente.TabIndex = 3;
+            this.btnNuevoPaciente.Text = "Nuevo paciente";
+            this.btnNuevoPaciente.UseVisualStyleBackColor = true;
+            this.btnNuevoPaciente.Click += new System.EventHandler(this.btnNuevoPaciente_Click);
             // 
-            // button3
+            // btnNuevoMedico
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.Location = new System.Drawing.Point(13, 145);
-            this.button3.Margin = new System.Windows.Forms.Padding(13);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(755, 40);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnNuevoMedico.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNuevoMedico.Location = new System.Drawing.Point(13, 431);
+            this.btnNuevoMedico.Margin = new System.Windows.Forms.Padding(13);
+            this.btnNuevoMedico.Name = "btnNuevoMedico";
+            this.btnNuevoMedico.Size = new System.Drawing.Size(1344, 183);
+            this.btnNuevoMedico.TabIndex = 2;
+            this.btnNuevoMedico.Text = "Nuevo medico";
+            this.btnNuevoMedico.UseVisualStyleBackColor = true;
+            this.btnNuevoMedico.Click += new System.EventHandler(this.btnNuevoMedico_Click);
             // 
-            // button2
+            // btnListaPacientes
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Location = new System.Drawing.Point(13, 79);
-            this.button2.Margin = new System.Windows.Forms.Padding(13);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(755, 40);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnListaPacientes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnListaPacientes.Location = new System.Drawing.Point(13, 222);
+            this.btnListaPacientes.Margin = new System.Windows.Forms.Padding(13);
+            this.btnListaPacientes.Name = "btnListaPacientes";
+            this.btnListaPacientes.Size = new System.Drawing.Size(1344, 183);
+            this.btnListaPacientes.TabIndex = 1;
+            this.btnListaPacientes.Text = "Lista de pacientes";
+            this.btnListaPacientes.UseVisualStyleBackColor = true;
+            this.btnListaPacientes.Click += new System.EventHandler(this.btnListaPacientes_Click);
             // 
-            // button1
+            // btnListaMEdicos
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(13, 13);
-            this.button1.Margin = new System.Windows.Forms.Padding(13);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(10);
-            this.button1.Size = new System.Drawing.Size(755, 40);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnListaMEdicos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnListaMEdicos.Location = new System.Drawing.Point(13, 13);
+            this.btnListaMEdicos.Margin = new System.Windows.Forms.Padding(13);
+            this.btnListaMEdicos.Name = "btnListaMEdicos";
+            this.btnListaMEdicos.Padding = new System.Windows.Forms.Padding(10);
+            this.btnListaMEdicos.Size = new System.Drawing.Size(1344, 183);
+            this.btnListaMEdicos.TabIndex = 0;
+            this.btnListaMEdicos.Text = "Lista de medicos";
+            this.btnListaMEdicos.UseVisualStyleBackColor = true;
+            this.btnListaMEdicos.Click += new System.EventHandler(this.button1_Click);
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(766, 321);
+            this.ClientSize = new System.Drawing.Size(1370, 892);
             this.Controls.Add(this.tableLayoutPanel1);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -129,9 +132,9 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnNuevoPaciente;
+        private System.Windows.Forms.Button btnNuevoMedico;
+        private System.Windows.Forms.Button btnListaPacientes;
+        private System.Windows.Forms.Button btnListaMEdicos;
     }
 }

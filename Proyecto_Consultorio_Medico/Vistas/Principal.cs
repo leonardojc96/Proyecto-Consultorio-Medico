@@ -123,5 +123,16 @@ namespace Proyecto_Consultorio_Medico
                 menu.Show();
             }
         }
+
+        private void verToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Validaciones.FormularioNoAbierto("TurnosGeneral"))
+            {
+                Vistas.TurnosGenerales.TurnosGeneral t = new Vistas.TurnosGenerales.TurnosGeneral();
+                t.MdiParent = this;
+                t.Show();
+
+            }
+        }
     }
 }

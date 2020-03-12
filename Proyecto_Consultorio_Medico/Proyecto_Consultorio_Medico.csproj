@@ -220,6 +220,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vistas\TurnosGenerales\TurnosGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\TurnosGenerales\TurnosGeneral.Designer.cs">
+      <DependentUpon>TurnosGeneral.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Vistas\Consultorios\AltaConsultorios.resx">
       <DependentUpon>AltaConsultorios.cs</DependentUpon>
     </EmbeddedResource>
@@ -280,6 +286,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vistas\TurnosGenerales\TurnosGeneral.resx">
+      <DependentUpon>TurnosGeneral.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="Modelo\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>

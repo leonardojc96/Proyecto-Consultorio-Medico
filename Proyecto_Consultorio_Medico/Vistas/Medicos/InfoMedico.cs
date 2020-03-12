@@ -148,18 +148,25 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
 
         private void btnAbrirConsulta_Click(object sender, EventArgs e)
         {
-            if (dgvConsultasPendientes.CurrentRow.Index != -1)
+            try
             {
-                int index = dgvConsultasPendientes.CurrentRow.Index;
-                int idConsulta = int.Parse(dgvConsultasPendientes.Rows[index].Cells["IdConsulta"].Value.ToString());
-
-
-                if (Validaciones.FormularioNoAbierto("ConsultaMedica"))
+                if (dgvConsultasPendientes.CurrentRow.Index != -1)
                 {
-                    Vistas.Pacientes.ConsultaMedica consultaMedica = new Pacientes.ConsultaMedica("", idConsulta);
-                    consultaMedica.MdiParent = this.Parent.FindForm();
-                    consultaMedica.Show();
+                    int index = dgvConsultasPendientes.CurrentRow.Index;
+                    int idConsulta = int.Parse(dgvConsultasPendientes.Rows[index].Cells["IdConsulta"].Value.ToString());
+
+
+                    if (Validaciones.FormularioNoAbierto("ConsultaMedica"))
+                    {
+                        Vistas.Pacientes.ConsultaMedica consultaMedica = new Pacientes.ConsultaMedica("", idConsulta);
+                        consultaMedica.MdiParent = this.Parent.FindForm();
+                        consultaMedica.Show();
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Por favor, seleccione un turno primero");
             }
         }
     }

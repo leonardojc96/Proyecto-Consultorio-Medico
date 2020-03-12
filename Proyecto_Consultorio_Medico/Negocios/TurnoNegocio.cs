@@ -30,7 +30,10 @@ namespace Proyecto_Consultorio_Medico.Negocios
         {
             return turnos.GetLastMedicos(idPaciente);
         }
-
+        public IEnumerable<dynamic> GetTurnos()
+        {
+            return turnos.GetTurnos();
+        }
         public Consultorios GetConsultoriosByMedicoYEspecialidad(int idMed, int idEsp)
         {
             return turnos.GetConsultoriosByMedicoYEspecialidad(idMed, idEsp);

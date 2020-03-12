@@ -167,7 +167,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.Size = new System.Drawing.Size(778, 55);
+            this.panelHeader.Size = new System.Drawing.Size(768, 55);
             // 
             // nombreLabel
             // 
@@ -373,6 +373,7 @@
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(200, 20);
             this.nombreTextBox.TabIndex = 1;
+            this.nombreTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombreTextBox_KeyPress);
             // 
             // apellidoTextBox
             // 
@@ -380,6 +381,7 @@
             this.apellidoTextBox.Name = "apellidoTextBox";
             this.apellidoTextBox.Size = new System.Drawing.Size(200, 20);
             this.apellidoTextBox.TabIndex = 3;
+            this.apellidoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombreTextBox_KeyPress);
             // 
             // dNITextBox
             // 
@@ -387,6 +389,7 @@
             this.dNITextBox.Name = "dNITextBox";
             this.dNITextBox.Size = new System.Drawing.Size(200, 20);
             this.dNITextBox.TabIndex = 5;
+            this.dNITextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dNITextBox_KeyPress);
             // 
             // direccionTextBox
             // 
@@ -402,6 +405,7 @@
             this.cantidadTurnosTextBox.Size = new System.Drawing.Size(200, 20);
             this.cantidadTurnosTextBox.TabIndex = 9;
             this.cantidadTurnosTextBox.Text = "0";
+            this.cantidadTurnosTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cantidadTurnosTextBox_KeyPress);
             // 
             // fechaNacDateTimePicker
             // 
@@ -891,7 +895,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(795, 238);
+            this.ClientSize = new System.Drawing.Size(785, 472);
             this.Controls.Add(this.btnCurricula);
             this.Controls.Add(this.btnAgregarHorario);
             this.Controls.Add(this.lblDisponibles);

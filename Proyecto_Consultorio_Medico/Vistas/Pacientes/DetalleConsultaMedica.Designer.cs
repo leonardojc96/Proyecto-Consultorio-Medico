@@ -68,7 +68,7 @@
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(32)))), ((int)(((byte)(61)))));
             this.panelHeader.ForeColor = System.Drawing.Color.White;
-            this.panelHeader.Size = new System.Drawing.Size(785, 55);
+            this.panelHeader.Size = new System.Drawing.Size(1370, 55);
             // 
             // id_MedicoLabel
             // 
@@ -283,7 +283,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(785, 555);
+            this.ClientSize = new System.Drawing.Size(1370, 892);
             this.Controls.Add(this.btnEstudios);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.panel1);

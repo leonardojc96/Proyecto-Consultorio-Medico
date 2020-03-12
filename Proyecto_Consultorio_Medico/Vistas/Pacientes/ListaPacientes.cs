@@ -96,17 +96,20 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
             {
                 if (Validaciones.FormularioNoAbierto("AltaPacientes"))
                 {
+                    int idpa = int.Parse(dgvLista.Rows[dgvLista.CurrentRow.Index].Cells[0].Value.ToString());
                     Vistas.Pacientes.AltaPacientes alta = new AltaPacientes(idPaciente);
                     alta.MdiParent = this.Parent.FindForm();
-                    alta.Modificar(idPaciente);
+                    alta.Modificar(idpa);
                     alta.Show();
                 }
                 else
                 {
+                    int idpa = int.Parse(dgvLista.Rows[dgvLista.CurrentRow.Index].Cells[0].Value.ToString());
+
                     Vistas.Pacientes.AltaPacientes alta = (Vistas.Pacientes.AltaPacientes)Application.OpenForms["AltaPacientes"];
-                    alta = new AltaPacientes(idPaciente);
+                    alta = new AltaPacientes(idpa);
                     alta.MdiParent = this.Parent.FindForm();
-                    alta.Modificar(idPaciente);
+                    alta.Modificar(idpa);
                     alta.Show();
 
                 }
@@ -169,14 +172,17 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
             {
                 if (Validaciones.FormularioNoAbierto("Turnos"))
                 {
-                    Vistas.Pacientes.Turnos Turnos = new Turnos(idPaciente);
+                    int idpa = int.Parse(dgvLista.Rows[dgvLista.CurrentRow.Index].Cells[0].Value.ToString()); 
+                    Vistas.Pacientes.Turnos Turnos = new Turnos(idpa);
                     Turnos.MdiParent = this.Parent.FindForm();                  
                     Turnos.Show();
                 }
                 else
                 {
+                    int idpa = int.Parse(dgvLista.Rows[dgvLista.CurrentRow.Index].Cells[0].Value.ToString());
+
                     Vistas.Pacientes.Turnos Turnos = (Vistas.Pacientes.Turnos)Application.OpenForms["Turnos"];
-                    Turnos = new Turnos(idPaciente);
+                    Turnos = new Turnos(idpa);
                     Turnos.MdiParent = this.Parent.FindForm();               
                     Turnos.Show();
 
