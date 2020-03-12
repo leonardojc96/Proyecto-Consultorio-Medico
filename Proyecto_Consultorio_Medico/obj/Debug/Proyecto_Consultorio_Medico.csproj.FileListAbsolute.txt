@@ -34,7 +34,6 @@ C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto Dos\Proyecto-Consultorio-Me
 C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto Dos\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto Dos\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\bin\Debug\EntityFramework.xml
 C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto Dos\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto Dos\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.csprojAssemblyReference.cache
 C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto Dos\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Consultorios.AltaConsultorios.resources
 C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto Dos\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Especialidades.AltaEspecialidades.resources
 C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto Dos\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Medicos.AltaMedico.resources
@@ -68,3 +67,4 @@ C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto Dos\Proyecto-Consultorio-Me
 C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto Dos\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\AxInterop.AcroPDFLib.dll
 C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto Dos\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.csproj.ResolveComReference.cache
 C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto Dos\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.Vistas.Pacientes.DetalleConsultaMedica.resources
+C:\Users\WIN 10\Documents\Proyectos con Git\Proyecto Dos\Proyecto-Consultorio-Medico\Proyecto_Consultorio_Medico\obj\Debug\Proyecto_Consultorio_Medico.csprojAssemblyReference.cache

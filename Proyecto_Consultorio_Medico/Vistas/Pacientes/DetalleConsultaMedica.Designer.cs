@@ -257,7 +257,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(174, 375);
             this.panel1.TabIndex = 27;
-            // 
             // btnSalir
             // 
             this.btnSalir.Location = new System.Drawing.Point(317, 515);

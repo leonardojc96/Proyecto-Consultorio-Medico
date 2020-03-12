@@ -89,7 +89,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
                     item.Viernes,
                     item.Sabado,
                     item.Domingo,
-                    consultorio.Nombre +" - "+consultorio.Especialidades.Nombre 
+                    consultorio.Nombre +" - "+consultorio.Especialidades.Nombre
                 };
 
                 dgvHorarios.Rows.Insert(0, elementos);
@@ -117,7 +117,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
             {
                 MessageBox.Show(ex.Message);
             }
-            
+
 
         }
 
@@ -178,12 +178,25 @@ namespace Proyecto_Consultorio_Medico.Vistas.Medicos
             {
                 int idConsulta = int.Parse(dgvConsultasPendientes.Rows[e.RowIndex].Cells["IdConsulta"].Value.ToString());
 
-
-                if (Validaciones.FormularioNoAbierto("ConsultaMedica"))
+                try
                 {
-                    Vistas.Pacientes.ConsultaMedica consultaMedica = new Pacientes.ConsultaMedica("", idConsulta);
-                    consultaMedica.MdiParent = this.Parent.FindForm();
-                    consultaMedica.Show();
+                    if (dgvConsultasPendientes.CurrentRow.Index != -1)
+                    {
+                        int index = dgvConsultasPendientes.CurrentRow.Index;
+                        int idConsultaa = int.Parse(dgvConsultasPendientes.Rows[index].Cells["IdConsulta"].Value.ToString());
+
+
+                        if (Validaciones.FormularioNoAbierto("ConsultaMedica"))
+                        {
+                            Vistas.Pacientes.ConsultaMedica consultaMedica = new Pacientes.ConsultaMedica("", idConsultaa);
+                            consultaMedica.MdiParent = this.Parent.FindForm();
+                            consultaMedica.Show();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
                 }
             }
         }

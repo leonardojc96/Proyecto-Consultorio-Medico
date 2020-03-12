@@ -53,7 +53,7 @@ namespace Proyecto_Consultorio_Medico.Vistas.Pacientes
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(32)))), ((int)(((byte)(61)))));
             this.panelHeader.ForeColor = System.Drawing.Color.White;
-            this.panelHeader.Size = new System.Drawing.Size(785, 55);
+            this.panelHeader.Size = new System.Drawing.Size(1395, 55);
             // 
             // btnSalir
             // 
